@@ -189,6 +189,18 @@
         <div class="span12">
           <div class="row-fluid">
             <div class="span6">
+              <label for="fecha2"><b>Fecha:</b></label>
+              <div class="input-append date" id="cal2" data-date-format="dd-mm-yyyy" data-date-language="es" data-date-autoclose="true">
+                <input type="text" style="width: 218px" placeholder="Seleccione una fecha" readonly="true">
+                <span class="add-on"><i class="icon-calendar"></i></span>
+              </div>
+            </div>
+            <div class="span6">
+            <!-- nada -->
+            </div>
+         </div>
+          <div class="row-fluid">
+            <div class="span6">
               <label for="cliente"><b>Cliente:</b></label>
               <input id="cliente" class="span12" type="text" autocomplete="off" placeholder="Nombre del cliente" data-provide="typeahead" data-source='["Deluxe Bicycla", "Super Deluxe Trampolina", "Super Duper Scootea", "Alto", "Deluxe Bicycla", "Super Deluxe Trampolina", "Super Duper Scootea", "Alto"]'>
             </div>
