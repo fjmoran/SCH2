@@ -2,3 +2,7 @@ Directorio recursos
 ======================
 
 Directorio para dejar librerias, programas y demases
+
+(1) Bootstrap: Framework CSS para el estilo del sitio
+(2) Datepicker: Addon para Bootstrap para el manejo de calendarios
+(3) Jquery: Framework JS utilizado por (1) y (2)
