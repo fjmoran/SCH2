@@ -13,6 +13,8 @@
 
     <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 
+    <link href="img/favicon.ico" rel="SHORTCUT ICON">
+
     <style type="text/css">
 
       h2 { font-family: 'Ubuntu Condensed', sans-serif !important; font-weight: 400; }

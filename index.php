@@ -7,6 +7,7 @@
     <!-- Bootstrap -->
     <link href="recursos/bootstrap/assets/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="recursos/datepicker/css/datepicker.css" rel="stylesheet"> 
+    <link href="img/favicon.ico" rel="SHORTCUT ICON">
 
     <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 
