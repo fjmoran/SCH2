@@ -7,7 +7,7 @@
 	<span class="add-on"><i class="icon-calendar"></i></span>
 </div>
 
-	<a href="#agregar" role="button" class="btn btn-primary pull-right" data-toggle="modal">+ Agregar</a>
+	<a href="#agregar" role="button" class="btn btn-primary pull-right" data-toggle="modal"><i class="icon-plus-sign icon-white"></i> Agregar</a>
 
 <h4>Gastos realizados</h4>
 
