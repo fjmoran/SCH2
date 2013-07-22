@@ -1,2 +1,9 @@
 Q & A
 ======
+
+
+1.- Ver si se pueden juntar algunos Informes, varios muestran información similar.
+
+2.- Eliminar "links"
+
+3.- Como funciona la opcion "facturar"

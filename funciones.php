@@ -17,6 +17,9 @@ function cargar_pagina($id) {
     	case 12:
         	include('pages/cli_crear.php');
         	break; 
+        case 13:
+            include('pages/cli_contacto.php');
+            break;             
         case 30:
             include('pages/cli_editar.php');
             break; 

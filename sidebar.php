@@ -20,8 +20,8 @@
               <li><a href="index.php?pid=12" class="load_link"><i class="icon-chevron-right"></i> Crear</a></li>
               <li><a href="index.php?pid=13"><i class="icon-chevron-right"></i> Agregar contacto</a></li>                          
               <li class="nav-header">Contactos</li>
-              <li><a href="index.php?pid=14"><i class="icon-chevron-right"></i> Crear</a></li>
-              <li><a href="index.php?pid=15"><i class="icon-chevron-right"></i> Agregar</a></li>
+              <li><a href="index.php?pid=14"><i class="icon-chevron-right"></i> Buscar</a></li>
+              <li><a href="index.php?pid=15"><i class="icon-chevron-right"></i> Crear</a></li>
               <li class="nav-header">Facturación</li>
               <li><a href="index.php?pid=16"><i class="icon-chevron-right"></i> Nueva factura</a></li>
               <li><a href="index.php?pid=17"><i class="icon-chevron-right"></i> Buscar facturas</a></li>              
