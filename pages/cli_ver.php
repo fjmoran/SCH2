@@ -8,6 +8,7 @@
   <li><a href="#cont" data-toggle="tab">Contactos</a></li>
 </ul>
 
+
 <div class="tab-content">
   <div class="tab-pane active" id="cli">
   
@@ -25,6 +26,16 @@
     
   </div>
 </div>
+
+<div class="row-fluid">
+  <div class="span12">
+
+    <p class="text-right">
+      <a class="btn btn-primary" href="#">Volver</a>
+    </p>
+
+  </div>
+</div> 
 
 </div>
 

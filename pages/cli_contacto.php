@@ -6,7 +6,7 @@
     <label for="cliente"><b>Cliente:</b></label>
     <input id="cliente" class="span10" type="text" autocomplete="off" placeholder="Nombre del cliente" data-provide="typeahead" data-source='["Deluxe Bicycla", "Super Deluxe Trampolina", "Super Duper Scootea", "Alto", "Deluxe Bicycla", "Super Deluxe Trampolina", "Super Duper Scootea"]'>
     
-    <label for="tipo"><b>Tipo:</b></label>
+    <label for="tipo"><b>Tipo de relación:</b></label>
     <select id="tipo" class="span10">
       <option>Gerente General</option>
       <option>Gerente Comercial</option>
