@@ -4,7 +4,7 @@
  <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Ingreso</li>
-              <li><a href="index.php?pid=1"><i class="icon-chevron-right"></i> Trabajos</a></li>
+              <li class="active"><a href="index.php?pid=1"><i class="icon-chevron-right"></i> Trabajos</a></li>  <!-- Muestra menu activo-->
               <li><a href="index.php?pid=2"><i class="icon-chevron-right"></i> Gastos</a></li>
               <li><a href="index.php?pid=3"><i class="icon-chevron-right"></i> Abonos</a></li>
               <li class="nav-header">Informes</li>
