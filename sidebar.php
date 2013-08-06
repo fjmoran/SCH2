@@ -4,7 +4,7 @@
  <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Ingreso</li>
-              <li class="<?php echo ($_GET['pid']==1) ? 'active':''; ?>" onclick="$('#cuerpo').load('pages/ing_trabajos.php');"><a href="#"><i class="icon-chevron-right"></i> Trabajos</a></li>  <!-- Muestra menu activo-->
+              <li class="<?php echo ($_GET['pid']==1) ? 'active':''; ?>" onclick="$('#cuerpo').load('pages/ing_trabajos.php');"><a href="#trabajos"><i class="icon-chevron-right"></i> Trabajos</a></li>  <!-- Muestra menu activo-->
               <li class="<?php echo ($_GET['pid']==2) ? 'active':''; ?>"><a href="index.php?pid=2"><i class="icon-chevron-right"></i> Gastos</a></li>
               <li class="<?php echo ($_GET['pid']==3) ? 'active':''; ?>"><a href="index.php?pid=3"><i class="icon-chevron-right"></i> Abonos</a></li>
               <li class="nav-header">Informes</li>
