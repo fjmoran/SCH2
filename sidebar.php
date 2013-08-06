@@ -11,20 +11,20 @@
               <li class="<?php echo ($_GET['pid']==4) ? 'active':''; ?>"><a href="index.php?pid=4"><i class="icon-chevron-right"></i>  Horas cliente</a></li>
               <li class="<?php echo ($_GET['pid']==5) ? 'active':''; ?>"><a href="index.php?pid=5"><i class="icon-chevron-right"></i> Horas abogado</a></li>
               <li class="<?php echo ($_GET['pid']==6) ? 'active':''; ?>"><a href="index.php?pid=6"><i class="icon-chevron-right"></i> Gastos cliente</a></li>
-              <li><a href="index.php?pid=7"><i class="icon-chevron-right"></i> Gastos abogado</a></li>
-              <li><a href="index.php?pid=8"><i class="icon-chevron-right"></i> Consolidado de horas</a></li>
-              <li><a href="index.php?pid=9"><i class="icon-chevron-right"></i> Personal</a></li>
-              <li><a href="index.php?pid=10"><i class="icon-chevron-right"></i> Horas materia</a></li>  
+              <li class="<?php echo ($_GET['pid']==7) ? 'active':''; ?>"><a href="index.php?pid=7"><i class="icon-chevron-right"></i> Gastos abogado</a></li>
+              <li class="<?php echo ($_GET['pid']==8) ? 'active':''; ?>"><a href="index.php?pid=8"><i class="icon-chevron-right"></i> Consolidado de horas</a></li>
+              <li class="<?php echo ($_GET['pid']==9) ? 'active':''; ?>"><a href="index.php?pid=9"><i class="icon-chevron-right"></i> Personal</a></li>
+              <li class="<?php echo ($_GET['pid']==10) ? 'active':''; ?>"><a href="index.php?pid=10"><i class="icon-chevron-right"></i> Horas materia</a></li>  
               <li class="nav-header">Clientes</li>
-              <li><a href="index.php?pid=11" class="load_link"><i class="icon-chevron-right"></i> Buscar</a></li>
-              <li><a href="index.php?pid=12" class="load_link"><i class="icon-chevron-right"></i> Crear</a></li>
-              <li><a href="index.php?pid=13"><i class="icon-chevron-right"></i> Agregar contacto</a></li>                          
+              <li class="<?php echo ($_GET['pid']==11) ? 'active':''; ?>"><a href="index.php?pid=11" class="load_link"><i class="icon-chevron-right"></i> Buscar</a></li>
+              <li class="<?php echo ($_GET['pid']==12) ? 'active':''; ?>"><a href="index.php?pid=12" class="load_link"><i class="icon-chevron-right"></i> Crear</a></li>
+              <li class="<?php echo ($_GET['pid']==13) ? 'active':''; ?>"><a href="index.php?pid=13"><i class="icon-chevron-right"></i> Agregar contacto</a></li>                          
               <li class="nav-header">Contactos</li>
-              <li><a href="index.php?pid=14"><i class="icon-chevron-right"></i> Buscar</a></li>
-              <li><a href="index.php?pid=15"><i class="icon-chevron-right"></i> Crear</a></li>
+              <li class="<?php echo ($_GET['pid']==14) ? 'active':''; ?>"><a href="index.php?pid=14"><i class="icon-chevron-right"></i> Buscar</a></li>
+              <li class="<?php echo ($_GET['pid']==15) ? 'active':''; ?>"><a href="index.php?pid=15"><i class="icon-chevron-right"></i> Crear</a></li>
               <li class="nav-header">Facturación</li>
-              <li><a href="index.php?pid=16"><i class="icon-chevron-right"></i> Nueva factura</a></li>
-              <li><a href="index.php?pid=17"><i class="icon-chevron-right"></i> Buscar facturas</a></li>              
+              <li class="<?php echo ($_GET['pid']==16) ? 'active':''; ?>"><a href="index.php?pid=16"><i class="icon-chevron-right"></i> Nueva factura</a></li>
+              <li class="<?php echo ($_GET['pid']==17) ? 'active':''; ?>"><a href="index.php?pid=17"><i class="icon-chevron-right"></i> Buscar facturas</a></li>              
             </ul>
 </div>
  </div>
