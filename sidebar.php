@@ -4,13 +4,13 @@
  <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Ingreso</li>
-              <li class="active"><a href="index.php?pid=1"><i class="icon-chevron-right"></i> Trabajos</a></li>  <!-- Muestra menu activo-->
-              <li><a href="index.php?pid=2"><i class="icon-chevron-right"></i> Gastos</a></li>
-              <li><a href="index.php?pid=3"><i class="icon-chevron-right"></i> Abonos</a></li>
+              <li class="<?php echo ($_GET['pid']==1) ? 'active':''; ?>"><a href="index.php?pid=1"><i class="icon-chevron-right"></i> Trabajos</a></li>  <!-- Muestra menu activo-->
+              <li class="<?php echo ($_GET['pid']==2) ? 'active':''; ?>"><a href="index.php?pid=2"><i class="icon-chevron-right"></i> Gastos</a></li>
+              <li class="<?php echo ($_GET['pid']==3) ? 'active':''; ?>"><a href="index.php?pid=3"><i class="icon-chevron-right"></i> Abonos</a></li>
               <li class="nav-header">Informes</li>
-              <li><a href="index.php?pid=4"><i class="icon-chevron-right"></i>  Horas cliente</a></li>
-              <li><a href="index.php?pid=5"><i class="icon-chevron-right"></i> Horas abogado</a></li>
-              <li><a href="index.php?pid=6"><i class="icon-chevron-right"></i> Gastos cliente</a></li>
+              <li class="<?php echo ($_GET['pid']==4) ? 'active':''; ?>"><a href="index.php?pid=4"><i class="icon-chevron-right"></i>  Horas cliente</a></li>
+              <li class="<?php echo ($_GET['pid']==5) ? 'active':''; ?>"><a href="index.php?pid=5"><i class="icon-chevron-right"></i> Horas abogado</a></li>
+              <li class="<?php echo ($_GET['pid']==6) ? 'active':''; ?>"><a href="index.php?pid=6"><i class="icon-chevron-right"></i> Gastos cliente</a></li>
               <li><a href="index.php?pid=7"><i class="icon-chevron-right"></i> Gastos abogado</a></li>
               <li><a href="index.php?pid=8"><i class="icon-chevron-right"></i> Consolidado de horas</a></li>
               <li><a href="index.php?pid=9"><i class="icon-chevron-right"></i> Personal</a></li>
