@@ -69,12 +69,13 @@
   </head>
   <body>
 	<?php 
-  include('funciones.php');
+  	include('funciones.php');
 	include('header.php');
 	include('sidebar.php');
 	?>
 
 	<!-- incluir funcion que cargue las paginas -->
+	<div id="cuerpo">
   <?php
 
    $pid = $_GET['pid'];
@@ -86,7 +87,7 @@
     include('pages/default.php');
   }
   ?>
-
+	</div>
 	<?php
 	include('footer.php');
 	?>
