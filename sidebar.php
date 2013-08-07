@@ -8,23 +8,23 @@
               <li onclick="$('#cuerpo').load('pages/ing_gastos.php');"><a href="#"><i class="icon-chevron-right"></i> Gastos</a></li>
               <li onclick="$('#cuerpo').load('pages/ing_abonos.php');"><a href="#"><i class="icon-chevron-right"></i> Abonos</a></li>
               <li class="nav-header">Informes</li>
-              <li onclick="$('#cuerpo').load('index.php');"><a href="#"><i class="icon-chevron-right"></i> Horas cliente</a></li>
-              <li onclick="$('#cuerpo').load('index.php');"><a href="#"><i class="icon-chevron-right"></i> Horas abogado</a></li>
-              <li onclick="$('#cuerpo').load('index.php');"><a href="#"><i class="icon-chevron-right"></i> Gastos cliente</a></li>
-              <li onclick="$('#cuerpo').load('index.php');"><a href="#"><i class="icon-chevron-right"></i> Gastos abogado</a></li>
-              <li onclick="$('#cuerpo').load('index.php');"><a href="#"><i class="icon-chevron-right"></i> Consolidado de horas</a></li>
-              <li onclick="$('#cuerpo').load('index.php');"><a href="#"><i class="icon-chevron-right"></i> Personal</a></li>
-              <li onclick="$('#cuerpo').load('index.php');"><a href="#"><i class="icon-chevron-right"></i> Horas materia</a></li>  
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#"><i class="icon-chevron-right"></i> Horas cliente</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#"><i class="icon-chevron-right"></i> Horas abogado</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#"><i class="icon-chevron-right"></i> Gastos cliente</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#"><i class="icon-chevron-right"></i> Gastos abogado</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#"><i class="icon-chevron-right"></i> Consolidado de horas</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#"><i class="icon-chevron-right"></i> Personal</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#"><i class="icon-chevron-right"></i> Horas materia</a></li>  
               <li class="nav-header">Clientes</li>
               <li onclick="$('#cuerpo').load('pages/cli_buscar.php');"><a href="#"><i class="icon-chevron-right"></i> Buscar</a></li>
               <li onclick="$('#cuerpo').load('pages/cli_crear.php');"><a href="#"><i class="icon-chevron-right"></i> Crear</a></li>
               <li onclick="$('#cuerpo').load('pages/cli_contacto.php');"><a href="#"><i class="icon-chevron-right"></i> Agregar contacto</a></li>                          
               <li class="nav-header">Contactos</li>
-              <li onclick="$('#cuerpo').load('index.php');"><a href="index.php?pid=14"><i class="icon-chevron-right"></i> Buscar</a></li>
-              <li onclick="$('#cuerpo').load('index.php');"><a href="index.php?pid=15"><i class="icon-chevron-right"></i> Crear</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="index.php?pid=14"><i class="icon-chevron-right"></i> Buscar</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="index.php?pid=15"><i class="icon-chevron-right"></i> Crear</a></li>
               <li class="nav-header">Facturación</li>
-              <li onclick="$('#cuerpo').load('index.php');"><a href="index.php?pid=16"><i class="icon-chevron-right"></i> Nueva factura</a></li>
-              <li onclick="$('#cuerpo').load('index.php');"><a href="index.php?pid=17"><i class="icon-chevron-right"></i> Buscar facturas</a></li>              
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="index.php?pid=16"><i class="icon-chevron-right"></i> Nueva factura</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="index.php?pid=17"><i class="icon-chevron-right"></i> Buscar facturas</a></li>              
             </ul>
 </div>
  </div>
