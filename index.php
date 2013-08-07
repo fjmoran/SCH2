@@ -113,6 +113,17 @@
           selector: "i[rel=tooltip]"
          })
 
+
+
+        $('ul.nav-list > li').click(function (e) {
+            e.preventDefault();
+            $('ul.nav-list > li').removeClass('active');
+            $(this).addClass('active');                
+        });  
+
+
+
+
       })
 
     </script>
