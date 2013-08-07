@@ -208,3 +208,19 @@
       <button class="btn btn-primary">Modificar</button>
     </div>
   </div>
+
+      <script type="text/javascript"> 
+      
+      $(document).ready(function(){
+        /* Calendario 1*/       
+        $('#cal1').datepicker();
+        /* Calendario 2*/       
+        $('#cal2').datepicker();        
+        /* Tooltip */
+        $('.table').tooltip({
+          selector: "i[rel=tooltip]"
+         })
+
+      })
+
+    </script>

@@ -94,14 +94,7 @@
     <script type="text/javascript"> 
       
       $(document).ready(function(){
-        /* Calendario 1*/       
-        $('#cal1').datepicker();
-        /* Calendario 2*/       
-        $('#cal2').datepicker();        
-        /* Tooltip */
-        $('.table').tooltip({
-          selector: "i[rel=tooltip]"
-         })
+        
         /* Menu activo */
         $('ul.nav-list > li').click(function (e) {
             e.preventDefault();

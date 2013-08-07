@@ -37,8 +37,8 @@
       <td>Pesquera Pacific Star S.A.</td>
       <td>pesquera@mail.com</td>
       <td>Nombre Apellido</td>
-      <td><a href="index.php?pid=31"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles"></i></a>
-          <a href="index.php?pid=30"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>        
+      <td><a href="#"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles" onclick="$('#cuerpo').load('pages/cli_ver.php');"></i></a>
+          <a href="#"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar" onclick="$('#cuerpo').load('pages/cli_editar.php');"></i></a>       
           <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i>
       </td>
     </tr>
@@ -47,8 +47,8 @@
       <td>Direct TV Chile Ltda.</td>
       <td>dtv@mail.com</td>
       <td>Nombre Apellido</td>
-      <td><a href="index.php?pid=31"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles"></i></a>
-          <a href="index.php?pid=30"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>        
+      <td><a href="#"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles" onclick="$('#cuerpo').load('pages/cli_ver.php');"></i></a>
+          <a href="#"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar" onclick="$('#cuerpo').load('pages/cli_editar.php');"></i></a>       
           <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i>
       </td>
     </tr>
@@ -57,8 +57,8 @@
       <td>Telefónica Móviles Chile S.A.</td>
       <td>tefonica@mail.com</td>
       <td>Nombre Apellido</td>
-      <td><a href="index.php?pid=31"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles"></i></a>
-          <a href="index.php?pid=30"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>        
+      <td><a href="#"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles" onclick="$('#cuerpo').load('pages/cli_ver.php');"></i></a>
+          <a href="#"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar" onclick="$('#cuerpo').load('pages/cli_editar.php');"></i></a>       
           <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i>
       </td>
     </tr>
@@ -67,8 +67,8 @@
       <td>Consorcio Maderero S.A.</td>
       <td>madera@mail.com</td>
       <td>Nombre Apellido</td>
-      <td><a href="index.php?pid=31"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles"></i></a>
-          <a href="index.php?pid=30"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>        
+      <td><a href="#"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles" onclick="$('#cuerpo').load('pages/cli_ver.php');"></i></a>
+          <a href="#"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar" onclick="$('#cuerpo').load('pages/cli_editar.php');"></i></a>      
           <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i>
       </td>
     </tr>
@@ -77,8 +77,8 @@
       <td>Agrícola Los Ciruelos Ltda.</td>
       <td>agricola@mail.com</td>
       <td>Nombre Apellido</td>
-      <td><a href="index.php?pid=31"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles"></i></a>
-          <a href="index.php?pid=30"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>        
+      <td><a href="#"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles" onclick="$('#cuerpo').load('pages/cli_ver.php');"></i></a>
+          <a href="#"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar" onclick="$('#cuerpo').load('pages/cli_editar.php');"></i></a>       
           <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i>
       </td>
     </tr>
@@ -87,8 +87,8 @@
       <td>Jaime Acevedo E.</td>
       <td>jaime.acevedo@mail.com</td>
       <td>Nombre Apellido</td>
-      <td><a href="index.php?pid=31"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles"></i></a>
-          <a href="index.php?pid=30"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>        
+      <td><a href="#"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles" onclick="$('#cuerpo').load('pages/cli_ver.php');"></i></a>
+          <a href="#"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar" onclick="$('#cuerpo').load('pages/cli_editar.php');"></i></a>      
           <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i>
       </td>
     </tr>
@@ -97,8 +97,8 @@
       <td>VTR Ltda.</td>
       <td>vtr@mail.com</td>
       <td>Nombre Apellido</td>
-      <td><a href="index.php?pid=31"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles"></i></a>
-          <a href="index.php?pid=30"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>        
+      <td><a href="#"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles" onclick="$('#cuerpo').load('pages/cli_ver.php');"></i></a>
+          <a href="#"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar" onclick="$('#cuerpo').load('pages/cli_editar.php');"></i></a>      
           <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i>
       </td>
     </tr>
@@ -107,8 +107,8 @@
       <td>Fanaloza S.A.</td>
       <td>fanaloza@mail.com</td>
       <td>Nombre Apellido</td>
-      <td><a href="index.php?pid=31"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles"></i></a>
-          <a href="index.php?pid=30"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>        
+      <td><a href="#"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles" onclick="$('#cuerpo').load('pages/cli_ver.php');"></i></a>
+          <a href="#"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar" onclick="$('#cuerpo').load('pages/cli_editar.php');"></i></a>        
           <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i>
       </td>
     </tr>
@@ -117,8 +117,8 @@
       <td>Jardines Botánicos Ltda.</td>
       <td>jardin@gmail.com</td>
       <td>Nombre Apellido</td>
-      <td><a href="index.php?pid=31"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles"></i></a>
-          <a href="index.php?pid=30"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>        
+      <td><a href="#"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles" onclick="$('#cuerpo').load('pages/cli_ver.php');"></i></a>
+          <a href="#"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar" onclick="$('#cuerpo').load('pages/cli_editar.php');"></i></a>      
           <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i>
       </td>
     </tr>    
