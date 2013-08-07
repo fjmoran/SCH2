@@ -69,24 +69,14 @@
   </head>
   <body>
 	<?php 
-  	include('funciones.php');
 	include('header.php');
 	include('sidebar.php');
 	?>
 
-	<!-- incluir funcion que cargue las paginas -->
 	<div id="cuerpo">
-  <?php
 
-   $pid = $_GET['pid'];
+   <?php include('pages/default.php'); ?>
 
-  if (isset($pid)) {
-    cargar_pagina($pid);
-  }
-  else {
-    include('pages/default.php');
-  }
-  ?>
 	</div>
 	<?php
 	include('footer.php');
@@ -112,17 +102,12 @@
         $('.table').tooltip({
           selector: "i[rel=tooltip]"
          })
-
-
-
+        /* Menu activo */
         $('ul.nav-list > li').click(function (e) {
             e.preventDefault();
             $('ul.nav-list > li').removeClass('active');
             $(this).addClass('active');                
         });  
-
-
-
 
       })
 

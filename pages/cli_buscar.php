@@ -27,8 +27,8 @@
       <td>Cemento Polpaico S.A.</td>
       <td>cemento.polpaico@mail.com</td>
       <td>Nombre Apellido</td>
-      <td><a href="index.php?pid=31"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles"></i></a>
-          <a href="index.php?pid=30"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>        
+      <td><a href="#"><i class="icon-eye-open" rel="tooltip" data-toggle="tooltip" title="Ver detalles" onclick="$('#cuerpo').load('pages/cli_ver.php');"></i></a>
+          <a href="#"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar" onclick="$('#cuerpo').load('pages/cli_editar.php');"></i></a>        
           <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i>
       </td>
     </tr>
