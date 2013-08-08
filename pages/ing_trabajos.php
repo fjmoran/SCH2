@@ -1,3 +1,6 @@
+<?php
+require "recursos/zhi/CreaConn.php";
+?>
 <div class="span11">
 <h2>Trabajos</h2>
 <h5>Seleccione la fecha que desea vizualizar</h5>
