@@ -97,7 +97,7 @@
         
         /* Menu activo */
         $('ul.nav-list > li').click(function (e) {
-            e.preventDefault();
+           // e.preventDefault();
             $('ul.nav-list > li').removeClass('active');
             $(this).addClass('active');                
         });  
