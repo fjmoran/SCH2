@@ -90,7 +90,6 @@
     <script src="recursos/datepicker/js/bootstrap-datepicker.js"></script>
     <script src="recursos/datepicker/js/locales/bootstrap-datepicker.es.js" charset="UTF-8"></script>
     
-
     <script type="text/javascript"> 
       
       $(document).ready(function(){

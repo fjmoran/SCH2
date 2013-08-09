@@ -4,29 +4,29 @@
  <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Usuarios</li>
-              <li><a href="#"><i class="icon-chevron-right"></i> Crear</a></li>
-              <li><a href="#"><i class="icon-chevron-right"></i> Modificar</a></li>
-              <li><a href="#"><i class="icon-chevron-right"></i> Tarifas</a></li>
+              <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#usr_crear"><i class="icon-chevron-right"></i> Crear</a></li>
+              <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#usr_mod"><i class="icon-chevron-right"></i> Modificar</a></li>
+              <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#usr_tar"><i class="icon-chevron-right"></i> Tarifas</a></li>
               <li class="nav-header">Perfiles</li>
-              <li><a href="#"><i class="icon-chevron-right"></i> Administrar</a></li>  
-              <li><a href="#"><i class="icon-chevron-right"></i> Permisos</a></li>                             
+              <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#perf_adm"><i class="icon-chevron-right"></i> Administrar</a></li>  
+              <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#perf_perm"><i class="icon-chevron-right"></i> Permisos</a></li>                             
               <li class="nav-header">Clientes</li>
-              <li><a href="#"><i class="icon-chevron-right"></i> Tarifa</a></li>
+              <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#cli_tar"><i class="icon-chevron-right"></i> Tarifa</a></li>
               <li class="nav-header">Contactos</li>
-              <li><a href="#"><i class="icon-chevron-right"></i> Tipos</a></li> 
+              <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#cto_tipo"><i class="icon-chevron-right"></i> Tipos</a></li> 
               <li class="nav-header">Materia</li>
-              <li><a href="#"><i class="icon-chevron-right"></i> Crear</a></li> 
-              <li><a href="#"><i class="icon-chevron-right"></i> Editar</a></li> 
-              <li><a href="#"><i class="icon-chevron-right"></i> Tipos</a></li>               
-              <li><a href="#"><i class="icon-chevron-right"></i> Estados</a></li>
-              <li><a href="#"><i class="icon-chevron-right"></i> Tarifas</a></li>   
+              <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_crear"><i class="icon-chevron-right"></i> Crear</a></li> 
+              <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_editar"><i class="icon-chevron-right"></i> Editar</a></li> 
+              <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_tipo"><i class="icon-chevron-right"></i> Tipos</a></li>               
+              <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_estdo"><i class="icon-chevron-right"></i> Estados</a></li>
+              <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_tar"><i class="icon-chevron-right"></i> Tarifas</a></li>   
               <li class="nav-header">Facturación</li>
-              <li><a href="#"><i class="icon-chevron-right"></i> Estados</a></li>
+              <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#fact_estdo"><i class="icon-chevron-right"></i> Estados</a></li>
               <li class="nav-header">Monedas</li>
-              <li><a href="#"><i class="icon-chevron-right"></i> Crear</a></li>
-              <li><a href="#"><i class="icon-chevron-right"></i> Editar</a></li> 
+              <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mon_crear"><i class="icon-chevron-right"></i> Crear</a></li>
+              <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mon_edit"><i class="icon-chevron-right"></i> Editar</a></li> 
               <li class="nav-header">Admin</li>
-              <li><a href="#"><i class="icon-chevron-right"></i> Modificar registro</a></li>                                                                                                             
+              <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#editor"><i class="icon-chevron-right"></i> Editor registros BD</a></li>                                                                                                             
             </ul>
 </div>
  </div>

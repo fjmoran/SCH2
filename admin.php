@@ -69,21 +69,15 @@
   </head>
   <body>
 	<?php 
-  include('funciones.php'); 
 	include('header.php');
 	include('sidebar_admin.php');
 	?>
 
-	<!-- incluir funcion que cargue las paginas -->
-    <?php
-  if (isset($pid)) {
-    cargar_pagina_admin();
-  }
-  else {
-  include('pages_admin/default.php');
-  }
-  ?>
+  <div id="cuerpo">
+    
+  <?php include('pages_admin/default.php'); ?>
 
+  </div>
 	<?php
 	include('footer.php');
 	?>
@@ -95,6 +89,21 @@
     <script src="recursos/bootstrap/assets/js/bootstrap.js"></script>
     <script src="recursos/datepicker/js/bootstrap-datepicker.js"></script>
     <script src="recursos/datepicker/js/locales/bootstrap-datepicker.es.js" charset="UTF-8"></script>
+
+    <script type="text/javascript"> 
+      
+      $(document).ready(function(){
+        
+        /* Menu activo */
+        $('ul.nav-list > li').click(function (e) {
+           // e.preventDefault();
+            $('ul.nav-list > li').removeClass('active');
+            $(this).addClass('active');                
+        });  
+
+      })
+
+    </script>    
     
  </body>
 </html>
