@@ -12,7 +12,93 @@
 <div class="tab-content">
   <div class="tab-pane active" id="cli">
   
-    Info cliente
+    <div class="row-fluid">
+      <div class="span12">
+        <label class="radio inline">
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" onclick="toggleSet(this)" checked>
+            Empresa
+        </label>
+        <label class="radio inline">
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="2" onclick="toggleSet(this)">
+            Persona
+          </label>
+        <br>
+        <br>
+        <div class="row-fluid">
+          <div class="span6">
+            <label for="razon_social" id="razon_social_l"><b>Razón Social:</b></label>
+            <input id="razon_social" class="span10" type="text" placeholder="Razón Social"> 
+            <label for="fantasia" id="fantasia_l"><b>Nombre de fantasía:</b></label>
+
+            <label for="nombres" id="nombres_l" style="display: none"><b>Nombres:</b></label>
+            <input id="nombres" class="span10" type="text" placeholder="Nombres" style="display: none"> 
+            <label for="apellido2" id="apellido2_l" style="display: none"><b>Apellido materno:</b></label>
+            <input id="apellido2" class="span10" type="text" placeholder="Apellido materno" style="display: none"> 
+
+            <input id="fantasia" class="span10" type="text" placeholder="Nombre de fantasía"> 
+            <label for="telefono"><b>Teléfono:</b></label>
+            <input id="telefono" class="span10" type="text" placeholder="Teléfono"> 
+            <label for="fax"><b>Fax:</b></label>
+            <input id="fax" class="span10" type="text" placeholder="Fax"> 
+            <label for="abogado"><b>Abogado a cargo:</b></label>
+              <select id="abogado" class="span10">
+                <option>No asignado</option>             
+                <option>Abogado 1</option>              
+                <option>Abogado 2</option>
+                <option>Abogado 3</option>  
+                <option>Abogado 4</option>  
+                <option>Abogado 5</option>                                                                          
+              </select>                                          
+          </div>
+          <div class="span6">
+
+            <label for="apellido1" id="apellido1_l" style="display: none"><b>Apellido paterno:</b></label>
+            <input id="apellido1" class="span10" type="text" placeholder="Apellido paterno" style="display: none"> 
+
+            <label for="rut"><b>RUT:</b></label>
+            <input id="rut" class="span10" type="text" placeholder="xx.xxx.xxx-x"> 
+            <label for="giro"><b>Giro:</b></label>
+            <input id="giro" class="span10" type="text" placeholder="Giro"> 
+            <label for="email"><b>Correo Electrónico:</b></label>
+            <input id="email" class="span10" type="email" placeholder="nombre@dominio.com">
+            <label for="web"><b>Sitio Web:</b></label>
+            <input id="web" class="span10" type="text" placeholder="Sitio Web">                
+          </div>
+        </div>
+            </br>
+        <label for="direccion"><b>Dirección</b></label> 
+        <div class="row-fluid">
+          <div class="span6">
+            <label for="pais"><b>País:</b></label>
+              <select id="pais" class="span10">
+                <option>Chile</option>              
+                <option>Argentina</option>
+                <option>Perú</option>  
+                <option>U.S.A.</option>  
+                <option>Otro</option>                                                             
+              </select>                                 
+          </div>
+          <div class="span6">
+            <label for="region"><b>Región:</b></label>
+              <select id="region" class="span10">
+                <option>Región Metropolitana</option>              
+                <option>Región Arica y Parinacota</option>
+                <option>Región Tarapacá</option>  
+                <option>Región Antofagasta</option>  
+                <option>Extranjero</option>                                                             
+              </select>               
+          </div>
+        </div>
+        <label for="calle"><b>Calle/Avenida - Número- Departamento/Oficina:</b></label>
+        <input id="calle" class="span11" type="text" placeholder="Dirección"> 
+        <div>
+          <p class="span11 text-right">
+            <a class="btn" onclick="$('#cuerpo').load('pages/cli_editar.php');" href="#cli_editar">Editar</a>
+            <a class="btn btn-primary" href="#">Volver</a>
+          </p>
+        </div>
+        </div>    
+      </div>
 
   </div>
   <div class="tab-pane" id="fact">
@@ -26,16 +112,6 @@
     
   </div>
 </div>
-
-<div class="row-fluid">
-  <div class="span12">
-
-    <p class="text-right">
-      <a class="btn btn-primary" href="#">Volver</a>
-    </p>
-
-  </div>
-</div> 
 
 </div>
 
