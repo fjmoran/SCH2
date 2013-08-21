@@ -86,7 +86,7 @@
             </div>
             <div class="modal-body">
               <p>Ingresa tu correo electrónico para recuperarla</p>
-              <input type="email" class="form-control" placeholder="correo@dominio.com"><br>
+              <input type="email" class="form-control" placeholder="correo@dominio.com">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
