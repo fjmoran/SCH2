@@ -1,6 +1,6 @@
- </div><!-- .row -->
- </div>
- </div>
+ 			</div><!-- .row -->
+ 		</div>
+ 	</div>
  </div><!-- .container -->
 <div id="footer"> 
 <div class="container">

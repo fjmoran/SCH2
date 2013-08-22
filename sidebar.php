@@ -31,7 +31,7 @@
  <div class="col-md-10"> <!-- style="background-color: lightgrey" -->
  <div class="container">
  <ul class="nav nav-pills pull-right">
- <li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+ <li class="active"><a href="index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
  <li><a href="admin.php"><span class="glyphicon glyphicon-wrench"></span> Administración</a></li>
  <li><a href="login.php"><span class="glyphicon glyphicon-off"></span> Salir</a></li>
  </ul>

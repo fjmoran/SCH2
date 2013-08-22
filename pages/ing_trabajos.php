@@ -1,7 +1,7 @@
 <?php
-require "recursos/zhi/CreaConn.php";
+// require "recursos/zhi/CreaConn.php";
 ?>
-<div class="span11">
+<div class="col-md-11">
 <h2>Trabajos</h2>
 <h5>Seleccione la fecha que desea vizualizar</h5>
 
@@ -10,7 +10,7 @@ require "recursos/zhi/CreaConn.php";
 	<span class="add-on"><i class="icon-calendar"></i></span>
 </div>
 
-	<a href="#agregar" role="button" class="btn btn-primary pull-right" data-toggle="modal"><i class="icon-plus-sign icon-white"></i> Agregar</a>
+	<a href="#agregar" role="button" class="btn btn-sm btn-primary pull-right" data-toggle="modal"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
 <h4>Horas trabajadas</h4>
 
@@ -105,9 +105,8 @@ require "recursos/zhi/CreaConn.php";
     </tr>    
   </tbody>
 </table>
-
-<div class="pagination pagination-centered">
-  <ul>
+  <div class="col-md-12 text-center">
+  <ul class="pagination pagination-sm" >
     <li><a href="#">Anterior</a></li>
     <li class="active"><a href="#">1</a></li>
     <li><a href="#">2</a></li>
@@ -116,8 +115,7 @@ require "recursos/zhi/CreaConn.php";
     <li><a href="#">5</a></li>
     <li><a href="#">Siguiente</a></li>
   </ul>
-</div>
-	
+	</div>
 </div><!-- .span10 -->
 
 <!-- Modal 1 -->
