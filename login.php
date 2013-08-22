@@ -17,10 +17,17 @@
 
      <style type="text/css">
 
-      h2 { font-family: 'Ubuntu Condensed', sans-serif !important; font-weight: 400; }
+      h2 { 
+        font-family: 'Ubuntu Condensed', sans-serif !important; font-weight: 400; 
+      }
     
       body {
         background-color: #f5f5f5;
+      }
+
+      .navbar-brand { 
+        font-family: 'Ubuntu Condensed', sans-serif !important; font-weight: 400; 
+        font-size:24px;
       }
 
       .form-signin {
