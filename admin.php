@@ -32,7 +32,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="recursos/jquery/jquery-1.10.1.min.js"></script>    
-    <script src="recursos/bootstrap3/js/bootstrap.js"></script>
+    <script src="recursos/bootstrap3/js/bootstrap.min.js"></script>
     <script src="recursos/datepicker/js/bootstrap-datepicker.js"></script>
     <script src="recursos/datepicker/js/locales/bootstrap-datepicker.es.js" charset="UTF-8"></script>
 

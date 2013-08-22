@@ -1,40 +1,40 @@
- <div class="container-fluid">
- <div class="row-fluid">
- <div class="span2">
- <div class="well sidebar-nav">
-            <ul class="nav nav-list">
+ <div class="container">
+ <div class="row">
+ <div class="col-md-2">
+ <div class="bs-sidebar">
+            <ul class="nav bs-sidenav">
               <li class="nav-header">Ingreso</li>
-              <li onclick="$('#cuerpo').load('pages/ing_trabajos.php');"><a href="#ing_trabajos"><i class="icon-chevron-right"></i> Trabajos</a></li>  <!-- Muestra menu activo-->
-              <li onclick="$('#cuerpo').load('pages/ing_gastos.php');"><a href="#ing_gastos"><i class="icon-chevron-right"></i> Gastos</a></li>
-              <li onclick="$('#cuerpo').load('pages/ing_abonos.php');"><a href="#ing_abonos"><i class="icon-chevron-right"></i> Abonos</a></li>
+              <li onclick="$('#cuerpo').load('pages/ing_trabajos.php');"><a href="#ing_trabajos"><span class="glyphicon glyphicon-chevron-right"></span> Trabajos</a></li>  <!-- Muestra menu activo-->
+              <li onclick="$('#cuerpo').load('pages/ing_gastos.php');"><a href="#ing_gastos"><span class="glyphicon glyphicon-chevron-right"></span> Gastos</a></li>
+              <li onclick="$('#cuerpo').load('pages/ing_abonos.php');"><a href="#ing_abonos"><span class="glyphicon glyphicon-chevron-right"></span> Abonos</a></li>
               <li class="nav-header">Informes</li>
-              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_horascli"><i class="icon-chevron-right"></i> Horas cliente</a></li>
-              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_horasabg"><i class="icon-chevron-right"></i> Horas abogado</a></li>
-              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_gastoscli"><i class="icon-chevron-right"></i> Gastos cliente</a></li>
-              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_gastosabg"><i class="icon-chevron-right"></i> Gastos abogado</a></li>
-              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_horas"><i class="icon-chevron-right"></i> Consolidado de horas</a></li>
-              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_personal"><i class="icon-chevron-right"></i> Personal</a></li>
-              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_horasmat"><i class="icon-chevron-right"></i> Horas materia</a></li>  
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_horascli"><span class="glyphicon glyphicon-chevron-right"></span> Horas cliente</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_horasabg"><span class="glyphicon glyphicon-chevron-right"></span> Horas abogado</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_gastoscli"><span class="glyphicon glyphicon-chevron-right"></span> Gastos cliente</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_gastosabg"><span class="glyphicon glyphicon-chevron-right"></span> Gastos abogado</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_horas"><span class="glyphicon glyphicon-chevron-right"></span> Consolidado de horas</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_personal"><span class="glyphicon glyphicon-chevron-right"></span> Personal</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_horasmat"><span class="glyphicon glyphicon-chevron-right"></span> Horas materia</a></li>  
               <li class="nav-header">Clientes</li>
-              <li onclick="$('#cuerpo').load('pages/cli_buscar.php');"><a href="#cli_buscar"><i class="icon-chevron-right"></i> Buscar</a></li>
-              <li onclick="$('#cuerpo').load('pages/cli_crear.php');"><a href="#cli_crear"><i class="icon-chevron-right"></i> Crear</a></li>
-              <li onclick="$('#cuerpo').load('pages/cli_contacto.php');"><a href="#cli_contacto"><i class="icon-chevron-right"></i> Agregar contacto</a></li>                          
+              <li onclick="$('#cuerpo').load('pages/cli_buscar.php');"><a href="#cli_buscar"><span class="glyphicon glyphicon-chevron-right"></span> Buscar</a></li>
+              <li onclick="$('#cuerpo').load('pages/cli_crear.php');"><a href="#cli_crear"><span class="glyphicon glyphicon-chevron-right"></span> Crear</a></li>
+              <li onclick="$('#cuerpo').load('pages/cli_contacto.php');"><a href="#cli_contacto"><span class="glyphicon glyphicon-chevron-right"></span> Agregar contacto</a></li>                          
               <li class="nav-header">Contactos</li>
-              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#cto_buscar"><i class="icon-chevron-right"></i> Buscar</a></li>
-              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#cto_crear"><i class="icon-chevron-right"></i> Crear</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#cto_buscar"><span class="glyphicon glyphicon-chevron-right"></span> Buscar</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#cto_crear"><span class="glyphicon glyphicon-chevron-right"></span> Crear</a></li>
               <li class="nav-header">Facturación</li>
-              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#fact_nueva"><i class="icon-chevron-right"></i> Nueva factura</a></li>
-              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#fact_buscar"><i class="icon-chevron-right"></i> Buscar facturas</a></li>              
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#fact_nueva"><span class="glyphicon glyphicon-chevron-right"></span> Nueva factura</a></li>
+              <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#fact_buscar"><span class="glyphicon glyphicon-chevron-right"></span> Buscar facturas</a></li>              
             </ul>
 </div>
  </div>
- <div class="span10"> <!-- style="background-color: lightgrey" -->
- <div class="container-fluid">
+ <div class="col-md-10"> <!-- style="background-color: lightgrey" -->
+ <div class="container">
  <ul class="nav nav-pills pull-right">
- <li><a href="index.php"><i class="icon-home"></i> Inicio</a></li>
- <li><a href="admin.php"><i class="icon-wrench"></i> Administración</a></li>
- <li><a href="login.php"><i class="icon-off"></i> Salir</a></li>
+ <li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+ <li><a href="admin.php"><span class="glyphicon glyphicon-wrench"></span> Administración</a></li>
+ <li><a href="login.php"><span class="glyphicon glyphicon-off"></span> Salir</a></li>
  </ul>
  </div>
 
- <div class="row-fluid" id="main-box">
+ <div class="row" id="main-box">
