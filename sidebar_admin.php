@@ -1,8 +1,8 @@
- <div class="container-fluid">
- <div class="row-fluid">
- <div class="span2">
- <div class="well sidebar-nav">
-            <ul class="nav nav-list">
+ <div class="container">
+ <div class="row">
+ <div class="col-md-2">
+ <div class="bs-sidebar">
+            <ul class="nav bs-sidenav">
               <li class="nav-header">Usuarios</li>
               <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#usr_crear"><i class="icon-chevron-right"></i> Crear</a></li>
               <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#usr_mod"><i class="icon-chevron-right"></i> Modificar</a></li>
@@ -30,8 +30,8 @@
             </ul>
 </div>
  </div>
- <div class="span10"> <!-- style="background-color: lightgrey" -->
- <div class="container-fluid">
+ <div class="col-md-10"> <!-- style="background-color: lightgrey" -->
+ <div class="container">
  <ul class="nav nav-pills pull-right">
  <li><a href="index.php"><i class="icon-home"></i> Inicio</a></li>
  <li><a href="admin.php"><i class="icon-wrench"></i> Administración</a></li>
@@ -39,4 +39,4 @@
  </ul>
  </div>
 
- <div class="row-fluid" id="main-box">
+ <div class="row" id="main-box">

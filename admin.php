@@ -5,7 +5,7 @@
     <title>Sistema de Control de Horas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="recursos/bootstrap/assets/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="recursos/bootstrap3/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="recursos/datepicker/css/datepicker.css" rel="stylesheet"> 
     <link href="img/favicon.ico" rel="SHORTCUT ICON">    
 
@@ -42,25 +42,56 @@
         background-color: #f5f5f5;
       }
 
-      /* Lastly, apply responsive CSS fixes as necessary */
-      @media (max-width: 767px) {
-        #footer {
-          margin-left: -20px;
-          margin-right: -20px;
-          padding-left: 20px;
-          padding-right: 20px;
-        }
+      /* First level of nav */
+      .bs-sidenav {
+        margin-bottom: 30px;
+        padding-top:    10px;
+        padding-bottom: 10px;
+        text-shadow: 0 1px 0 #fff;
+        background-color: #f8f8f8;
+        border-radius: 5px;
       }
 
+      /* All levels of nav */
+      .bs-sidebar .nav > li > a {
+        display: block;
+        color: #716b7a;
+        padding: 5px 20px;
+      }
+      .bs-sidebar .nav > li > a:hover,
+      .bs-sidebar .nav > li > a:focus {
+        text-decoration: none;
+        background-color: #e5e3e9;
+        border-right: 1px solid #dbd8e0;
+      }
+      .bs-sidebar .nav > .active > a,
+      .bs-sidebar .nav > .active:hover > a,
+      .bs-sidebar .nav > .active:focus > a {
+        font-weight: bold;
+        color: #563d7c;
+        background-color: transparent;
+        border-right: 1px solid #563d7c;
+      }
 
+      /* Nav: second level (shown on .active) */
+      .bs-sidebar .nav .nav {
+        display: none; /* Hide by default, but at >768px, show it */
+        margin-bottom: 8px;
+      }
+      .bs-sidebar .nav .nav > li > a {
+        padding-top:    3px;
+        padding-bottom: 3px;
+        padding-left: 30px;
+        font-size: 90%;
+      }   
 
       /* Custom page CSS
       -------------------------------------------------- */
       /* Not required for template or sticky footer method. */
 
       .container {
+        max-width: none !important;
         width: auto;
-        max-width: 680px;
       }
       .container .credit {
         margin: 20px 0;
@@ -86,7 +117,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="recursos/jquery/jquery-1.10.1.min.js"></script>    
-    <script src="recursos/bootstrap/assets/js/bootstrap.js"></script>
+    <script src="recursos/bootstrap3/js/bootstrap.js"></script>
     <script src="recursos/datepicker/js/bootstrap-datepicker.js"></script>
     <script src="recursos/datepicker/js/locales/bootstrap-datepicker.es.js" charset="UTF-8"></script>
 
@@ -95,9 +126,9 @@
       $(document).ready(function(){
         
         /* Menu activo */
-        $('ul.nav-list > li').click(function (e) {
+        $('ul.bs-sidenav > li').click(function (e) {
            // e.preventDefault();
-            $('ul.nav-list > li').removeClass('active');
+            $('ul.bs-sidenav > li').removeClass('active');
             $(this).addClass('active');                
         });  
 
