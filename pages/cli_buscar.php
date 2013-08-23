@@ -9,6 +9,7 @@
         <button class="btn btn-primary" type="button">Buscar</button>
     </form>
 
+    <br>
 <h4>Clientes</h4>
 
 <table class="table table-striped table-bordered table-condensed">
