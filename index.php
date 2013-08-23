@@ -7,7 +7,7 @@
     <!-- Bootstrap -->
     <link href="recursos/bootstrap3/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <!-- Jquery-ui -->
-    <link href="recursos/jquery-ui/css/flick/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+    <link href="recursos/jquery-ui/css/zhi/jquery-ui-1.10.3.custom.css" rel="stylesheet">
     <link href="recursos/zhi/css/zhi.css" rel="stylesheet"> 
     <link href="img/favicon.ico" rel="SHORTCUT ICON">
 

@@ -1,13 +1,16 @@
-<div class="span11">
+<div class="col-md-11">
 <h2>Abonos</h2>
 <h5>Seleccione la fecha que desea vizualizar</h5>
 
-<div class="input-append date" id="cal1" data-date-format="dd-mm-yyyy" data-date-language="es" data-date-autoclose="true">
-	<input type="text" placeholder="Seleccione una fecha" readonly="true">
-	<span class="add-on"><i class="icon-calendar"></i></span>
+<div class="row">
+  <div class="input-group col-md-3">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+    <input type="text" class="form-control" id="cal1" placeholder="Seleccione una fecha" readonly="true">
+  </div>
 </div>
 
-	<a href="#agregar" role="button" class="btn btn-primary pull-right" data-toggle="modal"><i class="icon-plus-sign icon-white"></i> Agregar</a>
+  <br>
+	<a href="#agregar" role="button" class="btn btn-sm btn-success pull-right" data-toggle="modal"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
 <h4>Abonos realizados</h4>
 
@@ -27,84 +30,84 @@
       <td>Cemento Polpaico S.A.</td>
       <td>Asesoria Legal</td>
       <td>$ 100.000</td>
-      <td><i class="icon-lock" rel="tooltip" data-toggle="tooltip" title="Facturado"></i></td>
+      <td><span class="glyphicon glyphicon-lock" rel="tooltip" data-toggle="tooltip" title="Facturado"></span></td>
     </tr>
     <tr>
       <td>21-07-2013</td>      	
       <td>Pesquera Pacific Star S.A.</td>
       <td>Redacción de documentos</td>
       <td>$ 500.000</td>
-      <td><i class="icon-lock" rel="tooltip" data-toggle="tooltip" title="Facturado"></i></td>
+      <td><span class="glyphicon glyphicon-lock" rel="tooltip" data-toggle="tooltip" title="Facturado"></span></td>
     </tr>
     <tr>
       <td>21-07-2013</td>    	
       <td>Direct TV Chile Ltda.</td>
       <td>Redacción de escritura</td>
       <td>U$ 1.000</td>
-      <td><a href="#editar" data-toggle="modal"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>
-      <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i></td>
+      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
     </tr>
     <tr>
       <td>20-07-2013</td>     	
       <td>Telefónica Móviles Chile S.A.</td>
       <td>Redacción de escritura</td>
       <td>UF 10</td>
-      <td><a href="#editar" data-toggle="modal"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>
-      <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i></td>
+      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
     </tr>
     <tr>
       <td>18-07-2013</td>     	
       <td>Consorcio Maderero S.A.</td>
       <td>Asesoria Legal</td>
       <td>$ 400.000</td>
-      <td><a href="#editar" data-toggle="modal"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>
-      <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i></td>
+      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
     </tr>
     <tr>
       <td>18-07-2013</td>     	
       <td>Agrícola Los Ciruelos Ltda.</td>
       <td>Asesoria Legal</td>
       <td>UF 5</td>
-      <td><a href="#editar" data-toggle="modal"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>
-      <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i></td>
+      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
     </tr>
     <tr>
       <td>16-07-2013</td>     	
       <td>Jaime Acevedo E.</td>
       <td>Redacción de documentos</td>
       <td>U$ 500</td>
-      <td><a href="#editar" data-toggle="modal"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>
-      <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i></td>
+      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
     </tr>
     <tr>
       <td>16-07-2013</td>     	
       <td>Direct TV Chile Ltda.</td>
       <td>Asesoria Legal</td>
       <td>$ 350.000</td>
-      <td><a href="#editar" data-toggle="modal"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>
-      <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i></td>
+      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
     </tr>
     <tr>
       <td>15-07-2013</td>     	
       <td>Direct TV Chile Ltda.</td>
       <td>Redacción de documentos</td>
       <td>$ 250.000</td>
-      <td><a href="#editar" data-toggle="modal"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>
-      <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i></td>
+      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
     </tr>
     <tr>
       <td>15-07-2013</td>     	
       <td>Consorcio Maderero S.A.</td>
       <td>Redacción de documentos</td>
       <td>UF 15</td>
-      <td><a href="#editar" data-toggle="modal"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>
-      <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i></td>
+      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
     </tr>    
   </tbody>
 </table>
 
-<div class="pagination pagination-centered">
-  <ul>
+  <div class="col-md-12 text-center">
+  <ul class="pagination pagination-sm" >
     <li><a href="#">Anterior</a></li>
     <li class="active"><a href="#">1</a></li>
     <li><a href="#">2</a></li>
@@ -113,9 +116,9 @@
     <li><a href="#">5</a></li>
     <li><a href="#">Siguiente</a></li>
   </ul>
-</div>
+  </div>
 	
-</div><!-- .span10 -->
+</div><!-- col-md-11 -->
 
 <!-- Modal 1 -->
   <div id="agregar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="agregarLabel" aria-hidden="true">
@@ -218,7 +221,7 @@
         $('#cal2').datepicker();        
         /* Tooltip */
         $('.table').tooltip({
-          selector: "i[rel=tooltip]"
+          selector: "span[rel=tooltip]"
          })
 
       })

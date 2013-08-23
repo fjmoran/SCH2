@@ -1,7 +1,7 @@
 <div class="span11">
 <h2>Creación de Cliente</h2>
 <h5>Ingrese los datos de la empresa o persona que desea registrar</h5>
-<div class="row-fluid">
+<div class="row">
   <div class="span12">
     <label class="radio inline">
       <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" onclick="toggleSet(this)" checked>
@@ -13,7 +13,7 @@
       </label>
     <br>
     <br>
-    <div class="row-fluid">
+    <div class="row">
       <div class="span6">
         <label for="razon_social" id="razon_social_l"><b>Razón Social:</b></label>
         <input id="razon_social" class="span10" type="text" placeholder="Razón Social"> 
@@ -56,7 +56,7 @@
     </div>
         </br>
     <label for="direccion"><b>Dirección</b></label> 
-    <div class="row-fluid">
+    <div class="row">
       <div class="span6">
         <label for="pais"><b>País:</b></label>
           <select id="pais" class="span10">

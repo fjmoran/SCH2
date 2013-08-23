@@ -11,6 +11,7 @@
   	<input type="text" class="form-control" id="cal1" placeholder="Seleccione una fecha" readonly="true">
   </div>
 </div>
+
 <br>
 	<a href="#agregar" role="button" class="btn btn-sm btn-success pull-right" data-toggle="modal"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
@@ -32,81 +33,82 @@
       <td>Cemento Polpaico S.A.</td>
       <td>Asesoria Legal</td>
       <td>2:30 hrs.</td>
-      <td><i class="icon-lock" rel="tooltip" data-toggle="tooltip" title="Facturado"></i></td>
+      <td><span class="glyphicon glyphicon-lock" rel="tooltip" data-toggle="tooltip" title="Facturado"></span></td>
     </tr>
     <tr>
       <td>21-07-2013</td>      	
       <td>Pesquera Pacific Star S.A.</td>
       <td>Redacción de documentos</td>
       <td>1:45 hrs.</td>
-      <td><i class="icon-lock" rel="tooltip" data-toggle="tooltip" title="Facturado"></i></td>
+      <td><span class="glyphicon glyphicon-lock" rel="tooltip" data-toggle="tooltip" title="Facturado"></span></td>
     </tr>
     <tr>
       <td>21-07-2013</td>    	
       <td>Direct TV Chile Ltda.</td>
       <td>Redacción de escritura</td>
       <td>0:30 hrs.</td>
-      <td><a href="#editar" data-toggle="modal"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>
-      <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i></td>
+      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
     </tr>
     <tr>
       <td>20-07-2013</td>     	
       <td>Telefónica Móviles Chile S.A.</td>
       <td>Redacción de escritura</td>
       <td>3:00 hrs.</td>
-      <td><a href="#editar" data-toggle="modal"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>
-      <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i></td>
+      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
     </tr>
     <tr>
       <td>18-07-2013</td>     	
       <td>Consorcio Maderero S.A.</td>
       <td>Asesoria Legal</td>
       <td>1:15 hrs.</td>
-      <td><a href="#editar" data-toggle="modal"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>
-      <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i></td>
+      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
     </tr>
     <tr>
       <td>18-07-2013</td>     	
       <td>Agrícola Los Ciruelos Ltda.</td>
       <td>Asesoria Legal</td>
       <td>4:00 hrs.</td>
-      <td><a href="#editar" data-toggle="modal"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>
-      <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i></td>
+      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
     </tr>
     <tr>
       <td>16-07-2013</td>     	
       <td>Jaime Acevedo E.</td>
       <td>Redacción de documentos</td>
       <td>7:30 hrs.</td>
-      <td><a href="#editar" data-toggle="modal"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>
-      <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i></td>
+      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
     </tr>
     <tr>
       <td>16-07-2013</td>     	
       <td>Direct TV Chile Ltda.</td>
       <td>Asesoria Legal</td>
       <td>3:30 hrs.</td>
-      <td><a href="#editar" data-toggle="modal"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>
-      <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i></td>
+      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
     </tr>
     <tr>
       <td>15-07-2013</td>     	
       <td>Direct TV Chile Ltda.</td>
       <td>Redacción de documentos</td>
       <td>1:00 hrs</td>
-      <td><a href="#editar" data-toggle="modal"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>
-      <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i></td>
+      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
     </tr>
     <tr>
       <td>15-07-2013</td>     	
       <td>Consorcio Maderero S.A.</td>
       <td>Redacción de documentos</td>
       <td>2:45 hrs.</td>
-      <td><a href="#editar" data-toggle="modal"><i class="icon-pencil" rel="tooltip" data-toggle="tooltip" title="Editar"></i></a>
-      <i class="icon-remove" rel="tooltip" data-toggle="tooltip" title="Eliminar"></i></td>
+      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
     </tr>    
   </tbody>
 </table>
+
   <div class="col-md-12 text-center">
   <ul class="pagination pagination-sm" >
     <li><a href="#">Anterior</a></li>
@@ -118,7 +120,8 @@
     <li><a href="#">Siguiente</a></li>
   </ul>
 	</div>
-</div><!-- .span10 -->
+  
+</div><!-- col-md-10 -->
 
 <!-- Modal 1 -->
   <div id="agregar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="agregarLabel" aria-hidden="true">
@@ -261,7 +264,7 @@
         $('#cal2').datepicker();        
         /* Tooltip */
         $('.table').tooltip({
-          selector: "i[rel=tooltip]"
+          selector: "span[rel=tooltip]"
          })
 
       })
