@@ -5,12 +5,14 @@
 <h2>Trabajos</h2>
 <h5>Seleccione la fecha que desea vizualizar</h5>
 
-<div class="input-append date" id="cal1" data-date-format="dd-mm-yyyy" data-date-language="es" data-date-autoclose="true">
-	<input type="text" placeholder="Seleccione una fecha" readonly="true">
-	<span class="add-on"><i class="icon-calendar"></i></span>
+<div class="row">
+  <div class="input-group col-md-3">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+  	<input type="text" class="form-control" id="cal1" placeholder="Seleccione una fecha" readonly="true">
+  </div>
 </div>
-
-	<a href="#agregar" role="button" class="btn btn-sm btn-primary pull-right" data-toggle="modal"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
+<br>
+	<a href="#agregar" role="button" class="btn btn-sm btn-success pull-right" data-toggle="modal"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
 <h4>Horas trabajadas</h4>
 
@@ -250,7 +252,7 @@
     </div>
   </div>
 
-      <script type="text/javascript"> 
+    <script type="text/javascript"> 
       
       $(document).ready(function(){
         /* Calendario 1*/       
@@ -263,5 +265,26 @@
          })
 
       })
+      jQuery(function($){
+              $.datepicker.regional['es'] = {
+                      closeText: 'Cerrar',
+                      prevText: '&#x3c;Ant',
+                      nextText: 'Sig&#x3e;',
+                      currentText: 'Hoy',
+                      monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+                      'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+                      monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun',
+                      'Jul','Ago','Sep','Oct','Nov','Dic'],
+                      dayNames: ['Domingo','Lunes','Martes','Mi&eacute;rcoles','Jueves','Viernes','S&aacute;bado'],
+                      dayNamesShort: ['Dom','Lun','Mar','Mi&eacute;','Juv','Vie','S&aacute;b'],
+                      dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','S&aacute;'],
+                      weekHeader: 'Sm',
+                      dateFormat: 'dd-mm-yy',
+                      firstDay: 1,
+                      isRTL: false,
+                      showMonthAfterYear: false,
+                      yearSuffix: ''};
+              $.datepicker.setDefaults($.datepicker.regional['es']);
+      });      
 
     </script>

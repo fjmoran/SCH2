@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="recursos/bootstrap3/css/bootstrap.css" rel="stylesheet" media="screen">
-    <link href="recursos/datepicker/css/datepicker.css" rel="stylesheet"> 
     <link href="recursos/zhi/css/zhi.css" rel="stylesheet"> 
     <link href="img/favicon.ico" rel="SHORTCUT ICON">    
 
@@ -33,8 +32,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="recursos/jquery/jquery-1.10.1.min.js"></script>    
     <script src="recursos/bootstrap3/js/bootstrap.min.js"></script>
-    <script src="recursos/datepicker/js/bootstrap-datepicker.js"></script>
-    <script src="recursos/datepicker/js/locales/bootstrap-datepicker.es.js" charset="UTF-8"></script>
 
     <script type="text/javascript"> 
       
