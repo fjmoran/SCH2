@@ -6,11 +6,11 @@
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
-          <label for="cliente" class="control-label">Cliente</label>
-          <input id="cliente" class="form-control" type="text" placeholder="Nombre del cliente">
+          <label for="cliente" class="control-label">Cliente:</label>
+          <input id="cliente" class="form-control" type="text" placeholder="Nombre del cliente"> <!-- agregar typeahead -->
         </div>
         <div class="form-group">
-          <label for="cliente" class="control-label">Tipo de relación</label>
+          <label for="cliente" class="control-label">Tipo de relación:</label>
           <select id="tipo" class="form-control">
             <option>Gerente General</option> <!-- llenar dinamicamente -->
             <option>Gerente Comercial</option>
@@ -22,7 +22,7 @@
       </div>  
       <div class="col-md-6">
         <div class="form-group">
-          <label for="contacto" class="control-label">Contacto</label>
+          <label for="contacto" class="control-label">Contacto:</label>
           <input id="contacto" class="form-control" type="text" placeholder="Nombre del contacto">
         </div>  
       </div>
