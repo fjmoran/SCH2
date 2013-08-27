@@ -106,7 +106,7 @@
   </tbody>
 </table>
 
-  <div class="col-md-12 text-center">
+<div class="col-md-12 text-center">
   <ul class="pagination pagination-sm" >
     <li><a href="#">Anterior</a></li>
     <li class="active"><a href="#">1</a></li>
@@ -116,7 +116,7 @@
     <li><a href="#">5</a></li>
     <li><a href="#">Siguiente</a></li>
   </ul>
-  </div>
+</div>
 	
 </div><!-- col-md-11 -->
 
