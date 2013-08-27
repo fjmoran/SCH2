@@ -16,7 +16,7 @@
             <option>Gerente Comercial</option>
             <option>Tomador de desiciones</option>
             <option>Secretaria</option>
-            <option>Influncia</option>
+            <option>Influencia</option>
           </select>
         </div>  
       </div>  
@@ -29,8 +29,10 @@
     </div> 
     <div class="row pull-right">
       <div class="col-md-12">
-          <button class="btn btn-default">Cancelar</button>
-          <button class="btn btn-primary">Guardar</button>
+          <p>
+            <button class="btn btn-default">Cancelar</button>
+            <button class="btn btn-primary">Guardar</button>
+          </p>
       </div>
     </div>
   </form>

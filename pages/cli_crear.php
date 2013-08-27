@@ -90,8 +90,8 @@
         <h4>Dirección</h4>
       </div>
     </div> 
-    <div class="row"> <!-- columna derecha dirección -->
-      <div class="col-md-6">
+    <div class="row"> 
+      <div class="col-md-6"> <!-- columna derecha dirección -->
         <div class="form-group">
           <label for="pais">País:</label>
             <select id="pais" class="form-control">
@@ -136,14 +136,16 @@
     </div>
     <div class="row pull-right"> <!-- fila para botones -->
       <div class="col-md-12">
-        <button class="btn btn-default">Cancelar</button>
-        <button class="btn btn-primary">Guardar</button>
+        <p>
+          <button class="btn btn-default">Cancelar</button>
+          <button class="btn btn-primary">Guardar</button>
+        </p>
       </div>
-    </div>        
+    </div>       
 
   </form>
 </div>
-
+<br><br>
 <script type="text/javascript">
 function toggleSet(rad)
 {

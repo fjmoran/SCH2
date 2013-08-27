@@ -4,7 +4,7 @@
 
     <form class="form-inline" role="form">
       <div class="form-group">
-        <input id="busqueda" type="text" class="form-control">
+        <input id="busqueda" type="text" class="form-control" size="45">
       </div>  
         <button class="btn btn-primary" type="button">Buscar</button>
     </form>

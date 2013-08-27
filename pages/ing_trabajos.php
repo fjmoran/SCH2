@@ -1,5 +1,6 @@
 <?php
 // require "recursos/zhi/CreaConn.php";
+$today = date("d-m-Y");
 ?>
 <div class="col-md-11">
 <h2>Trabajos</h2>
@@ -8,7 +9,7 @@
 <div class="row">
   <div class="input-group col-md-3">
     <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
-  	<input type="text" class="form-control" id="cal1" placeholder="Seleccione una fecha" readonly="true">
+  	<input type="text" class="form-control" id="cal1" placeholder="Seleccione una fecha" readonly="true" value=<?php echo $today; ?> >
   </div>
 </div>
 
