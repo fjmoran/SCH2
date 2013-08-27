@@ -22,14 +22,24 @@
 
     <div class="row"> <!-- fila con 2 columnas -->
       <div class="col-md-6"> <!-- columna izquierda -->
-        <div class="form-group">
-          <label for="razon_social" id="razon_social_l">Razón Social:</label>
+        <div class="form-group empresa"> <!-- empresa -->
+          <label for="razon_social">Razón Social:</label>
           <input id="razon_social" class="form-control" type="text" placeholder="Razón Social">           
         </div>
-        <div class="form-group">
-          <label for="fantasia" id="fantasia_l">Nombre de fantasía:</label>
+        <div class="form-group empresa"> <!-- empresa -->
+          <label for="fantasia">Nombre de fantasía:</label>
           <input id="fantasia" class="form-control" type="text" placeholder="Nombre de fantasía">           
         </div>
+
+        <div class="form-group hide persona"> <!-- persona -->
+          <label for="nombres">Nombres:</label>
+          <input id="nombres" class="form-control" type="text" placeholder="Nombres">
+        </div> 
+        <div class="form-group hide persona"> <!-- persona -->
+          <label for="apellido2">Apellido materno:</label>
+          <input id="apellido2" class="form-control" type="text" placeholder="Apellido materno"> 
+        </div>
+
         <div class="form-group">
           <label for="telefono">Teléfono:</label>
           <input id="telefono" class="form-control" type="text" placeholder="Teléfono">          
@@ -51,6 +61,12 @@
         </div>                                   
       </div>
       <div class="col-md-6"> <!-- columna derecha -->
+
+        <div class="form-group hide persona"> <!-- persona -->
+          <label for="apellido1">Apellido paterno:</label>
+          <input id="apellido1" class="form-control" type="text" placeholder="Apellido paterno"> 
+        </div>  
+
         <div class="form-group">
           <label for="rut">RUT:</label>
           <input id="rut" class="form-control" type="text" placeholder="xx.xxx.xxx-x">        
@@ -69,6 +85,61 @@
         </div>                       
       </div>  
     </div>
+    <div class="row"> <!-- fila para sub titulo dirección -->
+      <div class="col-md-12">
+        <h4>Dirección</h4>
+      </div>
+    </div> 
+    <div class="row"> <!-- columna derecha dirección -->
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="pais">País:</label>
+            <select id="pais" class="form-control">
+              <option>Chile</option>              
+              <option>Argentina</option>
+              <option>Perú</option>  
+              <option>U.S.A.</option>  
+              <option>Otro</option>                                                                         
+            </select>          
+        </div> 
+        <div class="form-group">
+          <label for="comuna">Comuna:</label>
+            <select id="Comuna" class="form-control">
+              <option>Las Condes</option>              
+              <option>Santiago</option>
+              <option>Ñuñoa</option>  
+              <option>Providencia</option>  
+              <option>No aplica</option>                                                                         
+            </select>          
+        </div>
+        <div class="form-group">
+          <label for="depto">Oficina o Departamento:</label>
+          <input id="depto" class="form-control" type="text" placeholder="Oficina o Departamento">       
+        </div>                     
+      </div>
+      <div class="col-md-6"> <!-- columna izquerda dirección -->
+        <div class="form-group">
+          <label for="region">Región:</label>
+            <select id="region" class="form-control">
+            <option>Región Metropolitana</option>              
+            <option>Región Arica y Parinacota</option>
+            <option>Región Tarapacá</option>  
+            <option>Región Antofagasta</option>  
+            <option>No aplica</option>                                                                         
+            </select>          
+        </div>
+        <div class="form-group">
+          <label for="calle">Calle o Avenida:</label>
+          <input id="calle" class="form-control" type="text" placeholder="Calle o Avenida">       
+        </div>         
+      </div>
+    </div>
+    <div class="row pull-right"> <!-- fila para botones -->
+      <div class="col-md-12">
+        <button class="btn btn-default">Cancelar</button>
+        <button class="btn btn-primary">Guardar</button>
+      </div>
+    </div>        
 
   </form>
 </div>
@@ -78,12 +149,12 @@ function toggleSet(rad)
 {
   var type = rad.value;
   if(type == 1){ //empresa
-    alert("1");
-
+    $('div.empresa').removeClass('hide');
+    $('div.persona').addClass('hide');  
   }
   if(type == 2){ //persona
-    alert("2");
-
+    $('div.persona').removeClass('hide');
+    $('div.empresa').addClass('hide');  
   }  
 }
 </script>
