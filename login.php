@@ -81,27 +81,27 @@
 
     </div> <!-- /container -->
 
-      <!-- Modal -->
-      <div id="recuperar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="recuperarLabel" aria-hidden="true">
-        
-        <div class="modal-dialog">
-          <div class="modal-content">
+<!-- Modal -->
+<div id="recuperar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="recuperarLabel" aria-hidden="true">
+  
+  <div class="modal-dialog">
+    <div class="modal-content">
 
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h4 class="modal-title" id="myModalLabel">¿Olvidaste tu contraseña?</h4>
-            </div>
-            <div class="modal-body">
-              <p>Ingresa tu correo electrónico para recuperarla</p>
-              <input type="email" class="form-control" placeholder="correo@dominio.com">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary">Enviar</button>
-            </div>
-          </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel">¿Olvidaste tu contraseña?</h4>
+      </div>
+      <div class="modal-body">
+        <p>Ingresa tu correo electrónico para recuperarla</p>
+        <input type="email" class="form-control" placeholder="correo@dominio.com">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Enviar</button>
+      </div>
+    </div><!-- modal-content -->
+  </div><!-- modal-dialog -->
+</div><!-- modal -->
 
     <!-- javascript
     ================================================== -->

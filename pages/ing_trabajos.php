@@ -125,136 +125,75 @@ $today = date("d-m-Y");
 </div><!-- col-md-10 -->
 
 <!-- Modal 1 -->
-  <div id="agregar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="agregarLabel" aria-hidden="true">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      <h4 id="myModalLabel">Ingreso de Trabajo</h4>
-    </div>
-    <div class="modal-body">
+<div id="agregar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="agregarLabel" aria-hidden="true">
+  
+  <div class="modal-dialog">
+    <div class="modal-content">
 
-      <div class="row-fluid">
-        <div class="span12">
-          <div class="row-fluid">
-            <div class="span6">
-              <label for="cliente"><b>Cliente:</b></label>
-              <input id="cliente" class="span12" type="text" autocomplete="off" placeholder="Nombre del cliente" data-provide="typeahead" data-source='["Deluxe Bicycla", "Super Deluxe Trampolina", "Super Duper Scootea", "Alto", "Deluxe Bicycla", "Super Deluxe Trampolina", "Super Duper Scootea"]'>
-            </div>
-            <div class="span6">
-              <label for="cliente"><b>Materia:</b></label>
-              <input id="cliente" class="span12" type="text" autocomplete="off" placeholder="Materia" data-provide="typeahead" data-source='["Deluxe Bicycle", "Super Deluxe Trampoline", "Super Duper Scooter"]'>
-            </div>
-         </div>
-
-           <label for="monto"><b>Tiempo:</b></label>
-          <div class="row-fluid">
-            <div class="span6">
-              <label for="horas">Horas</label>
-                <select id="horas" class="span6">
-                  <option>0</option>              
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
-                  <option>9</option>                                       
-                </select>
-            </div>
-            <div class="span6">
-              <label for="minutos">Minutos</label>
-                <select id="minutos" class="span6">
-                  <option>0</option>              
-                  <option>15</option>
-                  <option>30</option>
-                  <option>45</option>
-                </select>
-            </div>
-          </div>
-          <label for="desc"><b>Descripción:</b></label>
-          <textarea class="span12" rows="4"></textarea>
-        </div>  
-      </div> 
-
-    </div>
-    <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-      <button class="btn btn-primary">Guardar</button>
-    </div>
-  </div>
-
-<!-- Modal 2 -->
-  <div id="editar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="editarLabel" aria-hidden="true">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      <h4 id="myModalLabel">Edición de Trabajo</h4>
-    </div>
-    <div class="modal-body">
-
-      <div class="row-fluid">
-        <div class="span12">
-          <div class="row-fluid">
-            <div class="span6">
-              <label for="fecha2"><b>Fecha:</b></label>
-              <div class="input-append date" id="cal2" data-date-format="dd-mm-yyyy" data-date-language="es" data-date-autoclose="true">
-                <input type="text" style="width: 218px" placeholder="Seleccione una fecha" readonly="true">
-                <span class="add-on"><i class="icon-calendar"></i></span>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel">Ingreso de Trabajo</h4>
+      </div>
+      <form role="form">
+        <div class="modal-body">
+          <div class="row"> 
+            <div class="col-md-6">
+              <div class="form-group"> 
+                <label for="nombre">Cliente:</label>
+                <input id="nombre" class="form-control" type="text" placeholder="Nombre o Razón Social">
+              </div> 
+              <div class="form-group">
+                <label for="horas">Horas:</label>
+                  <select id="horas" class="form-control">            
+                    <option>1</option>              
+                    <option>2</option>
+                    <option>3</option>  
+                    <option>4</option>  
+                    <option>5</option>  
+                    <option>6</option>
+                    <option>7</option>  
+                    <option>8</option>  
+                    <option>9</option>                                                                                              
+                  </select>          
+              </div>              
+            </div>  
+            <div class="col-md-6">
+              <div class="form-group"> 
+                <label for="materia">Materia:</label>
+                <input id="materia" class="form-control" type="text" placeholder="Materia">
               </div>
-            </div>
-            <div class="span6">
-            <!-- nada -->
-            </div>
-         </div>
-          <div class="row-fluid">
-            <div class="span6">
-              <label for="cliente"><b>Cliente:</b></label>
-              <input id="cliente" class="span12" type="text" autocomplete="off" placeholder="Nombre del cliente" data-provide="typeahead" data-source='["Deluxe Bicycla", "Super Deluxe Trampolina", "Super Duper Scootea", "Alto", "Deluxe Bicycla", "Super Deluxe Trampolina", "Super Duper Scootea", "Alto"]'>
-            </div>
-            <div class="span6">
-              <label for="cliente"><b>Materia:</b></label>
-              <input id="cliente" class="span12" type="text" autocomplete="off" placeholder="Materia" data-provide="typeahead" data-source='["Deluxe Bicycle", "Super Deluxe Trampoline", "Super Duper Scooter", "Alto"]'>
-            </div>
-         </div>
-
-           <label for="monto"><b>Tiempo:</b></label>
-          <div class="row-fluid">
-            <div class="span6">
-              <label for="horas">Horas</label>
-                <select id="horas" class="span6">
-                  <option>0</option>              
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
-                  <option>9</option>                                       
-                </select>
-            </div>
-            <div class="span6">
-              <label for="minutos">Minutos</label>
-                <select id="minutos" class="span6">
-                  <option>0</option>              
-                  <option>15</option>
-                  <option>30</option>
-                  <option>45</option>
-                </select>
+              <div class="form-group">
+                <label for="minutos">Minutos:</label>
+                  <select id="minutos" class="form-control"> 
+                    <option>0</option>                              
+                    <option>15</option>              
+                    <option>30</option>
+                    <option>45</option>                                                                                              
+                  </select>          
+              </div>               
             </div>
           </div>
-          <label for="desc"><b>Descripción:</b></label>
-          <textarea class="span12" rows="4"></textarea>
-        </div>  
-      </div> 	
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group"> 
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" class="form-control" rows="3"></textarea>
+              </div>
+            </div>             
+          </div>   
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">guardar</button>
+        </div>
+      </form>
+    </div><!-- modal-content -->
+  </div><!-- modal-dialog -->
+</div><!-- modal -->  
+<!-- Fin Modal 1 -->
+<!-- Modal 2 -->
 
-    </div>
-    <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-      <button class="btn btn-primary">Modificar</button>
-    </div>
-  </div>
+<!-- Fin Modal 2 -->
 
     <script type="text/javascript"> 
       
