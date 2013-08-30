@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="recursos/bootstrap3/css/bootstrap.css" rel="stylesheet" media="screen">
+    <!-- Zhi CSS -->
     <link href="recursos/zhi/css/zhi.css" rel="stylesheet"> 
     <link href="img/favicon.ico" rel="SHORTCUT ICON">    
 
@@ -28,25 +29,25 @@
 	?>
 
  <!-- javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="recursos/jquery/jquery-1.10.1.min.js"></script>    
-    <script src="recursos/bootstrap3/js/bootstrap.min.js"></script>
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="recursos/jquery/jquery-1.10.1.min.js"></script>    
+  <script src="recursos/bootstrap3/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript"> 
+  <script type="text/javascript"> 
+    
+    $(document).ready(function(){
       
-      $(document).ready(function(){
-        
-        /* Menu activo */
-        $('ul.bs-sidenav > li').click(function (e) {
-           // e.preventDefault();
-            $('ul.bs-sidenav > li').removeClass('active');
-            $(this).addClass('active');                
-        });  
+      /* Menu activo */
+      $('ul.bs-sidenav > li').click(function (e) {
+         // e.preventDefault();
+          $('ul.bs-sidenav > li').removeClass('active');
+          $(this).addClass('active');                
+      });  
 
-      })
+    })
 
-    </script>    
+  </script>    
     
  </body>
 </html>
