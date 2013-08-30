@@ -199,7 +199,7 @@ $today = date("d-m-Y");
 
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title" id="myModalLabel">Ingreso de Trabajo</h4>
+        <h4 class="modal-title" id="myModalLabel">Edición de Trabajo</h4>
       </div>
 
       <form role="form">
