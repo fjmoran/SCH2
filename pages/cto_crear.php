@@ -1,6 +1,6 @@
 <div class="col-md-11">
-<h2>Creación de Cliente</h2>
-<h5>Ingrese los datos de la empresa o persona que desea registrar</h5><br>
+<h2>Creación de Contacto</h2>
+<h5>Ingrese los datos del contacto a registrar.</h5><br>
   
   <form role="form">
     <ul class="nav nav-tabs" id="tabs_crear">
@@ -16,38 +16,14 @@
         <h4></h4>
       </div>
     </div>    
-    <div class="row"> <!-- fila para los radios -->
-      <div class="col-md-12">
-        <div class="radio-inline">
-          <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" onclick="toggleSet(this)" checked>Empresa
-          </label>
-        </div>
-        <div class="radio-inline">
-          <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios2" value="2" onclick="toggleSet(this)">Persona
-          </label>
-        </div>
-        <br>
-      </div>    
-    </div>
-
     <div class="row"> <!-- fila con 2 columnas -->
       <div class="col-md-6"> <!-- columna izquierda -->
-        <div class="form-group empresa"> <!-- empresa -->
-          <label for="razon_social">Razón Social:</label>
-          <input id="razon_social" class="form-control" type="text" placeholder="Razón Social">           
-        </div>
-        <div class="form-group empresa"> <!-- empresa -->
-          <label for="fantasia">Nombre de fantasía:</label>
-          <input id="fantasia" class="form-control" type="text" placeholder="Nombre de fantasía">           
-        </div>
 
-        <div class="form-group hide persona"> <!-- persona -->
+        <div class="form-group">
           <label for="nombres">Nombres:</label>
           <input id="nombres" class="form-control" type="text" placeholder="Nombres">
         </div> 
-        <div class="form-group hide persona"> <!-- persona -->
+        <div class="form-group">
           <label for="apellido2">Apellido materno:</label>
           <input id="apellido2" class="form-control" type="text" placeholder="Apellido materno"> 
         </div>
@@ -57,24 +33,13 @@
           <input id="telefono" class="form-control" type="text" placeholder="Teléfono">          
         </div> 
         <div class="form-group">
-          <label for="fax">Fax:</label>
-          <input id="fax" class="form-control" type="text" placeholder="Fax">         
-        </div>
-        <div class="form-group">
-          <label for="abogado">Abogado a cargo:</label>
-            <select id="abogado" class="form-control">
-              <option>No asignado</option>             
-              <option>Abogado 1</option>              
-              <option>Abogado 2</option>
-              <option>Abogado 3</option>  
-              <option>Abogado 4</option>  
-              <option>Abogado 5</option>                                                                          
-            </select>          
-        </div>                                   
+          <label for="movil">Teléfono Movil:</label>
+          <input id="movil" class="form-control" type="text" placeholder="Teléfono Movil">       
+        </div>                                 
       </div>
       <div class="col-md-6"> <!-- columna derecha -->
 
-        <div class="form-group hide persona"> <!-- persona -->
+        <div class="form-group">
           <label for="apellido1">Apellido paterno:</label>
           <input id="apellido1" class="form-control" type="text" placeholder="Apellido paterno"> 
         </div>  
@@ -84,17 +49,13 @@
           <input id="rut" class="form-control" type="text" placeholder="xx.xxx.xxx-x">        
         </div>
         <div class="form-group">
-          <label for="giro">Giro:</label>
-          <input id="giro" class="form-control" type="text" placeholder="Giro">       
-        </div>
-        <div class="form-group">
           <label for="email">Correo Electrónico:</label>
           <input id="email" class="form-control" type="email" placeholder="nombre@dominio.com">      
-        </div>  
+        </div>         
         <div class="form-group">
-          <label for="web">Sitio Web:</label>
-          <input id="web" class="form-control" type="text" placeholder="Sitio Web">       
-        </div>                       
+          <label for="fax">Fax:</label>
+          <input id="fax" class="form-control" type="text" placeholder="Fax">         
+        </div>                               
       </div>  
     </div>
     <!-- fin datos basicos -->
@@ -165,17 +126,4 @@
   </form>
 </div>
 
-<script type="text/javascript">
-function toggleSet(rad)
-{
-  var type = rad.value;
-  if(type == 1){ //empresa
-    $('div.empresa').removeClass('hide');
-    $('div.persona').addClass('hide');  
-  }
-  if(type == 2){ //persona
-    $('div.persona').removeClass('hide');
-    $('div.empresa').addClass('hide');  
-  }  
-}
-</script>
+
