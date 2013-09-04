@@ -15,13 +15,13 @@
           <input id="contrasena_1" class="form-control" type="password" placeholder="Contraseña">           
         </div>
         <div class="form-group">
-          <label for="perfil">Perfil del ususario:</label>
-            <select id="abogado" class="form-control">
-              <option>Perfil 1</option>                          
-              <option>Perfil 2</option>
-              <option>Perfil 3</option>  
-              <option>Perfil 4</option>  
-              <option>Perfil 5</option>                                                                          
+          <label for="rol">Rol del ususario:</label>
+            <select id="rol" class="form-control">
+              <option>Rol 1</option>                          
+              <option>Rol 2</option>
+              <option>Rol 3</option>  
+              <option>Rol 4</option>  
+              <option>Rol 5</option>                                                                          
             </select>          
         </div>                                   
       </div>

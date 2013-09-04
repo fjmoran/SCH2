@@ -51,11 +51,7 @@
         <div class="form-group">
           <label for="email">Correo Electrónico:</label>
           <input id="email" class="form-control" type="email" placeholder="nombre@dominio.com">      
-        </div>         
-        <div class="form-group">
-          <label for="fax">Fax:</label>
-          <input id="fax" class="form-control" type="text" placeholder="Fax">         
-        </div>                               
+        </div>                                       
       </div>  
     </div>
     <!-- fin datos basicos -->
