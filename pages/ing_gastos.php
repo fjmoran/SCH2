@@ -164,6 +164,10 @@
                 <label for="descripcion">Descripción:</label>
                 <textarea id="descripcion" class="form-control" rows="3"></textarea>
               </div>
+              <div class="form-group">
+                <label for="adjunto">Adjuntos</label>
+                <input type="file" id="adjunto">
+              </div>
             </div>             
           </div>   
         </div>
