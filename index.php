@@ -49,7 +49,7 @@
       }); 
       /* Carousel init */
       $('.carousel').carousel({
-        interval: 3500
+        interval: 4500
       });
 
       $('.carousel').carousel('cycle');

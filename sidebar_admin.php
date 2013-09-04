@@ -4,7 +4,7 @@
      <div class="bs-sidebar">
       <ul class="nav bs-sidenav">
         <li class="nav-header">Usuarios</li>
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#usr_crear"><span class="glyphicon glyphicon-chevron-right"></span> Crear</a></li>
+        <li onclick="$('#cuerpo').load('pages_admin/usr_crear.php');"><a href="#usr_crear"><span class="glyphicon glyphicon-chevron-right"></span> Crear</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#usr_mod"><span class="glyphicon glyphicon-chevron-right"></span> Modificar</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#usr_tar"><span class="glyphicon glyphicon-chevron-right"></span> Tarifas</a></li>
         <li class="nav-header">Perfiles</li>

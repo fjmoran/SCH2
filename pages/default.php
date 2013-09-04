@@ -1,6 +1,6 @@
  <div class="col-md-11">
     <h2>Bienvenido!</h2>
-    <h5>El sistema de control de horas le proporciona una manera facil y amigable de administrar los recurso de su empresa!</h5>
+    <h5>El sistema de control de horas le proporciona una manera facil y amigable de administrar los recurso de su empresa!</h5><br>
     <div class=col-md-9>
     <div id="carousel-home" class="carousel slide">
 	  <!-- Indicators -->
@@ -35,7 +35,7 @@
 	  <a class="right carousel-control" href="#carousel-home" data-slide="next">
 	    <span class="icon-next"></span>
 	  </a> -->
-	</div>
+	</div> <br>
 	</div>
 
 
