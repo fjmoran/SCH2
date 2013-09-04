@@ -46,7 +46,14 @@
          // e.preventDefault();
           $('ul.bs-sidenav > li').removeClass('active');
           $(this).addClass('active');                
-      });  
+      }); 
+      /* Carousel init */
+      $('.carousel').carousel({
+        interval: 3500
+      });
+
+      $('.carousel').carousel('cycle');
+ 
 
     })
   </script>
