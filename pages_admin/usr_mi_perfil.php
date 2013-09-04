@@ -1,6 +1,6 @@
 <div class="col-md-11">
- <h2>Crear Usuario</h2>
- <h5>Creación de nuevos usuarios en el sistema</h5>
+ <h2>Mi Perfil</h2>
+ <h5>Los siguentes son sus datos en el sistema</h5>
 
 	<form role="form">
 
@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
           <label for="rol">Rol del ususario:</label>
-            <select id="rol" class="form-control">
+            <select id="rol" class="form-control" disabled>
               <option>Rol 1</option>                          
               <option>Rol 2</option>
               <option>Rol 3</option>  
@@ -29,7 +29,7 @@
 
         <div class="form-group">
           <label for="usuario">Usuario:</label>
-          <input id="usuario" class="form-control" type="text" placeholder="Usuario"> 
+          <input id="usuario" class="form-control" type="text" placeholder="Usuario" disabled> 
         </div>  
 
         <div class="form-group">
@@ -38,7 +38,7 @@
         </div>
         <div class="form-group">
           <label for="valor">Valor Hora:</label>
-          <input id="valor" class="form-control" type="text" placeholder="Valor hora en pesos">       
+          <input id="valor" class="form-control" type="text" placeholder="Valor hora en pesos" disabled>       
         </div>                        
       </div>  
     </div>

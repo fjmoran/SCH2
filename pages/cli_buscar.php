@@ -1,6 +1,6 @@
 <div class="col-md-11">
 <h2>Busqueda de clientes</h2>
-<h5>Realice una busqueda por el nombre o razón social del cliente</h5>
+<h5>Realice una busqueda por el nombre o razón social del cliente, RUT o Correo electrónico</h5>
 
     <form class="form-inline" role="form">
       <div class="form-group">

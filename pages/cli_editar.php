@@ -1,9 +1,21 @@
 <div class="col-md-11">
 <h2>Edición de Cliente</h2>
-<h5>Modifique los datos que corresponda</h5><br>
+<h5>Modificque los datos que corresponda</h5><br>
   
   <form role="form">
+    <ul class="nav nav-tabs" id="tabs_crear">
+      <li class="active"><a href="#datos_basicos" data-toggle="tab">Datos Básicos</a></li>
+      <li><a href="#direccion" data-toggle="tab">Dirección</a></li>
+    </ul>
 
+<div class="tab-content">
+  <div class="tab-pane active" id="datos_basicos">
+    <!-- datos basicos -->
+    <div class="row"> <!-- fila para sub titulo opcional -->
+      <div class="col-md-12">
+        <h4></h4>
+      </div>
+    </div>    
     <div class="row"> <!-- fila para los radios -->
       <div class="col-md-12">
         <div class="radio-inline">
@@ -85,12 +97,16 @@
         </div>                       
       </div>  
     </div>
-    <div class="row"> <!-- fila para sub titulo dirección -->
+    <!-- fin datos basicos -->
+  </div>
+  <div class="tab-pane" id="direccion">    
+    <!-- direccion -->
+    <div class="row"> <!-- fila para sub titulo opcional -->
       <div class="col-md-12">
-        <h4>Dirección</h4>
+        <h4></h4>
       </div>
     </div> 
-    <div class="row">
+    <div class="row"> 
       <div class="col-md-6"> <!-- columna derecha dirección -->
         <div class="form-group">
           <label for="pais">País:</label>
@@ -134,6 +150,9 @@
         </div>         
       </div>
     </div>
+    <!-- fin direccion -->
+  </div>
+</div>    
     <div class="row pull-right"> <!-- fila para botones -->
       <div class="col-md-12">
         <p>

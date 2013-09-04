@@ -20,7 +20,7 @@
         <li onclick="$('#cuerpo').load('pages/cli_crear.php');"><a href="#cli_crear"><span class="glyphicon glyphicon-chevron-right"></span> Crear</a></li>
         <li onclick="$('#cuerpo').load('pages/cli_contacto.php');"><a href="#cli_contacto"><span class="glyphicon glyphicon-chevron-right"></span> Agregar contacto</a></li>                          
         <li class="nav-header">Contactos</li>
-        <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#cto_buscar"><span class="glyphicon glyphicon-chevron-right"></span> Buscar</a></li>
+        <li onclick="$('#cuerpo').load('pages/cto_buscar.php');"><a href="#cto_buscar"><span class="glyphicon glyphicon-chevron-right"></span> Buscar</a></li>
         <li onclick="$('#cuerpo').load('pages/cto_crear.php');"><a href="#cto_crear"><span class="glyphicon glyphicon-chevron-right"></span> Crear</a></li>
         <li class="nav-header">Facturación</li>
         <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#fact_nueva"><span class="glyphicon glyphicon-chevron-right"></span> Nueva factura</a></li>
