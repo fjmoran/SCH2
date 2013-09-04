@@ -35,11 +35,7 @@
         <div class="form-group">
           <label for="contrasena_2">Reingresar contraseña:</label>
           <input id="contrasena_2" class="form-control" type="password" placeholder="Reingrese la contraseña">        
-        </div>
-        <div class="form-group">
-          <label for="valor">Valor Hora:</label>
-          <input id="valor" class="form-control" type="text" placeholder="Valor hora en pesos" disabled>       
-        </div>                        
+        </div>                    
       </div>  
     </div>
         <div class="row pull-right"> <!-- fila para botones -->
