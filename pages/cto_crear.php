@@ -31,11 +31,15 @@
         <div class="form-group">
           <label for="telefono">Teléfono:</label>
           <input id="telefono" class="form-control" type="text" placeholder="Teléfono">          
-        </div> 
+        </div>
         <div class="form-group">
-          <label for="movil">Teléfono Movil:</label>
-          <input id="movil" class="form-control" type="text" placeholder="Teléfono Movil">       
-        </div>                                 
+          <label for="email">Correo Electrónico:</label>
+          <input id="email" class="form-control" type="email" placeholder="nombre@dominio.com">      
+        </div>  
+        <div class="form-group">
+          <label for="twitter">Twitter:</label>
+          <input id="twitter" class="form-control" type="text" placeholder="Twitter">       
+        </div>                                                 
       </div>
       <div class="col-md-6"> <!-- columna derecha -->
 
@@ -49,9 +53,17 @@
           <input id="rut" class="form-control" type="text" placeholder="xx.xxx.xxx-x">        
         </div>
         <div class="form-group">
-          <label for="email">Correo Electrónico:</label>
-          <input id="email" class="form-control" type="email" placeholder="nombre@dominio.com">      
-        </div>                                       
+          <label for="movil">Teléfono Movil:</label>
+          <input id="movil" class="form-control" type="text" placeholder="Teléfono Movil">       
+        </div>  
+        <div class="form-group">
+          <label for="linkedin">LinkedIn:</label>
+          <input id="linkedin" class="form-control" type="text" placeholder="LinkedIn">       
+        </div>
+        <div class="form-group">
+          <label for="facebook">Facebook:</label>
+          <input id="facebook" class="form-control" type="text" placeholder="Facebook">       
+        </div>                                                       
       </div>  
     </div>
     <!-- fin datos basicos -->
