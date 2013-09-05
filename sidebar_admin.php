@@ -18,7 +18,6 @@
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_crear"><span class="glyphicon glyphicon-chevron-right"></span> Crear</a></li> 
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_editar"><span class="glyphicon glyphicon-chevron-right"></span> Editar</a></li> 
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_tipo"><span class="glyphicon glyphicon-chevron-right"></span> Tipos</a></li>               
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_estdo"><span class="glyphicon glyphicon-chevron-right"></span> Estados</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_tar"><span class="glyphicon glyphicon-chevron-right"></span> Tarifas</a></li>   
         <li class="nav-header">Facturación</li>
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#fact_estdo"><span class="glyphicon glyphicon-chevron-right"></span> Estados</a></li>
@@ -26,7 +25,6 @@
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mon_crear"><span class="glyphicon glyphicon-chevron-right"></span> Crear</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mon_edit"><span class="glyphicon glyphicon-chevron-right"></span> Editar</a></li> 
         <li class="nav-header">Admin</li>
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#editor"><span class="glyphicon glyphicon-chevron-right"></span> Editor registros BD</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#feriados"><span class="glyphicon glyphicon-chevron-right"></span> Feriados legales</a></li>                                                                                                             
       </ul>
     </div>

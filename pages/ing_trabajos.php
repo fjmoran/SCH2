@@ -16,7 +16,7 @@ $today = date("d-m-Y");
 <br>
 	<a href="#agregar" role="button" class="btn btn-sm btn-success pull-right" data-toggle="modal"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
-<h4>Horas trabajadas</h4>
+<h4>Últimos trabajos ingresados</h4>
 
 <table class="table table-striped table-bordered table-condensed">
   <thead>

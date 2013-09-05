@@ -12,7 +12,7 @@
   <br>
 	<a href="#agregar" role="button" class="btn btn-sm btn-success pull-right" data-toggle="modal"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
-<h4>Abonos realizados</h4>
+<h4>Últimos abonos ingresados</h4>
 
 <table class="table table-striped table-bordered table-condensed">
   <thead>
