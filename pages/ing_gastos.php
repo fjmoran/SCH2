@@ -139,37 +139,65 @@
                 <input id="nombre" class="form-control" type="text" placeholder="Nombre o Razón Social">
               </div> 
             </div>             
-          </div>           
-          <div class="row"> 
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="moneda">Moneda:</label>
-                  <select id="moneda" class="form-control">            
-                    <option>$</option>              
-                    <option>USD</option>
-                    <option>UF</option>                                                                                               
-                  </select>          
-              </div>              
-            </div>  
-            <div class="col-md-6">
-              <div class="form-group"> 
-                <label for="monto">Monto:</label>
-                <input id="monto" class="form-control" type="text" placeholder="Monto">
-              </div>              
+          </div> 
+
+          <ul class="nav nav-tabs" id="tabs_gastos">
+            <li class="active"><a href="#datos" data-toggle="tab">Descripción</a></li>
+            <li><a href="#adj" data-toggle="tab">Adjuntos</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane active" id="datos">
+              <div class="row"> <!-- fila para sub titulo opcional -->
+                <div class="col-md-12">
+                  <h4></h4>
+                </div>
+              </div> 
+              <div class="row"> 
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="moneda">Moneda:</label>
+                      <select id="moneda" class="form-control">            
+                        <option>$</option>              
+                        <option>USD</option>
+                        <option>UF</option>                                                                                               
+                      </select>          
+                  </div>              
+                </div>  
+                <div class="col-md-6">
+                  <div class="form-group"> 
+                    <label for="monto">Monto total:</label>
+                    <input id="monto" class="form-control" type="text" placeholder="Monto">
+                  </div>              
+                </div>                 
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group"> 
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" class="form-control" rows="3"></textarea>
+                  </div>
+                </div>             
+              </div>
+            </div>                 
+
+            <div class="tab-pane" id="adj">
+              <div class="row"> <!-- fila para sub titulo opcional -->
+                <div class="col-md-12">
+                  <h4></h4>
+                </div>
+              </div>               
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="adjunto">Adjuntos</label>
+                    <input type="file" id="adjunto">
+                  </div>
+                </div>             
+              </div> 
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group"> 
-                <label for="descripcion">Descripción:</label>
-                <textarea id="descripcion" class="form-control" rows="3"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="adjunto">Adjuntos</label>
-                <input type="file" id="adjunto">
-              </div>
-            </div>             
-          </div>   
+          </div>    
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
