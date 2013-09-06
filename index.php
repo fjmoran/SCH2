@@ -25,10 +25,11 @@
 	<div id="cuerpo">
 
    <?php 
-		echo "Flag de manejo de variables ";
+    echo "<div class='alert alert-danger alert-dismissable col-md-7'> <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>";
+		echo "Flag de manejo de variables : ";
 		echo count($_POST) ."</br>";
 		echo "user = ".$_POST["user"]."</br>";
-		echo "clave SHA1 = ".$_POST["password"]."</br>";
+		echo "clave SHA1 = ".$_POST["password"]."</br> </div>";
 		
    include('pages/default.php'); 
    ?>
