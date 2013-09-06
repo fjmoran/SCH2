@@ -1,3 +1,4 @@
+	
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -23,9 +24,17 @@
 
 	<div id="cuerpo">
 
-   <?php include('pages/default.php'); ?>
+   <?php 
+		echo "Flag de manejo de variables ";
+		echo count($_POST) ."</br>";
+		echo "user = ".$_POST["user"]."</br>";
+		echo "clave SHA1 = ".$_POST["password"]."</br>";
+		
+   include('pages/default.php'); 
+   ?>
 
 	</div>
+
 	<?php
 	include('footer.php');
 	?>

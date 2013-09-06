@@ -70,8 +70,8 @@
 
       <form class="form-signin" name="login" action="index.php" method="post">
         <h2 class="form-signin-heading">Acceso</h2>
-        <input type="text" class="form-control" placeholder="Usuario">
-        <input type="password" class="form-control" placeholder="Contraseña">
+        <input type="text" class="form-control" placeholder="Usuario" name="user">
+        <input type="password" class="form-control" placeholder="Contraseña" name="password">
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Recordarme
         </label>
@@ -108,5 +108,13 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="recursos/jquery/jquery-1.10.1.min.js"></script>    
     <script src="recursos/bootstrap3/js/bootstrap.min.js"></script>
+    <script src="recursos/CryptoJS v3/rollups/sha1.js"></script>
+    <script type="text/javascript">
+    	$('form.form-signin').on('submit', function(){
+    		var clave = $('input:password');
+    		var clavesha1 = CryptoJS.SHA1(clave.val());
+    		clave.val(clavesha1);
+    	});
+    </script>
   </body>
 </html>
