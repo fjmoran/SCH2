@@ -5,7 +5,7 @@
     <title>Sistema de Control de Horas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="recursos/bootstrap3/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="recursos/bootstrap3/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <!-- Zhi CSS -->
     <link href="recursos/zhi/css/zhi.css" rel="stylesheet"> 
     <link href="img/favicon.ico" rel="SHORTCUT ICON">    

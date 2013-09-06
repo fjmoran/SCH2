@@ -136,7 +136,7 @@
             <div class="col-md-12">
               <div class="form-group"> 
                 <label for="nombre">Cliente:</label>
-                <input id="nombre" class="form-control" type="text" placeholder="Nombre o Razón Social">
+                <input id="nombre" class="form-control" type="text" placeholder="Nombre del cliente">
               </div> 
             </div>             
           </div> 
@@ -175,7 +175,7 @@
                 <div class="col-md-12">
                   <div class="form-group"> 
                     <label for="descripcion">Descripción:</label>
-                    <textarea id="descripcion" class="form-control" rows="3"></textarea>
+                    <textarea id="descripcion" class="form-control" rows="4"></textarea>
                   </div>
                 </div>             
               </div>
@@ -190,8 +190,21 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label for="adjunto">Adjuntos</label>
-                    <input type="file" id="adjunto">
+                    <label for="descripcion">Archivo:</label>
+                      <div class="fileupload fileupload-new" data-provides="fileupload">
+                          <div class="input-group">
+                              <div class="form-control uneditable-input"><span class="glyphicon glyphicon-upload fileupload-exists"></span> 
+                                  <span class="fileupload-preview"></span>
+                              </div>
+                              <div class="input-group-btn">
+                                  <a class="btn btn-default btn-file">
+                                      <span class="fileupload-new">Agregar</span>
+                                      <span class="fileupload-exists">Cambiar</span>
+                                      <input type="file" class="file-input"/></a>
+                                  <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Eliminar</a>
+                              </div>
+                          </div>
+                      </div>
                   </div>
                 </div>             
               </div> 
@@ -201,7 +214,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">guardar</button>
+          <button type="button" class="btn btn-primary">Guardar</button>
         </div>
       </form>
     </div><!-- modal-content -->
@@ -268,7 +281,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">guardar</button>
+          <button type="button" class="btn btn-primary">Guardar</button>
         </div>
       </form>
     </div><!-- modal-content -->

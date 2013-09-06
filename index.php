@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="recursos/bootstrap3/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- Bootstrap FileUload-->
+    <link href="recursos/bootstrap-fileupload/bootstrap-fileupload.min.css" rel="stylesheet">        
     <!-- Jquery-ui -->
-    <link href="recursos/jquery-ui/css/zhi/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+    <link href="recursos/jquery-ui/css/zhi/jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
     <!-- Zhi CSS -->
     <link href="recursos/zhi/css/zhi.css" rel="stylesheet"> 
     <link href="img/favicon.ico" rel="SHORTCUT ICON">
@@ -45,6 +47,7 @@
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="recursos/jquery/jquery-1.10.1.min.js"></script>    
   <script src="recursos/bootstrap3/js/bootstrap.min.js"></script>
+  <script src="recursos/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>  
   <script src="recursos/jquery-ui/js/jquery-ui-1.10.3.custom.min.js"></script>
   
   <script type="text/javascript"> 
