@@ -45,7 +45,7 @@
  <!-- javascript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="recursos/jquery/jquery-1.10.1.min.js"></script>    
+  <script src="recursos/jquery/jquery-1.10.2.min.js"></script>    
   <script src="recursos/bootstrap3/js/bootstrap.min.js"></script>
   <script src="recursos/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>  
   <script src="recursos/jquery-ui/js/jquery-ui-1.10.3.custom.min.js"></script>

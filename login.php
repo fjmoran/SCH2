@@ -108,7 +108,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="recursos/jquery/jquery-1.10.1.min.js"></script>    
     <script src="recursos/bootstrap3/js/bootstrap.min.js"></script>
-    <script src="recursos/CryptoJSv3/rollups/sha1.js"></script>
+    <script src="recursos/CryptoJSv3/rollups/sha1-min.js"></script>
+    
     <script type="text/javascript">
     	$('form.form-signin').on('submit', function(){
     		var clave = $('input:password');
@@ -116,5 +117,6 @@
     		clave.val(clavesha1);
     	});
     </script>
+
   </body>
 </html>

@@ -186,27 +186,41 @@
                 <div class="col-md-12">
                   <h4></h4>
                 </div>
-              </div>               
-              <div class="row">
+              </div> 
+              <div class="row" id="row_boleta[0]" style="background-color:lightgray; padding-top:5px; margin:0px; -webkit-border-radius: 5px 5px 0 0 !important; -moz-border-radius: 5px 5px 0 0 !important; border-radius: 5px 5px 0 0 !important;">
+                <div class="col-md-6">
+                  <div class="form-group"> 
+                    <label for="monto_boleta[0]">Monto:</label>
+                    <input id="monto_boleta[0]" class="form-control" type="text" placeholder="Monto" name="monto_boleta[0]">
+                  </div> 
+                </div>  
+                <div class="col-md-6">
+                  <div class="form-group"> 
+                    <label for="nro_doc[0]">Nro. documento:</label>
+                    <input id="nro_doc[0]" class="form-control" type="text" placeholder="Nro. documento" name="nro_doc[0]">
+                  </div> 
+                </div>
+              </div>             
+              <div class="row" id="row_file[0]"> 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label for="descripcion">Archivo:</label>
+                    <label for="fileupload[0]">Archivo:</label>
                       <div class="fileupload fileupload-new" data-provides="fileupload">
                           <div class="input-group">
-                              <div class="form-control uneditable-input"><span class="glyphicon glyphicon-upload fileupload-exists"></span> 
+                              <div class="form-control uneditable-input"><span class="glyphicon glyphicon-upload fileupload-exists"> </span> 
                                   <span class="fileupload-preview"></span>
                               </div>
                               <div class="input-group-btn">
                                   <a class="btn btn-default btn-file">
                                       <span class="fileupload-new">Agregar</span>
                                       <span class="fileupload-exists">Cambiar</span>
-                                      <input type="file" class="file-input"/></a>
+                                      <input id="fileupload[0]" type="file" class="file-input" name="fileupload[0]"/></a>
                                   <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Eliminar</a>
                               </div>
                           </div>
                       </div>
                   </div>
-                </div>             
+                </div>           
               </div> 
             </div>
           </div>    
