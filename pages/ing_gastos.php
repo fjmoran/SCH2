@@ -182,8 +182,16 @@
             </div>                 
 
             <div class="tab-pane" id="adj"> 
-
+              <div class="row">
+                <div class="col-md-12">
+                  <button type="button" class="btn btn-success btn-xs" style="margin-top:7px;">Nuevo</button>
+                </div>  
+              </div>
               <div class="row fill-light-top" id="row_boleta[0]">
+                <div class="col-md-12">
+                  <button type="button" class="close" aria-hidden="true">&times;</button> 
+                  <h4 class="modal-title">&nbsp</h4>
+                </div>   
                 <div class="col-md-6">
                   <div class="form-group"> 
                     <label for="monto_boleta[0]">Monto:</label>
@@ -226,9 +234,13 @@
 
 
 
-
+              <!-- BORRAR INICIO -->
 
               <div class="row fill-light-top" id="row_boleta[0]">
+                <div class="col-md-12">
+                  <button type="button" class="close" aria-hidden="true">&times;</button> 
+                  <h4 class="modal-title">&nbsp</h4>
+                </div>                
                 <div class="col-md-6">
                   <div class="form-group"> 
                     <label for="monto_boleta[0]">Monto:</label>
@@ -264,7 +276,7 @@
                 </div>           
               </div> 
 
-
+              <!-- BORRAR FIN -->
 
 
 
