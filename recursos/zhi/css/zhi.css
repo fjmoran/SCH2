@@ -67,10 +67,35 @@ body {
 }
 
 .nav-header {
-  padding-left:15px; 
+  padding-left: 15px; 
   color: #428BCA; 
-  font-weight:bold;
+  font-weight: bold;
 } 
+
+.fill-light-top {
+  background-color: #F8F8F8; 
+  padding-top: 5px; 
+  margin: 0px; 
+  margin-top: 12px;
+  border-top: 1px solid #E7E7E7; 
+  border-left: 1px solid #E7E7E7;
+  border-right: 1px solid #E7E7E7;
+  -webkit-border-radius: 5px 5px 0 0; 
+  -moz-border-radius: 5px 5px 0 0; 
+  border-radius: 5px 5px 0 0;
+}
+
+.fill-light-bottom {
+  background-color: #F8F8F8; 
+  padding-top: 5px; 
+  margin: 0px; 
+  border-bottom: 1px solid #E7E7E7; 
+  border-left: 1px solid #E7E7E7;
+  border-right: 1px solid #E7E7E7;
+  -webkit-border-radius: 0 0 5px 5px; 
+  -moz-border-radius: 0 0 5px 5px; 
+  border-radius: 0 0 5px 5px;
+}
 
 /* Custom page CSS
 -------------------------------------------------- */
