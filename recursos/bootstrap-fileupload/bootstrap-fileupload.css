@@ -62,6 +62,7 @@
   cursor: text;
   overflow: hidden;                 /*Added this line*/
   max-height: 34px;                 /*Added this line*/
+  border-right: 0px;
 }
 .fileupload .fileupload-preview {   /*Added this line*/
   line-height: 21px;                /*Added this line*/
