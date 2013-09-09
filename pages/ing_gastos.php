@@ -184,7 +184,7 @@
             <div class="tab-pane" id="adj"> 
               <div class="row">
                 <div class="col-md-12">
-                  <button type="button" class="btn btn-success btn-xs" style="margin-top:7px;">Nuevo</button>
+                  <button type="button" id="nueva-boleta" class="btn btn-success btn-xs" style="margin-top:7px;">Nuevo</button>
                 </div>  
               </div>
               <div class="row fill-light-top" id="row_boleta[0]">
@@ -236,28 +236,28 @@
 
               <!-- BORRAR INICIO -->
 
-              <div class="row fill-light-top" id="row_boleta[0]">
+              <div class="row fill-light-top" id="row_boleta[1]">
                 <div class="col-md-12">
                   <button type="button" class="close" aria-hidden="true">&times;</button> 
                   <h4 class="modal-title">&nbsp</h4>
                 </div>                
                 <div class="col-md-6">
                   <div class="form-group"> 
-                    <label for="monto_boleta[0]">Monto:</label>
-                    <input id="monto_boleta[0]" class="form-control" type="text" placeholder="Monto" name="monto_boleta[0]">
+                    <label for="monto_boleta[1]">Monto:</label>
+                    <input id="monto_boleta[1]" class="form-control" type="text" placeholder="Monto" name="monto_boleta[0]">
                   </div> 
                 </div>  
                 <div class="col-md-6">
                   <div class="form-group"> 
-                    <label for="nro_doc[0]">Nro. documento:</label>
-                    <input id="nro_doc[0]" class="form-control" type="text" placeholder="Nro. documento" name="nro_doc[0]">
+                    <label for="nro_doc[1]">Nro. documento:</label>
+                    <input id="nro_doc[1]" class="form-control" type="text" placeholder="Nro. documento" name="nro_doc[0]">
                   </div> 
                 </div>
               </div>             
-              <div class="row fill-light-bottom" id="row_file[0]"> 
+              <div class="row fill-light-bottom" id="row_file[1]"> 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label for="fileupload[0]">Archivo:</label>
+                    <label for="fileupload[1]">Archivo:</label>
                       <div class="fileupload fileupload-new" data-provides="fileupload">
                           <div class="input-group">
                               <div class="form-control uneditable-input"><span class="glyphicon glyphicon-upload fileupload-exists"> </span> 
@@ -267,7 +267,7 @@
                                   <a class="btn btn-default btn-file">
                                       <span class="fileupload-new">Agregar</span>
                                       <span class="fileupload-exists">Cambiar</span>
-                                      <input id="fileupload[0]" type="file" class="file-input" name="fileupload[0]"/></a>
+                                      <input id="fileupload[1]" type="file" class="file-input" name="fileupload[1]"/></a>
                                   <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Eliminar</a>
                               </div>
                           </div>
@@ -291,7 +291,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>         
           <button type="button" class="btn btn-primary">Guardar</button>
         </div>
       </form>
@@ -370,6 +370,7 @@
   
 <script type="text/javascript"> 
   $(document).ready(function(){
+
     /* Calendario 1*/       
     $('#cal1').datepicker();
     /* Calendario 2*/       
@@ -379,5 +380,14 @@
       selector: "span[rel=tooltip]"
      })
 
+    /* Eliminar div detalle de gastos */  
+    $('.col-md-12 > .close').click(function (e) {
+      alert("Eliminar");              
+     });
+
+    /* Crear div detalle de gastos */  
+    $('#nueva-boleta').click(function (e) {
+      alert("Nuevo");              
+     });    
   })
 </script>
