@@ -140,7 +140,7 @@ $today = date("d-m-Y");
             <div class="col-md-6">
               <div class="form-group"> 
                 <label for="nombre">Cliente:</label>
-                <input id="nombre" class="form-control" type="text" placeholder="Nombre o Razón Social">
+                <input id="nombre" class="form-control" type="text" placeholder="Nombre del cliente">
               </div> 
               <div class="form-group">
                 <label for="horas">Horas:</label>
@@ -219,7 +219,7 @@ $today = date("d-m-Y");
             <div class="col-md-6">
               <div class="form-group"> 
                 <label for="nombre">Cliente:</label>
-                <input id="nombre" class="form-control" type="text" placeholder="Nombre o Razón Social">
+                <input id="nombre" class="form-control" type="text" placeholder="Nombre del cliente">
               </div> 
               <div class="form-group">
                 <label for="horas">Horas:</label>

@@ -136,7 +136,7 @@
             <div class="col-md-12">
               <div class="form-group"> 
                 <label for="nombre">Cliente:</label>
-                <input id="nombre" class="form-control" type="text" placeholder="Nombre o Razón Social">
+                <input id="nombre" class="form-control" type="text" placeholder="Nombre del cliente">
               </div> 
             </div>             
           </div>           
@@ -203,7 +203,7 @@
             <div class="col-md-12">
               <div class="form-group"> 
                 <label for="nombre">Cliente:</label>
-                <input id="nombre" class="form-control" type="text" placeholder="Nombre o Razón Social">
+                <input id="nombre" class="form-control" type="text" placeholder="Nombre del cliente">
               </div> 
             </div>             
           </div>           

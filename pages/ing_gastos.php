@@ -211,7 +211,7 @@
                     <label for="fileupload[0]">Archivo:</label>
                       <div class="fileupload fileupload-new" data-provides="fileupload">
                           <div class="input-group">
-                              <div class="form-control uneditable-input"><span class="glyphicon glyphicon-upload fileupload-exists"> </span> 
+                              <div class="form-control uneditable-input"><span class="glyphicon glyphicon-file fileupload-exists"> </span> 
                                   <span class="fileupload-preview"></span>
                               </div>
                               <div class="input-group-btn">
