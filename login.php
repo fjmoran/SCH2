@@ -1,3 +1,7 @@
+<?php
+session_unset();
+session_destroy();
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -68,7 +72,7 @@
 
     <div class="container">
 
-      <form class="form-signin" name="login" action="index.php" method="post">
+      <form class="form-signin" name="login" action="recursos/zhi/control.php" method="post">
         <h2 class="form-signin-heading">Acceso</h2>
         <input type="text" class="form-control" placeholder="Usuario" name="user">
         <input type="password" class="form-control" placeholder="Contraseña" name="password">

@@ -5,7 +5,15 @@
         </div>
         <div class="navbar-form navbar-right">
           <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown">Francisco Morán
+            <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown">
+            	<?php
+            	if (isset($_SESSION["nombre"])) {
+            		echo " ".$_SESSION["nombre"];
+            	}
+            	else {
+            		echo " Francisco Morán";
+            	}
+            	?>
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
