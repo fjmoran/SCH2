@@ -1,4 +1,5 @@
 <?php
+session_start();
 session_unset();
 session_destroy();
 ?>
@@ -80,7 +81,17 @@ session_destroy();
         } ?>
         ">
         <input type="password" class="form-control" placeholder="Contraseña" name="password">
-        <div class="alert alert-danger hide">Usuario o Contraseña incorrecto</div>
+        <div class="alert alert-danger
+        	<?php 
+        	if (!isset($_GET[error])) {
+        		echo " hide \">";
+        	}else if ($_GET[error] == 1) {
+        		echo "\">Usuario o Contraseña incorrecto";
+        	}else if ($_GET[error] == 2) {
+        		echo "\">Autetificación necesaria";
+        	}
+        	?>
+        </div>
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Recordarme
         </label>
