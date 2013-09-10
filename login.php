@@ -76,6 +76,7 @@ session_destroy();
         <h2 class="form-signin-heading">Acceso</h2>
         <input type="text" class="form-control" placeholder="Usuario" name="user">
         <input type="password" class="form-control" placeholder="Contraseña" name="password">
+        <div class="alert alert-danger hide">Usuario o Contraseña incorrecto</div>
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Recordarme
         </label>
