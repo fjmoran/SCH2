@@ -21,7 +21,7 @@ if (mysql_num_rows($rs)>0){
 }
 else
 {
-	header("Location:../../login.php");
+	header("Location:../../login.php?error=1&user=".$_POST[user]);
 }
 
 mysql_free_result($rs);

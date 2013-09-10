@@ -74,7 +74,11 @@ session_destroy();
 
       <form class="form-signin" name="login" action="recursos/zhi/control.php" method="post">
         <h2 class="form-signin-heading">Acceso</h2>
-        <input type="text" class="form-control" placeholder="Usuario" name="user">
+        <input type="text" class="form-control" placeholder="Usuario" name="user" <?php 
+        if (isset($_GET[user])) {
+        	echo "value=\"".$_GET[user]."\"";
+        } ?>
+        ">
         <input type="password" class="form-control" placeholder="Contraseña" name="password">
         <div class="alert alert-danger hide">Usuario o Contraseña incorrecto</div>
         <label class="checkbox">
