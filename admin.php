@@ -1,3 +1,6 @@
+<?php
+require "recursos/zhi/auth.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
