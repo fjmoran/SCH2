@@ -11,7 +11,7 @@
             		echo " ".$_SESSION[nombreUsuario];
             	}
             	else {
-            		echo " Francisco Morán";
+            		echo " Usuario";
             	}
             	?>
               <span class="caret"></span>
