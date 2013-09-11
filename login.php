@@ -75,23 +75,23 @@ session_destroy();
 
       <form class="form-signin" name="login" action="recursos/zhi/controlv2.php" method="post">
         <h2 class="form-signin-heading">Acceso</h2>
-        <input type="text" class="form-control" placeholder="Usuario" name="user" <?php 
+        <input type="text" class="form-control reset-alert" placeholder="Usuario" name="user" <?php 
         if (isset($_GET[user])) {
         	echo "value=\"".$_GET[user]."\"";
         } ?>
         ">
-        <input type="password" class="form-control" placeholder="Contraseña" name="password">
-        <div class="alert alert-danger
+        <input type="password" class="form-control reset-alert" placeholder="Contraseña" name="password">
+        <h4 class="text-center"><span id="login-error" class="label label-danger 
         	<?php 
         	if (!isset($_GET[error])) {
         		echo " hide \">";
         	}else if ($_GET[error] == 1) {
         		echo "\">Usuario o Contraseña incorrecto";
         	}else if ($_GET[error] == 2) {
-        		echo "\">Autetificación necesaria";
+        		echo "\">Autentificación necesaria";
         	}
         	?>
-        </div>
+        </span></h4>
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Recordarme
         </label>
@@ -136,6 +136,11 @@ session_destroy();
     		var clavesha1 = CryptoJS.SHA1(clave.val());
     		clave.val(clavesha1);
     	});
+
+      $('.reset-alert').focus(function() {
+      $('#login-error').addClass('hide');
+      });
+
     </script>
 
   </body>
