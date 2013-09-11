@@ -15,9 +15,12 @@ require "recursos/zhi/auth.php";
     <link href="recursos/jquery-ui/css/zhi/jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
     <!-- Zhi CSS -->
     <link href="recursos/zhi/css/zhi.css" rel="stylesheet"> 
+    <!-- Fonts -->
+    <link href='fonts/fonts.css' rel='stylesheet' type='text/css'>
+    <!-- Fav Icon -->    
     <link href="img/favicon.ico" rel="SHORTCUT ICON">
 
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+
 
   </head>
   <body>

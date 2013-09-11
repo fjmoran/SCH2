@@ -11,9 +11,10 @@ require "recursos/zhi/auth.php";
     <link href="recursos/bootstrap3/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <!-- Zhi CSS -->
     <link href="recursos/zhi/css/zhi.css" rel="stylesheet"> 
-    <link href="img/favicon.ico" rel="SHORTCUT ICON">    
-
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+    <!-- Fonts -->
+    <link href='fonts/fonts.css' rel='stylesheet' type='text/css'>
+    <!-- Fav Icon -->    
+    <link href="img/favicon.ico" rel="SHORTCUT ICON">
 
   </head>
   <body>

@@ -16,7 +16,7 @@ session_destroy();
     <!-- Le styles -->
     <link href="recursos/bootstrap3/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+    <link href='fonts/fonts.css' rel='stylesheet' type='text/css'>
 
     <link href="img/favicon.ico" rel="SHORTCUT ICON">
 
