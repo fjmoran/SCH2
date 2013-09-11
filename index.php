@@ -32,9 +32,10 @@ require "recursos/zhi/auth.php";
     echo "<div class='alert alert-danger alert-dismissable col-md-8'> <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>";
 		echo "Flag de manejo de variables = ";
 		echo count($_SESSION) ."</br>";
-		echo "user = ".$_SESSION["user"]."</br>";
-		echo "nombre = ".$_SESSION["nombre"]."</br>";
-		echo "perfil = ".$_SESSION["perfil"]."</br>";
+		echo "user = ".$_SESSION[userUsuario]."</br>";
+		echo "nombre = ".$_SESSION[nombreUsuario]."</br>";
+		echo "id = ".$_SESSION[idUsuario]."</br>";
+		echo "idperfil = ".$_SESSION[idperfilUsuario]."</br>";
 		echo "</div>";
 		
    include('pages/default.php'); 

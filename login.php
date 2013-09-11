@@ -73,7 +73,7 @@ session_destroy();
 
     <div class="container">
 
-      <form class="form-signin" name="login" action="recursos/zhi/control.php" method="post">
+      <form class="form-signin" name="login" action="recursos/zhi/controlv2.php" method="post">
         <h2 class="form-signin-heading">Acceso</h2>
         <input type="text" class="form-control" placeholder="Usuario" name="user" <?php 
         if (isset($_GET[user])) {
