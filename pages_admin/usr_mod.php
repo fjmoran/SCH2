@@ -86,7 +86,7 @@
 	    <tr>
 	      <td>Karl El</td>     	
 	      <td>superman</td>
-	      <td>Usuario</td>
+	      <td>SuperUsuario</td>
 	      <td>Activo</td>
 	      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>

@@ -53,8 +53,8 @@
           <input id="rut" class="form-control" type="text" placeholder="xx.xxx.xxx-x">        
         </div>
         <div class="form-group">
-          <label for="movil">Teléfono Movil:</label>
-          <input id="movil" class="form-control" type="text" placeholder="Teléfono Movil">       
+          <label for="movil">Teléfono móvil:</label>
+          <input id="movil" class="form-control" type="text" placeholder="Teléfono móvil">       
         </div>  
         <div class="form-group">
           <label for="linkedin">LinkedIn:</label>

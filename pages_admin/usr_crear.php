@@ -19,8 +19,8 @@
           <input id="correo" class="form-control" type="email" placeholder="email">           
         </div>  
         <div class="form-group"> 
-          <label for="movil">Teléfono movil:</label>
-          <input id="movil" class="form-control" type="text" placeholder="Teléfono movil">           
+          <label for="movil">Teléfono móvil:</label>
+          <input id="movil" class="form-control" type="text" placeholder="Teléfono móvil">           
         </div>                                                    
       </div>
       <div class="col-md-6"> <!-- columna derecha -->
