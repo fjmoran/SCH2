@@ -281,7 +281,7 @@ $today = date("d-m-Y");
         $('#cal2').datepicker();        
         /* Tooltip */
         $('.table').tooltip({
-          selector: "span[rel=tooltip]"
+          selector: "[rel=tooltip]"
          })
 
       })

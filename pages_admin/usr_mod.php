@@ -14,7 +14,7 @@
 	  </thead>
 	  <tbody>
 	    <tr>
-	      <td>Pedro Reyes</td>    	
+	      <td><span rel="tooltip" data-toggle="tooltip" title="Nombre completo del sujeto">Pedro Reyes</span></td>    	
 	      <td>preyes</td>
 	      <td>Usuario</td>
 	      <td>Inactivo</td>
@@ -119,7 +119,7 @@
       $(document).ready(function(){       
         /* Tooltip */
         $('.table').tooltip({
-          selector: "span[rel=tooltip]"
+          selector: "[rel=tooltip]"
          })
       })    
     </script>

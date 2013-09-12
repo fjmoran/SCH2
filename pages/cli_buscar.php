@@ -135,7 +135,7 @@
       $(document).ready(function(){       
         /* Tooltip */
         $('.table').tooltip({
-          selector: "span[rel=tooltip]"
+          selector: "[rel=tooltip]"
          })
 
       })     
