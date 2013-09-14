@@ -1,7 +1,11 @@
 <div class="col-md-11">
  	<h2>Usuarios</h2>
- 	<h5>Edición y desactivación de usuarios del sistema.</h5>
- 	<br>
+	<h5>Administración de usuarios</h5>
+
+	<br>
+		<a onclick="$('#cuerpo').load('pages_admin/usr_crear.php');" href="#usr_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
+
+	<h4>Usuarios del sistema</h4>
 	<table class="table table-striped table-bordered table-condensed">
 	  <thead>
 	    <tr>

@@ -4,7 +4,6 @@
      <div class="bs-sidebar">
       <ul class="nav bs-sidenav">
         <li class="nav-header">Usuarios</li>
-        <li onclick="$('#cuerpo').load('pages_admin/usr_crear.php');"><a href="#usr_crear"><span class="glyphicon glyphicon-chevron-right"></span> Crear</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/usr_mod.php');"><a href="#usr_mod"><span class="glyphicon glyphicon-chevron-right"></span> Administrar</a></li>
         <li class="nav-header">Roles</li>
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#perf_crear"><span class="glyphicon glyphicon-chevron-right"></span> Crear</a></li>
