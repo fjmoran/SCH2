@@ -6,8 +6,8 @@
         <li class="nav-header">Usuarios</li>
         <li onclick="$('#cuerpo').load('pages_admin/usr_mod.php');"><a href="#usr_mod"><span class="glyphicon glyphicon-chevron-right"></span> Administrar</a></li>
         <li class="nav-header">Roles</li>
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#perf_mod"><span class="glyphicon glyphicon-chevron-right"></span> Administrar</a></li>  
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#perf_perm"><span class="glyphicon glyphicon-chevron-right"></span> Permisos</a></li>                             
+        <li onclick="$('#cuerpo').load('pages_admin/roles_mod.php');"><a href="#roles_mod"><span class="glyphicon glyphicon-chevron-right"></span> Administrar</a></li>  
+        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#roles_perm"><span class="glyphicon glyphicon-chevron-right"></span> Permisos</a></li>                             
         <li class="nav-header">Clientes</li>
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#cli_tar"><span class="glyphicon glyphicon-chevron-right"></span> Tarifa</a></li>
         <li class="nav-header">Contactos</li>
