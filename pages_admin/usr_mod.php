@@ -36,7 +36,7 @@
 	      <td>rrojas</td>
 	      <td>Usuario</td>
 	      <td>Activo</td>
-	      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+	      <td><a onclick="$('#cuerpo').load('pages_admin/usr_editar.php');" href="#usr_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
 	    </tr>
 	    <tr>
@@ -44,7 +44,7 @@
 	      <td>jae</td>
 	      <td>Administrador</td>
 	      <td>Activo</td>
-	      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+	      <td><a onclick="$('#cuerpo').load('pages_admin/usr_editar.php');" href="#usr_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
 	    </tr>
 	    <tr>
@@ -52,7 +52,7 @@
 	      <td>xrojas</td>
 	      <td>Usuario</td>
 	      <td>Activo</td>
-	      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+	      <td><a onclick="$('#cuerpo').load('pages_admin/usr_editar.php');" href="#usr_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
 	    </tr>
 	    <tr>
@@ -60,7 +60,7 @@
 	      <td>briquelme</td>
 	      <td>Usuario</td>
 	      <td>Activo</td>
-	      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+	      <td><a onclick="$('#cuerpo').load('pages_admin/usr_editar.php');" href="#usr_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
 	    </tr>
 	    <tr>
@@ -68,7 +68,7 @@
 	      <td>gdiaz</td>
 	      <td>Usuario</td>
 	      <td>Activo</td>
-	      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+	      <td><a onclick="$('#cuerpo').load('pages_admin/usr_editar.php');" href="#usr_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
 	    </tr>
 	    <tr>
@@ -76,7 +76,7 @@
 	      <td>fjmoran</td>
 	      <td>Administrador</td>
 	      <td>Activo</td>
-	      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+	      <td><a onclick="$('#cuerpo').load('pages_admin/usr_editar.php');" href="#usr_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
 	    </tr>
 	    <tr>
@@ -84,7 +84,7 @@
 	      <td>el.zorro</td>
 	      <td>Usuario</td>
 	      <td>Activo</td>
-	      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+	      <td><a onclick="$('#cuerpo').load('pages_admin/usr_editar.php');" href="#usr_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
 	    </tr>
 	    <tr>
@@ -92,7 +92,7 @@
 	      <td>superman</td>
 	      <td>SuperUsuario</td>
 	      <td>Activo</td>
-	      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
+	      <td><a onclick="$('#cuerpo').load('pages_admin/usr_editar.php');" href="#usr_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
 	    </tr>    
 	  </tbody>
