@@ -6,11 +6,11 @@
         <li class="nav-header">Mantenedores</li>
         <li onclick="$('#cuerpo').load('pages_admin/usr_mod.php');"><a href="#usr_mod"><span class="glyphicon glyphicon-chevron-right"></span> Usuarios</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/roles_mod.php');"><a href="#roles_mod"><span class="glyphicon glyphicon-chevron-right"></span> Roles</a></li>  
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#roles_perm"><span class="glyphicon glyphicon-chevron-right"></span> Permisos por rol</a></li>                             
+        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#roles_perm"><span class="glyphicon glyphicon-chevron-right"></span> Permisos por rol</a></li>       
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#cli_tar"><span class="glyphicon glyphicon-chevron-right"></span> Tarifa cliente</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#cto_tipo"><span class="glyphicon glyphicon-chevron-right"></span> Tipos de contacto</a></li> 
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_mod"><span class="glyphicon glyphicon-chevron-right"></span> Materias</a></li> 
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_tipo"><span class="glyphicon glyphicon-chevron-right"></span> Tipos de materias</a></li>               
+        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_tipo"><span class="glyphicon glyphicon-chevron-right"></span> Tipos de materias</a></li>       
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_tar"><span class="glyphicon glyphicon-chevron-right"></span> Tarifas por materia</a></li>   
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#fact_estdo"><span class="glyphicon glyphicon-chevron-right"></span> Estados de facturas</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mon_mod"><span class="glyphicon glyphicon-chevron-right"></span> Tipos de monedas</a></li>

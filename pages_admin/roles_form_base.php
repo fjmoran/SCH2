@@ -11,11 +11,18 @@
           <input id="nombre_rol" class="form-control" type="text" placeholder="Nombre del rol">           
         </div> 
         <div class="form-group">
-          <label for="estado_rol">Estado:</label>
-            <select id="estado_rol" class="form-control">
-              <option>Activo</option>                          
-              <option>Inactivo</option>                                                                         
-            </select>          
+          <div class="radio-inline">
+            <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+              Habilitado
+            </label>
+          </div>
+          <div class="radio-inline">
+            <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+              Deshabilitado
+            </label>
+          </div>
         </div>                                                             
       </div>
       <div class="col-md-6"> <!-- columna derecha -->
