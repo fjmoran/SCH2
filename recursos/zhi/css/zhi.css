@@ -99,6 +99,7 @@ body {
 
 table.table tr:hover td {
 background-color: #e5e3e9;
+font-weight: bold;
 }
 
 /* Custom page CSS
