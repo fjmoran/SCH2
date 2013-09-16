@@ -3,26 +3,17 @@
    <div class="col-md-2">
      <div class="bs-sidebar">
       <ul class="nav bs-sidenav">
-        <li class="nav-header">Usuarios</li>
-        <li onclick="$('#cuerpo').load('pages_admin/usr_mod.php');"><a href="#usr_mod"><span class="glyphicon glyphicon-chevron-right"></span> Administrar</a></li>
-        <li class="nav-header">Roles</li>
-        <li onclick="$('#cuerpo').load('pages_admin/roles_mod.php');"><a href="#roles_mod"><span class="glyphicon glyphicon-chevron-right"></span> Administrar</a></li>  
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#roles_perm"><span class="glyphicon glyphicon-chevron-right"></span> Permisos</a></li>                             
-        <li class="nav-header">Clientes</li>
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#cli_tar"><span class="glyphicon glyphicon-chevron-right"></span> Tarifa</a></li>
-        <li class="nav-header">Contactos</li>
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#cto_tipo"><span class="glyphicon glyphicon-chevron-right"></span> Tipos</a></li> 
-        <li class="nav-header">Materia</li>
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_crear"><span class="glyphicon glyphicon-chevron-right"></span> Crear</a></li> 
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_adm"><span class="glyphicon glyphicon-chevron-right"></span> Administrar</a></li> 
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_tipo"><span class="glyphicon glyphicon-chevron-right"></span> Tipos</a></li>               
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_tar"><span class="glyphicon glyphicon-chevron-right"></span> Tarifas</a></li>   
-        <li class="nav-header">Facturación</li>
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#fact_estdo"><span class="glyphicon glyphicon-chevron-right"></span> Estados</a></li>
-        <li class="nav-header">Monedas</li>
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mon_crear"><span class="glyphicon glyphicon-chevron-right"></span> Crear</a></li>
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mon_adm"><span class="glyphicon glyphicon-chevron-right"></span> Administrar</a></li> 
-        <li class="nav-header">Admin</li>
+        <li class="nav-header">Mantenedores</li>
+        <li onclick="$('#cuerpo').load('pages_admin/usr_mod.php');"><a href="#usr_mod"><span class="glyphicon glyphicon-chevron-right"></span> Usuarios</a></li>
+        <li onclick="$('#cuerpo').load('pages_admin/roles_mod.php');"><a href="#roles_mod"><span class="glyphicon glyphicon-chevron-right"></span> Roles</a></li>  
+        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#roles_perm"><span class="glyphicon glyphicon-chevron-right"></span> Permisos por rol</a></li>                             
+        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#cli_tar"><span class="glyphicon glyphicon-chevron-right"></span> Tarifa cliente</a></li>
+        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#cto_tipo"><span class="glyphicon glyphicon-chevron-right"></span> Tipos de contacto</a></li> 
+        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_mod"><span class="glyphicon glyphicon-chevron-right"></span> Materias</a></li> 
+        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_tipo"><span class="glyphicon glyphicon-chevron-right"></span> Tipos de materias</a></li>               
+        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_tar"><span class="glyphicon glyphicon-chevron-right"></span> Tarifas por materia</a></li>   
+        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#fact_estdo"><span class="glyphicon glyphicon-chevron-right"></span> Estados de facturas</a></li>
+        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mon_mod"><span class="glyphicon glyphicon-chevron-right"></span> Tipos de monedas</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#feriados"><span class="glyphicon glyphicon-chevron-right"></span> Feriados legales</a></li>                                                                                                             
       </ul>
     </div>
