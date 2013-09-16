@@ -21,21 +21,21 @@
 	      <td><span rel="tooltip" data-toggle="tooltip" title="Nombre completo del sujeto">Pedro Reyes</span></td>    	
 	      <td>preyes</td>
 	      <td>Usuario</td>
-	      <td>Inactivo</td>
+	      <td><span class="label label-danger">Inactivo</span></td>
 	      <td><span class="glyphicon glyphicon-refresh" rel="tooltip" data-toggle="tooltip" title="Reactivar"></span></td>
 	    </tr>
 	    <tr>
 	      <td>Andres Carcamo</td>      	
 	      <td>acarcamo</td>
 	      <td>Usuario</td>
-	      <td>Inactivo</td>      
+	      <td><span class="label label-danger">Inactivo</span></td>      
 	      <td><span class="glyphicon glyphicon-refresh" rel="tooltip" data-toggle="tooltip" title="Reactivar"></span></td>
 	    </tr>
 	    <tr>
 	      <td>Roberto Rojas</td>    	
 	      <td>rrojas</td>
 	      <td>Usuario</td>
-	      <td>Activo</td>
+	      <td><span class="label label-success">Activo</span></td>
 	      <td><a onclick="$('#cuerpo').load('pages_admin/usr_editar.php');" href="#usr_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <a onclick="$('#cuerpo').load('pages_admin/usr_tar.php');" href="#usr_tar"><span class="glyphicon glyphicon-usd" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Tarifa del usuario (Abogado)"></span></a>	
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
@@ -44,7 +44,7 @@
 	      <td>Jaime Acevedo</td>     	
 	      <td>jae</td>
 	      <td>Administrador</td>
-	      <td>Activo</td>
+	      <td><span class="label label-success">Activo</span></td>
 	      <td><a onclick="$('#cuerpo').load('pages_admin/usr_editar.php');" href="#usr_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <a onclick="$('#cuerpo').load('pages_admin/usr_tar.php');" href="#usr_tar"><span class="glyphicon glyphicon-usd" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Tarifa del usuario (Abogado)"></span></a>	      	
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
@@ -53,7 +53,7 @@
 	      <td>Ximena Rojas</td>     	
 	      <td>xrojas</td>
 	      <td>Usuario</td>
-	      <td>Activo</td>
+	      <td><span class="label label-success">Activo</span></td>
 	      <td><a onclick="$('#cuerpo').load('pages_admin/usr_editar.php');" href="#usr_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <a onclick="$('#cuerpo').load('pages_admin/usr_tar.php');" href="#usr_tar"><span class="glyphicon glyphicon-usd" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Tarifa del usuario (Abogado)"></span></a>	      	
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
@@ -62,7 +62,7 @@
 	      <td>Bernardita Riquelme</td>     	
 	      <td>briquelme</td>
 	      <td>Usuario</td>
-	      <td>Activo</td>
+	      <td><span class="label label-success">Activo</span></td>
 	      <td><a onclick="$('#cuerpo').load('pages_admin/usr_editar.php');" href="#usr_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <a onclick="$('#cuerpo').load('pages_admin/usr_tar.php');" href="#usr_tar"><span class="glyphicon glyphicon-usd" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Tarifa del usuario (Abogado)"></span></a>	      	
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
@@ -71,7 +71,7 @@
 	      <td>Geronimo Diaz</td>     	
 	      <td>gdiaz</td>
 	      <td>Usuario</td>
-	      <td>Activo</td>
+	      <td><span class="label label-success">Activo</span></td>
 	      <td><a onclick="$('#cuerpo').load('pages_admin/usr_editar.php');" href="#usr_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <a onclick="$('#cuerpo').load('pages_admin/usr_tar.php');" href="#usr_tar"><span class="glyphicon glyphicon-usd" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Tarifa del usuario (Abogado)"></span></a>	      	
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
@@ -80,7 +80,7 @@
 	      <td>Francisco Morán</td>     	
 	      <td>fjmoran</td>
 	      <td>Administrador</td>
-	      <td>Activo</td>
+	      <td><span class="label label-success">Activo</span></td>
 	      <td><a onclick="$('#cuerpo').load('pages_admin/usr_editar.php');" href="#usr_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <a onclick="$('#cuerpo').load('pages_admin/usr_tar.php');" href="#usr_tar"><span class="glyphicon glyphicon-usd" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Tarifa del usuario (Abogado)"></span></a>	      		      		      	
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
@@ -89,7 +89,7 @@
 	      <td>Alejandro de la Vega</td>     	
 	      <td>el.zorro</td>
 	      <td>Usuario</td>
-	      <td>Activo</td>
+	      <td><span class="label label-success">Activo</span></td>
 	      <td><a onclick="$('#cuerpo').load('pages_admin/usr_editar.php');" href="#usr_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <a onclick="$('#cuerpo').load('pages_admin/usr_tar.php');" href="#usr_tar"><span class="glyphicon glyphicon-usd" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Tarifa del usuario (Abogado)"></span></a>	      	
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
@@ -98,7 +98,7 @@
 	      <td>Karl El</td>     	
 	      <td>superman</td>
 	      <td>SuperUsuario</td>
-	      <td>Activo</td>
+	      <td><span class="label label-success">Activo</span></td>
 	      <td><a onclick="$('#cuerpo').load('pages_admin/usr_editar.php');" href="#usr_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <a onclick="$('#cuerpo').load('pages_admin/usr_tar.php');" href="#usr_tar"><span class="glyphicon glyphicon-usd" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Tarifa del usuario (Abogado)"></span></a>	      	
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
