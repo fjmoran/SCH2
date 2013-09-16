@@ -23,11 +23,13 @@
    </div>
    <div class="col-md-10"> <!-- style="background-color: lightgrey" -->
      <div class="container">
-       <ul class="nav nav-pills pull-right">
-         <li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
-         <li><a href="admin.php"><span class="glyphicon glyphicon-wrench"></span> Administración</a></li>
-         <li><a href="login.php"><span class="glyphicon glyphicon-off"></span> Salir</a></li>
-       </ul>
+
+      <div class="btn-group pull-right">
+        <a class="btn btn-default" href="index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a>
+        <a class="btn btn-default" href="admin.php"><span class="glyphicon glyphicon-wrench"></span> Administración</a>
+        <a class="btn btn-default" href="login.php"><span class="glyphicon glyphicon-off"></span> Salir</a>
+      </div>
+      
      </div>
 
   <div class="row" id="main-box">
