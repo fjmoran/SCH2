@@ -37,20 +37,20 @@ if (isset($_GET[debug])){ print_r($info_fila);}
 
 ?>
 	<form role="form">
-    <div class="row"> <!-- fila para sub titulo opcional -->
-      <div class="col-md-12">
-<?php
-    foreach ($info_campo as $valor) {
- 			if (isset($_GET[debug])) {
-        printf("Nombre:        %s</br>", $valor->name);
-        printf("Tabla:         %s</br>", $valor->table);
-        printf("Longitud max.: %d</br>", $valor->max_length);
-        printf("Banderas:      %d</br>", $valor->flags);
-        printf("Tipo:          %d</br>", $valor->type);
-        echo "====================</br>";
-      }
-?>
-<div class="form-group">
+    <div class="row"> 
+      <div class="col-md-6">
+        <?php
+        foreach ($info_campo as $valor) {
+     			if (isset($_GET[debug])) {
+            printf("Nombre:        %s</br>", $valor->name);
+            printf("Tabla:         %s</br>", $valor->table);
+            printf("Longitud max.: %d</br>", $valor->max_length);
+            printf("Banderas:      %d</br>", $valor->flags);
+            printf("Tipo:          %d</br>", $valor->type);
+            echo "====================</br>";
+          }
+        ?>
+        <div class="form-group">
           <?php 
           switch ($valor->type) {
           	case 252:
@@ -76,19 +76,22 @@ if (isset($_GET[debug])){ print_r($info_fila);}
             				break;
           }
           ?>
-</div> 
-<?php
-		}
-?>
-</div>
-</div>
+          </div> 
+      <?php
+      }
+      ?>
+        </div> 
+    </div>
+    <div class="col-md-6"> <!-- columna vacia -->
+    </div>
+  </div>
 
-<div class="row pull-right"> <!-- fila para botones -->
-      <div class="col-md-12">
-        <p>
-          <button class="btn btn-default">Cancelar</button>
-          <button class="btn btn-primary">Guardar</button>
-        </p>
-      </div>
-    </div> 
+  <div class="row pull-right"> <!-- fila para botones -->
+    <div class="col-md-12">
+      <p>
+        <button class="btn btn-default">Cancelar</button>
+        <button class="btn btn-primary">Guardar</button>
+      </p>
+    </div>
+  </div> 
 </form>	
