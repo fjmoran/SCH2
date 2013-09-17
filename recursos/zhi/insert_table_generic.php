@@ -23,8 +23,11 @@ $rs = $mysqli->query($select);
 if (!$rs) {
 	echo "Falló al ejecutar la consulta: (". $mysqli->errno .") ". $mysqli->error;
 }
-#echo "Numero de Filas ". $rs->num_rows."</br>";
-#echo "====================</br>";
+
+if (isset($_GET[debug])) {
+	echo "Numero de Filas ". $rs->num_rows."</br>";
+	echo "====================</br>";
+}
 
 $info_campo = $rs->fetch_fields();
 
@@ -34,14 +37,16 @@ $info_campo = $rs->fetch_fields();
       <div class="col-md-12">
 <?php
     foreach ($info_campo as $valor) {
- /*       printf("Nombre:        %s</br>", $valor->name);
+ 			if (isset($_GET[debug])) {
+        printf("Nombre:        %s</br>", $valor->name);
         printf("Tabla:         %s</br>", $valor->table);
         printf("Longitud max.: %d</br>", $valor->max_length);
         printf("Banderas:      %d</br>", $valor->flags);
         printf("Tipo:          %d</br>", $valor->type);
-        echo "====================</br>"; */
+        echo "====================</br>";
+      }
 ?>
-<div class=\"form-group\">    
+<div class="form-group">    
           <?php 
           switch ($valor->type) {
           	case 252:
@@ -59,8 +64,7 @@ $info_campo = $rs->fetch_fields();
           ?>
 </div> 
 <?php
-}
-
+		}
 ?>
 </div>
 </div>
