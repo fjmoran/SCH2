@@ -72,7 +72,7 @@ if (isset($_GET[debug])){ print_r($info_fila);}
               			}else{
               				echo " checked";
               			}
-               			echo " > Habilitado</label></div>";
+               			echo " > Activo</label></div>";
             				break;
           }
           ?>
