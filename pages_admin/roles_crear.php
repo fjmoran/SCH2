@@ -6,7 +6,8 @@
 <?php 
 $_GET[table] = "SCH2.Perfil";
 $_GET[select] = "nombrePerfil as Nombre, descripcionPerfil as Descripcion, activoPerfil as Estado";
-require("../recursos/zhi/insert_table_generic.php") 
+
+require("../recursos/zhi/insert_table_generic.php");
 
 ?>
 </div><!-- col-md-11 -->

@@ -1,6 +1,7 @@
 <?php
 
 require_once "CreaConnv2.php";
+require "auth.php";
 
 $select = "select ";
 
@@ -30,6 +31,9 @@ if (isset($_GET[debug])) {
 }
 
 $info_campo = $rs->fetch_fields();
+if (isset($_GET[debug])){ print_r($info_campo);}
+$info_fila = $rs->fetch_assoc();
+if (isset($_GET[debug])){ print_r($info_fila);}
 
 ?>
 	<form role="form">
@@ -46,19 +50,29 @@ $info_campo = $rs->fetch_fields();
         echo "====================</br>";
       }
 ?>
-<div class="form-group">    
+<div class="form-group">
           <?php 
           switch ($valor->type) {
           	case 252:
           	case 253:	echo "<label for=\"".$valor->orgname."\">".$valor->name.":</label>
-          <input id=\"".$valor->orgname."\" class=\"form-control\" type=\"text\" >";
+          	<input id=\"".$valor->orgname."\" class=\"form-control\" type=\"text\" name=\"".$valor->orgname."\"";
+          						if ((isset($_GET[where])) and ($rs->num_rows)){
+          							echo "value=\"".$info_fila[$valor->name]."\"";
+          						}
+          						echo " >";
           						break;
-          	case 1:	echo "<label for=\"".$valor->orgname."\">".$valor->name.":</label>           
-          <div class=\"checkbox\">
-            <label>
-              <input type=\"checkbox\" value=\"".$value->name."\" checked>
-              Habilitado
-            </label>";
+          	case 1:	echo "<label for=\"".$valor->orgname."\">".$valor->name.":</label>
+          	<div class=\"checkbox\">
+          	<label>
+          	<input type=\"checkbox\" value=\"".$valor->name."\" name=\"".$valor->orgname ."\"";
+              			if ((isset($_GET[where])) and ($rs->num_rows)){
+              				if ($info_fila[$valor->name]){
+              					echo "checked";
+              				}
+              			}else{
+              				echo " checked";
+              			}
+               			echo " > Habilitado</label>";
             				break;
           }
           ?>
