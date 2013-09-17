@@ -72,7 +72,7 @@ if (isset($_GET[debug])){ print_r($info_fila);}
               			}else{
               				echo " checked";
               			}
-               			echo " > Habilitado</label>";
+               			echo " > Habilitado</label></div>";
             				break;
           }
           ?>
@@ -80,7 +80,6 @@ if (isset($_GET[debug])){ print_r($info_fila);}
       <?php
       }
       ?>
-        </div> 
     </div>
     <div class="col-md-6"> <!-- columna vacia -->
     </div>
