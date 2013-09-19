@@ -13,7 +13,7 @@
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_tipo"><span class="glyphicon glyphicon-chevron-right"></span> Tipos de materias</a></li>       
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_tar"><span class="glyphicon glyphicon-chevron-right"></span> Tarifas por materia</a></li>   
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#fact_estdo"><span class="glyphicon glyphicon-chevron-right"></span> Estados de facturas</a></li>
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mon_mod"><span class="glyphicon glyphicon-chevron-right"></span> Tipos de monedas</a></li>
+        <li onclick="$('#cuerpo').load('pages_admin/mon_mod.php');"><a href="#mon_mod"><span class="glyphicon glyphicon-chevron-right"></span> Tipos de monedas</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#feriados"><span class="glyphicon glyphicon-chevron-right"></span> Feriados legales</a></li> 
         <li class="nav-header">Información del Sistema</li>
         <li onclick="$('#cuerpo').load('pages_admin/version.php');"><a href="#version"><span class="glyphicon glyphicon-chevron-right"></span> Versión</a></li>  
