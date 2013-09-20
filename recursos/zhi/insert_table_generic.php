@@ -36,7 +36,7 @@ $info_fila = $rs->fetch_assoc();
 if (isset($_GET[debug])){ print_r($info_fila);}
 
 ?>
-	<form role="form">
+	<form role="form" method="POST" action="recursos/zhi/insert_generic.php">
     <div class="row"> 
       <div class="col-md-6">
         <?php
@@ -93,4 +93,6 @@ if (isset($_GET[debug])){ print_r($info_fila);}
       </p>
     </div>
   </div> 
+  <input type="hidden" name="table" value="<?php echo $_GET[table]; ?>">
+  <input type="hidden" name="select" value="<?php echo $_GET[select]; ?>">
 </form>	
