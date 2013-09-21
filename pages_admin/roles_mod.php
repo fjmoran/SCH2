@@ -1,7 +1,14 @@
+<?php
+
+require_once "../recursos/zhi/CreaConnv2.php";
+require "../recursos/zhi/auth.php";
+
+?>
 <div class="col-md-11">
  	<h2>Roles</h2>
 	<h5>Administración de roles</h5>
-
+	<?php echo "Con PHP </br>"; ?>
+	
 	<br>
 		<a onclick="$('#cuerpo').load('pages_admin/roles_crear.php');" href="#roles_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
@@ -16,7 +23,45 @@
 	    </tr>
 	  </thead>
 	  <tbody>
-	    <tr>
+	  	<?php
+		  	$query = "select * from SCH2.Perfil order by idPerfil";
+		  	if ($rs = $mysqli->query($query)){
+		  		if ($rs->num_rows > 0){
+		  			echo "En if num_rows</br>";
+		  			while($row = $rs->fetch_assoc()){
+		  				echo "<tr>\n";
+	  					echo "<td>".$row[nombrePerfil]."</td>\n";
+	  					echo "<td>".$row[descripcionPerfil]."</td>\n";
+		  				echo "<td><span class=\"label ";
+		  				if ($row[activoPerfil]){
+		  					echo "label-success";
+		  				}else {
+		  					echo "label-danger";
+		  				}
+		  				echo "\">";
+		  				if ($row[activoPerfil]){
+		  					echo "Activo";
+		  				}else {
+		  					echo "Inactivo";
+		  				}
+		  				echo "</span></td>\n";
+		  				echo "<td>\n";
+		  				echo "<a onclick=\"$('#cuerpo').load('pages_admin/roles_editar.php?idPerfil=".$row[idPerfil]."');\" href=\"#roles_editar\">";
+		  				echo "<span class=\"glyphicon glyphicon-pencil\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Editar\"></span></a>";
+		  				if ($row[activoPerfil]){
+		  					echo "&nbsp;<span class=\"glyphicon glyphicon-remove-circle\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span>";
+		  				}else {
+		  					echo "&nbsp;<span class=\"glyphicon glyphicon-refresh\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span>";
+		  				}
+		  				echo "</td>\n";	  					
+		  				echo "</tr>\n";
+		  			}
+		  		}
+		  	}else{
+		  		echo "Falló al ejecutar la consulta: (". $mysqli->errno .") ". $mysqli->error;
+		  	}
+	  	?>
+	    <!-- <tr>
 	      <td>Adminsitrador del Sistema</td>    	
 	      <td>Tiene acceso a todas las funcionalidades del sistema</td>
 	      <td><span class="label label-success">Activo</span></td>
@@ -84,7 +129,7 @@
 	      <td><span class="label label-success">Activo</span></td>
 	      <td><a onclick="$('#cuerpo').load('pages_admin/roles_editar.php');" href="#roles_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
 	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
-	    </tr>    
+	    </tr> -->   
 	  </tbody>
 	</table>
 
