@@ -31,7 +31,7 @@ require "recursos/zhi/auth.php";
 	<?php
 	include('footer.php');
 	?>
-
+<iframe name="IframeOutput" style="display:none;"></iframe>
  <!-- javascript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->

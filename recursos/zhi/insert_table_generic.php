@@ -36,7 +36,7 @@ $info_fila = $rs->fetch_assoc();
 if (isset($_GET[debug])){ print_r($info_fila);}
 
 ?>
-	<form role="form" method="POST" action="recursos/zhi/insert_generic.php">
+	<form role="form" method="POST" action="recursos/zhi/insert_generic.php" target="IframeOutput">
     <div class="row"> 
       <div class="col-md-6">
         <?php
@@ -64,7 +64,7 @@ if (isset($_GET[debug])){ print_r($info_fila);}
           	case 1:	echo "<label for=\"".$valor->orgname."\">".$valor->name.":</label>
           	<div class=\"checkbox\">
           	<label>
-          	<input type=\"checkbox\" value=\"".$valor->name."\" name=\"".$valor->orgname ."\"";
+          	<input type=\"checkbox\" value=\"1\" name=\"".$valor->orgname ."\"";
               			if ((isset($_GET[where])) and ($rs->num_rows)){
               				if ($info_fila[$valor->name]){
               					echo "checked";
@@ -95,4 +95,6 @@ if (isset($_GET[debug])){ print_r($info_fila);}
   </div> 
   <input type="hidden" name="table" value="<?php echo $_GET[table]; ?>">
   <input type="hidden" name="select" value="<?php echo $_GET[select]; ?>">
+  <input type="hidden" name="jquery" value="<?php echo $_GET[jquery];?>">
+  
 </form>	

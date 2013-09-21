@@ -1,13 +1,17 @@
 <?php
 
-require "CreaConnv2.php";
-#require "auth.php";
+require_once "CreaConnv2.php";
+require "auth.php";
 
-echo "Insert Generic</br>";
+if ((isset($_GET[debug]))||(isset($_POST[debug]))) { $debug = TRUE; } else {$debug = FALSE;}
+	
+if ($debug)	{echo "Insert Generic</br>";}
 
-$select_all = "select * from ".$_POST[table].";";
-echo $select_all;
-echo "</br>";
+$select_all = "select * from ".$_POST[table]." LIMIT 1;";
+if ($debug) {
+	echo $select_all;
+	echo "</br>";
+}
 
 $select = "select ";
 if (isset($_POST[select])){
@@ -16,26 +20,91 @@ if (isset($_POST[select])){
 	$select = $select."*";
 }
 
-$select = $select." from ".$_POST[table].";";
-echo $select;
-echo "</br>";
+$select = $select." from ".$_POST[table]." LIMIT 1;";
+if ($debug) {
+	echo $select;
+	echo "</br>";
+}
 
 $select_all = $select_all.$select;
 
 if ($mysqli->multi_query($select_all)) {
-	echo "despues de query";
-	echo "</br>";
+	if ($debug) {
+		echo "despues de query";
+		echo "</br>";
+	}
 	$resultado_tabla_completa = $mysqli->store_result();
 	$mysqli->next_result();
 	$resultado_tabla_select = $mysqli->store_result();
-	echo "Despues del store result";
-	echo "</br>";
+	if ($debug) {
+		echo "Despues del store result";
+		echo "</br>";
+	}
 	$info_tabla = $resultado_tabla_completa->fetch_fields();
-	print_r($info_tabla);
-	echo "</br>";
+	if ($debug) {
+		print_r($info_tabla);
+		echo "</br>";
+	}
 	$info_select = $resultado_tabla_select->fetch_fields();	
-	print_r($info_select);
-	echo "</br>";
+	if ($debug) {
+		print_r($info_select);
+		echo "</br>";
+	}
+	$VALUES = array();
+	foreach ($info_tabla as $campo_tabla){
+		$salida = 1;
+		foreach ($info_select as $campo_select){
+			if ($campo_tabla->orgname == $campo_select->orgname){
+				if ($debug) {
+					echo "campo_select ".$campo_select->orgname."=".$_POST[$campo_select->orgname];
+					echo "</br>";
+				}
+				array_push($VALUES,$mysqli->real_escape_string($_POST[$campo_select->orgname])); 
+				$salida = 0;
+				break;
+			}
+		}
+		if ($salida == 1){
+			if ($debug){
+				echo "campo_tabla ".$campo_tabla->orgname."=NULL";
+				echo "</br>";
+			}
+			array_push($VALUES,"NULL"); 
+		}
+	}
+	
+	if ($debug) {
+		print_r($VALUES);
+		echo "</br>";
+	}
+	
+	$list_value = "('";
+	$list_value .= implode("','",$VALUES);
+	$list_value .="')";
+	$insert = "INSERT INTO ".$_POST[table]." VALUES ".$list_value;
+	if ($debug){
+		echo $insert;
+		echo "</br>";
+	}
+	
+	$resultado_tabla_select->free();
+	$resultado_tabla_completa->free();
+	
+	if ($mysqli->query($insert) === TRUE){
+		$ID = $mysqli->insert_id;
+	}
+
+echo "<html>
+	<body>
+	<p>Se insertado con exito en la tabla ".$_POST[table]." con el id ".$ID." </p>
+	
+	<script src=\"recursos/jquery/jquery-1.10.2.min.js\"></script>    
+  <script src=\"recursos/bootstrap3/js/bootstrap.min.js\"></script>
+	<script type=\"text/javascript\">
+		parent.".$_POST[jquery]."
+	</script>
+	</body>
+</html>";
 	
  } else{
 	echo "Falló al ejecutar la consulta: (". $mysqli->errno .") ". $mysqli->error;
