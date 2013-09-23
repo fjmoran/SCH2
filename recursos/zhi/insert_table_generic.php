@@ -88,8 +88,8 @@ if (isset($_GET[debug])){ print_r($info_fila);}
   <div class="row pull-right"> <!-- fila para botones -->
     <div class="col-md-12">
       <p>
-        <button class="btn btn-default">Cancelar</button>
-        <button class="btn btn-primary">Guardar</button>
+        <button class="btn btn-default" type="reset">Cancelar</button>
+        <button class="btn btn-primary" type="submit">Guardar</button>
       </p>
     </div>
   </div> 
