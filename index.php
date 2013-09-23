@@ -50,7 +50,7 @@ require "recursos/zhi/auth.php";
 	include('footer.php');
 	?>
 
-<iframe name="IframeOutput" style="display:none;"></iframe>
+<iframe name="IframeOutput" class="hide"></iframe>
 
  <!-- javascript
   ================================================== -->
