@@ -7,7 +7,6 @@ require "../recursos/zhi/auth.php";
 <div class="col-md-11">
  	<h2>Roles</h2>
 	<h5>Administración de roles</h5>
-	<?php echo "Con PHP </br>"; ?>
 	
 	<br>
 		<a onclick="$('#cuerpo').load('pages_admin/roles_crear.php');" href="#roles_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
@@ -27,7 +26,7 @@ require "../recursos/zhi/auth.php";
 		  	$query = "select * from SCH2.Perfil order by idPerfil";
 		  	if ($rs = $mysqli->query($query)){
 		  		if ($rs->num_rows > 0){
-		  			echo "En if num_rows</br>";
+		  			 // echo "En if num_rows</br>";
 		  			while($row = $rs->fetch_assoc()){
 		  				echo "<tr>\n";
 	  					echo "<td>".$row[nombrePerfil]."</td>\n";
@@ -61,75 +60,7 @@ require "../recursos/zhi/auth.php";
 		  		echo "Falló al ejecutar la consulta: (". $mysqli->errno .") ". $mysqli->error;
 		  	}
 	  	?>
-	    <!-- <tr>
-	      <td>Adminsitrador del Sistema</td>    	
-	      <td>Tiene acceso a todas las funcionalidades del sistema</td>
-	      <td><span class="label label-success">Activo</span></td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/roles_editar.php');" href="#roles_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Rol 2</td>      	
-	      <td>Este es el rol 2</td>
-	      <td><span class="label label-danger">Inactivo</span></td>      
-	      <td><span class="glyphicon glyphicon-refresh" rel="tooltip" data-toggle="tooltip" title="Reactivar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Rol 3</td>      	
-	      <td>Este es el rol 3</td>
-	      <td><span class="label label-success">Activo</span></td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/roles_editar.php');" href="#roles_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Rol 4</td>      	
-	      <td>Este es el rol 4</td>
-	      <td><span class="label label-success">Activo</span></td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/roles_editar.php');" href="#roles_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Rol 5</td>      	
-	      <td>Este es el rol 5</td>
-	      <td><span class="label label-success">Activo</span></td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/roles_editar.php');" href="#roles_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Rol 6</td>      	
-	      <td>Este es el rol 6</td>
-	      <td><span class="label label-success">Activo</span></td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/roles_editar.php');" href="#roles_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Rol 7</td>      	
-	      <td>Este es el rol 7</td>
-	      <td><span class="label label-success">Activo</span></td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/roles_editar.php');" href="#roles_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Rol 8</td>      	
-	      <td>Este es el rol 8</td>
-	      <td><span class="label label-success">Activo</span></td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/roles_editar.php');" href="#roles_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Rol 2</td>      	
-	      <td>Este es el rol 2</td>
-	      <td><span class="label label-success">Activo</span></td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/roles_editar.php');" href="#roles_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Rol 9</td>      	
-	      <td>Este es el rol 9</td>
-	      <td><span class="label label-success">Activo</span></td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/roles_editar.php');" href="#roles_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
-	    </tr> -->   
+
 	  </tbody>
 	</table>
 
@@ -145,13 +76,7 @@ require "../recursos/zhi/auth.php";
 	  </ul>
 	</div>
 
-
-
-
-
 </div><!-- col-md-11 -->
-
-
 
     <script type="text/javascript"> 
       
