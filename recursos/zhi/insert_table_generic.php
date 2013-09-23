@@ -88,7 +88,7 @@ if (isset($_GET[debug])){ print_r($info_fila);}
   <div class="row pull-right"> <!-- fila para botones -->
     <div class="col-md-12">
       <p>
-        <button class="btn btn-default" type="reset">Cancelar</button>
+        <button class="btn btn-default" type="reset" onclick= "<?php echo ($_GET[jquery]); ?>" >Cancelar</button>
         <button class="btn btn-primary" type="submit">Guardar</button>
       </p>
     </div>
