@@ -23,7 +23,7 @@ require "../recursos/zhi/auth.php";
 	  </thead>
 	  <tbody>
 	  	<?php
-		  	$query = "select * from SCH2.Perfil order by idPerfil";
+		  	$query = "select * from SCH2.Perfil order by activoPerfil DESC, idPerfil";
 		  	if ($rs = $mysqli->query($query)){
 		  		if ($rs->num_rows > 0){
 		  			 // echo "En if num_rows</br>";
