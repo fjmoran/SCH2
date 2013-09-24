@@ -5,7 +5,7 @@
 <?php 
 $_GET[table] = "SCH2.Usuario";
 $_GET[select] = "nombreUsuario as Nombre, userUsuario as Usuario, claveUsuario as Clave, correoUsuario as Correo, telefonoUsuario as Telefono, celularUsuario as Movil, activoUsuario as Estado, Perfil_idPerfil as Rol";
-$_GET[jquery] = "$('#cuerpo').load('pages_admin/user_mod.php');";
+$_GET[jquery] = "$('#cuerpo').load('pages_admin/usr_mod.php');";
 
 require("../recursos/zhi/insert_table_generic.php");
 
