@@ -98,7 +98,7 @@ $rs->free();
           			$select_list = "select ".$info_fk[REFERENCED_COLUMN_NAME]." as id, nombre".$info_fk[REFERENCED_TABLE_NAME]." as nombre from ".$schema.".".$info_fk[REFERENCED_TABLE_NAME]." where activo".$info_fk[REFERENCED_TABLE_NAME]."='1'";
           			if (isset($_GET[debug])) { echo "Query Foreign Key ".$select_list."</br>"; }
           			$rs_list_fk = $mysqli->query($select_list);
-          			echo "<label for=\"".$valor->orgname."\">".$valor->name.":</label><select id=\"".$valor->orgname."\" class=\"form-control\">";
+          			echo "<label for=\"".$valor->orgname."\">".$valor->name.":</label><select name=\"".$valor->orgname."\" class=\"form-control\">";
           			while ($list_fk=$rs_list_fk->fetch_assoc()) {
               		echo "<option value=\"".$list_fk[id]."\">".$list_fk[nombre]."</option>";
               	}
@@ -132,5 +132,6 @@ $rs->free();
   <input type="hidden" name="table" value="<?php echo $_GET[table]; ?>">
   <input type="hidden" name="select" value="<?php echo $_GET[select]; ?>">
   <input type="hidden" name="jquery" value="<?php echo $_GET[jquery];?>">
+    <input type="hidden" name="debug" value="1">
   
 </form>	
