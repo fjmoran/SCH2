@@ -1,5 +1,5 @@
 <div class="col-md-11">
- 	<h2>Reportes del Sistema</h2>
+ 	<h2>Cuadro de Mando</h2>
  	<h5>Esto es un texto de demo.</h5>
  	<div class="row">
 	 	<div class="col-md-6">
