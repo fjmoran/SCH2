@@ -98,8 +98,13 @@ body {
 }
 
 table.table tr:hover td {
-background-color: #e5e3e9;
-font-weight: bold;
+  background-color: #e5e3e9;
+  font-weight: bold;
+}
+
+.graph-report {
+  border: 1px solid #E7E7E7; 
+  border-radius: 5px 5px 5px 5px;
 }
 
 /* Custom page CSS
