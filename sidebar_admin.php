@@ -26,7 +26,8 @@
 
       <div class="btn-group pull-right">
         <a class="btn btn-default" href="index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a>
-        <a class="btn btn-default" href="admin.php"><span class="glyphicon glyphicon-wrench"></span> Administración</a>
+        <a class="btn btn-default" href="informes.php"><span class="glyphicon glyphicon-file"></span> Informes</a>          
+        <a class="btn btn-default" href="admin.php"><span class="glyphicon glyphicon-wrench"></span> Administración</a>       
         <a class="btn btn-default" href="login.php"><span class="glyphicon glyphicon-off"></span> Salir</a>
       </div>
       

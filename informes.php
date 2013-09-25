@@ -26,23 +26,14 @@ require "recursos/zhi/auth.php";
   <body>
 	<?php 
 	include('header.php');
-	include('sidebar.php');
+	include('sidebar_informes.php');
 	?>
 
 	<div id="cuerpo">
 
    <?php 
-   /*
-    echo "<div class='alert alert-danger alert-dismissable col-md-8'> <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>";
-		echo "Flag de manejo de variables = ";
-		echo count($_SESSION) ."</br>";
-		echo "user = ".$_SESSION[userUsuario]."</br>";
-		echo "nombre = ".$_SESSION[nombreUsuario]."</br>";
-		echo "id = ".$_SESSION[idUsuario]."</br>";
-		echo "idperfil = ".$_SESSION[idperfilUsuario]."</br>";
-		echo "</div>"; */
 		
-   include('pages/default.php'); 
+   include('pages_informes/default.php'); 
    ?>
 
 	</div>
@@ -71,13 +62,6 @@ require "recursos/zhi/auth.php";
           $('ul.bs-sidenav > li').removeClass('active');
           $(this).addClass('active');                
       }); 
-      /* Carousel init */
-      $('.carousel').carousel({
-        interval: 4500
-      });
-
-      $('.carousel').carousel('cycle');
- 
 
     })
   </script>

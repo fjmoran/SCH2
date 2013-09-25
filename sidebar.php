@@ -6,15 +6,7 @@
         <li class="nav-header">Ingreso</li>
         <li onclick="$('#cuerpo').load('pages/ing_trabajos.php');"><a href="#ing_trabajos"><span class="glyphicon glyphicon-chevron-right"></span> Trabajos</a></li>  <!-- Muestra menu activo-->
         <li onclick="$('#cuerpo').load('pages/ing_gastos.php');"><a href="#ing_gastos"><span class="glyphicon glyphicon-chevron-right"></span> Gastos</a></li>
-        <li onclick="$('#cuerpo').load('pages/ing_abonos.php');"><a href="#ing_abonos"><span class="glyphicon glyphicon-chevron-right"></span> Abonos</a></li>
-        <li class="nav-header">Informes</li>
-        <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_horascli"><span class="glyphicon glyphicon-chevron-right"></span> Horas cliente</a></li>
-        <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_horasabg"><span class="glyphicon glyphicon-chevron-right"></span> Horas abogado</a></li>
-        <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_gastoscli"><span class="glyphicon glyphicon-chevron-right"></span> Gastos cliente</a></li>
-        <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_gastosabg"><span class="glyphicon glyphicon-chevron-right"></span> Gastos abogado</a></li>
-        <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_horas"><span class="glyphicon glyphicon-chevron-right"></span> Consolidado de horas</a></li>
-        <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_personal"><span class="glyphicon glyphicon-chevron-right"></span> Personal</a></li>
-        <li onclick="$('#cuerpo').load('pages/default.php');"><a href="#inf_horasmat"><span class="glyphicon glyphicon-chevron-right"></span> Horas materia</a></li>  
+        <li onclick="$('#cuerpo').load('pages/ing_abonos.php');"><a href="#ing_abonos"><span class="glyphicon glyphicon-chevron-right"></span> Abonos</a></li> 
         <li class="nav-header">Clientes</li>
         <li onclick="$('#cuerpo').load('pages/cli_buscar.php');"><a href="#cli_buscar"><span class="glyphicon glyphicon-chevron-right"></span> Buscar</a></li>
         <li onclick="$('#cuerpo').load('pages/cli_crear.php');"><a href="#cli_crear"><span class="glyphicon glyphicon-chevron-right"></span> Crear</a></li>
@@ -33,6 +25,7 @@
 
     <div class="btn-group pull-right">
       <a class="btn btn-default" href="index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a>
+      <a class="btn btn-default" href="informes.php"><span class="glyphicon glyphicon-file"></span> Informes</a>      
       <a class="btn btn-default" href="admin.php"><span class="glyphicon glyphicon-wrench"></span> Administración</a>
       <a class="btn btn-default" href="login.php"><span class="glyphicon glyphicon-off"></span> Salir</a>
     </div>
