@@ -2,8 +2,10 @@
 
 require "CreaConnv2.php";
 
+$host  = $_SERVER['HTTP_HOST'];
+
 //Definir consulta
-$SSQL="SELECT idUsuario, userUsuario,nombreUsuario,Perfil_idPerfil FROM SCH2.Usuario WHERE Usuario.userUsuario='".$_POST['user']."' and Usuario.claveUsuario='".$_POST['password']."' and Usuario.activoUsuario=1";
+$SSQL="SELECT idUsuario, userUsuario,nombreUsuario,Perfil_idPerfil FROM ".$bd.".Usuario WHERE Usuario.userUsuario='".$_POST['user']."' and Usuario.claveUsuario='".$_POST['password']."' and Usuario.activoUsuario=1";
 //Realizar consulta echo "Antes de consulta ".$SSQL."</br>";
 
 if ($rs=$mysqli->query($SSQL)){
@@ -18,12 +20,12 @@ if ($rs=$mysqli->query($SSQL)){
 		$_SESSION[nombreUsuario]=$row[nombreUsuario];
 		$_SESSION[idperfilUsuario] = $row[Perfil_idPerfil];
 		$rs->close();
-		header ("Location:../../index.php");
+		header ("Location:http://".$host."/".$ini_array[basedir]."/index.php");
 	}
 	else
 	{
 		$rs->close();
-		header("Location:../../login.php?error=1&user=".$_POST[user]);
+		header("Location:http://".$host."/".$ini_array[basedir]."/login.php?error=1&user=".$_POST[user]);
 	}
 }
 
