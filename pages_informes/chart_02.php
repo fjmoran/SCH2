@@ -44,4 +44,4 @@ $(function () {
     });
 });
 </script>
-<div id="container2" style="min-width: 310px; height: 400px;"></div>
+<div id="container2" style="min-width: 310px; height: 350px;"></div>
