@@ -11,7 +11,7 @@
 	 	<div class="col-md-6">
 	 		<h5>Titulo 2</h5>
 	 		<div class="graph-report">
-	 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br>	
+	 			<?php include "pages_informes/chart_02.php"; ?>	
 	 		</div>
 	 	</div>
 	 </div>
