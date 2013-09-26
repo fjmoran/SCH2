@@ -68,6 +68,5 @@ $(function () {
     });
 </script>
 
-<div id="container1" style="min-width: 310px; height: 350px;"></div>
 
 

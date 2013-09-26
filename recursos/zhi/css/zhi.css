@@ -105,6 +105,15 @@ table.table tr:hover td {
 .graph-report {
   border: 1px solid #E7E7E7; 
   border-radius: 5px 5px 5px 5px;
+  min-width: 310px; 
+  height: 350px;
+}
+
+.graph-report-full {
+  border: 1px solid #E7E7E7; 
+  border-radius: 5px 5px 5px 5px;
+  min-width: 310px; 
+  height: 700px;
 }
 
 /* Custom page CSS

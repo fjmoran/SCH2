@@ -1,6 +1,6 @@
 <script type="text/javascript">
 $(function () {
-        $('#container').highcharts({
+        $('#container3').highcharts({
             chart: {
                 type: 'line'
             },
@@ -44,5 +44,4 @@ $(function () {
     });
 </script>
 
-<div id="container" style="min-width: 310px; height: 350px;"></div>
 
