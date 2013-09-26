@@ -19,13 +19,13 @@
 	 	<div class="col-md-6">
 	 		<h5>Titulo 3</h5>
 	 		<div class="graph-report">
-	 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br>	
+	 			<?php include "pages_informes/chart_03.php"; ?>		
 	 		</div>
 	 	</div>
 	 	<div class="col-md-6">
 	 		<h5>Titulo 4</h5>
 	 		<div class="graph-report">
-	 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br>	
+	 			<?php include "pages_informes/chart_04.php"; ?>			
 	 		</div>
 	 	</div>
 	 </div>	
