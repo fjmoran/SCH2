@@ -5,7 +5,7 @@
 	 	<div class="col-md-6">
 	 		<h5>Titulo 1</h5>
 	 		<div class="graph-report">
-	 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br>	
+	 			<?php include "pages_informes/chart_01.php"; ?>	
 	 		</div>
 	 	</div>
 	 	<div class="col-md-6">
