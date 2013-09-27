@@ -6,31 +6,31 @@ $(function () {
                 type: 'column'
             },
             title: {
-                text: 'Monthly Average Rainfall'
+                text: 'Reporte Mensual'
             },
             subtitle: {
-                text: 'Source: WorldClimate.com'
+                // text: 'Source: WorldClimate.com'
             },
             xAxis: {
                 categories: [
-                    'Jan',
+                    'Ene',
                     'Feb',
                     'Mar',
-                    'Apr',
+                    'Abr',
                     'May',
                     'Jun',
                     'Jul',
-                    'Aug',
+                    'Ago',
                     'Sep',
                     'Oct',
                     'Nov',
-                    'Dec'
+                    'Dic'
                 ]
             },
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Rainfall (mm)'
+                    text: 'Lluvia (mm)'
                 }
             },
             tooltip: {

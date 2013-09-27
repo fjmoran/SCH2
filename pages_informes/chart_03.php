@@ -5,17 +5,17 @@ $(function () {
                 type: 'line'
             },
             title: {
-                text: 'Monthly Average Temperature'
+                text: 'Promedio Mensual'
             },
             subtitle: {
-                text: 'Source: WorldClimate.com'
+                // text: 'Source: WorldClimate.com'
             },
             xAxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                categories: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
             },
             yAxis: {
                 title: {
-                    text: 'Temperature (°C)'
+                    text: 'Temperatura (°C)'
                 }
             },
             tooltip: {

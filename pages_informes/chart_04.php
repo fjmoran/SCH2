@@ -18,10 +18,10 @@ $(function () {
                 }
             },
             title: {
-                text: 'User supplied data'
+                text: 'Datos de Usuario'
             },
             subtitle: {
-                text: 'Click the plot area to add a point. Click a point to remove it.'
+                // text: 'Click the plot area to add a point. Click a point to remove it.'
             },
             xAxis: {
                 minPadding: 0.2,
@@ -30,7 +30,7 @@ $(function () {
             },
             yAxis: {
                 title: {
-                    text: 'Value'
+                    text: 'Valor'
                 },
                 minPadding: 0.2,
                 maxPadding: 0.2,

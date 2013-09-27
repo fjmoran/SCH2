@@ -4,7 +4,7 @@
 
 
 <?php 
-$_GET[table] = "SCH2.Moneda";
+$_GET[table] = $bd.".Moneda";
 $_GET[select] = "nombreMoneda as Simbolo, descripcionMoneda as Descripcion";
 $_GET[jquery] = "$('#cuerpo').load('pages_admin/mon_mod.php');";
 

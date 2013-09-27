@@ -7,7 +7,7 @@ $(function () {
             plotShadow: false
         },
         title: {
-            text: 'Browser market shares at a specific website, 2010'
+            text: 'Participación de mercado, Exploradores'
         },
         tooltip: {
     	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -38,7 +38,7 @@ $(function () {
                 },
                 ['Safari',    8.5],
                 ['Opera',     6.2],
-                ['Others',   0.7]
+                ['Otros',   0.7]
             ]
         }]
     });

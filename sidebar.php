@@ -4,7 +4,7 @@
     <div class="bs-sidebar">
       <ul class="nav bs-sidenav">
         <li class="nav-header">Ingreso</li>
-        <li onclick="$('#cuerpo').load('pages/ing_trabajos.php');"><a href="#ing_trabajos"><span class="glyphicon glyphicon-chevron-right"></span> Trabajos</a></li>  <!-- Muestra menu activo-->
+        <li onclick="$('#cuerpo').load('pages/ing_trabajos.php');"><a href="#ing_trabajos"><span class="glyphicon glyphicon-chevron-right"></span> Trabajos</a></li>
         <li onclick="$('#cuerpo').load('pages/ing_gastos.php');"><a href="#ing_gastos"><span class="glyphicon glyphicon-chevron-right"></span> Gastos</a></li>
         <li onclick="$('#cuerpo').load('pages/ing_abonos.php');"><a href="#ing_abonos"><span class="glyphicon glyphicon-chevron-right"></span> Abonos</a></li> 
         <li class="nav-header">Clientes</li>
