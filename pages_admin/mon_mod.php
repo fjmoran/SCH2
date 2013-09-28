@@ -3,9 +3,9 @@
 	<h5>Administración de monedas</h5>
 
 	<br>
-		<a onclick="$('#cuerpo').load('pages_admin/mon_crear.php');" href="#roles_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
+		<a onclick="$('#cuerpo').load('pages_admin/mon_crear.php');" href="#mon_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
-	<h4>Tipos de monedas disponibles</h4>
+	<h4>Tipos de moneda disponibles</h4>
 	<table class="table table-striped table-bordered table-condensed">
 	  <thead>
 	    <tr>
