@@ -7,11 +7,10 @@
         <li onclick="$('#cuerpo').load('pages_admin/usr_mod.php');"><a href="#usr_mod"><span class="glyphicon glyphicon-chevron-right"></span> Usuarios</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/roles_mod.php');"><a href="#roles_mod"><span class="glyphicon glyphicon-chevron-right"></span> Roles</a></li>  
         <li onclick="$('#cuerpo').load('pages_admin/roles_perm_mod.php');"><a href="#roles_perm_mod"><span class="glyphicon glyphicon-chevron-right"></span> Permisos por rol</a></li>       
-        <li onclick="$('#cuerpo').load('pages_admin/cli_tar_mod.php');"><a href="#cli_tar_mod"><span class="glyphicon glyphicon-chevron-right"></span> Tarifas por cliente</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/cto_tipo_mod.php');"><a href="#cto_tipo_mod"><span class="glyphicon glyphicon-chevron-right"></span> Tipos de contacto</a></li> 
         <li onclick="$('#cuerpo').load('pages_admin/mat_mod.php');"><a href="#mat_mod"><span class="glyphicon glyphicon-chevron-right"></span> Materias</a></li> 
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_tipo_mod"><span class="glyphicon glyphicon-chevron-right"></span> Tipos de materia</a></li>       
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#mat_tar_mod"><span class="glyphicon glyphicon-chevron-right"></span> Tarifas por materia</a></li>   
+        <li onclick="$('#cuerpo').load('pages_admin/mat_tipo_mod.php');"><a href="#mat_tipo_mod"><span class="glyphicon glyphicon-chevron-right"></span> Tipos de materia</a></li>       
+        <li onclick="$('#cuerpo').load('pages_admin/mat_tar_mod.php');"><a href="#mat_tar_mod"><span class="glyphicon glyphicon-chevron-right"></span> Tarifas por materia</a></li>   
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#fact_estdo_mod"><span class="glyphicon glyphicon-chevron-right"></span> Estados de factura</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/mon_mod.php');"><a href="#mon_mod"><span class="glyphicon glyphicon-chevron-right"></span> Tipos de moneda</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/abono_mod.php');"><a href="#abono_mod"><span class="glyphicon glyphicon-chevron-right"></span> Tipos de abono</a></li>
