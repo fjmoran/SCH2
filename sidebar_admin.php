@@ -17,9 +17,9 @@
         <li onclick="$('#cuerpo').load('pages_admin/tipo_gasto_mod.php');"><a href="#tipo_gasto_mod"><span class="glyphicon glyphicon-chevron-right"></span> Tipos de gasto</a></li>                
         <li onclick="$('#cuerpo').load('pages_admin/feriados_mod.php');"><a href="#feriados_mod"><span class="glyphicon glyphicon-chevron-right"></span> Feriados legales</a></li>
         <li class="nav-header">Parámetros</li>
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#pais_mod"><span class="glyphicon glyphicon-chevron-right"></span> Países</a></li>
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#region_mod"><span class="glyphicon glyphicon-chevron-right"></span> Regiones</a></li>
-        <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#comuna_mod"><span class="glyphicon glyphicon-chevron-right"></span> Comunas</a></li>
+        <li onclick="$('#cuerpo').load('pages_admin/pais_mod.php');"><a href="#pais_mod"><span class="glyphicon glyphicon-chevron-right"></span> Países</a></li>
+        <li onclick="$('#cuerpo').load('pages_admin/region_mod.php');"><a href="#region_mod"><span class="glyphicon glyphicon-chevron-right"></span> Regiones</a></li>
+        <li onclick="$('#cuerpo').load('pages_admin/comuna_mod.php');"><a href="#comuna_mod"><span class="glyphicon glyphicon-chevron-right"></span> Comunas</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#concep_mod"><span class="glyphicon glyphicon-chevron-right"></span> Conceptos</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#label_mod"><span class="glyphicon glyphicon-chevron-right"></span> Labels</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/default.php');"><a href="#menu_mod"><span class="glyphicon glyphicon-chevron-right"></span> Menú</a></li>
