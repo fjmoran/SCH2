@@ -1,6 +1,6 @@
 <div class="col-md-11">
  <h2>Crear Región</h2>
- <h5>Creación de nuevas regione en el sistema</h5><br>
+ <h5>Creación de nuevas regiones en el sistema</h5><br>
 
 
 <?php 
