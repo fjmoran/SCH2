@@ -15,6 +15,8 @@ require "recursos/zhi/auth.php";
     <link href='fonts/fonts.css' rel='stylesheet' type='text/css'>
     <!-- Fav Icon -->    
     <link href="img/favicon.ico" rel="SHORTCUT ICON">
+    <!-- jquery -->  
+    <script src="recursos/jquery/jquery-1.10.2.min.js"></script> 
 
   </head>
   <body>
@@ -34,9 +36,10 @@ require "recursos/zhi/auth.php";
 <iframe name="IframeOutput" class="hide"></iframe>
  <!-- javascript
   ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="recursos/jquery/jquery-1.10.2.min.js"></script>    
+  <!-- Placed at the end of the document so the pages load faster -->   
   <script src="recursos/bootstrap3/js/bootstrap.min.js"></script>
+  <script src="recursos/highcharts/js/highcharts.js"></script>
+  <script src="recursos/highcharts/js/modules/exporting.js"></script>
 
   <script type="text/javascript"> 
     
