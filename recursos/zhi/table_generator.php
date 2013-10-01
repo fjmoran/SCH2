@@ -91,9 +91,9 @@ $regen_select = false; // variable para indicar si hay que regenerar la query
 
 foreach ($keys as $key){
 	if (in_array($key,$column_select)){
-		echo "Se encontro la llave ".$key." </br>";
+		if (isset($_GET['debug'])) {echo "Se encontro la llave ".$key." </br>";}
 	}else{
-		echo "No se econtro la llave ".$key." </br>";
+		if (isset($_GET['debug'])) {echo "No se econtro la llave ".$key." </br>";}
 		$_GET['select'] .= ",".$key." ";
 		$regen_select = true;
 	}
@@ -132,6 +132,13 @@ $campos_tabla_info = $rs->fetch_fields();
 
 if (isset($_GET['debug'])) {echo "Listado de datos para la tabla : "; print_r($campos_tabla); echo "</br>";}
 if (isset($_GET['debug'])) {echo "Listado de campos que trae la tabla : ";print_r($campos_tabla_info); echo "</br>";}
+
+$campo_tipo = array(); // arreglo con los tipos de las columnas en la tabla
+foreach ($campos_tabla_info as $valor){
+	$campo_tipo[$valor->name]=$valor->type;
+}
+
+if (isset($_GET['debug'])) {echo "Listado de tipos de los campos que trae la tabla : ";print_r($campo_tipo); echo "</br>";}
 /*
 	while($row = $rs->fetch_assoc()){
 		$fila_tabla = "";
@@ -168,27 +175,64 @@ if (isset($_GET['debug'])) {echo "Listado de campos que trae la tabla : ";print_
 }*/
 
 foreach ($campos_tabla as $campo) {
-	echo "Campo a desplegar en la tabla :";
-	print_r ($campo);
-	echo "</br>";
+	if (isset($_GET['debug'])) {
+		echo "Campo a desplegar en la tabla :";
+		print_r ($campo);
+		echo "</br>";
+	}
 	$body_table .= "<tr>";
+	$activo = false;
 	foreach ($title_select as $columna){
+		if (isset($_GET['debug'])) {echo "Agregando ".$columna."</br>";}
 		$body_table .= "<td>";
-		$body_table .= $campo[$columna];
-		$body_table .= "<td>";
+		switch ($campo_tipo[$columna]){
+			case 3:
+			case 4:
+			case 253:
+			case 254:
+			case 252:
+				$body_table .= htmlentities($campo[$columna],ENT_SUBSTITUTE,'UTF-8');
+				break; 
+			case 1:
+				$body_table .= "<span class=\"label ";
+				if ($campo[$columna]){
+					$body_table .= "label-success";
+				}else {
+					$body_table .= "label-danger";
+				}
+				$body_table .= "\">";
+				if ($campo[$columna]){
+					$body_table .= "Activo";
+					$activo = true;
+				}else {
+					$body_table .= "Inactivo";
+					$activo = false;
+				}
+				$body_table .= "</span>";
+				break;
+		}
+		$body_table .= "</td>\n";
 	}
-	switch ($valor->type){
-		case 3:
-		case 4:
-		case 253:
-		case 254: 
-		case 1:
-	}
+		$id = "";
+		foreach ($keys as $key){
+			$id .= $key ."=".$campo[$key]."&";
+		}
+
+		$body_table .= "<td>\n";
+		$body_table .= "<a onclick=\"$('#cuerpo').load('pages_admin/roles_editar.php?".$id."');\" href=\"#roles_editar\">";
+		$body_table .= "<span class=\"glyphicon glyphicon-pencil\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Editar\"></span></a>";
+		if ($activo){
+			$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-remove-circle\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span>";
+		}else {
+			$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-refresh\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span>";
+		}
+		$body_table .= "</td>\n";	  				
+
 	$body_table .= "</tr>";
 
 }
 
-print_r($body_table);
+if (isset($_GET['debug'])) {print_r($body_table);}
 
 ?>
 <table class="table table-striped table-bordered table-condensed">
@@ -200,7 +244,9 @@ print_r($body_table);
 	    		if (isset($_GET['tabla']['width'])){
 	    			echo "width='".$title_width[$i]."'";
 	    		}
-	    		echo " >".$title_table[$i]."</th>\n";
+	    		echo " >";
+	    		echo htmlentities($title_table[$i],ENT_SUBSTITUTE,'UTF-8');
+	    		echo "</th>\n";
 	    	}
 	    ?>	
 	    	<th width=10%>Acciones</th>
