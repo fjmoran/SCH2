@@ -10,7 +10,7 @@ $table = substr($_GET['table'],strpos($_GET['table'],".")+1);
 $schema = substr($_GET['table'],0,strpos($_GET['table'],"."));
 $select = "select ";
 
-$body_table = array(); //se guardan los campos que van en body de la tabla
+$body_table = ""; //se guardan los campos que van en body de la tabla
 $header_table = array(); //se guardan los campos que van en header de la tabla
 
 $show_key = "show keys from ".$_GET['table']." where key_name = 'PRIMARY'";
@@ -167,9 +167,16 @@ if (isset($_GET['debug'])) {echo "Listado de campos que trae la tabla : ";print_
 	if (isset($_GET[debug])) {print_r ($campos_tabla); echo "</br>";}
 }*/
 
-
-foreach ($campos_tabla_info as $campo) {
-	//$row_table = "<tr>";
+foreach ($campos_tabla as $campo) {
+	echo "Campo a desplegar en la tabla :";
+	print_r ($campo);
+	echo "</br>";
+	$body_table .= "<tr>";
+	foreach ($title_select as $columna){
+		$body_table .= "<td>";
+		$body_table .= $campo[$columna];
+		$body_table .= "<td>";
+	}
 	switch ($valor->type){
 		case 3:
 		case 4:
@@ -177,9 +184,11 @@ foreach ($campos_tabla_info as $campo) {
 		case 254: 
 		case 1:
 	}
+	$body_table .= "</tr>";
 
 }
 
+print_r($body_table);
 
 ?>
 <table class="table table-striped table-bordered table-condensed">
@@ -200,6 +209,7 @@ foreach ($campos_tabla_info as $campo) {
 	  </thead>
 	  <tbody>
 	  	<?php
+	  	echo $body_table;
 	  	?>
 
 	  </tbody>

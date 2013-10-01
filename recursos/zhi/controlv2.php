@@ -14,18 +14,18 @@ if ($rs=$mysqli->query($SSQL)){
 		$row=$rs->fetch_array(MYSQLI_ASSOC);
 	//	echo $row[idUsuario].",". $row[userUsuario].",".$row[nombreUsuario].",".$row[Perfil_idPerfil];	
 		session_start();
-		$_SESSION[auth]=1;
-		$_SESSION[userUsuario]=$row[userUsuario];
-		$_SESSION[idUsuario]=$row[idUsuario];
-		$_SESSION[nombreUsuario]=$row[nombreUsuario];
-		$_SESSION[idperfilUsuario] = $row[Perfil_idPerfil];
+		$_SESSION['auth']=1;
+		$_SESSION['userUsuario']=$row['userUsuario'];
+		$_SESSION['idUsuario']=$row['idUsuario'];
+		$_SESSION['nombreUsuario']=$row['nombreUsuario'];
+		$_SESSION['idperfilUsuario'] = $row['Perfil_idPerfil'];
 		$rs->close();
-		header ("Location:http://".$host."/".$ini_array[basedir]."/index.php");
+		header ("Location:http://".$host."/".$ini_array['basedir']."/index.php");
 	}
 	else
 	{
 		$rs->close();
-		header("Location:http://".$host."/".$ini_array[basedir]."/login.php?error=1&user=".$_POST[user]);
+		header("Location:http://".$host."/".$ini_array['basedir']."/login.php?error=1&user=".$_POST['user']);
 	}
 }
 
