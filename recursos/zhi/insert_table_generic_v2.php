@@ -55,6 +55,7 @@ foreach ($info_campo as $valor) {
     printf("Tipo:          %d</br>", $valor->type);
   }
    switch ($valor->type) {
+    case 4:
     case 252:
     case 253: $campo_formulario = "<label for=\"".$valor->orgname."\">".$valor->name.":</label><input id=\"".$valor->orgname."\" class=\"form-control\" type=\"text\" name=\"".$valor->orgname."\"";
               if ((isset($_GET[where])) and ($rs->num_rows)){
@@ -93,7 +94,10 @@ foreach ($info_campo as $valor) {
           $query = "select REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME from information_schema.key_column_usage where column_name = '".$valor->orgname."' and table_name='".$table."'";
           if (isset($_GET[debug])) { echo $query."</br>"; }
           $rspk = $mysqli->query($query);
-          if ($rspk->num_rows > 1) {echo "Son mas de una fila </br>"; $rspk->data_seek(1);}
+          if ($rspk->num_rows > 1) {
+            if (isset($_GET[debug])) {echo "Son mas de una fila </br>"; }
+            $rspk->data_seek(1);
+          }
           $info = $rspk->fetch_assoc();
           if (isset($_GET[debug])) { print_r ($info); echo "</br>"; }
           $rspk->free();
