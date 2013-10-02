@@ -45,6 +45,10 @@ if (isset($_GET['where'])) {
 	$select = $select." where ".$_GET['where'];
 }
 
+if (isset($_GET['orderby'])) { 
+	$select = $select." orderby ".$_GET['orderby'];
+}
+
 if (isset($_GET['debug'])) {echo "query que viene del usuario ".$select ."</br>";}
 
 // Se ejecuta la consulta con el select solicitado por el usuario
@@ -115,6 +119,11 @@ if ($regen_select) {
 	}
 	if (isset($_GET['debug'])) {echo $select ."</br>";}
 
+	if (isset($_GET['orderby'])) { 
+		$select = $select." orderby ".$_GET['orderby'];
+	}
+	if (isset($_GET['debug'])) {echo $select ."</br>";}
+
 	// Se libera el result de la query con select del usuario
 	$rs->free();
 
@@ -139,40 +148,6 @@ foreach ($campos_tabla_info as $valor){
 }
 
 if (isset($_GET['debug'])) {echo "Listado de tipos de los campos que trae la tabla : ";print_r($campo_tipo); echo "</br>";}
-/*
-	while($row = $rs->fetch_assoc()){
-		$fila_tabla = "";
-		$fila_tabla .= "<tr>\n";
-		$fila_tabla .= "<td>".$row[nombrePerfil]."</td>\n";
-		$fila_tabla .= "<td>".$row[descripcionPerfil]."</td>\n";
-		$fila_tabla .= "<td><span class=\"label ";
-		if ($row[activoPerfil]){
-			$fila_tabla .= "label-success";
-		}else {
-			$fila_tabla .= "label-danger";
-		}
-		$fila_tabla .= "\">";
-		if ($row[activoPerfil]){
-			$fila_tabla .= "Activo";
-		}else {
-			$fila_tabla .= "Inactivo";
-		}
-		$fila_tabla .= "</span></td>\n";
-		$fila_tabla .= "<td>\n";
-		$fila_tabla .= "<a onclick=\"$('#cuerpo').load('pages_admin/roles_editar.php?idPerfil=".$row[idPerfil]."');\" href=\"#roles_editar\">";
-		$fila_tabla .= "<span class=\"glyphicon glyphicon-pencil\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Editar\"></span></a>";
-		if ($row[activoPerfil]){
-			$fila_tabla .= "&nbsp;<span class=\"glyphicon glyphicon-remove-circle\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span>";
-		}else {
-			$fila_tabla .= "&nbsp;<span class=\"glyphicon glyphicon-refresh\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span>";
-		}
-		$fila_tabla .= "</td>\n";	  					
-		$fila_tabla .= "</tr>\n";
-
-		array_push($campos_tabla,$fila_tabla);
-	}
-	if (isset($_GET[debug])) {print_r ($campos_tabla); echo "</br>";}
-}*/
 
 foreach ($campos_tabla as $campo) {
 	if (isset($_GET['debug'])) {
