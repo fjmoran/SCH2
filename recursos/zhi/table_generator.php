@@ -193,16 +193,27 @@ foreach ($campos_tabla as $campo) {
 		foreach ($keys as $key){
 			$id .= $key ."=".$campo[$key]."&";
 		}
-
-		$body_table .= "<td>\n";
-		$body_table .= "<a onclick=\"$('#cuerpo').load('pages_admin/roles_editar.php?".$id."');\" href=\"#roles_editar\">";
-		$body_table .= "<span class=\"glyphicon glyphicon-pencil\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Editar\"></span></a>";
-		if ($activo){
-			$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-remove-circle\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span>";
-		}else {
-			$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-refresh\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span>";
-		}
-		$body_table .= "</td>\n";	  				
+		if ($_GET['acciones']){
+				$body_table .= "<td>\n";
+				if (isset($_GET['editar'])){
+					$body_table .= "<a onclick=\"$('#cuerpo').load('".$_GET['editar']."?".$id."');\" href=\"#roles_editar\">";
+					$body_table .= "<span class=\"glyphicon glyphicon-pencil\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Editar\"></span></a>";
+				}
+				if (isset($_GET['activar'])){
+					if ($activo){
+						$body_table .= "<a onclick=\"$('#cuerpo').load('".$_GET['activar']."?".$id."&activar=1');\" href=\"#roles_editar\">";
+						$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-remove-circle\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span>";
+					}else {
+						$body_table .= "<a onclick=\"$('#cuerpo').load('".$_GET['activar']."?".$id."&activar=0');\" href=\"#roles_editar\">";
+						$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-refresh\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span>";
+					}
+				}
+				if (isset($_GET['borrar'])){
+					$body_table .= "<a onclick=\"$('#cuerpo').load('".$_GET['borrar']."?".$id."');\" href=\"#roles_editar\">";
+					$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-remove\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"\" data-original-title=\"Eliminar\"></span>\"";
+				}
+				$body_table .= "</td>\n";
+			}	  				
 
 	$body_table .= "</tr>";
 
@@ -224,8 +235,10 @@ if (isset($_GET['debug'])) {print_r($body_table);}
 	    		echo htmlentities($title_table[$i],ENT_SUBSTITUTE,'UTF-8');
 	    		echo "</th>\n";
 	    	}
-	    ?>	
-	    	<th width=10%>Acciones</th>
+	   		if (isset($_GET['acciones'])){
+	   			echo "<th width=10%>Acciones</th>\n";
+	   		}
+	   	?>	
 		</tr>
 
 	  </thead>
