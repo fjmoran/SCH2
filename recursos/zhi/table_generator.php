@@ -220,25 +220,7 @@ foreach ($campos_tabla as $campo) {
 
 				}
 			}
-/*			
-			if (isset($_GET['editar'])){
-				$body_table .= "<a onclick=\"$('#cuerpo').load('".$_GET['editar']."?".$id."');\" href=\"#roles_editar\">";
-				$body_table .= "<span class=\"glyphicon glyphicon-pencil\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Editar\"></span></a>";
-			}
-			if (isset($_GET['activar'])){
-				if ($activo){
-					$body_table .= "<a onclick=\"$('#cuerpo').load('".$_GET['activar']."?".$id."&activar=1');\" href=\"#roles_editar\">";
-					$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-remove-circle\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span>";
-				}else {
-					$body_table .= "<a onclick=\"$('#cuerpo').load('".$_GET['activar']."?".$id."&activar=0');\" href=\"#roles_editar\">";
-					$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-refresh\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span>";
-				}
-			}
-			if (isset($_GET['borrar'])){
-				$body_table .= "<a onclick=\"$('#cuerpo').load('".$_GET['borrar']."?".$id."');\" href=\"#roles_editar\">";
-				$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-remove\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"\" data-original-title=\"Eliminar\"></span>";
-			}
-*/			$body_table .= "</td>\n";
+			$body_table .= "</td>\n";
 		}	  				
 
 	$body_table .= "</tr>";
