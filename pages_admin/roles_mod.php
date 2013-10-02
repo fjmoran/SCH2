@@ -16,6 +16,7 @@ require "../recursos/zhi/auth.php";
 	<?php 
 	$_GET[table] = $bd.".Perfil";
 	$_GET[select] = "nombrePerfil as Nombre, descripcionPerfil as Descripcion, activoPerfil as Estado";
+	// $_GET[orderby] = "activoPerfil ASC, idPerfil"
 	$_GET[tabla][width] = "30%, 45%, 15%";
 	$_GET[tabla][title] = "Nombre del rol, Descripción, Estado";
 	require("../recursos/zhi/table_generator.php");
