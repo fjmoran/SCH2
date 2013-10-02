@@ -194,26 +194,52 @@ foreach ($campos_tabla as $campo) {
 			$id .= $key ."=".$campo[$key]."&";
 		}
 		if ($_GET['acciones']){
-				$body_table .= "<td>\n";
-				if (isset($_GET['editar'])){
-					$body_table .= "<a onclick=\"$('#cuerpo').load('".$_GET['editar']."?".$id."');\" href=\"#roles_editar\">";
-					$body_table .= "<span class=\"glyphicon glyphicon-pencil\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Editar\"></span></a>";
-				}
-				if (isset($_GET['activar'])){
-					if ($activo){
-						$body_table .= "<a onclick=\"$('#cuerpo').load('".$_GET['activar']."?".$id."&activar=1');\" href=\"#roles_editar\">";
-						$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-remove-circle\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span>";
-					}else {
-						$body_table .= "<a onclick=\"$('#cuerpo').load('".$_GET['activar']."?".$id."&activar=0');\" href=\"#roles_editar\">";
-						$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-refresh\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span>";
+		$body_table .= "<td>\n";			
+			if (isset($_GET['accion'])){
+				foreach ($_GET['accion'] as $key => $value) {
+					if(isset($_GET['debug'])) {
+						echo "Accion </br>";
+						echo "Llave : ".$key."</br>";
+						echo "Valor : ";
+						print_r($value);
+						echo "</br>";
 					}
+					if ($key == 'activar'){
+						if (isset($_GET['debug'])) { echo "En acción activar </br>";}
+						if ($activo){
+							$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."&activar=1');\" href=\"#roles_editar\">";
+							$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-remove-circle\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span></a>";
+						}else {
+							$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."&activar=0');\" href=\"#roles_editar\">";
+							$body_table .= "&nbsp;<span class=\"".$value['class']."\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span></a>";
+						}
+					}else{
+						$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."');\" href=\"#roles_editar\">";
+						$body_table .= "&nbsp;<span class=\"".$value['class']."\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"".$value['title']."\"></span></a>";
+					}
+
 				}
-				if (isset($_GET['borrar'])){
-					$body_table .= "<a onclick=\"$('#cuerpo').load('".$_GET['borrar']."?".$id."');\" href=\"#roles_editar\">";
-					$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-remove\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"\" data-original-title=\"Eliminar\"></span>\"";
+			}
+/*			
+			if (isset($_GET['editar'])){
+				$body_table .= "<a onclick=\"$('#cuerpo').load('".$_GET['editar']."?".$id."');\" href=\"#roles_editar\">";
+				$body_table .= "<span class=\"glyphicon glyphicon-pencil\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Editar\"></span></a>";
+			}
+			if (isset($_GET['activar'])){
+				if ($activo){
+					$body_table .= "<a onclick=\"$('#cuerpo').load('".$_GET['activar']."?".$id."&activar=1');\" href=\"#roles_editar\">";
+					$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-remove-circle\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span>";
+				}else {
+					$body_table .= "<a onclick=\"$('#cuerpo').load('".$_GET['activar']."?".$id."&activar=0');\" href=\"#roles_editar\">";
+					$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-refresh\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span>";
 				}
-				$body_table .= "</td>\n";
-			}	  				
+			}
+			if (isset($_GET['borrar'])){
+				$body_table .= "<a onclick=\"$('#cuerpo').load('".$_GET['borrar']."?".$id."');\" href=\"#roles_editar\">";
+				$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-remove\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"\" data-original-title=\"Eliminar\"></span>";
+			}
+*/			$body_table .= "</td>\n";
+		}	  				
 
 	$body_table .= "</tr>";
 
