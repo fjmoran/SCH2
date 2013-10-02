@@ -117,12 +117,11 @@ if ($regen_select) {
 	if (isset($_GET['where'])) { 
 		$select = $select." where ".$_GET['where'];
 	}
-	if (isset($_GET['debug'])) {echo $select ."</br>";}
 
 	if (isset($_GET['orderby'])) { 
 		$select = $select." orderby ".$_GET['orderby'];
 	}
-	if (isset($_GET['debug'])) {echo $select ."</br>";}
+	if (isset($_GET['debug'])) {echo "Query con PRIMARYKEY ".$select ."</br>";}
 
 	// Se libera el result de la query con select del usuario
 	$rs->free();
@@ -138,6 +137,8 @@ if ($rs->num_rows > 0){
 $campos_tabla = array();
 while ($row = $rs->fetch_assoc()) {array_push($campos_tabla,$row);}
 $campos_tabla_info = $rs->fetch_fields();
+
+$rs->free();
 
 if (isset($_GET['debug'])) {echo "Listado de datos para la tabla : "; print_r($campos_tabla); echo "</br>";}
 if (isset($_GET['debug'])) {echo "Listado de campos que trae la tabla : ";print_r($campos_tabla_info); echo "</br>";}
