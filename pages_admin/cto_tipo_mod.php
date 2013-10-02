@@ -6,6 +6,17 @@
 		<a onclick="$('#cuerpo').load('pages_admin/cto_tipo_crear.php');" href="#cto_tipo_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
 	<h4>Tipos de contacto disponibles</h4>
+
+	<?php 
+	$_GET[table] = $bd.".TipoContacto";
+	$_GET[select] = "nombreTipoContacto as Nombre, descripcionTipoContacto as Descripcion";
+	$_GET[orderby] = "nombreTipoContacto DESC";
+	$_GET[tabla][width] = "45%, 45%";
+	$_GET[tabla][title] = "Tipo, Descripción";
+	require("../recursos/zhi/table_generator.php");
+
+	?>
+
 	<table class="table table-striped table-bordered table-condensed">
 	  <thead>
 	    <tr>
