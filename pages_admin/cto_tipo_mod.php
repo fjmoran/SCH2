@@ -10,49 +10,19 @@
 	<?php 
 	$_GET['table'] = $bd.".TipoContacto";
 	$_GET['select'] = "nombreTipoContacto as Nombre, descripcionTipoContacto as Descripcion";
-	$_GET['orderby'] = "nombreTipoContacto DESC";
+	$_GET['orderby'] = "nombreTipoContacto ASC";
 	$_GET['tabla']['width'] = "45%, 45%";
 	$_GET['tabla']['title'] = "Tipo, Descripción";
 	$_GET['acciones'] = "true";
+	$_GET['accion']['editar']['URL'] = "pages_admin/cto_tipo_editar.php";
+	$_GET['accion']['editar']['title'] = "Editar";
+	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";	
+	$_GET['accion']['eliminar']['URL'] = "#";
+	$_GET['accion']['eliminar']['title'] = "Eliminar";
+	$_GET['accion']['eliminar']['class'] = "glyphicon glyphicon-remove";	
 
 	require("../recursos/zhi/table_generator.php");
 	?>
-
-	<table class="table table-striped table-bordered table-condensed">
-	  <thead>
-	    <tr>
-	      <th width=45%>Tipo</th>
-	      <th width=45%>Descripción</th>
-	      <th width=10%>Acciones</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <td>Gerente General</td>    	
-	      <td>Gerente General de la empresa</td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/cto_tipo_editar.php');" href="#cto_tipo_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Secretaria</td>      	
-	      <td>Secretaria del cliente</td>     
-	      <td><a onclick="$('#cuerpo').load('pages_admin/cto_tipo_editar.php');" href="#cto_tipo_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Influencia</td>      	
-	      <td>Ejerce influencia en el cliente</td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/cto_tipo_editar.php');" href="#cto_tipo_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Familiar</td>      	
-	      <td>Familiar del cliente</td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/cto_tipo_editar.php');" href="#cto_tipo_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-	    </tr>
-	  </tbody>
-	</table>
 
 	<div class="col-md-12 text-center">
 	  <ul class="pagination pagination-sm" >
