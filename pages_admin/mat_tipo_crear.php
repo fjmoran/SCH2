@@ -4,9 +4,9 @@
 
 
 <?php 
-$_GET[table] = $bd.".TipoMateria";
-$_GET[select] = "nombreTipoMateria as Nombre, descripcionTipoMateria as Descripcion, activoTipoMateria as Estado";
-$_GET[jquery] = "$('#cuerpo').load('pages_admin/mat_tipo_mod.php');";
+$_GET['table'] = $bd.".TipoMateria";
+$_GET['select'] = "nombreTipoMateria as Nombre, descripcionTipoMateria as Descripcion, activoTipoMateria as Estado";
+$_GET['jquery'] = "$('#cuerpo').load('pages_admin/mat_tipo_mod.php');";
 
 require("../recursos/zhi/insert_table_generic.php");
 

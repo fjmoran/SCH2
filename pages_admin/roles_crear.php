@@ -4,9 +4,9 @@
 
 
 <?php 
-$_GET[table] = $bd.".Perfil";
-$_GET[select] = "nombrePerfil as Nombre, descripcionPerfil as Descripcion, activoPerfil as Estado";
-$_GET[jquery] = "$('#cuerpo').load('pages_admin/roles_mod.php');";
+$_GET['table'] = $bd.".Perfil";
+$_GET['select'] = "nombrePerfil as Nombre, descripcionPerfil as Descripcion, activoPerfil as Estado";
+$_GET['jquery'] = "$('#cuerpo').load('pages_admin/roles_mod.php');";
 
 require("../recursos/zhi/insert_table_generic.php");
 

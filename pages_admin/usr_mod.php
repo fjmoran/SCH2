@@ -8,12 +8,12 @@
 	<h4>Usuarios del sistema</h4>
 
 	<?php 
-	$_GET[table] = $bd.".Usuario";
-	$_GET[select] = "nombreUsuario as Nombre, userUsuario as Usuario, Perfil_idPerfil as Rol, activoUsuario as Estado";
-	$_GET[orderby] = "activoUsuario DESC, nombreUsuario";
-	$_GET[tabla][width] = "25%, 25%, 25%, 15%";
-	$_GET[tabla][title] = "Nombre, Usuario, Rol, Estado";
-	$_GET[acciones] = "true";
+	$_GET['table'] = $bd.".Usuario";
+	$_GET['select'] = "nombreUsuario as Nombre, userUsuario as Usuario, Perfil_idPerfil as Rol, activoUsuario as Estado";
+	$_GET['orderby'] = "activoUsuario DESC, nombreUsuario";
+	$_GET['tabla']['width'] = "25%, 25%, 25%, 15%";
+	$_GET['tabla']['title'] = "Nombre, Usuario, Rol, Estado";
+	$_GET['acciones'] = "true";
 
 	require("../recursos/zhi/table_generator.php");
 	?>

@@ -4,9 +4,9 @@
 
 
 <?php 
-$_GET[table] = $bd.".Region";
-$_GET[select] = "Pais_idPais as Pais, nombreRegion as Region, codeRegion as Codigo, activoRegion as Estado";
-$_GET[jquery] = "$('#cuerpo').load('pages_admin/region_mod.php');";
+$_GET['table'] = $bd.".Region";
+$_GET['select'] = "Pais_idPais as Pais, nombreRegion as Region, codeRegion as Codigo, activoRegion as Estado";
+$_GET['jquery'] = "$('#cuerpo').load('pages_admin/region_mod.php');";
 
 require("../recursos/zhi/insert_table_generic.php");
 

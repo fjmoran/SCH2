@@ -14,12 +14,16 @@ require "../recursos/zhi/auth.php";
 	<h4>Roles del sistema</h4>
 
 	<?php 
-	$_GET[table] = $bd.".Perfil";
-	$_GET[select] = "nombrePerfil as Nombre, descripcionPerfil as Descripcion, activoPerfil as Estado";
-	$_GET[orderby] = "activoPerfil DESC, idPerfil";
-	$_GET[tabla][width] = "30%, 45%, 15%";
-	$_GET[tabla][title] = "Nombre del rol, Descripción, Estado";
-	$_GET[acciones] = "true";
+	$_GET['table'] = $bd.".Perfil";
+	$_GET['select'] = "nombrePerfil as Nombre, descripcionPerfil as Descripcion, activoPerfil as Estado";
+	$_GET['orderby'] = "activoPerfil DESC, idPerfil";
+	$_GET['tabla']['width'] = "30%, 45%, 15%";
+	$_GET['tabla']['title'] = "Nombre del rol, Descripción, Estado";
+	$_GET['acciones'] = "true";
+	$_GET['accion']['editar']['URL'] = "pages_admin/roles_editar.php";
+	$_GET['accion']['editar']['title'] = "Editar";
+	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";
+	$_GET['accion']['activar']['URL'] = "#";
 
 	require("../recursos/zhi/table_generator.php");
 	?>

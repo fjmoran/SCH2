@@ -4,9 +4,9 @@
 
 
 <?php 
-$_GET[table] = $bd.".Pais";
-$_GET[select] = "nombrePais as Pais, intcodePais as Codigo, activoPais as Estado";
-$_GET[jquery] = "$('#cuerpo').load('pages_admin/pais_mod.php');";
+$_GET['table'] = $bd.".Pais";
+$_GET['select'] = "nombrePais as Pais, intcodePais as Codigo, activoPais as Estado";
+$_GET['jquery'] = "$('#cuerpo').load('pages_admin/pais_mod.php');";
 
 require("../recursos/zhi/insert_table_generic.php");
 

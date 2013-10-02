@@ -4,9 +4,9 @@
 
 
 <?php 
-$_GET[table] = $bd.".EstadoFactura";
-$_GET[select] = "nombreEstadoFactura as Estado, descripcionEstadoFactura as Descripcion";
-$_GET[jquery] = "$('#cuerpo').load('pages_admin/fact_estdo_mod.php');";
+$_GET['table'] = $bd.".EstadoFactura";
+$_GET['select'] = "nombreEstadoFactura as Estado, descripcionEstadoFactura as Descripcion";
+$_GET['jquery'] = "$('#cuerpo').load('pages_admin/fact_estdo_mod.php');";
 
 require("../recursos/zhi/insert_table_generic.php");
 

@@ -8,12 +8,12 @@
 	<h4>Tipos de contacto disponibles</h4>
 
 	<?php 
-	$_GET[table] = $bd.".TipoContacto";
-	$_GET[select] = "nombreTipoContacto as Nombre, descripcionTipoContacto as Descripcion";
-	$_GET[orderby] = "nombreTipoContacto DESC";
-	$_GET[tabla][width] = "45%, 45%";
-	$_GET[tabla][title] = "Tipo, Descripción";
-	$_GET[acciones] = "true";
+	$_GET['table'] = $bd.".TipoContacto";
+	$_GET['select'] = "nombreTipoContacto as Nombre, descripcionTipoContacto as Descripcion";
+	$_GET['orderby'] = "nombreTipoContacto DESC";
+	$_GET['tabla']['width'] = "45%, 45%";
+	$_GET['tabla']['title'] = "Tipo, Descripción";
+	$_GET['acciones'] = "true";
 
 	require("../recursos/zhi/table_generator.php");
 	?>

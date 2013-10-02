@@ -4,9 +4,9 @@
 
 
 <?php 
-$_GET[table] = $bd.".TarifaMateria";
-$_GET[select] = "Materia_idMateria as Materia, Moneda_idMoneda as Moneda, valorTarifaMateria as Valor";
-$_GET[jquery] = "$('#cuerpo').load('pages_admin/mat_tar_mod.php');";
+$_GET['table'] = $bd.".TarifaMateria";
+$_GET['select'] = "Materia_idMateria as Materia, Moneda_idMoneda as Moneda, valorTarifaMateria as Valor";
+$_GET['jquery'] = "$('#cuerpo').load('pages_admin/mat_tar_mod.php');";
 
 require("../recursos/zhi/insert_table_generic.php");
 
