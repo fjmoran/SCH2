@@ -46,7 +46,7 @@ if (isset($_GET['where'])) {
 }
 
 if (isset($_GET['orderby'])) { 
-	$select = $select." orderby ".$_GET['orderby'];
+	$select = $select." order by ".$_GET['orderby'];
 }
 
 if (isset($_GET['debug'])) {echo "query que viene del usuario ".$select ."</br>";}
@@ -119,7 +119,7 @@ if ($regen_select) {
 	}
 
 	if (isset($_GET['orderby'])) { 
-		$select = $select." orderby ".$_GET['orderby'];
+		$select = $select." order by ".$_GET['orderby'];
 	}
 	if (isset($_GET['debug'])) {echo "Query con PRIMARYKEY ".$select ."</br>";}
 
