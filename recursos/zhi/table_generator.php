@@ -207,14 +207,14 @@ foreach ($campos_tabla as $campo) {
 					if ($key == 'activar'){
 						if (isset($_GET['debug'])) { echo "En acción activar </br>";}
 						if ($activo){
-							$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."&activar=1');\" href=\"#roles_editar\">";
+							$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."&activar=1');\" href=\"#".$table."_".$key."\">";
 							$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-remove-circle\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span></a>";
 						}else {
-							$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."&activar=0');\" href=\"#roles_editar\">";
+							$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."&activar=0');\" href=\"#".$table."_".$key."\">";
 							$body_table .= "&nbsp;<span class=\"glyphicon glyphicon-refresh\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span></a>";
 						}
 					}else{
-						$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."');\" href=\"#roles_editar\">";
+						$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."');\" href=\"".$table."_".$key."\">";
 						$body_table .= "&nbsp;<span class=\"".$value['class']."\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"".$value['title']."\"></span></a>";
 					}
 
