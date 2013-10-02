@@ -19,8 +19,9 @@ require "../recursos/zhi/auth.php";
 	$_GET[orderby] = "activoPerfil DESC, idPerfil";
 	$_GET[tabla][width] = "30%, 45%, 15%";
 	$_GET[tabla][title] = "Nombre del rol, Descripción, Estado";
-	require("../recursos/zhi/table_generator.php");
+	$_GET[acciones] = "true";
 
+	require("../recursos/zhi/table_generator.php");
 	?>
 
 	<div class="col-md-12 text-center">

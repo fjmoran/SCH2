@@ -13,8 +13,9 @@
 	$_GET[orderby] = "nombreTipoContacto DESC";
 	$_GET[tabla][width] = "45%, 45%";
 	$_GET[tabla][title] = "Tipo, Descripción";
-	require("../recursos/zhi/table_generator.php");
+	$_GET[acciones] = "true";
 
+	require("../recursos/zhi/table_generator.php");
 	?>
 
 	<table class="table table-striped table-bordered table-condensed">
