@@ -3,7 +3,7 @@
 if (isset($_GET['debug'])) { echo "Generador de tablas automatico </br>";}
 #Requiere el nombre de la tabla, el schema y la consulta a ejecutar, en caso que no exista consulta trae toda la tabla.
 
-#require_once ("auth.php");
+require_once ("auth.php");
 require_once("CreaConnv2.php");
 
 $table = substr($_GET['table'],strpos($_GET['table'],".")+1);
