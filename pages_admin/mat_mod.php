@@ -6,6 +6,22 @@
 		<a onclick="$('#cuerpo').load('pages_admin/mat_crear.php');" href="#mat_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
 	<h4>Materias disponibles</h4>
+
+	<?php 
+	$_GET['table'] = $bd.".Materia";
+	$_GET['select'] = "nombreMateria as Materia, Cliente_idCliente as Cliente, TipoMateria_idTipoMateria as TipoMateria, activoMateria as Estado";
+	$_GET['orderby'] = "Cliente_idCliente, nombreMateria";
+	$_GET['tabla']['width'] = "25%, 25%, 25%, 15%";
+	$_GET['tabla']['title'] = "Materia, Cliente, Tipo, Estado";
+	$_GET['acciones'] = "true";
+	$_GET['accion']['editar']['URL'] = "pages_admin/mat_editar.php";
+	$_GET['accion']['editar']['title'] = "Editar";
+	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";		
+	$_GET['accion']['activar']['URL'] = "pages_admin/mat_estado.php";	
+
+	require("../recursos/zhi/table_generator.php");
+	?>
+
 	<table class="table table-striped table-bordered table-condensed">
 	  <thead>
 	    <tr>

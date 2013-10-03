@@ -17,7 +17,7 @@
 	$_GET['accion']['editar']['URL'] = "pages_admin/cto_tipo_editar.php";
 	$_GET['accion']['editar']['title'] = "Editar";
 	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";	
-	$_GET['accion']['eliminar']['URL'] = "#";
+	$_GET['accion']['eliminar']['URL'] = "pages_admin/cto_tipo_del.php";
 	$_GET['accion']['eliminar']['title'] = "Eliminar";
 	$_GET['accion']['eliminar']['class'] = "glyphicon glyphicon-trash";	
 
