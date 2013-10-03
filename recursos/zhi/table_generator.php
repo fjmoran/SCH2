@@ -146,15 +146,16 @@ foreach ($fkeys as $fkey=>$value){
 			}
 		}else{
 				array_push ($left_join,"LEFT JOIN ".$value[0]." ON ".$value[0].".".$value[1]."=".$table.".".$fkey);
+				$pos = array_search($fkey,$column_select);
+				if(isset($_GET['debug'])) {echo "position : ".$pos."</br>valor : ".$column_select[$pos]."</br>";}
+				$title_select[$pos] = "nombre".$value[0];
+				$last_table = $value[0];
 			}
 		
 		if (!(isset($_GET['select']))) { $_GET['select'] = $table.".*";}
 		
 		$_GET['select'] .= ", ".$value[0].".nombre".$value[0]." ";
-		$pos = array_search($fkey,$column_select);
-		if(isset($_GET['debug'])) {echo "position : ".$pos."</br>valor : ".$column_select[$pos]."</br>";}
-		$title_select[$pos] = "nombre".$value[0];
-		$last_table = $value[0];
+
 		$regen_select = true;
 	}
 }
@@ -317,23 +318,9 @@ if (isset($_GET['debug'])) {print_r($body_table);}
 ?>
 <table class="table table-striped table-bordered table-condensed">
 	  <thead>
-	    <tr> 
 	    <?php
-	    	for($i = 0; $i < count($title_table); $i++){
-	    		echo "<th ";
-	    		if (isset($_GET['tabla']['width'])){
-	    			echo "width='".$title_width[$i]."'";
-	    		}
-	    		echo " >";
-	    		echo htmlentities($title_table[$i],ENT_SUBSTITUTE,'UTF-8');
-	    		echo "</th>\n";
-	    	}
-	   		if (isset($_GET['acciones'])){
-	   			echo "<th width=10% style=\"text-align: center; \">Acciones</th>\n";
-	   		}
+	    	echo $header_table;
 	   	?>	
-		</tr>
-
 	  </thead>
 	  <tbody>
 	  	<?php
