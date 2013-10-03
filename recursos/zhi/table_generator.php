@@ -34,7 +34,7 @@ $rs_show->free();
 $query_fk = "SELECT k.REFERENCED_TABLE_NAME, k.REFERENCED_COLUMN_NAME, k.COLUMN_NAME\n"
     . "FROM information_schema.TABLE_CONSTRAINTS i \n"
     . "LEFT JOIN information_schema.KEY_COLUMN_USAGE k ON i.CONSTRAINT_NAME = k.CONSTRAINT_NAME \n"
-    . "WHERE i.CONSTRAINT_TYPE ='FOREIGN KEY'AND i.TABLE_SCHEMA ='".$schema."' AND i.TABLE_NAME ='".$table."' order by k.REFERENCED_TABLE_NAME";
+    . "WHERE i.CONSTRAINT_TYPE ='FOREIGN KEY'AND i.TABLE_SCHEMA = database() AND i.TABLE_NAME ='".$table."' order by k.REFERENCED_TABLE_NAME";
 
 if (isset($_GET['debug'])) {echo "Query para buscar llaves foraneas ".$query_fk."</br>";}
 
@@ -151,7 +151,8 @@ foreach ($fkeys as $fkey=>$value){
 		if (!(isset($_GET['select']))) { $_GET['select'] = $table.".*";}
 		
 		$_GET['select'] .= ", ".$value[0].".nombre".$value[0]." ";
-		$pos = array_search($fkey,$title_select);
+		$pos = array_search($fkey,$column_select);
+		if(isset($_GET['debug'])) {echo "position : ".$pos."</br>valor : ".$column_select[$pos]."</br>";}
 		$title_select[$pos] = "nombre".$value[0];
 		$last_table = $value[0];
 		$regen_select = true;

@@ -8,7 +8,7 @@
 	<h4>Usuarios del sistema</h4>
 
 	<?php 
-	$_GET['table'] = $bd.".Usuario";
+	$_GET['table'] = $db.".Usuario";
 	$_GET['select'] = "nombreUsuario as Nombre, userUsuario as Usuario, Perfil_idPerfil as Rol, activoUsuario as Estado";
 	$_GET['orderby'] = "activoUsuario DESC, nombreUsuario";
 	$_GET['tabla']['width'] = "25%, 25%, 25%, 15%";
@@ -20,7 +20,8 @@
 	$_GET['accion']['tar']['URL'] = "pages_admin/usr_tar_mod.php";
 	$_GET['accion']['tar']['title'] = "Tarifa del Usuario";
 	$_GET['accion']['tar']['class'] = "glyphicon glyphicon-usd";	
-	$_GET['accion']['activar']['URL'] = "pages_admin/usr_estado.php";	
+	$_GET['accion']['activar']['URL'] = "pages_admin/usr_estado.php";
+	#$_GET['debug']=1;	
 
 	require("../recursos/zhi/table_generator.php");
 	?>
