@@ -206,7 +206,7 @@ $header_table = "<tr>\n";
 for($i = 0; $i < count($title_table); $i++){
 	$header_table.= "<th ";
 	if (isset($_GET['tabla']['width'])){
-		$title_table .= "width='".$title_width[$i]."'";
+		$header_table .= "width='".$title_width[$i]."'";
 	}
 	$header_table .= " >";
 	$header_table .= htmlentities($title_table[$i],ENT_SUBSTITUTE,'UTF-8');
