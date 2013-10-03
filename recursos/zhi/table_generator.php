@@ -298,7 +298,7 @@ foreach ($campos_tabla as $campo) {
 							$body_table .= "<span class=\"glyphicon glyphicon-refresh\" style=\"color: black; font-size:12px; padding-left:4px; \" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span></a>";
 						}
 					}else{
-						$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."');\" href=\"".$table."_".$key."\">";
+						$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."');\" href=\"#".$table."_".$key."\">";
 						$body_table .= "<span class=\"".$value['class']."\" style=\"color: black; font-size:12px; padding-left:4px; \" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"".$value['title']."\"></span></a>";
 					}
 
