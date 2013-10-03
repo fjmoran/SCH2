@@ -9,17 +9,15 @@
 
 	<?php 
 	$_GET['table'] = $bd.".Moneda";
-	$_GET['select'] = "nombreMoneda as Simbolo, descripcionMoneda as Descripcion";
-	$_GET['orderby'] = "nombreMoneda";
-	$_GET['tabla']['width'] = "45%, 45%";
-	$_GET['tabla']['title'] = "Símbolo, Descripción";
+	$_GET['select'] = "nombreMoneda as Simbolo, descripcionMoneda as Descripcion, activoMoneda as Estado";
+	$_GET['orderby'] = "activoMoneda DESC, nombreMoneda";
+	$_GET['tabla']['width'] = "35%, 40% 15%";
+	$_GET['tabla']['title'] = "Símbolo, Descripción, Estado";
 	$_GET['acciones'] = "true";
 	$_GET['accion']['editar']['URL'] = "pages_admin/mon_editar.php";
 	$_GET['accion']['editar']['title'] = "Editar";
 	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";	
-	$_GET['accion']['eliminar']['URL'] = "pages_admin/mon_del.php";
-	$_GET['accion']['eliminar']['title'] = "Eliminar";
-	$_GET['accion']['eliminar']['class'] = "glyphicon glyphicon-trash";	
+	$_GET['accion']['activar']['URL'] = "pages_admin/mon_estado.php";
 
 	require("../recursos/zhi/table_generator.php");
 	?>
