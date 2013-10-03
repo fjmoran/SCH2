@@ -213,7 +213,7 @@ for($i = 0; $i < count($title_table); $i++){
 	$header_table .= "</th>\n";
 }
 if (isset($_GET['acciones'])){
-	$header_table .= "<th width=10%>Acciones</th>\n";
+	$header_table .= "<th width=10% style=\"text-align: center; \">Acciones</th>\n";
 }
 $header_table .= "</tr>\n";
 
