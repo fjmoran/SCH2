@@ -6,41 +6,23 @@
 		<a onclick="$('#cuerpo').load('pages_admin/tipo_abono_crear.php');" href="#tipo_abono_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
 	<h4>Tipos de abonos disponibles</h4>
-	<table class="table table-striped table-bordered table-condensed">
-	  <thead>
-	    <tr>
-	      <th width=45%>Nombre</th>
-	      <th width=45%>Descripción</th>
-	      <th width=10%>Acciones</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <td>Dinero efectivo</td>    	
-	      <td>Cash</td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/tipo_abono_editar.php');" href="#tipo_abono_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Cheque</td>      	
-	      <td>Cheque al día</td>  	         
-	      <td><a onclick="$('#cuerpo').load('pages_admin/tipo_abono_editar.php');" href="#tipo_abono_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Pagaré</td>      	
-	      <td>Pagaré a nombre de la empresa</td>	      
-	      <td><a onclick="$('#cuerpo').load('pages_admin/tipo_abono_editar.php');" href="#tipo_abono_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Otro</td>      	
-	      <td>Otro tipo de abono</td>	      
-	      <td><a onclick="$('#cuerpo').load('pages_admin/tipo_abono_editar.php');" href="#tipo_abono_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-	    </tr>
-	  </tbody>
-	</table>
+
+	<?php 
+	$_GET['table'] = $bd.".TipoAbono";
+	$_GET['select'] = "nombreTipoAbono as Nombre, descripcionTipoAbono as Descripcion";
+	$_GET['orderby'] = "nombreTipoAbono";
+	$_GET['tabla']['width'] = "45%, 45%";
+	$_GET['tabla']['title'] = "Nombre, Descripción";
+	$_GET['acciones'] = "true";
+	$_GET['accion']['editar']['URL'] = "pages_admin/tipo_abono_editar.php";
+	$_GET['accion']['editar']['title'] = "Editar";
+	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";	
+	$_GET['accion']['eliminar']['URL'] = "pages_admin/tipo_abono_del.php";
+	$_GET['accion']['eliminar']['title'] = "Eliminar";
+	$_GET['accion']['eliminar']['class'] = "glyphicon glyphicon-trash";	
+
+	require("../recursos/zhi/table_generator.php");
+	?>
 
 	<div class="col-md-12 text-center">
 	  <ul class="pagination pagination-sm" >
@@ -54,13 +36,7 @@
 	  </ul>
 	</div>
 
-
-
-
-
 </div><!-- col-md-11 -->
-
-
 
     <script type="text/javascript"> 
       

@@ -6,41 +6,23 @@
 		<a onclick="$('#cuerpo').load('pages_admin/fact_estdo_crear.php');" href="#fact_estdo_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
 	<h4>Estados disponibles para facturas</h4>
-	<table class="table table-striped table-bordered table-condensed">
-	  <thead>
-	    <tr>
-	      <th width=45%>Nombre</th>
-	      <th width=45%>Descripción</th>
-	      <th width=10%>Acciones</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <td>Facturada</td>    	
-	      <td>Factura enviada al cliente</td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/fact_estdo_editar.php');" href="#fact_estdo_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Pagada</td>      	
-	      <td>Factura pagada por el cliente</td>  	         
-	      <td><a onclick="$('#cuerpo').load('pages_admin/fact_estdo_editar.php');" href="#fact_estdo_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Pendiente</td>      	
-	      <td>Pendiente de facturar</td>	      
-	      <td><a onclick="$('#cuerpo').load('pages_admin/fact_estdo_editar.php');" href="#fact_estdo_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Rechazada</td>      	
-	      <td>Factura rechazada por el cliente</td>	      
-	      <td><a onclick="$('#cuerpo').load('pages_admin/fact_estdo_editar.php');" href="#fact_estdo_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-	    </tr>
-	  </tbody>
-	</table>
+
+	<?php 
+	$_GET['table'] = $bd.".EstadoFactura";
+	$_GET['select'] = "nombreEstadoFactura as Estado, descripcionEstadoFactura as Descripcion";
+	$_GET['orderby'] = "nombreEstadoFactura";
+	$_GET['tabla']['width'] = "45%, 45%";
+	$_GET['tabla']['title'] = "Nombre, Descripción";
+	$_GET['acciones'] = "true";
+	$_GET['accion']['editar']['URL'] = "pages_admin/fact_estdo_editar.php";
+	$_GET['accion']['editar']['title'] = "Editar";
+	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";	
+	$_GET['accion']['eliminar']['URL'] = "pages_admin/fact_estdo_del.php";
+	$_GET['accion']['eliminar']['title'] = "Eliminar";
+	$_GET['accion']['eliminar']['class'] = "glyphicon glyphicon-trash";	
+
+	require("../recursos/zhi/table_generator.php");
+	?>
 
 	<div class="col-md-12 text-center">
 	  <ul class="pagination pagination-sm" >
@@ -54,13 +36,7 @@
 	  </ul>
 	</div>
 
-
-
-
-
 </div><!-- col-md-11 -->
-
-
 
     <script type="text/javascript"> 
       

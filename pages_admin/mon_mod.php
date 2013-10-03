@@ -6,41 +6,23 @@
 		<a onclick="$('#cuerpo').load('pages_admin/mon_crear.php');" href="#mon_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
 	<h4>Tipos de moneda disponibles</h4>
-	<table class="table table-striped table-bordered table-condensed">
-	  <thead>
-	    <tr>
-	      <th width=45%>Simbolo</th>
-	      <th width=45%>Descripción</th>
-	      <th width=10%>Acciones</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <td>USD</td>    	
-	      <td>Dolar Americano</td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/mon_editar.php');" href="#mon_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>$</td>      	
-	      <td>Peso Chileno</td>     
-	      <td><a onclick="$('#cuerpo').load('pages_admin/mon_editar.php');" href="#mon_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>UF</td>      	
-	      <td>Unidad de fomento</td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/mon_editar.php');" href="#mon_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>€</td>      	
-	      <td>Euro</td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/mon_editar.php');" href="#mon_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-	      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-	    </tr>
-	  </tbody>
-	</table>
+
+	<?php 
+	$_GET['table'] = $bd.".Moneda";
+	$_GET['select'] = "nombreMoneda as Simbolo, descripcionMoneda as Descripcion";
+	$_GET['orderby'] = "nombreMoneda";
+	$_GET['tabla']['width'] = "45%, 45%";
+	$_GET['tabla']['title'] = "Símbolo, Descripción";
+	$_GET['acciones'] = "true";
+	$_GET['accion']['editar']['URL'] = "pages_admin/mon_editar.php";
+	$_GET['accion']['editar']['title'] = "Editar";
+	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";	
+	$_GET['accion']['eliminar']['URL'] = "pages_admin/mon_del.php";
+	$_GET['accion']['eliminar']['title'] = "Eliminar";
+	$_GET['accion']['eliminar']['class'] = "glyphicon glyphicon-trash";	
+
+	require("../recursos/zhi/table_generator.php");
+	?>
 
 	<div class="col-md-12 text-center">
 	  <ul class="pagination pagination-sm" >
@@ -54,13 +36,7 @@
 	  </ul>
 	</div>
 
-
-
-
-
 </div><!-- col-md-11 -->
-
-
 
     <script type="text/javascript"> 
       

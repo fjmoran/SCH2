@@ -6,44 +6,21 @@
 		<a onclick="$('#cuerpo').load('pages_admin/pais_crear.php');" href="#pais_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
 	<h4>Países registrados en el sistema</h4>
-	<table class="table table-striped table-bordered table-condensed">
-	  <thead>
-	    <tr>
-	      <th width=45%>Nombre</th>
-	      <th width=45%>Código</th>
-	      <th wigth=15%>Estado</th>
-	      <th width=10%>Acciones</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <td>Dinamarca</td>    	
-	      <td>DIN</td>
-	      <td><span class="label label-danger">Inactivo</span></td>
-	      <td><span class="glyphicon glyphicon-refresh" rel="tooltip" data-toggle="tooltip" title="Reactivar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Alemania</td>      	
-	      <td>ALE</td>
-	      <td><span class="label label-danger">Inactivo</span></td>      
-	      <td><span class="glyphicon glyphicon-refresh" rel="tooltip" data-toggle="tooltip" title="Reactivar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Chile</td>    	
-	      <td>CHI</td>
-	      <td><span class="label label-success">Activo</span></td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/pais_editar.php');" href="#pais_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>	
-	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Perú</td>     	
-	      <td>PER</td>
-	      <td><span class="label label-success">Activo</span></td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/pais_editar.php');" href="#pais_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>	      	
-	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
-	    </tr>   
-	  </tbody>
-	</table>
+
+	<?php 
+	$_GET['table'] = $bd.".Pais";
+	$_GET['select'] = "nombrePais as Pais, intcodePais as Codigo, activoPais as Estado";
+	$_GET['orderby'] = "activoPais DESC, nombrePais";
+	$_GET['tabla']['width'] = "60%, 15%, 15%";
+	$_GET['tabla']['title'] = "Nombre, Código, Estado";
+	$_GET['acciones'] = "true";
+	$_GET['accion']['editar']['URL'] = "pages_admin/pais_editar.php";
+	$_GET['accion']['editar']['title'] = "Editar";
+	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";
+	$_GET['accion']['activar']['URL'] = "pages_admin/pais_estado.php";
+
+	require("../recursos/zhi/table_generator.php");
+	?>
 
 	<div class="col-md-12 text-center">
 	  <ul class="pagination pagination-sm" >
@@ -57,13 +34,7 @@
 	  </ul>
 	</div>
 
-
-
-
-
 </div><!-- col-md-11 -->
-
-
 
     <script type="text/javascript"> 
       

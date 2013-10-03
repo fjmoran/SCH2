@@ -6,50 +6,22 @@
 		<a onclick="$('#cuerpo').load('pages_admin/region_crear.php');" href="#region_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
 	<h4>Regiones registradas en el sistema</h4>
-	<table class="table table-striped table-bordered table-condensed">
-	  <thead>
-	    <tr>
-	      <th width=25%>País</th>
-	      <th width=25%>Región</th>
-	      <th width=25%>Código</th>
-	      <th wigth=15%>Estado</th>
-	      <th width=10%>Acciones</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <td>Chile</td>    	
-	      <td>Metropolitana</td>
-	      <td>13</td>
-	      <td><span class="label label-danger">Inactivo</span></td>
-	      <td><span class="glyphicon glyphicon-refresh" rel="tooltip" data-toggle="tooltip" title="Reactivar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Chile</td>      	
-	      <td>Arica y Parinacota</td>
-	      <td>14</td>
-	      <td><span class="label label-danger">Inactivo</span></td>      
-	      <td><span class="glyphicon glyphicon-refresh" rel="tooltip" data-toggle="tooltip" title="Reactivar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Chile</td>    	
-	      <td>Atacama</td>
-	      <td>1</td>
-	      <td><span class="label label-success">Activo</span></td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/region_editar.php');" href="#region_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>	
-	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
-	    </tr>
-	    <tr>
-	      <td>Chile</td>     	
-	      <td>Los Ríos</td>
-	      <td>15</td>
-	      <td><span class="label label-success">Activo</span></td>
-	      <td><a onclick="$('#cuerpo').load('pages_admin/region_editar.php');" href="#region_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>	      	
-	      <span class="glyphicon glyphicon-remove-circle" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Desactivar"></span></td>
-	    </tr>   
-	  </tbody>
-	</table>
 
+	<?php 
+	$_GET['table'] = $bd.".Region";
+	$_GET['select'] = "Pais_idPais as Pais, nombreRegion as Region, codeRegion as Codigo, activoRegion as Estado";
+	$_GET['orderby'] = "activoRegion DESC, Pais_idPais";
+	$_GET['tabla']['width'] = "25%, 25%, 25%, 15%";
+	$_GET['tabla']['title'] = "País, Región, Código, Estado";
+	$_GET['acciones'] = "true";
+	$_GET['accion']['editar']['URL'] = "pages_admin/region_editar.php";
+	$_GET['accion']['editar']['title'] = "Editar";
+	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";
+	$_GET['accion']['activar']['URL'] = "pages_admin/region_estado.php";
+
+	require("../recursos/zhi/table_generator.php");
+	?>
+	
 	<div class="col-md-12 text-center">
 	  <ul class="pagination pagination-sm" >
 	    <li><a href="#">Anterior</a></li>
@@ -61,10 +33,6 @@
 	    <li><a href="#">Siguiente</a></li>
 	  </ul>
 	</div>
-
-
-
-
 
 </div><!-- col-md-11 -->
 
