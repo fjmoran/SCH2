@@ -12,7 +12,7 @@
 	$_GET['select'] = "Materia_idMateria as Materia, Moneda_idMoneda as Moneda, valorTarifaMateria as Valor";
 	$_GET['orderby'] = "Materia_idMateria";
 	$_GET['tabla']['width'] = "45%, 25%, 20%";
-	$_GET['tabla']['title'] = "Materia, Tarifa, Moneda";
+	$_GET['tabla']['title'] = "Materia, Moneda, Tarifa";
 	$_GET['acciones'] = "true";
 	$_GET['accion']['editar']['URL'] = "pages_admin/mat_tar_editar.php";
 	$_GET['accion']['editar']['title'] = "Editar";
