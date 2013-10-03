@@ -275,7 +275,7 @@ foreach ($campos_tabla as $campo) {
 	}
 		$id = "";
 		foreach ($keys as $key){
-			$id .= $key ."=".$campo[$key]."&";
+			$id .= $key ."=".$campo[$key];
 		}
 		if ($_GET['acciones']){
 		$body_table .= "<td style=\"text-align: center; \" >\n";			
