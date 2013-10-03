@@ -213,7 +213,7 @@ for($i = 0; $i < count($title_table); $i++){
 	$header_table .= "</th>\n";
 }
 if (isset($_GET['acciones'])){
-	$header_table .= "<th width=10% style=\"text-align: center; \">Acciones</th>\n";
+	$header_table .= "<th width=10% style=\"text-align: center; color:#428BCA; \">Acciones</th>\n";
 }
 $header_table .= "</tr>\n";
 
@@ -316,8 +316,9 @@ foreach ($campos_tabla as $campo) {
 if (isset($_GET['debug'])) {print_r($body_table);}
 
 ?>
-<table class="table table-striped table-bordered table-condensed">
-	  <thead>
+<br>
+<table class="table table-striped table-condensed">
+	  <thead style="text-align: center; color:#428BCA;">
 	    <?php
 	    	echo $header_table;
 	   	?>	
