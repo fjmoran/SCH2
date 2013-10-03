@@ -174,7 +174,7 @@ if ($regen_select) { // Si falto algun PRIMARY KEY o hay alguna llave foranea, s
 		$select = $select ." ". implode(" ",$left_join);
 	}
 
-	echo $select."</br>";
+	// echo $select."</br>";
 
 	if (isset($_GET['where'])) { 
 		$select = $select." where ".$_GET['where'];
@@ -278,7 +278,7 @@ foreach ($campos_tabla as $campo) {
 			$id .= $key ."=".$campo[$key]."&";
 		}
 		if ($_GET['acciones']){
-		$body_table .= "<td>\n";			
+		$body_table .= "<td style=\"text-align: center; \" >\n";			
 			if (isset($_GET['accion'])){
 				foreach ($_GET['accion'] as $key => $value) {
 					if(isset($_GET['debug'])) {
@@ -292,14 +292,14 @@ foreach ($campos_tabla as $campo) {
 						if (isset($_GET['debug'])) { echo "En acción activar </br>";}
 						if ($activo){
 							$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."&activar=1');\" href=\"#".$table."_".$key."\">";
-							$body_table .= "<span class=\"glyphicon glyphicon-remove-circle\" style=\"color: black; padding-left:3px;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span></a>";
+							$body_table .= "<span class=\"glyphicon glyphicon-remove-circle\" style=\"color: black; font-size:12px; padding-left:4px; \" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span></a>";
 						}else {
 							$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."&activar=0');\" href=\"#".$table."_".$key."\">";
-							$body_table .= "<span class=\"glyphicon glyphicon-refresh\" style=\"color: black; padding-left:3px;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span></a>";
+							$body_table .= "<span class=\"glyphicon glyphicon-refresh\" style=\"color: black; font-size:12px; padding-left:4px; \" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span></a>";
 						}
 					}else{
 						$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."');\" href=\"".$table."_".$key."\">";
-						$body_table .= "<span class=\"".$value['class']."\" style=\"color: black; padding-left:3px;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"".$value['title']."\"></span></a>";
+						$body_table .= "<span class=\"".$value['class']."\" style=\"color: black; font-size:12px; padding-left:4px; \" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"".$value['title']."\"></span></a>";
 					}
 
 				}
@@ -328,7 +328,7 @@ if (isset($_GET['debug'])) {print_r($body_table);}
 	    		echo "</th>\n";
 	    	}
 	   		if (isset($_GET['acciones'])){
-	   			echo "<th width=10%>Acciones</th>\n";
+	   			echo "<th width=10% style=\"text-align: center; \">Acciones</th>\n";
 	   		}
 	   	?>	
 		</tr>

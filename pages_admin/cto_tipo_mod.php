@@ -19,7 +19,7 @@
 	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";	
 	$_GET['accion']['eliminar']['URL'] = "#";
 	$_GET['accion']['eliminar']['title'] = "Eliminar";
-	$_GET['accion']['eliminar']['class'] = "glyphicon glyphicon-remove";	
+	$_GET['accion']['eliminar']['class'] = "glyphicon glyphicon-trash";	
 
 	require("../recursos/zhi/table_generator.php");
 	?>
