@@ -7,42 +7,6 @@ $table = substr($_GET['table'],strpos($_GET['table'],".")+1);
 $schema = substr($_GET['table'],0,strpos($_GET['table'],"."));
 $select = "select ";
 
-$keys = array(); // Arreglo de llaves primarias
-$fkeys = array(); // Arreglo de llaves foraneas
-
-
-//Obtención de llaves primarias
-$show_key = "show keys from ".$_GET['table']." where key_name = 'PRIMARY'";
-if (isset($_GET['debug'])) {echo "Query para buscar llaves primarias ".$show_key."</br>";}
-if ($rs_show = $mysqli->query($show_key)){
-  while ($row = $rs_show->fetch_assoc()){
-    array_push($keys,$row['Column_name']);
-  }
-  if (isset($_GET['debug'])) {echo "Listado de llaves primarias ";print_r($keys); echo "</br>";}
-}else {
-  echo "Falló al ejecutar la consulta: (". $mysqli->errno .") ". $mysqli->error;
-}
-$rs_show->free();
-
-// se buscan las llaves foraneas de la tabla
-$query_fk = "SELECT k.REFERENCED_TABLE_NAME, k.REFERENCED_COLUMN_NAME, k.COLUMN_NAME\n"
-    . "FROM information_schema.TABLE_CONSTRAINTS i \n"
-    . "LEFT JOIN information_schema.KEY_COLUMN_USAGE k ON i.CONSTRAINT_NAME = k.CONSTRAINT_NAME \n"
-    . "WHERE i.CONSTRAINT_TYPE ='FOREIGN KEY'AND i.TABLE_SCHEMA = database() AND i.TABLE_NAME ='".$table."' order by k.REFERENCED_TABLE_NAME";
-
-if (isset($_GET['debug'])) {echo "Query para buscar llaves foraneas ".$query_fk."</br>";}
-
-if ($rs_fk = $mysqli->query($query_fk)){
-  while ($row = $rs_fk->fetch_assoc()){
-    $fkeys[$row['COLUMN_NAME']] = array($row['REFERENCED_TABLE_NAME'],$row['REFERENCED_COLUMN_NAME']);
-  }
-  if (isset($_GET['debug'])) {echo "Listado de llaves foraneas ";print_r($fkeys); echo "</br>";}
-
-}else {
-  echo "Falló al ejecutar la consulta: (". $mysqli->errno .") ". $mysqli->error;
-}
-$rs_fk->free();
-
 // se arma el select enviado por el usuario
 if (isset($_GET['select'])) { 
 	$select = $select . $_GET['select'];
