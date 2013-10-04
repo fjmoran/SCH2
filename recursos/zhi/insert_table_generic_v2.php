@@ -5,6 +5,9 @@ require_once "auth.php";
 
 $table = substr($_GET['table'],strpos($_GET['table'],".")+1);
 $schema = substr($_GET['table'],0,strpos($_GET['table'],"."));
+
+$script = "";
+
 $select = "select ";
 
 // se arma el select enviado por el usuario
@@ -72,6 +75,25 @@ foreach ($info_campo as $valor) {
             }
             $campo_formulario .= " > Activo</label></div>";
             break;
+    case 10:
+      if(isset($_GET['debug'])) { echo "Es del tipo Fecha </br>";}
+        $campo_formulario .= "<div class=\"form-group\">";
+        $campo_formulario .= "<label for=\"".$valor->orgname."\">Fecha:</label>";
+        $campo_formulario .= "<div class=\"input-group\">";
+        $campo_formulario .= "<span class=\"input-group-addon\">";
+        $campo_formulario .= "<span class=\"glyphicon glyphicon-th\"></span>";
+        $campo_formulario .= "</span>";
+        $campo_formulario .= "<input type=\"text\" class=\"form-control\" id=\"".$valor->orgname."\" name=\"".$valor->orgname."\" placeholder=\"Seleccione una fecha\" readonly=\"true\">";
+        $campo_formulario .= "</div>";
+        $campo_formulario .= "</div>";
+
+        $script .= "<script type=\"text/javascript\">\n";
+        $script .= "$(document).ready(function(){";
+        $script .= "$('#".$valor->orgname."').datepicker();";
+        $script .= "})\n";
+        $script .= "</script>";
+
+      break;
     case 3:
       if (!($valor->flags & 2)) {
         // No es llave primaria, por lo que es una referencia.
@@ -166,6 +188,8 @@ if (isset($_GET['debug'])) {print_r ($arreglo_campos_formulario); echo "</br>";}
   <input type="hidden" name="table" value="<?php echo $_GET[table]; ?>">
   <input type="hidden" name="select" value="<?php echo $_GET[select]; ?>">
   <input type="hidden" name="jquery" value="<?php echo $_GET[jquery];?>">
-    <input type="hidden" name="debug" value="1">
+  <input type="hidden" name="debug" value="1">
   
 </form>	
+
+<?php echo $script; ?>
