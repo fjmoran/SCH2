@@ -10,7 +10,7 @@
 	<?php 
 	$_GET['table'] = $bd.".Region";
 	$_GET['select'] = "Pais_idPais as Pais, nombreRegion as Region, codeRegion as Codigo, activoRegion as Estado";
-	$_GET['orderby'] = "activoRegion DESC, Pais_idPais";
+	$_GET['orderby'] = "activoRegion DESC, Pais_idPais, codeRegion";
 	$_GET['tabla']['width'] = "25%, 25%, 25%, 15%";
 	$_GET['tabla']['title'] = "País, Región, Código, Estado";
 	$_GET['acciones'] = "true";
