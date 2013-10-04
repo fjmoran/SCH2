@@ -11,6 +11,8 @@ require "recursos/zhi/auth.php";
     <link href="recursos/bootstrap3/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <!-- Zhi CSS -->
     <link href="recursos/zhi/css/zhi.css" rel="stylesheet"> 
+    <!-- Jquery-ui -->
+    <link href="recursos/jquery-ui/css/zhi/jquery-ui-1.10.3.custom.min.css" rel="stylesheet">    
     <!-- Fonts -->
     <link href='fonts/fonts.css' rel='stylesheet' type='text/css'>
     <!-- Fav Icon -->    
@@ -40,6 +42,7 @@ require "recursos/zhi/auth.php";
   <script src="recursos/bootstrap3/js/bootstrap.min.js"></script>
   <script src="recursos/highcharts/js/highcharts.js"></script>
   <script src="recursos/highcharts/js/modules/exporting.js"></script>
+  <script src="recursos/jquery-ui/js/jquery-ui-1.10.3.custom.min.js"></script>
 
   <script type="text/javascript"> 
     
@@ -53,7 +56,27 @@ require "recursos/zhi/auth.php";
       });  
 
     })
-
+      jQuery(function($){
+              $.datepicker.regional['es'] = {
+                      closeText: 'Cerrar',
+                      prevText: '&#x3c;Ant',
+                      nextText: 'Sig&#x3e;',
+                      currentText: 'Hoy',
+                      monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+                      'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+                      monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun',
+                      'Jul','Ago','Sep','Oct','Nov','Dic'],
+                      dayNames: ['Domingo','Lunes','Martes','Mi&eacute;rcoles','Jueves','Viernes','S&aacute;bado'],
+                      dayNamesShort: ['Dom','Lun','Mar','Mi&eacute;','Juv','Vie','S&aacute;b'],
+                      dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','S&aacute;'],
+                      weekHeader: 'Sm',
+                      dateFormat: 'dd-mm-yy',
+                      firstDay: 1,
+                      isRTL: false,
+                      showMonthAfterYear: false,
+                      yearSuffix: ''};
+              $.datepicker.setDefaults($.datepicker.regional['es']);
+      }); 
   </script>    
     
  </body>
