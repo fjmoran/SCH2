@@ -3,6 +3,10 @@
 if (isset($_GET['debug'])) { echo "Generador de tablas automatico </br>";}
 #Requiere el nombre de la tabla, el schema y la consulta a ejecutar, en caso que no exista consulta trae toda la tabla.
 
+if (!defined('ENT_SUBSTITUTE')) {
+    define('ENT_SUBSTITUTE', 8);
+}
+
 require_once ("auth.php");
 require_once("CreaConnv2.php");
 
@@ -98,9 +102,10 @@ foreach ($info_select as $valor){
 }
 
 if (isset($_GET['debug'])) {echo "columnas que vienen del select usuario ";print_r ($column_select); echo "</br>";}
-if (isset($_GET['debug'])) {echo "Titulos que vienen del select del usuario ";print_r ($title_select); echo "</br>";}
+if (isset($_GET['debug'])) {echo "Titulos que vienen del select del usuario (title_select) ";print_r ($title_select); echo "</br>";}
 
 if (isset($_GET['tabla']['title'])){
+	if(isset($_GET['debug'])) { echo "tabla.title ".$_GET['tabla']['title']."</br>";}
 	$title_table = explode(",",$_GET['tabla']['title']);
 }else{
 	$title_table = $title_select;
@@ -203,6 +208,7 @@ if ($rs->num_rows > 0){
 
 //Llenado de $header_table
 $header_table = "<tr>\n";
+if (isset($_GET['debug'])) {echo "title_table:"; print_r($title_table); echo "</br>";}
 for($i = 0; $i < count($title_table); $i++){
 	$header_table.= "<th ";
 	if (isset($_GET['tabla']['width'])){
@@ -216,7 +222,7 @@ if (isset($_GET['acciones'])){
 	$header_table .= "<th width=10% style=\"text-align: center; color:#428BCA; \">Acciones</th>\n";
 }
 $header_table .= "</tr>\n";
-
+if(isset($_GET['debug'])){echo $header_table."</br>";}
 //Llenado de los datos de la tabla.
 $campos_tabla = array();
 
@@ -325,7 +331,7 @@ if (isset($_GET['debug'])) {print_r($body_table);}
 	  </thead>
 	  <tbody>
 	  	<?php
-	  	echo $body_table;
+	  		echo $body_table;
 	  	?>
 
 	  </tbody>
