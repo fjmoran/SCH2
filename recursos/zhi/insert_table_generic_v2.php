@@ -153,7 +153,39 @@ foreach ($info_campo as $valor) {
         $campo_formulario .= "</select>";
       }
 
-      break;                   
+      break;
+      case 254:
+        if (isset($_GET['debug'])) { echo "Tipo SET </br>";}
+        //Acá va lo que se tiene que hacer con el tipo set
+        $show_setvalues = "show columns from ".$_GET['table']." LIKE '".$valor->orgname."'";
+        $rs_setvalues = $mysqli->query($show_setvalues);
+        $array_setvalues = $rs_setvalues->fetch_assoc();
+        
+        if (isset($_GET['debug'])) {echo "Array set values : ";print_r($array_setvalues);echo "</br>";}
+
+        $line_values = $array_setvalues['Type'];
+        $line_values = substr($line_values,4,-1);
+        $line_values = str_replace("'","",$line_values);
+        
+        if (isset($_GET['debug'])) {echo "line values : ";print_r($line_values);echo "</br>";}
+
+        $values = explode(",",$line_values);
+
+        if (isset($_GET['debug'])) {echo "valores del SET : ";print_r($values);echo "</br>";}
+
+        $campo_formulario = "<label for=\"".$valor->orgname."\">".$valor->name.":</label><select name=\"".$valor->orgname."\" class=\"form-control\">";
+        foreach ($values as $val){
+          $campo_formulario .= "<option value=\"".$val."\">".$val."</option>";
+        }
+        $campo_formulario .= "</select>";
+
+        $rs_setvalues->free();
+
+        break;
+      
+      default: //cualquier cosa que no esta clasificada pasara por esto.
+        if(isset($_GET['debug'])) {echo "Tipo no clasificado ".$valor->type; echo "</br>";}
+        break;
     }  
   array_push($arreglo_campos_formulario, $campo_formulario);
   if (isset($_GET['debug'])) {echo "====================</br>";}
