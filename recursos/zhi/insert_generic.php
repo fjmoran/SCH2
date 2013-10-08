@@ -1,7 +1,7 @@
 <?php
 
 require_once "CreaConnv2.php";
-require "auth.php";
+require_once "auth.php";
 
 if ((isset($_GET[debug]))||(isset($_POST[debug]))) { $debug = TRUE; } else {$debug = FALSE;}
 	
@@ -59,6 +59,13 @@ if ($mysqli->multi_query($select_all)) {
 					echo "campo_select ".$campo_select->orgname."=".$_POST[$campo_select->orgname];
 					echo "</br>";
 				}
+
+				switch $campo_tabla->value {
+					case 10:
+						$_POST[$campo_select->orgname] = date('Y-m-d',strtotime($_POST[$campo_select->orgname]));
+						break;
+				}
+				
 				array_push($VALUES,$mysqli->real_escape_string($_POST[$campo_select->orgname])); 
 				$salida = 0;
 				break;
