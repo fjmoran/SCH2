@@ -1,7 +1,13 @@
 <?php
 
+if (isset($_GET['debug'])) { echo "Generador de Formularios automatico </br>";}
+
 require_once "CreaConnv2.php";
 require_once "auth.php";
+
+if (!defined('ENT_SUBSTITUTE')) {
+    define('ENT_SUBSTITUTE', 8);
+}
 
 $table = substr($_GET['table'],strpos($_GET['table'],".")+1);
 $schema = substr($_GET['table'],0,strpos($_GET['table'],"."));
