@@ -65,13 +65,13 @@ foreach ($info_campo as $valor) {
    switch ($valor->type) {
     case 4:
     case 252:
-    case 253: $campo_formulario = "<label for=\"".$valor->orgname."\">".$valor->name.":</label><input id=\"".$valor->orgname."\" class=\"form-control\" type=\"text\" name=\"".$valor->orgname."\"";
+    case 253: $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><input id=\"".$valor->orgname."\" class=\"form-control\" type=\"text\" name=\"".$valor->orgname."\"";
               if ((isset($_GET['where'])) and ($rs->num_rows)){
                 $campo_formulario .= "value=\"".$info_fila[$valor->name]."\"";
               }
               $campo_formulario .= " >";
               break;
-    case 1: $campo_formulario = "<label for=\"".$valor->orgname."\">".$valor->name.":</label><div class=\"checkbox\"><label><input type=\"checkbox\" value=\"1\" name=\"".$valor->orgname ."\"";
+    case 1: $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><div class=\"checkbox\"><label><input type=\"checkbox\" value=\"1\" name=\"".$valor->orgname ."\"";
             if ((isset($_GET['where'])) and ($rs->num_rows)){
               if ($info_fila[$valor->name]){
                 $campo_formulario .= "checked";
@@ -134,7 +134,7 @@ foreach ($info_campo as $valor) {
 
       if($info['REFERENCED_TABLE_NAME'] == NULL){
         if (!($valor->flags & 512)){ 
-          $campo_formulario = "<label for=\"".$valor->orgname."\">".$valor->name.":</label><input id=\"".$valor->orgname."\" class=\"form-control\" type=\"text\" name=\"".$valor->orgname."\"";
+          $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><input id=\"".$valor->orgname."\" class=\"form-control\" type=\"text\" name=\"".$valor->orgname."\"";
           if ((isset($_GET['where'])) and ($rs->num_rows)){
             $campo_formulario .= "value=\"".$info_fila[$valor->name]."\"";
           }
