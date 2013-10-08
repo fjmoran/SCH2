@@ -3,24 +3,24 @@
 require_once "CreaConnv2.php";
 require "auth.php";
 
-if ((isset($_GET['debug']))||(isset($_POST['debug']))) { $'debug' = TRUE; } else {$'debug' = FALSE;}
+if ((isset($_GET[debug]))||(isset($_POST[debug]))) { $debug = TRUE; } else {$debug = FALSE;}
 	
-if ($'debug')	{echo "Insert Generic</br>";}
+if ($debug)	{echo "Insert Generic</br>";}
 
-$select_all = "select * from ".$_POST['table']." LIMIT 1;";
+$select_all = "select * from ".$_POST[table]." LIMIT 1;";
 if ($debug) {
 	echo $select_all;
 	echo "</br>";
 }
 
 $select = "select ";
-if (isset($_POST['select'])){
-	$select = $select.$_POST['select'];
+if (isset($_POST[select])){
+	$select = $select.$_POST[select];
 }else {
 	$select = $select."*";
 }
 
-$select = $select." from ".$_POST['table']." LIMIT 1;";
+$select = $select." from ".$_POST[table]." LIMIT 1;";
 if ($debug) {
 	echo $select;
 	echo "</br>";
@@ -59,11 +59,6 @@ if ($mysqli->multi_query($select_all)) {
 					echo "campo_select ".$campo_select->orgname."=".$_POST[$campo_select->orgname];
 					echo "</br>";
 				}
-				
-/*				if ($campo_tabla->type == 10){
-					$_POST[$campo_select->orgname] = date('Y-m-d',strtotime($_POST[$campo_select->orgname]));
-				}*/
-
 				array_push($VALUES,$mysqli->real_escape_string($_POST[$campo_select->orgname])); 
 				$salida = 0;
 				break;
@@ -71,7 +66,7 @@ if ($mysqli->multi_query($select_all)) {
 		}
 		if ($salida == 1){
 			if ($debug){
-				echo "campo_tabla ".$campo_tabla->orgname."= NULL";
+				echo "campo_tabla ".$campo_tabla->orgname."=NULL";
 				echo "</br>";
 			}
 			array_push($VALUES,"NULL"); 
@@ -86,7 +81,7 @@ if ($mysqli->multi_query($select_all)) {
 	$list_value = "('";
 	$list_value .= implode("','",$VALUES);
 	$list_value .="')";
-	$insert = "INSERT INTO ".$_POST['table']." VALUES ".$list_value;
+	$insert = "INSERT INTO ".$_POST[table]." VALUES ".$list_value;
 	if ($debug){
 		echo $insert;
 		echo "</br>";
@@ -101,12 +96,12 @@ if ($mysqli->multi_query($select_all)) {
 
 echo "<html>
 	<body>
-	<p>Se insertado con exito en la tabla ".$_POST['table']." con el id ".$ID." </p>
+	<p>Se insertado con exito en la tabla ".$_POST[table]." con el id ".$ID." </p>
 	
 	<script src=\"recursos/jquery/jquery-1.10.2.min.js\"></script>    
   <script src=\"recursos/bootstrap3/js/bootstrap.min.js\"></script>
 	<script type=\"text/javascript\">
-		parent.".$_POST['jquery']."
+		parent.".$_POST[jquery]."
 	</script>
 	</body>
 </html>";
