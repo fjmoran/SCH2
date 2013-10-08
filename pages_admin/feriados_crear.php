@@ -6,7 +6,7 @@
 <?php 
 $_GET['table'] = $bd.".Feriado";
 $_GET['select'] = "fechaFeriado as Fecha, tipoFeriado as Tipo, Pais_idPais as Pais, descripcionFeriado as Descripcion, activoFeriado as Estado";
-$_GET['jquery'] = "$('#cuerpo').load('pages_admin/fact_estdo_mod.php');";
+$_GET['jquery'] = "$('#cuerpo').load('pages_admin/feriados_mod.php');";
 #$_GET['debug'] = 1;
 require("../recursos/zhi/insert_table_generic.php");
 

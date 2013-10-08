@@ -17,7 +17,7 @@
 	$_GET['accion']['editar']['URL'] = "pages_admin/feriados_editar.php";
 	$_GET['accion']['editar']['title'] = "Editar";
 	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";
-	$_GET['accion']['activar']['URL'] = "pages_admin/roles_estado.php";
+	$_GET['accion']['activar']['URL'] = "pages_admin/feriados_estado.php";
 
 	require("../recursos/zhi/table_generator.php");
 	?>
