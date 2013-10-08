@@ -59,9 +59,11 @@ if ($mysqli->multi_query($select_all)) {
 					echo "campo_select ".$campo_select->orgname."=".$_POST[$campo_select->orgname];
 					echo "</br>";
 				}
-				if ($campo_tabla->type == 10){
+				
+/*				if ($campo_tabla->type == 10){
 					$_POST[$campo_select->orgname] = date('Y-m-d',strtotime($_POST[$campo_select->orgname]));
-				}
+				}*/
+
 				array_push($VALUES,$mysqli->real_escape_string($_POST[$campo_select->orgname])); 
 				$salida = 0;
 				break;
