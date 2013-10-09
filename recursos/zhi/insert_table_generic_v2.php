@@ -145,7 +145,7 @@ foreach ($info_campo as $valor) {
         $select_list = "select ".$info['REFERENCED_COLUMN_NAME']." as id, nombre".$info['REFERENCED_TABLE_NAME']." as nombre from ".$schema.".".$info[REFERENCED_TABLE_NAME]." where activo".$info[REFERENCED_TABLE_NAME]."='1'";
         if (isset($_GET['debug'])) { echo "Query Foreign Key ".$select_list."</br>"; }
         $rs_list_fk = $mysqli->query($select_list);
-        $campo_formulario = "<label for=\"".$valor->orgname."\">".$valor->name.":</label><select name=\"".$valor->orgname."\" class=\"form-control\">";
+        $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><select name=\"".$valor->orgname."\" class=\"form-control\">";
         while ($list_fk=$rs_list_fk->fetch_assoc()) {
           $campo_formulario .= "<option value=\"".$list_fk['id']."\">".$list_fk['nombre']."</option>";
         }
@@ -173,9 +173,9 @@ foreach ($info_campo as $valor) {
 
         if (isset($_GET['debug'])) {echo "valores del SET : ";print_r($values);echo "</br>";}
 
-        $campo_formulario = "<label for=\"".$valor->orgname."\">".$valor->name.":</label><select name=\"".$valor->orgname."\" class=\"form-control\">";
+        $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><select name=\"".$valor->orgname."\" class=\"form-control\">";
         foreach ($values as $val){
-          $campo_formulario .= "<option value=\"".$val."\">".$val."</option>";
+          $campo_formulario .= "<option value=\"".$val."\">".htmlentities($val,ENT_SUBSTITUTE,'UTF-8')."</option>";
         }
         $campo_formulario .= "</select>";
 
@@ -193,7 +193,7 @@ foreach ($info_campo as $valor) {
 if (isset($_GET['debug'])) {print_r ($arreglo_campos_formulario); echo "</br>";}
 
 ?>
-<div class="alert alert-danger alert-dismissable">
+<div class="alert alert-danger alert-dismissable <?php if (!(isset($_GET['alert']))) {echo "hide";} ?>">
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
   Este registro ya existe!
 </div>
