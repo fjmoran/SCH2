@@ -57,12 +57,14 @@ if ($mysqli->multi_query($select_all)) {
 			if ($campo_tabla->orgname == $campo_select->orgname){
 				if ($debug) {
 					echo "campo_select ".$campo_select->orgname."=".$_POST[$campo_select->orgname];
+					echo "</br> campo_tabla->type ".$campo_tabla->type;
 					echo "</br>";
 				}
-
-				switch ($campo_tabla->value) {
+				$type = $campo_tabla->type;
+				switch ($type){
 					case 10:
 						$_POST[$campo_select->orgname] = date('Y-m-d',strtotime($_POST[$campo_select->orgname]));
+						if (isset($debug)) { echo "En Case por tipo Fecha ".$_POST[$campo_select->orgname]." </br>";}
 						break;
 				}
 

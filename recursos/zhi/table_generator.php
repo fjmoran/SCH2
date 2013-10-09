@@ -278,6 +278,10 @@ foreach ($campos_tabla as $campo) {
 				}
 				$body_table .= "</span>";
 				break;
+			case 10:
+				if(isset($_GET['debug'])) {echo "Tipo Fecha </br>";}
+				$body_table .= date('d-m-Y',strtotime($campo[$columna]));
+				break;
 		}
 		$body_table .= "</td>\n";
 	}
