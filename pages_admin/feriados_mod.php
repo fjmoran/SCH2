@@ -10,7 +10,7 @@
 	<?php 
 	$_GET['table'] = $bd.".Feriado";
 	$_GET['select'] = "fechaFeriado as Fecha, descripcionFeriado as Descripcion, tipoFeriado as Tipo, Pais_idPais as Pais, activoFeriado as Estado";
-	$_GET['orderby'] = "activoFeriado DESC, Pais_idPais";
+	$_GET['orderby'] = "activoFeriado DESC, Pais_idPais, fechaFeriado";
 	$_GET['tabla']['width'] = "15%, 30%, 15%, 15%, 15%";
 	$_GET['tabla']['title'] = "Fecha, Descripción, Tipo, País, Estado";
 	$_GET['acciones'] = "true";
