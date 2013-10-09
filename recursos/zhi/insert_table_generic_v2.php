@@ -193,6 +193,10 @@ foreach ($info_campo as $valor) {
 if (isset($_GET['debug'])) {print_r ($arreglo_campos_formulario); echo "</br>";}
 
 ?>
+<div class="alert alert-danger alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  Este registro ya existe!
+</div>
 	<form role="form" method="POST" action="recursos/zhi/insert_generic.php" target="IframeOutput">
     <div class="row"> 
       <div class="col-md-6"> <!-- columna uno -->
