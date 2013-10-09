@@ -4,7 +4,7 @@
 
 <?php 
 $_GET['table'] = $bd.".Concepto";
-$_GET['select'] = "nombreConcepto as Concepto, descripcionConcepto as Descripcion";
+$_GET['select'] = "nombreConcepto as Concepto, descripcionConcepto as Descripcion, activoConcepto as Estado";
 $_GET['jquery'] = "$('#cuerpo').load('pages_admin/concep_mod.php');";
 
 require("../recursos/zhi/insert_table_generic.php");

@@ -9,17 +9,15 @@
 
 	<?php 
 	$_GET['table'] = $bd.".Concepto";
-	$_GET['select'] = "nombreConcepto as Concepto, descripcionConcepto as Descripcion";
+	$_GET['select'] = "nombreConcepto as Concepto, descripcionConcepto as Descripcion, activoConcepto as Estado";
 	$_GET['orderby'] = "nombreConcepto";
-	$_GET['tabla']['width'] = "45%, 45%";
-	$_GET['tabla']['title'] = "Concepto, Descripción";
+	$_GET['tabla']['width'] = "35%, 40%, 15%";
+	$_GET['tabla']['title'] = "Concepto, Descripción, Estado";
 	$_GET['acciones'] = "true";
 	$_GET['accion']['editar']['URL'] = "pages_admin/concep_editar.php";
 	$_GET['accion']['editar']['title'] = "Editar";
 	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";	
-	$_GET['accion']['eliminar']['URL'] = "pages_admin/concept_del.php";
-	$_GET['accion']['eliminar']['title'] = "Eliminar";
-	$_GET['accion']['eliminar']['class'] = "glyphicon glyphicon-trash";	
+	$_GET['accion']['activar']['URL'] = "pages_admin/concept_estado.php";
 
 	require("../recursos/zhi/table_generator.php");
 	?>
