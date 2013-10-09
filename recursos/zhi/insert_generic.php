@@ -3,24 +3,24 @@
 require_once "CreaConnv2.php";
 require_once "auth.php";
 
-if ((isset($_GET[debug]))||(isset($_POST[debug]))) { $debug = TRUE; } else {$debug = FALSE;}
+if ((isset($_GET['debug']))||(isset($_POST['debug']))) { $debug = TRUE; } else {$debug = FALSE;}
 	
 if ($debug)	{echo "Insert Generic</br>";}
 
-$select_all = "select * from ".$_POST[table]." LIMIT 1;";
+$select_all = "select * from ".$_POST['table']." LIMIT 1;";
 if ($debug) {
 	echo $select_all;
 	echo "</br>";
 }
 
 $select = "select ";
-if (isset($_POST[select])){
-	$select = $select.$_POST[select];
+if (isset($_POST['select'])){
+	$select = $select.$_POST['select'];
 }else {
 	$select = $select."*";
 }
 
-$select = $select." from ".$_POST[table]." LIMIT 1;";
+$select = $select." from ".$_POST['table']." LIMIT 1;";
 if ($debug) {
 	echo $select;
 	echo "</br>";
@@ -65,7 +65,7 @@ if ($mysqli->multi_query($select_all)) {
 						$_POST[$campo_select->orgname] = date('Y-m-d',strtotime($_POST[$campo_select->orgname]));
 						break;
 				}
-				
+
 				array_push($VALUES,$mysqli->real_escape_string($_POST[$campo_select->orgname])); 
 				$salida = 0;
 				break;
@@ -88,7 +88,7 @@ if ($mysqli->multi_query($select_all)) {
 	$list_value = "('";
 	$list_value .= implode("','",$VALUES);
 	$list_value .="')";
-	$insert = "INSERT INTO ".$_POST[table]." VALUES ".$list_value;
+	$insert = "INSERT INTO ".$_POST['table']." VALUES ".$list_value;
 	if ($debug){
 		echo $insert;
 		echo "</br>";
@@ -103,12 +103,12 @@ if ($mysqli->multi_query($select_all)) {
 
 echo "<html>
 	<body>
-	<p>Se insertado con exito en la tabla ".$_POST[table]." con el id ".$ID." </p>
+	<p>Se insertado con exito en la tabla ".$_POST['table']." con el id ".$ID." </p>
 	
 	<script src=\"recursos/jquery/jquery-1.10.2.min.js\"></script>    
   <script src=\"recursos/bootstrap3/js/bootstrap.min.js\"></script>
 	<script type=\"text/javascript\">
-		parent.".$_POST[jquery]."
+		parent.".$_POST['jquery']."
 	</script>
 	</body>
 </html>";
