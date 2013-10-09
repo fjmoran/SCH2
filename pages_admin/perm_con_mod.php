@@ -11,7 +11,7 @@
 	$_GET['table'] = $bd.".PermisoConcepto";
 	$_GET['select'] = "Concepto_idConcepto as Concepto, readPermisoConcepto as Lectura, writePermisoConcepto as Escritura, deletePermisoConcepto as Eliminacion, Perfil_idPerfil as Rol";
 	$_GET['orderby'] = "Concepto_idConcepto";
-	$_GET['tabla']['width'] = "30%, 10%, 10%, 10%, 30%";
+	$_GET['tabla']['width'] = "35%, 10%, 10%, 10%, 25%";
 	$_GET['tabla']['title'] = "Concepto, Lectura, Escritura, Elimimación, Rol";
 	$_GET['acciones'] = "true";
 	$_GET['accion']['editar']['URL'] = "pages_admin/perm_con_editar.php";
