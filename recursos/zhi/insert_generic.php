@@ -60,7 +60,7 @@ if ($mysqli->multi_query($select_all)) {
 					echo "</br>";
 				}
 
-				switch $campo_tabla->value {
+				switch ($campo_tabla->value) {
 					case 10:
 						$_POST[$campo_select->orgname] = date('Y-m-d',strtotime($_POST[$campo_select->orgname]));
 						break;

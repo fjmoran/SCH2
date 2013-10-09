@@ -223,9 +223,9 @@ if (isset($_GET['debug'])) {print_r ($arreglo_campos_formulario); echo "</br>";}
       </p>
     </div>
   </div> 
-  <input type="hidden" name="table" value="<?php echo $_GET[table]; ?>">
-  <input type="hidden" name="select" value="<?php echo $_GET[select]; ?>">
-  <input type="hidden" name="jquery" value="<?php echo $_GET[jquery];?>">
+  <input type="hidden" name="table" value="<?php echo $_GET['table']; ?>">
+  <input type="hidden" name="select" value="<?php echo $_GET['select']; ?>">
+  <input type="hidden" name="jquery" value="<?php echo $_GET['jquery'];?>">
   <input type="hidden" name="debug" value="1">
   
 </form>	
