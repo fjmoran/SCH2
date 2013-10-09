@@ -6,6 +6,7 @@
 $_GET['table'] = $bd.".PermisoConcepto";
 $_GET['select'] = "Concepto_idConcepto as Concepto, readPermisoConcepto as Lectura, writePermisoConcepto as Escritura, deletePermisoConcepto as Eliminacion, Perfil_idPerfil as Rol";
 $_GET['jquery'] = "$('#cuerpo').load('pages_admin/perm_con_mod.php');";
+$_GET['debug'] = 1;
 
 require("../recursos/zhi/insert_table_generic.php");
 
