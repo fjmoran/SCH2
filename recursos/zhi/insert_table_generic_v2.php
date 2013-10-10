@@ -11,6 +11,7 @@ if (!defined('ENT_SUBSTITUTE')) {
 
 $table = substr($_GET['table'],strpos($_GET['table'],".")+1);
 $schema = substr($_GET['table'],0,strpos($_GET['table'],"."));
+$edicion = false;
 
 $script = "";
 
@@ -43,9 +44,9 @@ if (isset($_GET['debug'])) {
 }
 
 $info_campo = $rs->fetch_fields();
-if (isset($_GET['debug'])){ print_r($info_campo);}
+if (isset($_GET['debug'])){ echo "info_campo : ";print_r($info_campo); echo "</br>";}
 $info_fila = $rs->fetch_assoc();
-if (isset($_GET['debug'])){ print_r($info_fila);}
+if (isset($_GET['debug'])){ echo "info_fila : "; print_r($info_fila); echo "</br>";}
 $rs->free();
 
 $arreglo_campos_formulario = array();
@@ -66,13 +67,13 @@ foreach ($info_campo as $valor) {
     case 4:
     case 252:
     case 253: $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><input id=\"".$valor->orgname."\" class=\"form-control\" type=\"text\" name=\"".$valor->orgname."\"";
-              if ((isset($_GET['where'])) and ($rs->num_rows)){
+              if ((isset($_GET['where'])) and ($_GET['edit'])){
                 $campo_formulario .= "value=\"".$info_fila[$valor->name]."\"";
               }
               $campo_formulario .= " >";
               break;
     case 1: $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><div class=\"checkbox\"><label><input type=\"checkbox\" value=\"1\" name=\"".$valor->orgname ."\"";
-            if ((isset($_GET['where'])) and ($rs->num_rows)){
+            if ((isset($_GET['where'])) and ($_GET['edit'])){
               if ($info_fila[$valor->name]){
                 $campo_formulario .= "checked";
               }
@@ -89,7 +90,11 @@ foreach ($info_campo as $valor) {
         $campo_formulario .= "<span class=\"input-group-addon\">";
         $campo_formulario .= "<span class=\"glyphicon glyphicon-th\"></span>";
         $campo_formulario .= "</span>";
-        $campo_formulario .= "<input type=\"text\" class=\"form-control\" id=\"".$valor->orgname."\" name=\"".$valor->orgname."\" placeholder=\"Seleccione una fecha\" readonly=\"true\">";
+        $campo_formulario .= "<input type=\"text\" class=\"form-control\" id=\"".$valor->orgname."\" name=\"".$valor->orgname."\"";
+        if ((isset($_GET['where'])) and ($_GET['edit'])){
+          $campo_formulario .= "value=\"".$info_fila[$valor->name]."\"";
+        }
+        $campo_formulario .= "placeholder=\"Seleccione una fecha\" readonly=\"true\">";
         $campo_formulario .= "</div>";
         $campo_formulario .= "</div>";
 
@@ -135,7 +140,7 @@ foreach ($info_campo as $valor) {
       if($info['REFERENCED_TABLE_NAME'] == NULL){
         if (!($valor->flags & 512)){ 
           $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><input id=\"".$valor->orgname."\" class=\"form-control\" type=\"text\" name=\"".$valor->orgname."\"";
-          if ((isset($_GET['where'])) and ($rs->num_rows)){
+          if ((isset($_GET['where'])) and ($_GET['edit'])){
             $campo_formulario .= "value=\"".$info_fila[$valor->name]."\"";
           }
           $campo_formulario .= " >";
@@ -147,7 +152,13 @@ foreach ($info_campo as $valor) {
         $rs_list_fk = $mysqli->query($select_list);
         $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><select name=\"".$valor->orgname."\" class=\"form-control\">";
         while ($list_fk=$rs_list_fk->fetch_assoc()) {
-          $campo_formulario .= "<option value=\"".$list_fk['id']."\">".$list_fk['nombre']."</option>";
+          $campo_formulario .= "<option value=\"".$list_fk['id']."\"";
+          if ((isset($_GET['where'])) and ($_GET['edit'])){
+            if ($info_fila[$valor->name] == $list_fk['id']){
+              $campo_formulario .= "selected";
+            }
+          }
+          $campo_formulario .= " >".$list_fk['nombre']."</option>";
         }
         $rs_list_fk->free();
         $campo_formulario .= "</select>";
@@ -175,7 +186,13 @@ foreach ($info_campo as $valor) {
 
         $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><select name=\"".$valor->orgname."\" class=\"form-control\">";
         foreach ($values as $val){
-          $campo_formulario .= "<option value=\"".$val."\">".htmlentities($val,ENT_SUBSTITUTE,'UTF-8')."</option>";
+          $campo_formulario .= "<option value=\"".$val."\"";
+          if ((isset($_GET['where'])) and ($_GET['edit'])){
+            if ($info_fila[$valor->name] == $val){
+              $campo_formulario .= "selected";
+            }
+          }
+          $campo_formulario .=" >".htmlentities($val,ENT_SUBSTITUTE,'UTF-8')."</option>";
         }
         $campo_formulario .= "</select>";
 
@@ -197,7 +214,14 @@ if (isset($_GET['debug'])) {print_r ($arreglo_campos_formulario); echo "</br>";}
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
   Este registro ya existe!
 </div>
-	<form role="form" method="POST" action="recursos/zhi/insert_generic.php" target="IframeOutput">
+	<form role="form" method="POST" action="<?php
+    if ($_GET['edit']){
+      echo "recursos/zhi/update_generic.php";
+    } else {
+      echo "recursos/zhi/insert_generic.php";
+    }
+  ?>
+" target="IframeOutput">
     <div class="row"> 
       <div class="col-md-6"> <!-- columna uno -->
         <?php
@@ -229,6 +253,10 @@ if (isset($_GET['debug'])) {print_r ($arreglo_campos_formulario); echo "</br>";}
   </div> 
   <input type="hidden" name="table" value="<?php echo $_GET['table']; ?>">
   <input type="hidden" name="select" value="<?php echo $_GET['select']; ?>">
+  <?php if ($_GET['edit']) {
+    echo "<input type=\"hidden\" name=\"where\" value=\"".$_GET['where']."\">";
+  }
+  ?>
   <input type="hidden" name="jquery" value="<?php echo $_GET['jquery'];?>">
   <input type="hidden" name="debug" value="1">
   
