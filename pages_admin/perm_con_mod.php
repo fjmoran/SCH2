@@ -10,7 +10,7 @@
 	<?php 
 	$_GET['table'] = $bd.".PermisoConcepto";
 	$_GET['select'] = "Concepto_idConcepto as Concepto, readPermisoConcepto as Lectura, writePermisoConcepto as Escritura, deletePermisoConcepto as Eliminacion, Perfil_idPerfil as Rol";
-	$_GET['orderby'] = "Concepto_idConcepto";
+	$_GET['orderby'] = "Perfil_idPerfil, Concepto_idConcepto";
 	$_GET['tabla']['width'] = "35%, 10%, 10%, 10%, 25%";
 	$_GET['tabla']['title'] = "Concepto, Lectura, Escritura, Elimimación, Rol";
 	$_GET['acciones'] = "true";
