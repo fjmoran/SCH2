@@ -92,7 +92,7 @@ foreach ($info_campo as $valor) {
         $campo_formulario .= "</span>";
         $campo_formulario .= "<input type=\"text\" class=\"form-control\" id=\"".$valor->orgname."\" name=\"".$valor->orgname."\"";
         if ((isset($_GET['where'])) and ($_GET['edit'])){
-          $campo_formulario .= "value=\"".$info_fila[$valor->name]."\"";
+          $campo_formulario .= "value=\"".date('d-m-Y',strtotime($info_fila[$valor->name]))."\"";
         }
         $campo_formulario .= "placeholder=\"Seleccione una fecha\" readonly=\"true\">";
         $campo_formulario .= "</div>";
