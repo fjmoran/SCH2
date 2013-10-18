@@ -14,10 +14,10 @@
 	$_GET['tabla']['width'] = "45%, 30%, 15%";
 	$_GET['tabla']['title'] = "Parámetro, Valor, Estado";
 	$_GET['acciones'] = "true";
-	$_GET['accion']['editar']['URL'] = "pages_admin/parametros_editar.php";
+	$_GET['accion']['editar']['URL'] = "pages_admin/param_editar.php";
 	$_GET['accion']['editar']['title'] = "Editar";
 	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";	
-	$_GET['accion']['activar']['URL'] = "pages_admin/parametros_estado.php";
+	$_GET['accion']['activar']['URL'] = "pages_admin/param_estado.php";
 
 	require("../recursos/zhi/table_generator.php");
 	?>
