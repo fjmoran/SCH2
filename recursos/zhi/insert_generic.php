@@ -101,7 +101,6 @@ if ($mysqli->multi_query($select_all)) {
 	
 	if ($mysqli->query($insert) === TRUE){
 		$ID = $mysqli->insert_id;
-	}
 
 echo "<html>
 	<body>
@@ -114,6 +113,10 @@ echo "<html>
 	</script>
 	</body>
 </html>";
+	}
+	else {
+		echo "Falló al ejecutar el insert: (". $mysqli->errno .") ". $mysqli->error; 
+	}
 	
  } else{
 	echo "Falló al ejecutar la consulta: (". $mysqli->errno .") ". $mysqli->error;

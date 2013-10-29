@@ -11,6 +11,7 @@ if (!defined('ENT_SUBSTITUTE')) {
 
 $table = substr($_GET['table'],strpos($_GET['table'],".")+1);
 $schema = substr($_GET['table'],0,strpos($_GET['table'],"."));
+$validacion = array();
 $edicion = false;
 
 $script = "";
@@ -71,7 +72,9 @@ foreach ($info_campo as $valor) {
                 $campo_formulario .= "value=\"".$info_fila[$valor->name]."\"";
               }
               $campo_formulario .= " >";
+              if ($valor->flags & 1) { array_push($validacion,$valor->orgname); }
               break;
+              
     case 1: $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><div class=\"checkbox\"><label><input type=\"checkbox\" value=\"1\" name=\"".$valor->orgname ."\"";
             if ((isset($_GET['where'])) and ($_GET['edit'])){
               if ($info_fila[$valor->name]){
@@ -81,7 +84,9 @@ foreach ($info_campo as $valor) {
               $campo_formulario .= " checked";
             }
             $campo_formulario .= " > Activo</label></div>";
+            #if ($valor->flags & 1) { array_push($validacion, $valor->orgname);}
             break;
+
     case 10:
       if(isset($_GET['debug'])) { echo "Es del tipo Fecha </br>";}
         $campo_formulario .= "<div class=\"form-group\">";
@@ -103,8 +108,9 @@ foreach ($info_campo as $valor) {
         $script .= "$('#".$valor->orgname."').datepicker();";
         $script .= "})\n";
         $script .= "</script>";
-
+        if ($valor->flags & 1) { array_push($validacion, $valor->orgname);}
       break;
+      
     case 3:
       if (!($valor->flags & 2)) {
         // No es llave primaria, por lo que es una referencia.
@@ -163,8 +169,9 @@ foreach ($info_campo as $valor) {
         $rs_list_fk->free();
         $campo_formulario .= "</select>";
       }
-
+      #if($valor->flags & 1) { array_push($validacion, $valor->orgname);}
       break;
+      
       case 254:
         if (isset($_GET['debug'])) { echo "Tipo SET </br>";}
         //Acá va lo que se tiene que hacer con el tipo set
@@ -197,7 +204,7 @@ foreach ($info_campo as $valor) {
         $campo_formulario .= "</select>";
 
         $rs_setvalues->free();
-
+        #if($valor->flags & 1) { array_push($validacion, $valor->orgname);}
         break;
       
       default: //cualquier cosa que no esta clasificada pasara por esto.
@@ -208,13 +215,13 @@ foreach ($info_campo as $valor) {
   if (isset($_GET['debug'])) {echo "====================</br>";}
 }
 if (isset($_GET['debug'])) {print_r ($arreglo_campos_formulario); echo "</br>";}
-
+if (isset($_GET['debug'])) {echo " Arreglo de Validacion </br>";print_r ($validacion); echo "</br>";}
 ?>
-<div class="alert alert-danger alert-dismissable <?php if (!(isset($_GET['alert']))) {echo "hide";} ?>">
+<div id="alert" class="alert alert-danger alert-dismissable <?php if (!(isset($_GET['alert']))) {echo "hide";} ?>">
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  Este registro ya existe!
+  <span>Este registro ya existe!</span>
 </div>
-	<form role="form" method="POST" action="<?php
+	<form name="InsertEditForm" id="InsertEditForm" role="form" method="POST" action="<?php
     if ($_GET['edit']){
       echo "recursos/zhi/update_generic.php";
     } else {
@@ -263,3 +270,29 @@ if (isset($_GET['debug'])) {print_r ($arreglo_campos_formulario); echo "</br>";}
 </form>	
 
 <?php echo $script; ?>
+<script type="text/javascript">
+
+$( "#InsertEditForm" ).submit(function( event ) {
+var mensaje = "";
+var error = 0;
+  <?php
+    foreach ($validacion as $valor) {
+      echo "if (\$(\"#$valor\").val().length == 0) {
+         mensaje+=\" $valor No puede ser vacio </br>\";alert(mensaje);
+         error=1;
+      }";
+    }
+  ?>
+
+  alert("Despues del chequear");
+
+if (error == 1){
+  $( "#alert span" ).html("Faltan Campos : "+mensaje);
+  $( "#alert" ).removeClass("hide");
+  event.preventDefault();
+}
+
+});
+
+
+</script>
