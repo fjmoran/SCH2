@@ -4,7 +4,7 @@
 
 <?php 
 $_GET['table'] = $bd.".Pagina";
-$_GET['select'] = "urlPagina as URL, paginaPagina as Pagina, descripcionPagina as Descripcion, activoPagina as Estado";
+$_GET['select'] = "urlPagina as URL, nombrePagina as Pagina, descripcionPagina as Descripcion, activoPagina as Estado";
 $_GET['jquery'] = "$('#cuerpo').load('pages_admin/paginas_mod.php');";
 
 require("../recursos/zhi/insert_table_generic.php");

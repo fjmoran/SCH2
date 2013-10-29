@@ -9,8 +9,8 @@
 
 	<?php 
 	$_GET['table'] = $bd.".Pagina";
-	$_GET['select'] = "urlPagina as URL, paginaPagina as Pagina, descripcionPagina as Descripcion, activoPagina as Estado";
-	$_GET['orderby'] = "activoPagina DESC, paginaPagina";
+	$_GET['select'] = "urlPagina as URL, nombrePagina as Pagina, descripcionPagina as Descripcion, activoPagina as Estado";
+	$_GET['orderby'] = "activoPagina DESC, nombrePagina";
 	$_GET['tabla']['width'] = "25%, 20%, 25%, 15%";
 	$_GET['tabla']['title'] = "URL, Página, Descripción, Estado";
 	$_GET['acciones'] = "true";
