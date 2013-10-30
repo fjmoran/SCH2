@@ -43,11 +43,11 @@
           <input id="fantasia" class="form-control" type="text" placeholder="Nombre de fantasía">           
         </div>
 
-        <div class="form-group hide persona"> <!-- persona -->
+        <div class="form-group hidden persona"> <!-- persona -->
           <label for="nombres">Nombres:</label>
           <input id="nombres" class="form-control" type="text" placeholder="Nombres">
         </div> 
-        <div class="form-group hide persona"> <!-- persona -->
+        <div class="form-group hidden persona"> <!-- persona -->
           <label for="apellido2">Apellido materno:</label>
           <input id="apellido2" class="form-control" type="text" placeholder="Apellido materno"> 
         </div>
@@ -74,7 +74,7 @@
       </div>
       <div class="col-md-6"> <!-- columna derecha -->
 
-        <div class="form-group hide persona"> <!-- persona -->
+        <div class="form-group hidden persona"> <!-- persona -->
           <label for="apellido1">Apellido paterno:</label>
           <input id="apellido1" class="form-control" type="text" placeholder="Apellido paterno"> 
         </div>  
@@ -170,12 +170,12 @@ function toggleSet(rad)
 {
   var type = rad.value;
   if(type == 1){ //empresa
-    $('div.empresa').removeClass('hide');
-    $('div.persona').addClass('hide');  
+    $('div.empresa').removeClass('hidden');
+    $('div.persona').addClass('hidden');  
   }
   if(type == 2){ //persona
-    $('div.persona').removeClass('hide');
-    $('div.empresa').addClass('hide');  
+    $('div.persona').removeClass('hidden');
+    $('div.empresa').addClass('hidden');  
   }  
 }
 </script>
