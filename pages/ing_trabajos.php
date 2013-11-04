@@ -159,7 +159,7 @@ $today = date("d-m-Y");
             </div>  
             <div class="col-md-6">
               <div class="form-group"> 
-                <label for="materia">Materia:</label>
+                <label id="lbl_materia" for="materia">Materia:</label>
                 <input id="materia" class="form-control" type="text" placeholder="Materia">
               </div>
               <div class="form-group">
@@ -238,7 +238,7 @@ $today = date("d-m-Y");
             </div>  
             <div class="col-md-6">
               <div class="form-group"> 
-                <label for="materia">Materia:</label>
+                <label id="lbl_materia" for="materia" >Materia:</label>
                 <input id="materia" class="form-control" type="text" placeholder="Materia">
               </div>
               <div class="form-group">
@@ -274,6 +274,36 @@ $today = date("d-m-Y");
 
     <script type="text/javascript"> 
       
+      <?php
+
+        require_once ("../recursos/zhi/CreaConnv2.php");
+
+        if (!defined('ENT_SUBSTITUTE')) {
+          define('ENT_SUBSTITUTE', 8);
+        }
+        
+        $select = "select nombrelabel as id, desplieguelabel as valor, classlabel as class from Label";
+
+        $rs = $mysqli->query($select);
+        if (!$rs) {
+          echo "Falló al ejecutar la consulta: (". $mysqli->errno .") ". $mysqli->error;
+        }else {
+          $retorno = "var labels = {";
+          $indice = 0;
+          while ($label = $rs->fetch_assoc()){
+            
+            if ($indice > 0) { $retorno .= ",";}
+            $retorno .= $label['id']." : '".htmlentities($label['valor'],ENT_SUBSTITUTE,'UTF-8')."'";
+            $indice ++;
+          }
+          
+          $retorno .= "}";
+          $rs->free();
+
+          echo $retorno;
+        }
+      ?>
+
       $(document).ready(function(){
         /* Calendario 1*/       
         $('#cal1').datepicker();
@@ -283,7 +313,5 @@ $today = date("d-m-Y");
         $('.table').tooltip({
           selector: "[rel=tooltip]"
          })
-
-      })
-     
+      });
     </script>
