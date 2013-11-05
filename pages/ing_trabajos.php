@@ -275,7 +275,6 @@ $today = date("d-m-Y");
     <script type="text/javascript"> 
       
       <?php
-
         require_once ("../recursos/zhi/CreaConnv2.php");
 
         if (!defined('ENT_SUBSTITUTE')) {
@@ -297,14 +296,23 @@ $today = date("d-m-Y");
             $indice ++;
           }
           
-          $retorno .= "}";
+          $retorno .= "};\n";
           $rs->free();
 
           echo $retorno;
         }
       ?>
 
+      for (var elem in labels){
+        //alert(elem + " value " + labels[elem]);
+        var cadena = new RegExp(elem, 'g');
+        
+        document.body.innerHTML = document.body.innerHTML.replace(cadena, labels[elem]);
+      }
+
+
       $(document).ready(function(){
+
         /* Calendario 1*/       
         $('#cal1').datepicker();
         /* Calendario 2*/       
