@@ -273,43 +273,6 @@ $today = date("d-m-Y");
 <!-- Fin Modal 2 -->
 
     <script type="text/javascript"> 
-      
-      <?php
-        require_once ("../recursos/zhi/CreaConnv2.php");
-
-        if (!defined('ENT_SUBSTITUTE')) {
-          define('ENT_SUBSTITUTE', 8);
-        }
-        
-        $select = "select nombrelabel as id, desplieguelabel as valor, classlabel as class from Label";
-
-        $rs = $mysqli->query($select);
-        if (!$rs) {
-          echo "Falló al ejecutar la consulta: (". $mysqli->errno .") ". $mysqli->error;
-        }else {
-          $retorno = "var labels = {";
-          $indice = 0;
-          while ($label = $rs->fetch_assoc()){
-            
-            if ($indice > 0) { $retorno .= ",";}
-            $retorno .= $label['id']." : '".htmlentities($label['valor'],ENT_SUBSTITUTE,'UTF-8')."'";
-            $indice ++;
-          }
-          
-          $retorno .= "};\n";
-          $rs->free();
-
-          echo $retorno;
-        }
-      ?>
-
-      for (var elem in labels){
-        //alert(elem + " value " + labels[elem]);
-        var cadena = new RegExp(elem, 'g');
-        
-        document.body.innerHTML = document.body.innerHTML.replace(cadena, labels[elem]);
-      }
-
 
       $(document).ready(function(){
 
@@ -323,3 +286,8 @@ $today = date("d-m-Y");
          })
       });
     </script>
+
+<?php
+/* incluye script para hacer el cambio de los nombres en los labels */
+include ("../recursos/zhi/replace_label.php");
+?>
