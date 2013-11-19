@@ -219,7 +219,7 @@ for($i = 0; $i < count($title_table); $i++){
 	$header_table .= "</th>\n";
 }
 if (isset($_GET['acciones'])){
-	$header_table .= "<th width=10% style=\"text-align: center; color:#428BCA; \">Acciones</th>\n";
+	$header_table .= "<th width=10% style=\"text-align: center; color:#428BCA; padding-left:16px; \">Acciones</th>\n";
 }
 $header_table .= "</tr>\n";
 if(isset($_GET['debug'])){echo $header_table."</br>";}
@@ -304,14 +304,14 @@ foreach ($campos_tabla as $campo) {
 						if (isset($_GET['debug'])) { echo "En acción activar </br>";}
 						if ($activo){
 							$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."&activar=1');\" href=\"#".$table."_".$key."\">";
-							$body_table .= "<span class=\"glyphicon glyphicon-remove-circle\" style=\"color: black; font-size:12px; padding-left:4px; \" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span></a>";
+							$body_table .= "<span class=\"glyphicon glyphicon-remove-circle\" style=\"color: black; font-size:12px; padding-left:8px; padding-right:8px; \" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span></a>";
 						}else {
 							$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."&activar=0');\" href=\"#".$table."_".$key."\">";
-							$body_table .= "<span class=\"glyphicon glyphicon-refresh\" style=\"color: black; font-size:12px; padding-left:4px; \" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span></a>";
+							$body_table .= "<span class=\"glyphicon glyphicon-refresh\" style=\"color: black; font-size:12px; padding-left:8px; padding-right:8px; \" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span></a>";
 						}
 					}else{
 						$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."');\" href=\"#".$table."_".$key."\">";
-						$body_table .= "<span class=\"".$value['class']."\" style=\"color: black; font-size:12px; padding-left:4px; \" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"".$value['title']."\"></span></a>";
+						$body_table .= "<span class=\"".$value['class']."\" style=\"color: black; font-size:12px; padding-left:8px; padding-right:8px; \" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"".$value['title']."\"></span></a>";
 					}
 
 				}
