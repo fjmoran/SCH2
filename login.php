@@ -129,7 +129,7 @@ session_destroy();
     <script src="recursos/jquery/jquery-1.10.2.min.js"></script>    
     <script src="recursos/bootstrap3/js/bootstrap.min.js"></script>
     <script src="recursos/CryptoJSv3/rollups/sha1.js"></script>
-    <script src="recursos/zhi/rememberme.js"</script>
+    <script src="recursos/zhi/rememberme.js"></script>
     
     <script type="text/javascript">
     	$('form.form-signin').on('submit', function(){
