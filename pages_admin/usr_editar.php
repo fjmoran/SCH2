@@ -5,7 +5,7 @@
 <?php
 
 $_GET['table'] = $bd.".Usuario";
-$_GET['select'] = "nombreUsuario as Nombre, userUsuario as Usuario, claveUsuario as Clave, correoUsuario as Correo, telefonoUsuario as Telefono, celularUsuario as Movil, Perfil_idPerfil as Rol, activoUsuario as Estado";
+$_GET['select'] = "nombreUsuario as Nombre, userUsuario as Usuario, correoUsuario as Correo, telefonoUsuario as Telefono, celularUsuario as Movil, Perfil_idPerfil as Rol, activoUsuario as Estado";
 $_GET['where'] = "idUsuario='".$_GET['idUsuario']."'";
 $_GET['edit'] = 1;
 $_GET['jquery'] = "$('#cuerpo').load('pages_admin/usr_mod.php');";
