@@ -93,7 +93,7 @@ session_destroy();
         	?>
         </span></h4>
         <label class="checkbox">
-          <input type="checkbox" value="remember_me" id="remeber_me"> Recordarme
+          <input type="checkbox" value="remember_me" id="remeber_me" checked> Recordarme
         </label>
         <button class="btn btn-primary btn-block" type="submit">Ingresar</button><br>
         <a href="#recuperar" data-toggle="modal">Recuperar contraseña</a>
