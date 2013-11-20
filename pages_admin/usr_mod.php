@@ -22,7 +22,7 @@
 	$_GET['accion']['tar']['class'] = "glyphicon glyphicon-usd";	
 	$_GET['accion']['clave']['URL'] = "pages_admin/usr_clave_mod.php";
 	$_GET['accion']['clave']['title'] = "Cambiar clave";
-	$_GET['accion']['clave']['class'] = "glyphicon glyphicon-lock";
+	$_GET['accion']['clave']['class'] = "glyphicon glyphicon-user";
 	$_GET['accion']['activar']['URL'] = "pages_admin/usr_estado.php";
 
 	#$_GET['debug']=1;	
