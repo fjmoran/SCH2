@@ -311,12 +311,12 @@ foreach ($campos_tabla as $campo) {
 						}
 					}else{
 						if (strpos($value['URL'],"#") === 0){
-							$body_table .= "<a href=\"".$value['URL']."\" data-toogle=\"modal\">";
-							$body_table .= "cambio Clave</a>";
+							$body_table .= "<a href=\"".$value['URL']."\" data-toggle=\"modal\">";
 						}else {
 							$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."');\" href=\"#".$table."_".$key."\">";
-							$body_table .= "<span class=\"".$value['class']."\" style=\"color: black; font-size:12px; \" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"".$value['title']."\"></span>&nbsp</a>";
 						}
+						$body_table .= "<span class=\"".$value['class']."\" style=\"color: black; font-size:12px; \" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"".$value['title']."\"></span>&nbsp</a>";
+
 					}
 
 				}
