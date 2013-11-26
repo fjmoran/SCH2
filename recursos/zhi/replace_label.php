@@ -31,9 +31,15 @@
 
       for (var elem in labels){
         //alert(elem + " value " + labels[elem]);
-        var cadena = new RegExp(elem, 'g');
-        
-        document.body.innerHTML = document.body.innerHTML.replace(cadena, labels[elem]);
+        //var cadena = new RegExp(elem, '');
+       
+        //alert("ANtes de Jquery");
+        $.each( $('[id~='+ elem +']'),function () {
+          //alert( $(this).text() );
+          $(this).text(labels[elem]);
+          //alert($(this).text());
+        });
+        //document.body.innerHTML = document.body.innerHTML.replace(cadena, labels[elem]);
       }
 
 </script>
