@@ -310,7 +310,11 @@ foreach ($campos_tabla as $campo) {
 							$body_table .= "<span class=\"glyphicon glyphicon-refresh\" style=\"color: black; font-size:12px; \" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span>&nbsp</a>";
 						}
 					}else{
-						$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."');\" href=\"#".$table."_".$key."\">";
+						if (substring($value['URL'],0,1) == "#"){
+							$body_table .= "<a href=\"".$value['URL']."\" data-toogle=\"modal\">";
+						}else {
+							$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."');\" href=\"#".$table."_".$key."\">";
+						}
 						$body_table .= "<span class=\"".$value['class']."\" style=\"color: black; font-size:12px; \" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"".$value['title']."\"></span>&nbsp</a>";
 					}
 
