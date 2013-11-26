@@ -2,6 +2,19 @@
  	<h2>Usuarios</h2>
 	<h5>Administración de usuarios</h5>
 
+
+
+
+
+	<a href="#agregar" role="button" class="btn btn-sm btn-success pull-right" data-toggle="modal"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
+
+
+
+
+
+
+	
+
 	<br>
 		<a onclick="$('#cuerpo').load('pages_admin/usr_crear.php');" href="#usr_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
