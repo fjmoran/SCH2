@@ -2,19 +2,6 @@
  	<h2>Usuarios</h2>
 	<h5>Administración de usuarios</h5>
 
-
-
-
-
-	<a href="#agregar" role="button" class="btn btn-sm btn-success pull-right" data-toggle="modal"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
-
-
-
-
-
-
-	
-
 	<br>
 		<a onclick="$('#cuerpo').load('pages_admin/usr_crear.php');" href="#usr_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
@@ -62,15 +49,6 @@
 </div><!-- col-md-11 -->
 
 
-
-
-
-
-
-
-
-
-
 <div id="usr_clave_mod" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="agregarLabel" aria-hidden="true">
   
   <div class="modal-dialog">
@@ -78,7 +56,7 @@
 
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title" id="myModalLabel">Ingreso de Trabajo</h4>
+        <h4 class="modal-title" id="myModalLabel">Ingreso de Trabajo TEST</h4>
       </div>
       <form role="form">
         <div class="modal-body">
