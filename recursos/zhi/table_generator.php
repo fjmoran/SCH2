@@ -311,7 +311,7 @@ foreach ($campos_tabla as $campo) {
 						}
 					}else{
 						if (strpos($value['URL'],"#") === 0){
-							$body_table .= "<a href=\"".$value['URL']."\" data-toggle=\"modal\">";
+							$body_table .= "<a onclick=\"$('".$value['URL']."').load('".substr($value['URL'],1).".php?".$id."');\" href=\"".$value['URL']."\" data-toggle=\"modal\">";
 						}else {
 							$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."');\" href=\"#".$table."_".$key."\">";
 						}
