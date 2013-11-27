@@ -47,7 +47,7 @@
 	      <div class="col-md-12">
 	        <p>
             <button class="btn btn-default">Cancelar</button>
-	          <button class="btn btn-default" data-toggle="modal" data-target="#usr_clave_mod">Cambiar clave</button>
+	          <button class="btn btn-info" data-toggle="modal" data-target="#usr_clave_mod">Cambiar clave</button>
 	          <button class="btn btn-primary">Guardar</button>
 	        </p>
 	      </div>
