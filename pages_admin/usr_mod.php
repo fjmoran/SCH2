@@ -1,3 +1,15 @@
+<?php
+
+require_once("../recursos/zhi/CreaConnv2.php");
+require_once ("../recursos/zhi/auth.php");
+require_once ("../recursos/zhi/funciones.php");
+
+if (!isset($_GET['pagina'])){ $_GET['pagina']=1;}
+if (!isset($_GET['tampag'])){ $_GET['tampag']=10;}
+	
+
+?>
+
 <div class="col-md-11">
  	<h2>Usuarios</h2>
 	<h5>Administración de usuarios</h5>
@@ -25,21 +37,22 @@
 	$_GET['accion']['clave']['class'] = "glyphicon glyphicon-user";
 	$_GET['accion']['activar']['URL'] = "pages_admin/usr_estado.php";
 
+	list($reg,$total)=select_paginar($_GET['table'],$_GET['where'],$_GET['pagina'],$_GET['tampag'],"id".$_GET['table'],$mysqli);
+
+	$_GET['limit'] = $reg.",".$_GET['tampag']+$reg;
+
 	#$_GET['debug']=1;	
 
 	require("../recursos/zhi/table_generator.php");
 	?>
-
+	
 	<div class="col-md-12 text-center">
-	  <ul class="pagination pagination-sm" >
-	    <li><a href="#">Anterior</a></li>
-	    <li class="active"><a href="#">1</a></li>
-	    <li><a href="#">2</a></li>
-	    <li><a href="#">3</a></li>
-	    <li><a href="#">4</a></li>
-	    <li><a href="#">5</a></li>
-	    <li><a href="#">Siguiente</a></li>
-	  </ul>
+	<?php
+
+		if ($_GET['tampag']<$total){
+			echo paginar($_GET['pagina'],$total,$_GET['tampag'],"pages_admin/usr_mod.php?tampag=".$_GET['tampag']."&pagina=","#usr_mod");
+		}
+	?>
 	</div>
 
 </div><!-- col-md-11 -->

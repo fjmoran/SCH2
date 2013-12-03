@@ -5,7 +5,7 @@ $ini_array = parse_ini_file("config.ini");
 $user = $ini_array['user'];
 $passwd = $ini_array['password'];
 $host = $ini_array['host'];
-$bd = $ini_array['schema'];
+$bd = $db = $ini_array['schema'];
 
 $mysqli = new mysqli($host, $user, $passwd, $bd);
 if ($mysqli->connect_errno) {

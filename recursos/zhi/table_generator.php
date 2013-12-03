@@ -65,7 +65,7 @@ else {
 
 $select = $select ." from ". $_GET['table']; 
 
-if (isset($_GET['where'])) { 
+if ((isset($_GET['where'])) and ($_GET['where']!="")) { 
 	$select = $select." where ".$_GET['where'];
 }
 
@@ -190,6 +190,11 @@ if ($regen_select) { // Si falto algun PRIMARY KEY o hay alguna llave foranea, s
 	if (isset($_GET['orderby'])) { 
 		$select = $select." order by ".$_GET['orderby'];
 	}
+	
+	if (isset($_GET['limit'])) {
+		$select = $select." LIMIT ".$_GET['limit'];
+	}
+		
 	if (isset($_GET['debug'])) {echo "Query con PRIMARYKEY ".$select ."</br>";}
 
 	// Se libera el result de la query con select del usuario
