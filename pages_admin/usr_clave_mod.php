@@ -11,13 +11,13 @@
             <div class="col-md-6">
               <div class="form-group"> 
                 <label id="lbl_nvaclave" for="clave">Nueva clave:</label>
-                <input id="clave" class="form-control" type="text" placeholder="Nueva clave">
+                <input id="clave" class="form-control" type="password" placeholder="Nueva clave">
               </div>              
             </div>  
             <div class="col-md-6">
               <div class="form-group"> 
                 <label id="lbl_nuevaclave2" for="clave2">Reingrese clave:</label>
-                <input id="clave2" class="form-control" type="text" placeholder="Reingrese clave">
+                <input id="clave2" class="form-control" type="password" placeholder="Reingrese clave">
               </div>              
             </div>
           </div>   
