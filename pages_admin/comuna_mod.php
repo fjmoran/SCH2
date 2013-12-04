@@ -1,3 +1,14 @@
+<?php
+
+require_once("../recursos/zhi/CreaConnv2.php");
+require_once ("../recursos/zhi/auth.php");
+require_once ("../recursos/zhi/funciones.php");
+
+if (!isset($_GET['pagina'])){ $_GET['pagina']=1;} // pagina inicial
+if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagina
+	
+?>
+
 <div class="col-md-11">
  	<h2>Comunas</h2>
 	<h5>Administración de comunas</h5>
@@ -19,19 +30,21 @@
 	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";
 	$_GET['accion']['activar']['URL'] = "pages_admin/comuna_estado.php";
 
+	list($reg,$total)=select_paginar($_GET['table'],$_GET['where'],$_GET['pagina'],$_GET['tampag'],"id".$_GET['table'],$mysqli);
+
+	$hasta = $_GET['tampag']+$reg;
+	$_GET['limit'] = $reg.",".$hasta;	
+
 	require("../recursos/zhi/table_generator.php");
 	?>
 
 	<div class="col-md-12 text-center">
-	  <ul class="pagination pagination-sm" >
-	    <li><a href="#">Anterior</a></li>
-	    <li class="active"><a href="#">1</a></li>
-	    <li><a href="#">2</a></li>
-	    <li><a href="#">3</a></li>
-	    <li><a href="#">4</a></li>
-	    <li><a href="#">5</a></li>
-	    <li><a href="#">Siguiente</a></li>
-	  </ul>
+	<?php
+
+		if ($_GET['tampag'] < $total){
+			echo paginar($_GET['pagina'],$total,$_GET['tampag'],"pages_admin/comuna_mod.php?tampag=".$_GET['tampag']."&pagina=","#usr_mod");
+		}
+	?>
 	</div>
 
 </div><!-- col-md-11 -->

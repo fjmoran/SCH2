@@ -7,7 +7,6 @@ require_once ("../recursos/zhi/funciones.php");
 if (!isset($_GET['pagina'])){ $_GET['pagina']=1;} // pagina inicial
 if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagina
 	
-
 ?>
 
 <div class="col-md-11">
