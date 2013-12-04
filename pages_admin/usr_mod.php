@@ -82,6 +82,6 @@ if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagi
     <script type="text/javascript">
 		$('.modal').on('hidden.bs.modal', function () {
 			// alert("cerrado!");
-			$('.modal').removeData();
+			$(this).removeData();
 		});
 	</script>
