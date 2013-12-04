@@ -82,7 +82,6 @@ if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} //
     
     <script type="text/javascript">
 		$('#act_desact').on('hidden', '.modal', function () {
-			alert("Before Remove");
 			$(this).removeData('modal');
 		});
 	</script>
