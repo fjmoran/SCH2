@@ -42,7 +42,7 @@ if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagi
 	<?php
 
 		if ($_GET['tampag'] < $total){
-			echo paginar($_GET['pagina'],$total,$_GET['tampag'],"pages_admin/comuna_mod.php?tampag=".$_GET['tampag']."&pagina=","#usr_mod");
+			echo paginar($_GET['pagina'],$total,$_GET['tampag'],"pages_admin/comuna_mod.php?tampag=".$_GET['tampag']."&pagina=","#comuna_mod");
 		}
 	?>
 	</div>
