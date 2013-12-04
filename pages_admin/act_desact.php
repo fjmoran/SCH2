@@ -16,7 +16,7 @@ $id = "id".$tabla;
        <!--  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> -->
         <h4 class="modal-title" id="myModalLabel">
         <?php
-        	if ($_GET['activar'] == 1) {
+        	if ($_GET['activar'] == 0) {
 	        	echo "Activaci&oacute;n";
         	}else {
 	        	echo "Desactivaci&oacute;n";
@@ -29,7 +29,7 @@ $id = "id".$tabla;
           <div class="row"> 
             <div class="col-md-12">
 
-              Esta seguro que desea <?php if ($_GET['activar'] == 1) { echo "activar"; } else { echo "desactivar";} ?> al item Id <?php echo $id.",".$_GET[$id];
+              Esta seguro que desea <?php if ($_GET['activar'] == 0) { echo "activar"; } else { echo "desactivar";} ?> al item Id <?php echo $id.",".$_GET[$id];
               ?>
              
             </div>  
@@ -39,7 +39,7 @@ $id = "id".$tabla;
           <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cancelar</button>
           <button type="submit" class="btn 
           <?php 
-          if ($_GET['activar'] == 1) {
+          if ($_GET['activar'] == 0) {
           	echo "btn-success";
           }else{
 	          echo "btn-danger"; 
@@ -47,7 +47,7 @@ $id = "id".$tabla;
           ?>
           ">
           <?php
-          if ($_GET['activar']==1){
+          if ($_GET['activar']==0){
 	          echo "Activar";
           }else{
 	          echo "Desactivar";

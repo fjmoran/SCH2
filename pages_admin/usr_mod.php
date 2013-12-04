@@ -4,8 +4,8 @@ require_once("../recursos/zhi/CreaConnv2.php");
 require_once ("../recursos/zhi/auth.php");
 require_once ("../recursos/zhi/funciones.php");
 
-if (!isset($_GET['pagina'])){ $_GET['pagina']=1;} //
-if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} //
+if (!isset($_GET['pagina'])){ $_GET['pagina']=1;} // pagina inicial
+if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagina
 	
 
 ?>
@@ -16,7 +16,6 @@ if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} //
 
 	<br>
 		<a onclick="$('#cuerpo').load('pages_admin/usr_crear.php');" href="#usr_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
-
 
 	<h4>Usuarios del sistema</h4>
 
@@ -81,7 +80,8 @@ if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} //
     </script>
     
     <script type="text/javascript">
-		$('#act_desact').on('hidden', '.modal', function () {
-			$(this).removeData('modal');
+		$('#act_desact').on('hidden.bs.modal', function () {
+			// alert("cerrado!");
+			$('#act_desact').removeData();
 		});
 	</script>
