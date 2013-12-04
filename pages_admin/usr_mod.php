@@ -18,8 +18,6 @@ if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} //
 		<a onclick="$('#cuerpo').load('pages_admin/usr_crear.php');" href="#usr_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
 
-			<a onclick="$('#cuerpo').load('pages_admin/act_desact.php');" href="#usr_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> 2Agregar</a>
-
 	<h4>Usuarios del sistema</h4>
 
 	<?php 
@@ -53,7 +51,7 @@ if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} //
 	<div class="col-md-12 text-center">
 	<?php
 
-		if ($_GET['tampag']<$total){
+		if ($_GET['tampag'] < $total){
 			echo paginar($_GET['pagina'],$total,$_GET['tampag'],"pages_admin/usr_mod.php?tampag=".$_GET['tampag']."&pagina=","#usr_mod");
 		}
 	?>
@@ -67,9 +65,7 @@ if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} //
 </div><!-- modal cambio de clave-->  
 
 
-<div id="act_desact" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="agregarLabel" aria-hidden="true">
-
-	<?php include('act_desact.php'); ?>
+<div id="act_desact" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="act_deasctLabel" aria-hidden="true">
     
 </div><!-- modal activar y desactivar -->  
 
@@ -83,3 +79,10 @@ if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} //
          })
       })    
     </script>
+    
+    <script type="text/javascript">
+		$('#act_desact').on('hidden', '.modal', function () {
+			alert("Before Remove");
+			$(this).removeData('modal');
+		});
+	</script>
