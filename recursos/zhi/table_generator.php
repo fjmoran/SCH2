@@ -308,12 +308,12 @@ foreach ($campos_tabla as $campo) {
 					if ($key == 'activar'){
 						if (isset($_GET['debug'])) { echo "En acción activar </br>";}
 						if ($activo){
-							$body_table .= "<a data-target=\"#act_desact\" href=\"pages_admin/act_desact.php?table=".$_GET['table']."&activar=1&".$id."\" data-toggle=\"modal\" >";
+							$body_table .= "<a data-target=\"#act_desact\" href=\"pages_admin/act_desact.php?table=".$_GET['table']."&activar=1&".$id."\" data-toggle=\"modal\" data-backdrop=\"static\" data-keyboard=\"false\">";
 //							
 //							<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."&activar=1');\" href=\"#".$table."_".$key."\">";
 							$body_table .= "<span class=\"glyphicon glyphicon-remove-circle\" style=\"color: black; font-size:12px; margin-right: 3px; margin-left: 3px;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span></a>";
 						}else {
-							$body_table .= "<a data-target=\"#act_desact\" href=\"pages_admin/act_desact.php?table=".$_GET['table']."&activar=0&".$id."\" data-toggle=\"modal\">";
+							$body_table .= "<a data-target=\"#act_desact\" href=\"pages_admin/act_desact.php?table=".$_GET['table']."&activar=0&".$id."\" data-toggle=\"modal\" data-backdrop=\"static\" data-keyboard=\"false\">";
 //							
 //							<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."&activar=0');\" href=\"#".$table."_".$key."\">";
 							$body_table .= "<span class=\"glyphicon glyphicon-refresh\" style=\"color: black; font-size:12px; margin-right: 3px; margin-left: 3px;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span></a>";
