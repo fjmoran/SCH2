@@ -38,7 +38,7 @@ if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagi
 
 	list($reg,$total)=select_paginar($_GET['table'],$_GET['where'],$_GET['pagina'],$_GET['tampag'],"id".$_GET['table'],$mysqli);
 
-	$hasta = $_GET['tampag']+$reg;
+	$hasta = $_GET['tampag'];
 	$_GET['limit'] = $reg.",".$hasta;
 
 	#$_GET['debug']=1;	

@@ -24,12 +24,12 @@ $id = "id".$tabla;
         ?>
         </h4>
       </div>
-      <form role="form">
+      <form role="form" method="post" target="IframeOutput" action="recursos/zhi/activar.php">
         <div class="modal-body">
           <div class="row"> 
             <div class="col-md-12">
 
-              Esta seguro que desea <?php if ($_GET['activar'] == 0) { echo "activar"; } else { echo "desactivar";} ?> al item Id <?php echo $id.",".$_GET[$id];
+              Esta seguro que desea <?php if ($_GET['activar'] == 0) { echo "activar"; } else { echo "desactivar";} ?> al item con <?php echo $id." ".$_GET[$id];
               ?>
              
             </div>  
@@ -55,6 +55,10 @@ $id = "id".$tabla;
           ?>
           </button> <!-- class="btn btn-success" -->
         </div>
+        <input type="hidden" name="<?php echo $id; ?>" value="<?php echo $_GET[$id]; ?>">
+        <input type="hidden" name="table" value="<?php echo $_GET['table']; ?>">
+        <input type="hidden" name="activo<?php echo $tabla; ?>" value="<?php echo $_GET['activar']?0:1; ?>">
+        <input type="hidden" name="debug" value="1"> <!-- Borrar antes de paso a producción -->
       </form>
     </div><!-- modal-content -->
   </div><!-- modal-dialog -->
