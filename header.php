@@ -7,8 +7,8 @@
           <div class="btn-group">
             <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown">
             	<?php
-            	if (isset($_SESSION[nombreUsuario])) {
-            		echo " ".$_SESSION[nombreUsuario];
+            	if (isset($_SESSION['nombreUsuario'])) {
+            		echo " ".$_SESSION['nombreUsuario'];
             	}
             	else {
             		echo " Usuario";

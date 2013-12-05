@@ -19,6 +19,7 @@ if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagi
 	<h4>Usuarios del sistema</h4>
 
 	<?php 
+	$_GET['callerURL'] = $_SERVER ['PHP_SELF'];
 	$_GET['table'] = $db.".Usuario";
 	$_GET['select'] = "nombreUsuario as Nombre, userUsuario as Usuario, Perfil_idPerfil as Rol, activoUsuario as Estado";
 	$_GET['orderby'] = "activoUsuario DESC, nombreUsuario";

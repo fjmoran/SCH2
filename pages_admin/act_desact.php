@@ -30,6 +30,7 @@ $id = "id".$tabla;
             <div class="col-md-12">
 
               Esta seguro que desea <?php if ($_GET['activar'] == 0) { echo "activar"; } else { echo "desactivar";} ?> al item con <?php echo $id." ".$_GET[$id];
+              //echo $_GET['callerURL'];
               ?>
              
             </div>  
@@ -58,6 +59,7 @@ $id = "id".$tabla;
         <input type="hidden" name="<?php echo $id; ?>" value="<?php echo $_GET[$id]; ?>">
         <input type="hidden" name="table" value="<?php echo $_GET['table']; ?>">
         <input type="hidden" name="activo<?php echo $tabla; ?>" value="<?php echo $_GET['activar']?0:1; ?>">
+        <input type="hidden" name="callerURL" value="<?php echo $_GET['callerURL']; ?>">
         <input type="hidden" name="debug" value="1"> <!-- Borrar antes de paso a producción -->
       </form>
     </div><!-- modal-content -->
