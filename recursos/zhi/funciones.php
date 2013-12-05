@@ -131,10 +131,27 @@ function myfragment($str, $n, $delim='...') { // {{{
  * Devuelve un texto que representa la paginacion
  */
 
-function paginar($actual=1, $total, $por_pagina=10, $enlace,$href) {
+function paginar($actual=1, $total, $por_pagina=10, $enlace,$href,$por_ventana=10) {
   $total_paginas = ceil($total/$por_pagina);
   $anterior = $actual - 1;
   $posterior = $actual + 1;
+  $total_ventanas = ceil($total_paginas / $por_ventana);
+  $ventana_actual = floor($actual / $por_pagina);
+  
+  $inicio_ventana = $ventana_actual * $por_pagina;
+  if ($inicio_ventana < 1) { 
+  	$inicio_ventana = 1;
+  }
+  
+  $fin_ventana = (($ventana_actual + 1) * $por_pagina) - 1;
+  if ($fin_ventana < 1) {
+  	$fin_ventana = 1;
+  }
+  if ($fin_ventana > $total_paginas) {
+  	$fin_ventana = $total_paginas;
+  }
+
+
   $texto = "<ul class=\"pagination pagination-sm\" >";
 
   if ($actual > 1) {
@@ -143,11 +160,11 @@ function paginar($actual=1, $total, $por_pagina=10, $enlace,$href) {
   else {
     $texto .= "<li class=\"disabled\"><a href=#>Anterior</a></li> ";
   }
-  for ($i=1; $i<$actual; $i++) {
+  for ($i=$inicio_ventana; $i<$actual; $i++) {
     $texto .= "<li onclick=\"$('#cuerpo').load('$enlace$i');\"><a href=\"".$href."_".$i."\">$i</a></li> ";
   }
   $texto .= "<li class=\"active\"><span>$actual<span class=\"sr-only\">(current)</span></span></li> ";
-  for ($i=$actual+1; $i<=$total_paginas; $i++) {
+  for ($i=$actual+1; $i<=$fin_ventana; $i++) {
     $texto .= "<li onclick=\"$('#cuerpo').load('$enlace$i');\"><a href=\"".$href."_".$i."\">$i</a></li> ";
   }
   if ($actual<$total_paginas) {
