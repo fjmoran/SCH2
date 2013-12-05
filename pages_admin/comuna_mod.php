@@ -18,7 +18,8 @@ if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagi
 
 	<h4>Comunas registradas en el sistema</h4>
 
-	<?php 
+	<?php
+	$_GET['callerURL'] = $_SERVER["PHP_SELF"];
 	$_GET['table'] = $bd.".Comuna";
 	$_GET['select'] = "Region_idRegion as Region, nombreComuna as Comuna, codeComuna as Codigo, activoComuna as Estado";
 	$_GET['orderby'] = "activoComuna DESC, Region_idRegion, codeComuna";
@@ -49,6 +50,9 @@ if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagi
 
 </div><!-- col-md-11 -->
 
+<div id="act_desact" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="act_deasctLabel" aria-hidden="true">
+    
+</div><!-- modal activar y desactivar -->  
     <script type="text/javascript"> 
       
       $(document).ready(function(){       
