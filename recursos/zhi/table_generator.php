@@ -14,18 +14,6 @@ $table = substr($_GET['table'],strpos($_GET['table'],".")+1);
 $schema = substr($_GET['table'],0,strpos($_GET['table'],"."));
 $select = "select ";
 
-$callerURL = pathinfo($_GET['callerURL']);
-
-// Validación de que estoy en la tabla de usuario y que el usuario listado soy yo.
-
-$UserTable = 0;
-
-if ($callerURL['filename'] == "usr_mod") {
-	$UserTable = 1;
-	if ($_GET['debug']) { echo "User Table : ".$UserTable."</br>"; }
-}
-
-
 $body_table = ""; //se guardan los campos que van en body de la tabla
 $header_table = ""; //se guardan los campos que van en header de la tabla
 
@@ -261,7 +249,7 @@ if (isset($_GET['debug'])) {echo "Listado de tipos de los campos que trae la tab
 
 foreach ($campos_tabla as $campo) {
 	if (isset($_GET['debug'])) {
-		echo "Campo a desplegar en la tabla (campo de campos_tabla):";
+		echo "Campo a desplegar en la tabla :";
 		print_r ($campo);
 		echo "</br>";
 	}
@@ -306,7 +294,6 @@ foreach ($campos_tabla as $campo) {
 		foreach ($keys as $key){
 			$id .= $key ."=".$campo[$key]."&";
 		}
-		
 		if ($_GET['acciones']){
 		$body_table .= "<td style=\"text-align: center; \" >\n";			
 			if (isset($_GET['accion'])){
@@ -319,27 +306,17 @@ foreach ($campos_tabla as $campo) {
 						echo "</br>";
 					}
 					if ($key == 'activar'){
-						if (isset($_GET['debug'])) { echo "En acción activar ".$campo['idUsuario']." = ".$_SESSION['idUsuario']."</br>";}
+						if (isset($_GET['debug'])) { echo "En acción activar </br>";}
 						if ($activo){
-							if (!(($UserTable) && ($campo['idUsuario'] == $_SESSION['idUsuario']))){
-								$body_table .= "<a data-target=\"#act_desact\" href=\"pages_admin/act_desact.php?table=".$_GET['table']."&activar=1&".$id."callerURL=".$_GET['callerURL']."\" data-toggle=\"modal\" data-backdrop=\"static\" data-keyboard=\"false\">";
-							}
-							$body_table .= "<span class=\"glyphicon glyphicon-remove-circle\" style=\"color:";
-							if (!(($UserTable) && ($campo['idUsuario'] == $_SESSION['idUsuario']))){
-								$body_table .= "black";
-							}else {
-								$body_table .= "#777";
-							}
-							$body_table .= "; font-size:12px; margin-right: 3px; margin-left: 3px;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span>";
-							if (!(($UserTable) && ($campo['idUsuario'] == $_SESSION['idUsuario']))){
-								$body_table .= "</a>";
-							}
+							$body_table .= "<a data-target=\"#act_desact\" href=\"pages_admin/act_desact.php?table=".$_GET['table']."&activar=1&".$id."callerURL=".$_GET['callerURL']."\" data-toggle=\"modal\" data-backdrop=\"static\" data-keyboard=\"false\">";
+//							
+//							<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."&activar=1');\" href=\"#".$table."_".$key."\">";
+							$body_table .= "<span class=\"glyphicon glyphicon-remove-circle\" style=\"color: black; font-size:12px; margin-right: 3px; margin-left: 3px;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span></a>";
 						}else {
-								$body_table .= "<a data-target=\"#act_desact\" href=\"pages_admin/act_desact.php?table=".$_GET['table']."&activar=0&".$id."callerURL=".$_GET['callerURL']."\" data-toggle=\"modal\" data-backdrop=\"static\" data-keyboard=\"false\">";
-								$body_table .= "<span class=\"glyphicon glyphicon-refresh\" style=\"color:";
-								$body_table .= "black";
-							$body_table .= "; font-size:12px; margin-right: 3px; margin-left: 3px;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span>";
-								$body_table.= "</a>";
+							$body_table .= "<a data-target=\"#act_desact\" href=\"pages_admin/act_desact.php?table=".$_GET['table']."&activar=0&".$id."callerURL=".$_GET['callerURL']."\" data-toggle=\"modal\" data-backdrop=\"static\" data-keyboard=\"false\">";
+//							
+//							<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."&activar=0');\" href=\"#".$table."_".$key."\">";
+							$body_table .= "<span class=\"glyphicon glyphicon-refresh\" style=\"color: black; font-size:12px; margin-right: 3px; margin-left: 3px;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span></a>";
 						}
 					}else{
 						if (strpos($value['URL'],"#") === 0){
