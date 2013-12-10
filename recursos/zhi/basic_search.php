@@ -1,18 +1,19 @@
-	<form class="form-inline" role="form">
-		<div class="form-group">
-			<label class="sr-only" for="buscar">Busqueda</label>
-			<input type="text" class="form-control input-sm" id="buscar" placeholder="Buscar" size="40">
+	<form role="form">
+		<div class="row">
+			<div class="col-md-5">	
+				<div class="form-group">
+					<div class="input-group">
+					    <input type="text" class="form-control input-sm">
+					      <div class="input-group-btn">
+					        <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown"> <!-- <span class="glyphicon glyphicon-search"></span> --> Buscar <span class="caret"></span></button>
+					        <ul class="dropdown-menu pull-right">
+					          <li><a href="#"> por: Nombre</a></li>        	
+					          <li><a href="#"> por: Usuario</a></li>
+					          <li><a href="#"> por: Rol</a></li>
+					        </ul>
+					      </div><!-- /btn-group -->
+					</div><!-- /input-group -->
+				</div>
+			</div>
 		</div>
-
-		<span> en </span>
-
-		<div class="form-group">
-			<label class="sr-only" for="where">Campos</label>
-				<select class="form-control input-sm">
-					<option>Nombre</option>
-					<option>Usuario</option>
-					<option>Rol</option>
-				</select>
-		</div>
-		<button type="submit" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-search"></span> Buscar</button>
 	</form>
