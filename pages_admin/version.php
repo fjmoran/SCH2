@@ -1,6 +1,6 @@
 <div class="col-md-11">
 	<h2>Sistema de Control de Horas Versión 2.0</h2><br>
- 	<h4>Changelog</h4>
+ 	<h4>Historial de Versiones</h4>
 
 
 
@@ -9,7 +9,7 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-          Collapsible Group Item #1
+          Ver. 2.0.1
         </a>
       </h4>
     </div>
@@ -23,7 +23,7 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-          Collapsible Group Item #2
+          Ver. 2.0.0
         </a>
       </h4>
     </div>
@@ -37,7 +37,7 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-          Collapsible Group Item #3
+          Ver. 1.0.0
         </a>
       </h4>
     </div>
