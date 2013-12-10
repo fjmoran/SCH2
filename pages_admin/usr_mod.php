@@ -4,9 +4,27 @@ require_once("../recursos/zhi/CreaConnv2.php");
 require_once ("../recursos/zhi/auth.php");
 require_once ("../recursos/zhi/funciones.php");
 
+if ($debug){
+echo "GET : ";
+print_r($_GET);
+echo "<br>";
+echo "POST : ";
+print_r($_POST);
+echo "<br>";
+}
+
 if (!isset($_GET['pagina'])){ $_GET['pagina']=1;} // pagina inicial
 if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagina
-	
+
+
+
+
+$_GET['callerURL'] = $_SERVER ['PHP_SELF'];
+$_GET['table'] = $db.".Usuario";
+$_GET['SearchField']['nombreUsuario'] = "Nombre";
+$_GET['SearchField']['userUsuario'] = "Usuario";
+$_GET['SearchField']['Perfil_idPerfil'] = "Rol";
+
 ?>
 
 <div class="col-md-11">
@@ -15,6 +33,9 @@ if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagi
 	<br>
 
 	<?php
+	if ((isset($_GET['txt_search'])) && ($debug)) {
+		echo $_GET['txt_search']."</br>";
+	}
 	include("../recursos/zhi/basic_search.php");
 	?>
 
@@ -23,8 +44,6 @@ if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagi
 	<h4>Usuarios del sistema</h4>
 
 	<?php 
-	$_GET['callerURL'] = $_SERVER ['PHP_SELF'];
-	$_GET['table'] = $db.".Usuario";
 	$_GET['select'] = "nombreUsuario as Nombre, userUsuario as Usuario, Perfil_idPerfil as Rol, activoUsuario as Estado";
 	$_GET['orderby'] = "activoUsuario DESC, nombreUsuario";
 	$_GET['tabla']['width'] = "25%, 25%, 25%, 15%";
