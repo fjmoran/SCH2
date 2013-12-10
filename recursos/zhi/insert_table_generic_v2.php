@@ -288,8 +288,6 @@ var error = 0;
     }
   ?>
 
- // alert("Despues del chequear");
-
 if (error == 1){
   $( "#alert span" ).html("Faltan Campos : "+mensaje);
   $( "#alert" ).removeClass("hide");
