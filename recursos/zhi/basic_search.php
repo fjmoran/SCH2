@@ -24,7 +24,7 @@
 //        alert(target);
 	variable = $('#basic_search').serialize();
 
-	variable += "&select_field=" + target.substr(target.indexOf(":")+1);
+	variable += "&select_field=" + target.substr(target.indexOf(":")+2);
   $.ajax({
     url: '<?php echo $_GET['callerURL']; ?>',
     type: 'get',

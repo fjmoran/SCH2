@@ -181,9 +181,13 @@ function paginar($actual=1, $total, $por_pagina=10, $enlace,$href,$por_ventana=1
 function select_paginar($tabla,$where="",$pag=1,$tampag=10,$CAMPO="TITULO",$connect){
 	$sql_count = "SELECT COUNT(*) FROM ". $tabla;
 	if ((isset($where)) and ($where != "")) $sql_count .= " WHERE ".$where;
-	$result = $connect->query($sql_count); 
-	list($total) = $result->fetch_row();
-	$reg1 = ($pag-1) * $tampag;
-	return array($reg1,$total);
+	if ($result = $connect->query($sql_count)) { 
+		list($total) = $result->fetch_row();
+		$reg1 = ($pag-1) * $tampag;
+		return array($reg1,$total);
+	}else {
+		echo "Falló al ejecutar la consulta: (". $connect->errno .") ". $connect->error;
+		return 0;
+	}
 }
 ?>

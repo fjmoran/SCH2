@@ -17,9 +17,13 @@ print_r($_POST);
 echo "<br>";
 }
 
+$campos = array("Nombre"=>"nombreUsuario");
+
 if (!isset($_GET['pagina'])){ $_GET['pagina']=1;} // pagina inicial
 if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagina
-
+if (($_GET['txt_search'])&&($_GET['select_field'])){ 
+	$_GET['where'] = $campos[$_GET['select_field']]." like '%".$_GET['txt_search']."%'";
+}
 
 
 
@@ -39,6 +43,8 @@ $_GET['SearchField']['Perfil_idPerfil'] = "Rol";
 	<?php
 	if ((isset($_GET['txt_search'])) && ($debug)) {
 		echo $_GET['txt_search']."</br>";
+		echo "@".$_GET['select_field']."@</br>";
+		echo $_GET['where']."</br>";
 	}
 	include("../recursos/zhi/basic_search.php");
 	?>
