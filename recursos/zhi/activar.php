@@ -27,8 +27,7 @@
 	}else {
 		echo $update_query." Failed!<br>\n";
 	}
-
-	echo "TEST";
+	if (isset($_POST['debug'])) { echo "TEST"; }
 ?>
 
 <script src="../recursos/jquery/jquery-1.10.2.min.js"></script>    
