@@ -75,7 +75,8 @@ foreach ($info_campo as $valor) {
               if ($valor->flags & 1) { array_push($validacion,$valor->orgname); }
               break;
               
-    case 1:          
+    case 1:
+            if ((isset($_GET['idUsuario'])) && ($_GET['idUsuario'] != $_SESSION['idUsuario'])) {          
             $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><div class=\"checkbox\"><label><input type=\"checkbox\" value=\"1\" name=\"".$valor->orgname ."\"";
             if ((isset($_GET['where'])) and ($_GET['edit'])){
               if ($info_fila[$valor->name]){
@@ -84,11 +85,12 @@ foreach ($info_campo as $valor) {
             }else{
               $campo_formulario .= " checked";
             }
-            if ((isset($_GET['idUsuario'])) && ($_GET['idUsuario'] == $_SESSION['idUsuario'])) {
-              $campo_formulario .= " disabled";
-            } 
+
             $campo_formulario .= " > Activo</label></div>";
             #if ($valor->flags & 1) { array_push($validacion, $valor->orgname);}
+          } else {
+            $campo_formulario .= "<input type=\"hidden\" name=\"".$valor->orgname."\" value=\"1\">";
+          }
             break;
 
     case 10:
