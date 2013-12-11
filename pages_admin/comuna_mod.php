@@ -40,8 +40,17 @@ $_GET['table'] = $db.".Comuna";
 <div class="col-md-11">
  	<h2>Comunas</h2>
 	<h5>Administración de comunas</h5>
-
 	<br>
+
+	<?php
+	if ((isset($_GET['txt_search'])) && ($debug)) {
+		echo $_GET['txt_search']."</br>";
+		echo "@".$_GET['select_field']."@</br>";
+		echo "Where : ".$_GET['where']."</br>";
+	}
+	include("../recursos/zhi/basic_search.php");
+	?>
+
 		<a onclick="$('#cuerpo').load('pages_admin/comuna_crear.php');" href="#comuna_crear" role="button" class="btn btn-sm btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
 
 	<h4>Comunas registradas en el sistema</h4>
