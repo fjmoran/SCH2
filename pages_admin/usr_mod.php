@@ -86,7 +86,7 @@ $_GET['table'] = $db.".Usuario";
 	<?php
 
 		if ($_GET['tampag'] < $total){
-			echo paginar($_GET['pagina'],$total,$_GET['tampag'],"pages_admin/usr_mod.php?tampag=".$_GET['tampag']."&pagina=","#usr_mod");
+			echo paginar($_GET['pagina'],$total,$_GET['tampag'],"pages_admin/usr_mod.php?".http_build_query($_GET)."&tampag=".$_GET['tampag']."&pagina=","#usr_mod");
 		}
 	?>
 	</div>

@@ -78,7 +78,8 @@ $_GET['table'] = $db.".Comuna";
 	<?php
 
 		if ($_GET['tampag'] < $total){
-			echo paginar($_GET['pagina'],$total,$_GET['tampag'],"pages_admin/comuna_mod.php?tampag=".$_GET['tampag']."&pagina=","#comuna_mod");
+
+			echo paginar($_GET['pagina'],$total,$_GET['tampag'],"pages_admin/comuna_mod.php?".http_build_query($_GET)."&tampag=".$_GET['tampag']."&pagina=","#comuna_mod");
 		}
 	?>
 	</div>
