@@ -19,7 +19,7 @@ echo "<br>";
 }
 
 // Acá se definen los campos por los cuales se puede realizar las busquedas (basic_search)
-$campos_busqueda = array("Region"=>"Region_idRegion","Comuna"=>"nombreComuna","Codigo"=>"codeComuna");
+$campos_busqueda = array("Región"=>"Region_idRegion","Comuna"=>"nombreComuna","Código"=>"codeComuna");
 
 if (!isset($_GET['pagina'])){ $_GET['pagina']=1;} // pagina inicial
 if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagina
