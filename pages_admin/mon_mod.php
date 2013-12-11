@@ -45,3 +45,10 @@
          })
       })    
     </script>
+    
+    <script type="text/javascript">
+		$('.modal').on('hidden.bs.modal', function () {
+			// alert("cerrado!");
+			$(this).removeData();
+		});
+	</script>  
