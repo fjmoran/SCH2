@@ -5,7 +5,7 @@ if (($_GET['debug']) || ($_POST['debug'])){
 	unset($debug);
 }
 
-if ((isset($campos_busqueda)) && ($_GET['table'])){
+if ((isset($campos_busqueda)) && ($_GET['table']) && ($_GET['callerURL'])){
 	if ($debug){
 		echo "arreglo campos busqueda :";
 		print_r($campos_busqueda);
