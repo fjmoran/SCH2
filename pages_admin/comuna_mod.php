@@ -4,9 +4,37 @@ require_once("../recursos/zhi/CreaConnv2.php");
 require_once ("../recursos/zhi/auth.php");
 require_once ("../recursos/zhi/funciones.php");
 
+if (($_GET['debug']) || ($_POST['debug'])){
+	$debug = 1;
+}
+
+#$debug = 1;
+if ($debug){
+echo "GET : ";
+print_r($_GET);
+echo "<br>";
+echo "POST : ";
+print_r($_POST);
+echo "<br>";
+}
+
+// Acá se definen los campos por los cuales se puede realizar las busquedas (basic_search)
+$campos_busqueda = array("Region"=>"Region_idRegion","Comuna"=>"nombreComuna","Codigo"=>"codeComuna");
+
 if (!isset($_GET['pagina'])){ $_GET['pagina']=1;} // pagina inicial
 if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagina
-	
+if (($_GET['txt_search'])&&($_GET['select_field'])){
+	if ($_GET['foreign']){
+	$query_fk = "SELECT ".$_GET['fkcolumna']." FROM ".$_GET['fktabla']." WHERE nombre".$_GET['fktabla']." like '%".$_GET['txt_search']."%'";
+	$_GET['where'] = $_GET['select_field']." IN (".$query_fk.")";
+	} else {
+		$_GET['where'] = $_GET['select_field']." like '%".$_GET['txt_search']."%'";
+	}
+}
+
+$_GET['callerURL'] = $_SERVER ['PHP_SELF'];
+$_GET['table'] = $db.".Comuna";
+
 ?>
 
 <div class="col-md-11">
@@ -19,8 +47,6 @@ if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagi
 	<h4>Comunas registradas en el sistema</h4>
 
 	<?php
-	$_GET['callerURL'] = $_SERVER["PHP_SELF"];
-	$_GET['table'] = $bd.".Comuna";
 	$_GET['select'] = "Region_idRegion as Region, nombreComuna as Comuna, codeComuna as Codigo, activoComuna as Estado";
 	$_GET['orderby'] = "activoComuna DESC, Region_idRegion, codeComuna";
 	$_GET['tabla']['width'] = "25%, 25%, 25%, 15%";
