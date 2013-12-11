@@ -36,9 +36,6 @@ if (($_GET['txt_search'])&&($_GET['select_field'])){
 
 $_GET['callerURL'] = $_SERVER ['PHP_SELF'];
 $_GET['table'] = $db.".Usuario";
-$_GET['SearchField']['nombreUsuario'] = "Nombre";
-$_GET['SearchField']['userUsuario'] = "Usuario";
-$_GET['SearchField']['Perfil_idPerfil'] = "Rol";
 
 ?>
 
