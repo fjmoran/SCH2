@@ -62,7 +62,7 @@ if ((isset($campos_busqueda)) && ($_GET['table']) && ($_GET['callerURL'])){
 
 <form role="form" id="basic_search" name="basic_search" method="GET" onsubmit="return false">
 	<div class="row">
-		<div class="col-md-5">	
+		<div class="col-md-4">	
 			<div class="form-group">
 				<div class="input-group">
 				    <input type="text" class="form-control input-sm" id="txt_search" name="txt_search" value="<?php echo $_GET['txt_search'];?>">
