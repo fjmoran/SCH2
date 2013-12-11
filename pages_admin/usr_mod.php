@@ -8,6 +8,7 @@ if (($_GET['debug']) || ($_POST['debug'])){
 	$debug = 1;
 }
 
+#$debug = 1;
 if ($debug){
 echo "GET : ";
 print_r($_GET);
@@ -17,12 +18,18 @@ print_r($_POST);
 echo "<br>";
 }
 
-$campos = array("Nombre"=>"nombreUsuario");
+// Acá se definen los campos por los cuales se puede realizar las busquedas (basic_search)
+$campos_busqueda = array("Nombre"=>"nombreUsuario","Usuario"=>"userUsuario","Rol"=>"Perfil_idPerfil");
 
 if (!isset($_GET['pagina'])){ $_GET['pagina']=1;} // pagina inicial
 if (!isset($_GET['tampag'])){ $_GET['tampag']=10;} // cantidad de items por pagina
-if (($_GET['txt_search'])&&($_GET['select_field'])){ 
-	$_GET['where'] = $campos[$_GET['select_field']]." like '%".$_GET['txt_search']."%'";
+if (($_GET['txt_search'])&&($_GET['select_field'])){
+	if ($_GET['foreign']){
+	$query_fk = "SELECT ".$_GET['fkcolumna']." FROM ".$_GET['fktabla']." WHERE nombre".$_GET['fktabla']." like '%".$_GET['txt_search']."%'";
+	$_GET['where'] = $_GET['select_field']." IN (".$query_fk.")";
+	} else {
+		$_GET['where'] = $_GET['select_field']." like '%".$_GET['txt_search']."%'";
+	}
 }
 
 
@@ -44,7 +51,7 @@ $_GET['SearchField']['Perfil_idPerfil'] = "Rol";
 	if ((isset($_GET['txt_search'])) && ($debug)) {
 		echo $_GET['txt_search']."</br>";
 		echo "@".$_GET['select_field']."@</br>";
-		echo $_GET['where']."</br>";
+		echo "Where : ".$_GET['where']."</br>";
 	}
 	include("../recursos/zhi/basic_search.php");
 	?>

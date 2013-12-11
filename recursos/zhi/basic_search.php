@@ -1,3 +1,65 @@
+<?php
+if (($_GET['debug']) || ($_POST['debug'])){
+	$debug = 1;
+}else{
+	unset($debug);
+}
+
+if ((isset($campos_busqueda)) && ($_GET['table'])){
+	if ($debug){
+		echo "arreglo campos busqueda :";
+		print_r($campos_busqueda);
+		echo "</br>";
+		echo "Tabla:";
+		echo $_GET['table']."</br>";
+	}
+
+	$lista_opciones = "";
+
+	$table = substr($_GET['table'],strpos($_GET['table'],".")+1);
+
+	$query_fk = "SELECT k.REFERENCED_TABLE_NAME, k.REFERENCED_COLUMN_NAME, k.COLUMN_NAME\n"
+	    . "FROM information_schema.TABLE_CONSTRAINTS i \n"
+	    . "LEFT JOIN information_schema.KEY_COLUMN_USAGE k ON i.CONSTRAINT_NAME = k.CONSTRAINT_NAME \n"
+	    . "WHERE i.CONSTRAINT_TYPE ='FOREIGN KEY'AND i.TABLE_SCHEMA = database() AND i.TABLE_NAME ='".$table."' order by k.REFERENCED_TABLE_NAME";
+
+	if ($debug) {echo "Query para buscar llaves foraneas ".$query_fk."</br>";}
+
+	if ($rs_fk = $mysqli->query($query_fk)){
+		$fkeys = array();
+		while ($row = $rs_fk->fetch_assoc()){
+			$fkeys[$row['COLUMN_NAME']] = array($row['REFERENCED_TABLE_NAME'],$row['REFERENCED_COLUMN_NAME']);
+		}
+		if ($debug) {echo "Resultado de la query que retorna el listado de llaves foraneas ";print_r($fkeys); echo "</br>";}
+
+	}else {
+		echo "Falló al ejecutar la consulta: (". $mysqli->errno .") ". $mysqli->error;
+	}
+	$rs_fk->free();
+
+	foreach ($campos_busqueda as $nombre => $columna){
+		$lista_opciones .= "<li ";
+		if ($debug){
+			echo "nombre :".$nombre."</br>";
+			echo "columna :".$columna."</br>";
+		}
+		if (array_key_exists($columna,$fkeys)){
+			if ($debug){
+				echo "Tabla Llave Foranea : ".$fkeys[$columna][0]."</br>";
+				echo "Columna llave Foranea : ".$fkeys[$columna][1]."</br>";
+			}
+			$lista_opciones .= "foreign=\"1\" ";
+			$lista_opciones .= "fkcolumna=\"".$fkeys[$columna][1]."\" ";
+			$lista_opciones .= "fktable=\"".$fkeys[$columna][0]."\"";
+		}else{
+			$lista_opciones .= "foreign=\"0\" ";
+
+		}
+		$lista_opciones .= "columna=\"".$columna."\" ";
+		$lista_opciones .= "><a href=\"#\">por : $nombre</a></li>\n";
+	}
+?>
+
 <form role="form" id="basic_search" name="basic_search" method="GET" onsubmit="return false">
 	<div class="row">
 		<div class="col-md-5">	
@@ -7,9 +69,9 @@
 				      <div class="input-group-btn">
 				        <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" name="select_field"> <!-- <span class="glyphicon glyphicon-search"></span> --> Buscar <span class="caret"></span></button>
 				        <ul class="dropdown-menu pull-right">
-				          <li onclick="$('#basic_search').submit();"><a href="#"> por: Nombre</a></li>        	
-				          <li><a href="#"> por: Usuario</a></li>
-				          <li><a href="#"> por: Rol</a></li>
+				        	<?php
+				        	echo $lista_opciones;
+				        	?>
 				        </ul>
 				      </div><!-- /btn-group -->
 				</div><!-- /input-group -->
@@ -21,10 +83,20 @@
 <script type="text/javascript">
     $("ul.dropdown-menu > li").click(function() {
         target = $(this).text();
-//        alert(target);
+        columna = $(this).attr('columna');
+        foreign = $(this).attr('foreign');
+        if (foreign == 1){
+        	fktabla = $(this).attr('fktable');
+        	fkcolumna = $(this).attr('fkcolumna')
+        }
+
 	variable = $('#basic_search').serialize();
 
-	variable += "&select_field=" + target.substr(target.indexOf(":")+2);
+	variable += "&select_field=" + columna;
+	if (foreign == 1){
+		variable += "&foreign=" + foreign + "&fktabla=" + fktabla + "&fkcolumna=" + fkcolumna;
+	}
+	//alert(variable);
   $.ajax({
     url: '<?php echo $_GET['callerURL']; ?>',
     type: 'get',
@@ -38,3 +110,7 @@
  });
  });
 </script>
+
+<?php
+}
+?>
