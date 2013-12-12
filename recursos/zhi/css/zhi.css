@@ -116,6 +116,15 @@ table.table tr:hover td {
   height: 700px;
 }
 
+input[type="search"] {
+
+ -webkit-appearance: searchfield;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+-webkit-appearance: searchfield-cancel-button;
+}
+
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */

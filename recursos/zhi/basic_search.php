@@ -65,7 +65,7 @@ if ((isset($campos_busqueda)) && ($_GET['table']) && ($_GET['callerURL'])){
 		<div class="col-md-4">	
 			<div class="form-group">
 				<div class="input-group">
-				    <input type="text" class="form-control input-sm" id="txt_search" name="txt_search" value="<?php echo $_GET['txt_search'];?>">
+				    <input type="search" class="form-control input-sm" id="txt_search" name="txt_search" value="<?php echo $_GET['txt_search'];?>">
 				      <div class="input-group-btn">
 				        <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" name="select_field"><span class="glyphicon glyphicon-search"></span><span class="caret"></span></button>
 				        <ul class="dropdown-menu pull-right">
