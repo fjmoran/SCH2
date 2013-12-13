@@ -20,12 +20,10 @@
         <li onclick="$('#cuerpo').load('pages_admin/pais_mod.php');"><a href="#pais_mod"><span class="glyphicon glyphicon-chevron-right"></span> Países</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/region_mod.php');"><a href="#region_mod"><span class="glyphicon glyphicon-chevron-right"></span> Regiones</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/comuna_mod.php');"><a href="#comuna_mod"><span class="glyphicon glyphicon-chevron-right"></span> Comunas</a></li>
-        <li onclick="$('#cuerpo').load('pages_admin/concep_mod.php');"><a href="#concep_mod"><span class="glyphicon glyphicon-chevron-right"></span> Conceptos</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/label_mod.php');"><a href="#label_mod"><span class="glyphicon glyphicon-chevron-right"></span> Labels</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/menu_mod.php');"><a href="#menu_mod"><span class="glyphicon glyphicon-chevron-right"></span> Menú</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/paginas_mod.php');"><a href="#paginas_mod"><span class="glyphicon glyphicon-chevron-right"></span> Páginas</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/param_mod.php');"><a href="#param_mod"><span class="glyphicon glyphicon-chevron-right"></span> Parámetros Globales</a></li>
-        <li onclick="$('#cuerpo').load('pages_admin/perm_con_mod.php');"><a href="#perm_con_mod"><span class="glyphicon glyphicon-chevron-right"></span> Permisos concepto</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/perm_menu_mod.php');"><a href="#perm_menu_mod"><span class="glyphicon glyphicon-chevron-right"></span> Permisos menú</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/perm_pag_mod.php');"><a href="#perm_pag_mod"><span class="glyphicon glyphicon-chevron-right"></span> Permisos página</a></li>                                                
         <li class="nav-header">Información del Sistema</li>
