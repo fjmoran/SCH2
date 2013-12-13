@@ -392,7 +392,7 @@ if ($total != 0) {
 }else{ 
 ?>
 <br>
-<div class="alert alert-warning"><?php echo "No se encontraron regitros que coincidan con su búsqueda, por favor intentelo de nuevo.</br>"; ?></div>
+<div class="alert alert-warning"><?php echo "No se encontraron registros que coincidan con su búsqueda, por favor intentelo de nuevo.</br>"; ?></div>
 	
 <?php 
 }
