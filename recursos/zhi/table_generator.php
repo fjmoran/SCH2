@@ -364,18 +364,16 @@ if (isset($_GET['debug'])) {print_r($body_table);}
 
 ?>
 <br>
-<div id='table_generated'>
-	<table class="table table-striped table-condensed">
-		  <thead style="text-align: center; color:#428BCA;">
-		    <?php
-		    	echo $header_table;
-		   	?>	
-		  </thead>
-		  <tbody>
-		  	<?php
-		  		echo $body_table;
-		  	?>
+<table class="table table-striped table-condensed">
+	  <thead style="text-align: center; color:#428BCA;">
+	    <?php
+	    	echo $header_table;
+	   	?>	
+	  </thead>
+	  <tbody>
+	  	<?php
+	  		echo $body_table;
+	  	?>
 
-		  </tbody>
+	  </tbody>
 	</table>
-</div>
