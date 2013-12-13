@@ -44,7 +44,12 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
   PRIMARY KEY (`idUsuario`),
   UNIQUE INDEX `idUsuario_UNIQUE` (`idUsuario` ASC),
   INDEX `fk_Usuario_Perfil_idx` (`Perfil_idPerfil` ASC),
-  UNIQUE INDEX `correoUsuario_UNIQUE` (`correoUsuario` ASC))
+  UNIQUE INDEX `correoUsuario_UNIQUE` (`correoUsuario` ASC),
+  CONSTRAINT `fk_Usuario_Perfil`
+    FOREIGN KEY (`Perfil_idPerfil`)
+    REFERENCES `Perfil` (`idPerfil`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'usuarios del sistema.'
 PACK_KEYS = Default
@@ -80,7 +85,12 @@ CREATE TABLE IF NOT EXISTS `Region` (
   `Pais_idPais` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`idRegion`),
   UNIQUE INDEX `idRegion_UNIQUE` (`idRegion` ASC),
-  INDEX `fk_Region_Pais1_idx` (`Pais_idPais` ASC))
+  INDEX `fk_Region_Pais1_idx` (`Pais_idPais` ASC),
+  CONSTRAINT `fk_Region_Pais1`
+    FOREIGN KEY (`Pais_idPais`)
+    REFERENCES `Pais` (`idPais`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'listado de regiones';
 
@@ -98,7 +108,12 @@ CREATE TABLE IF NOT EXISTS `Comuna` (
   `Region_idRegion` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`idComuna`),
   UNIQUE INDEX `idComuna_UNIQUE` (`idComuna` ASC),
-  INDEX `fk_Comuna_Region1_idx` (`Region_idRegion` ASC))
+  INDEX `fk_Comuna_Region1_idx` (`Region_idRegion` ASC),
+  CONSTRAINT `fk_Comuna_Region1`
+    FOREIGN KEY (`Region_idRegion`)
+    REFERENCES `Region` (`idRegion`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'Listado de Comunas';
 
@@ -122,7 +137,22 @@ CREATE TABLE IF NOT EXISTS `Direccion` (
   UNIQUE INDEX `idDireccion_UNIQUE` (`idDireccion` ASC),
   INDEX `fk_Direccion_Comuna1_idx` (`Comuna_idComuna` ASC),
   INDEX `fk_Direccion_Pais1_idx` (`Pais_idPais` ASC),
-  INDEX `fk_Direccion_Region1_idx` (`Region_idRegion` ASC))
+  INDEX `fk_Direccion_Region1_idx` (`Region_idRegion` ASC),
+  CONSTRAINT `fk_Direccion_Comuna1`
+    FOREIGN KEY (`Comuna_idComuna`)
+    REFERENCES `Comuna` (`idComuna`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Direccion_Pais1`
+    FOREIGN KEY (`Pais_idPais`)
+    REFERENCES `Pais` (`idPais`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Direccion_Region1`
+    FOREIGN KEY (`Region_idRegion`)
+    REFERENCES `Region` (`idRegion`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'Tabla de direcciones tanto para clientes como para contactos /* comment truncated */ /*.*/';
 
@@ -153,7 +183,17 @@ CREATE TABLE IF NOT EXISTS `Cliente` (
   UNIQUE INDEX `nombreCliente_UNIQUE` (`nombreCliente` ASC),
   UNIQUE INDEX `rutCliente_UNIQUE` (`rutCliente` ASC),
   INDEX `fk_Cliente_Usuario1_idx` (`Usuario_idUsuario` ASC),
-  INDEX `fk_Cliente_Direccion1_idx` (`Direccion_idDireccion` ASC))
+  INDEX `fk_Cliente_Direccion1_idx` (`Direccion_idDireccion` ASC),
+  CONSTRAINT `fk_Cliente_Usuario1`
+    FOREIGN KEY (`Usuario_idUsuario`)
+    REFERENCES `Usuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Cliente_Direccion1`
+    FOREIGN KEY (`Direccion_idDireccion`)
+    REFERENCES `Direccion` (`idDireccion`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'Se guardan los datos del cliente.\n';
 
@@ -193,7 +233,22 @@ CREATE TABLE IF NOT EXISTS `Materia` (
   UNIQUE INDEX `nombreMateria_UNIQUE` (`nombreMateria` ASC),
   INDEX `fk_Materia_Cliente1_idx` (`Cliente_idCliente` ASC),
   INDEX `fk_Materia_Usuario1_idx` (`Usuario_idUsuario` ASC),
-  INDEX `fk_Materia_TipoMateria1_idx` (`TipoMateria_idTipoMateria` ASC))
+  INDEX `fk_Materia_TipoMateria1_idx` (`TipoMateria_idTipoMateria` ASC),
+  CONSTRAINT `fk_Materia_Cliente1`
+    FOREIGN KEY (`Cliente_idCliente`)
+    REFERENCES `Cliente` (`idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Materia_Usuario1`
+    FOREIGN KEY (`Usuario_idUsuario`)
+    REFERENCES `Usuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Materia_TipoMateria1`
+    FOREIGN KEY (`TipoMateria_idTipoMateria`)
+    REFERENCES `TipoMateria` (`idTipoMateria`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'materia perteneciente a un cliente.\ntambién se podría defini /* comment truncated */ /*r como proyectos de un cliente.*/';
 
@@ -215,7 +270,17 @@ CREATE TABLE IF NOT EXISTS `Trabajo` (
   PRIMARY KEY (`idTrabajo`),
   UNIQUE INDEX `idTrabajo_UNIQUE` (`idTrabajo` ASC),
   INDEX `fk_Trabajo_Usuario1_idx` (`Usuario_idUsuario` ASC),
-  INDEX `fk_Trabajo_Materia1_idx` (`Materia_idMateria` ASC, `Materia_Cliente_idCliente` ASC))
+  INDEX `fk_Trabajo_Materia1_idx` (`Materia_idMateria` ASC, `Materia_Cliente_idCliente` ASC),
+  CONSTRAINT `fk_Trabajo_Usuario1`
+    FOREIGN KEY (`Usuario_idUsuario`)
+    REFERENCES `Usuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Trabajo_Materia1`
+    FOREIGN KEY (`Materia_idMateria` , `Materia_Cliente_idCliente`)
+    REFERENCES `Materia` (`idMateria` , `Cliente_idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'todos los trabajos ingresados';
 
@@ -243,7 +308,22 @@ CREATE TABLE IF NOT EXISTS `Archivo` (
   UNIQUE INDEX `nombreArchivo_UNIQUE` (`nombreArchivo` ASC),
   INDEX `fk_Archivo_Materia1_idx` (`Materia_idMateria` ASC, `Materia_Cliente_idCliente` ASC),
   INDEX `fk_Archivo_Cliente1_idx` (`Cliente_idCliente` ASC),
-  INDEX `fk_Archivo_Usuario1_idx` (`Usuario_idUsuario` ASC))
+  INDEX `fk_Archivo_Usuario1_idx` (`Usuario_idUsuario` ASC),
+  CONSTRAINT `fk_Archivo_Materia1`
+    FOREIGN KEY (`Materia_idMateria` , `Materia_Cliente_idCliente`)
+    REFERENCES `Materia` (`idMateria` , `Cliente_idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Archivo_Cliente1`
+    FOREIGN KEY (`Cliente_idCliente`)
+    REFERENCES `Cliente` (`idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Archivo_Usuario1`
+    FOREIGN KEY (`Usuario_idUsuario`)
+    REFERENCES `Usuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'Se guardan los archivos correspondiente a un cliente / mater /* comment truncated */ /*ia especifico.*/';
 
@@ -268,7 +348,12 @@ CREATE TABLE IF NOT EXISTS `Contacto` (
   PRIMARY KEY (`idContacto`),
   UNIQUE INDEX `idContacto_UNIQUE` (`idContacto` ASC),
   UNIQUE INDEX `nombreContacto_UNIQUE` (`nombreContacto` ASC),
-  INDEX `fk_Contacto_Direccion1_idx` (`Direccion_idDireccion` ASC))
+  INDEX `fk_Contacto_Direccion1_idx` (`Direccion_idDireccion` ASC),
+  CONSTRAINT `fk_Contacto_Direccion1`
+    FOREIGN KEY (`Direccion_idDireccion`)
+    REFERENCES `Direccion` (`idDireccion`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'son los contactos que tiene la empresa.';
 
@@ -299,7 +384,22 @@ CREATE TABLE IF NOT EXISTS `ContactoCliente` (
   `TipoContacto_idTipoContacto` INT UNSIGNED NULL,
   PRIMARY KEY (`Cliente_idCliente`, `Contacto_idContacto`),
   INDEX `fk_ContactoCliente_Contacto1_idx` (`Contacto_idContacto` ASC),
-  INDEX `fk_ContactoCliente_TipoContacto1_idx` (`TipoContacto_idTipoContacto` ASC))
+  INDEX `fk_ContactoCliente_TipoContacto1_idx` (`TipoContacto_idTipoContacto` ASC),
+  CONSTRAINT `fk_ContactoCliente_Cliente1`
+    FOREIGN KEY (`Cliente_idCliente`)
+    REFERENCES `Cliente` (`idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_ContactoCliente_Contacto1`
+    FOREIGN KEY (`Contacto_idContacto`)
+    REFERENCES `Contacto` (`idContacto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_ContactoCliente_TipoContacto1`
+    FOREIGN KEY (`TipoContacto_idTipoContacto`)
+    REFERENCES `TipoContacto` (`idTipoContacto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'se guarda las relaciones de los contactos con los clientes.';
 
@@ -357,7 +457,27 @@ CREATE TABLE IF NOT EXISTS `Gasto` (
   INDEX `fk_Gasto_Usuario1_idx` (`Usuario_idUsuario` ASC),
   INDEX `fk_Gasto_Materia1_idx` (`Materia_idMateria` ASC, `Materia_Cliente_idCliente` ASC),
   INDEX `fk_Gasto_Moneda1_idx` (`Moneda_idMoneda` ASC),
-  INDEX `fk_Gasto_TipoGasto1_idx` (`TipoGasto_idTipoGasto` ASC))
+  INDEX `fk_Gasto_TipoGasto1_idx` (`TipoGasto_idTipoGasto` ASC),
+  CONSTRAINT `fk_Gasto_Usuario1`
+    FOREIGN KEY (`Usuario_idUsuario`)
+    REFERENCES `Usuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Gasto_Materia1`
+    FOREIGN KEY (`Materia_idMateria` , `Materia_Cliente_idCliente`)
+    REFERENCES `Materia` (`idMateria` , `Cliente_idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Gasto_Moneda1`
+    FOREIGN KEY (`Moneda_idMoneda`)
+    REFERENCES `Moneda` (`idMoneda`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Gasto_TipoGasto1`
+    FOREIGN KEY (`TipoGasto_idTipoGasto`)
+    REFERENCES `TipoGasto` (`idTipoGasto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'se ingresas los gastos realizados para un cliente/materia de /* comment truncated */ /*terminado, por un usuario determinado.*/';
 
@@ -379,7 +499,12 @@ CREATE TABLE IF NOT EXISTS `Boleta` (
   `Gasto_idGasto` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`idImagenBoleta`),
   UNIQUE INDEX `idImagenBoleta_UNIQUE` (`idImagenBoleta` ASC),
-  INDEX `fk_Boleta_Gasto1_idx` (`Gasto_idGasto` ASC))
+  INDEX `fk_Boleta_Gasto1_idx` (`Gasto_idGasto` ASC),
+  CONSTRAINT `fk_Boleta_Gasto1`
+    FOREIGN KEY (`Gasto_idGasto`)
+    REFERENCES `Gasto` (`idGasto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'se guarda las boletas con o sin imagen de los documentos ren /* comment truncated */ /*didos para poder ser presentadas al cliente en que caso de ser necesario.*/';
 
@@ -397,7 +522,17 @@ CREATE TABLE IF NOT EXISTS `TarifaUsuario` (
   PRIMARY KEY (`idTarifaUsuario`, `Usuario_idUsuario`, `Moneda_idMoneda`),
   UNIQUE INDEX `idTarifaUsuario_UNIQUE` (`idTarifaUsuario` ASC),
   INDEX `fk_TarifaUsuario_Usuario1_idx` (`Usuario_idUsuario` ASC),
-  INDEX `fk_TarifaUsuario_Moneda1_idx` (`Moneda_idMoneda` ASC))
+  INDEX `fk_TarifaUsuario_Moneda1_idx` (`Moneda_idMoneda` ASC),
+  CONSTRAINT `fk_TarifaUsuario_Usuario1`
+    FOREIGN KEY (`Usuario_idUsuario`)
+    REFERENCES `Usuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_TarifaUsuario_Moneda1`
+    FOREIGN KEY (`Moneda_idMoneda`)
+    REFERENCES `Moneda` (`idMoneda`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'Tarifa general asignada a una usuario';
 
@@ -416,7 +551,17 @@ CREATE TABLE IF NOT EXISTS `TarifaMateria` (
   PRIMARY KEY (`idTarifaMateria`, `Moneda_idMoneda`, `Materia_idMateria`, `Materia_Cliente_idCliente`),
   UNIQUE INDEX `idTarifaMateria_UNIQUE` (`idTarifaMateria` ASC),
   INDEX `fk_TarifaMateria_Moneda1_idx` (`Moneda_idMoneda` ASC),
-  INDEX `fk_TarifaMateria_Materia1_idx` (`Materia_idMateria` ASC, `Materia_Cliente_idCliente` ASC))
+  INDEX `fk_TarifaMateria_Materia1_idx` (`Materia_idMateria` ASC, `Materia_Cliente_idCliente` ASC),
+  CONSTRAINT `fk_TarifaMateria_Moneda1`
+    FOREIGN KEY (`Moneda_idMoneda`)
+    REFERENCES `Moneda` (`idMoneda`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_TarifaMateria_Materia1`
+    FOREIGN KEY (`Materia_idMateria` , `Materia_Cliente_idCliente`)
+    REFERENCES `Materia` (`idMateria` , `Cliente_idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'guarda las tarifas asignadas por materia a cada usuario.';
 
@@ -455,7 +600,22 @@ CREATE TABLE IF NOT EXISTS `Factura` (
   UNIQUE INDEX `idFactura_UNIQUE` (`idFactura` ASC),
   INDEX `fk_Factura_EstadoFactura1_idx` (`EstadoFactura_idEstadoFactura` ASC),
   INDEX `fk_Factura_Cliente1_idx` (`Cliente_idCliente` ASC),
-  INDEX `fk_Factura_Moneda1_idx` (`Moneda_idMoneda` ASC))
+  INDEX `fk_Factura_Moneda1_idx` (`Moneda_idMoneda` ASC),
+  CONSTRAINT `fk_Factura_EstadoFactura1`
+    FOREIGN KEY (`EstadoFactura_idEstadoFactura`)
+    REFERENCES `EstadoFactura` (`idEstadoFactura`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Factura_Cliente1`
+    FOREIGN KEY (`Cliente_idCliente`)
+    REFERENCES `Cliente` (`idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Factura_Moneda1`
+    FOREIGN KEY (`Moneda_idMoneda`)
+    REFERENCES `Moneda` (`idMoneda`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'facturas realizadas';
 
@@ -473,7 +633,17 @@ CREATE TABLE IF NOT EXISTS `TrabajoFactura` (
   PRIMARY KEY (`idTrabajoFactura`, `Trabajo_idTrabajo`),
   UNIQUE INDEX `idTrabajoFactura_UNIQUE` (`idTrabajoFactura` ASC),
   INDEX `fk_TrabajoFactura_Factura1_idx` (`Factura_idFactura` ASC),
-  INDEX `fk_TrabajoFactura_Trabajo1_idx` (`Trabajo_idTrabajo` ASC))
+  INDEX `fk_TrabajoFactura_Trabajo1_idx` (`Trabajo_idTrabajo` ASC),
+  CONSTRAINT `fk_TrabajoFactura_Factura1`
+    FOREIGN KEY (`Factura_idFactura`)
+    REFERENCES `Factura` (`idFactura`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_TrabajoFactura_Trabajo1`
+    FOREIGN KEY (`Trabajo_idTrabajo`)
+    REFERENCES `Trabajo` (`idTrabajo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'Trabajos que están en la factura.';
 
@@ -510,7 +680,22 @@ CREATE TABLE IF NOT EXISTS `Abono` (
   UNIQUE INDEX `idAbono_UNIQUE` (`idAbono` ASC),
   INDEX `fk_Abono_Cliente1_idx` (`Cliente_idCliente` ASC),
   INDEX `fk_Abono_Usuario1_idx` (`Usuario_idUsuario` ASC),
-  INDEX `fk_Abono_TipoAbono1_idx` (`TipoAbono_idTipoAbono` ASC))
+  INDEX `fk_Abono_TipoAbono1_idx` (`TipoAbono_idTipoAbono` ASC),
+  CONSTRAINT `fk_Abono_Cliente1`
+    FOREIGN KEY (`Cliente_idCliente`)
+    REFERENCES `Cliente` (`idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Abono_Usuario1`
+    FOREIGN KEY (`Usuario_idUsuario`)
+    REFERENCES `Usuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Abono_TipoAbono1`
+    FOREIGN KEY (`TipoAbono_idTipoAbono`)
+    REFERENCES `TipoAbono` (`idTipoAbono`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'Reemplaza tabla AgendaEconomica\npara guardar los abonos o pl /* comment truncated */ /*atas entregadas por los clientes para distintos tramites.*/';
 
@@ -549,7 +734,17 @@ CREATE TABLE IF NOT EXISTS `Menu` (
   PRIMARY KEY (`idMenu`, `Pagina_idPagina`),
   UNIQUE INDEX `idMenu_UNIQUE` (`idMenu` ASC),
   INDEX `fk_Menu_Pagina1_idx` (`Pagina_idPagina` ASC),
-  INDEX `fk_Menu_Menu1_idx` (`Menu_idMenu` ASC, `Menu_Pagina_idPagina` ASC))
+  INDEX `fk_Menu_Menu1_idx` (`Menu_idMenu` ASC, `Menu_Pagina_idPagina` ASC),
+  CONSTRAINT `fk_Menu_Pagina1`
+    FOREIGN KEY (`Pagina_idPagina`)
+    REFERENCES `Pagina` (`idPagina`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Menu_Menu1`
+    FOREIGN KEY (`Menu_idMenu` , `Menu_Pagina_idPagina`)
+    REFERENCES `Menu` (`idMenu` , `Pagina_idPagina`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'Despliegue del Menu con URL.';
 
@@ -564,7 +759,17 @@ CREATE TABLE IF NOT EXISTS `PermisoMenu` (
   `Perfil_idPerfil` INT UNSIGNED NOT NULL,
   `idPermisoMenu` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`idPermisoMenu`, `Menu_idMenu`, `Perfil_idPerfil`),
-  INDEX `fk_PermisoMenu_Perfil1_idx` (`Perfil_idPerfil` ASC))
+  INDEX `fk_PermisoMenu_Perfil1_idx` (`Perfil_idPerfil` ASC),
+  CONSTRAINT `fk_PermisoMenu_Menu1`
+    FOREIGN KEY (`Menu_idMenu`)
+    REFERENCES `Menu` (`idMenu`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_PermisoMenu_Perfil1`
+    FOREIGN KEY (`Perfil_idPerfil`)
+    REFERENCES `Perfil` (`idPerfil`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'permisos de menu';
 
@@ -579,7 +784,17 @@ CREATE TABLE IF NOT EXISTS `PermisoPagina` (
   `Pagina_idPagina` INT UNSIGNED NOT NULL,
   `idPermisoPagina` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`idPermisoPagina`, `Perfil_idPerfil`, `Pagina_idPagina`),
-  INDEX `fk_PermisoPagina_Pagina1_idx` (`Pagina_idPagina` ASC))
+  INDEX `fk_PermisoPagina_Pagina1_idx` (`Pagina_idPagina` ASC),
+  CONSTRAINT `fk_PermisoPagina_Perfil1`
+    FOREIGN KEY (`Perfil_idPerfil`)
+    REFERENCES `Perfil` (`idPerfil`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_PermisoPagina_Pagina1`
+    FOREIGN KEY (`Pagina_idPagina`)
+    REFERENCES `Pagina` (`idPagina`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'permisos de las pagina.';
 
@@ -599,7 +814,12 @@ CREATE TABLE IF NOT EXISTS `Input` (
   `Pagina_idPagina` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`idInput`, `Pagina_idPagina`),
   UNIQUE INDEX `idConcepto_UNIQUE` (`idInput` ASC),
-  INDEX `fk_Input_Pagina1_idx` (`Pagina_idPagina` ASC))
+  INDEX `fk_Input_Pagina1_idx` (`Pagina_idPagina` ASC),
+  CONSTRAINT `fk_Input_Pagina1`
+    FOREIGN KEY (`Pagina_idPagina`)
+    REFERENCES `Pagina` (`idPagina`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'Se describen los conceptos del sistema, como usuario, client /* comment truncated */ /*e, materia, etc.*/';
 
@@ -634,7 +854,12 @@ CREATE TABLE IF NOT EXISTS `Feriado` (
   `Pais_idPais` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`idFeriado`),
   UNIQUE INDEX `idFeriados_UNIQUE` (`idFeriado` ASC),
-  INDEX `fk_Feriados_Pais1_idx` (`Pais_idPais` ASC))
+  INDEX `fk_Feriados_Pais1_idx` (`Pais_idPais` ASC),
+  CONSTRAINT `fk_Feriados_Pais1`
+    FOREIGN KEY (`Pais_idPais`)
+    REFERENCES `Pais` (`idPais`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'tabla de feriados legales';
 
@@ -666,36 +891,37 @@ CREATE TABLE IF NOT EXISTS `ParametroUsuario` (
   `Usuario_idUsuario` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`idParametroUsuario`, `Usuario_idUsuario`),
   UNIQUE INDEX `idParametroUsuario_UNIQUE` (`idParametroUsuario` ASC),
-  INDEX `fk_ParametroUsuario_Usuario1_idx` (`Usuario_idUsuario` ASC))
+  INDEX `fk_ParametroUsuario_Usuario1_idx` (`Usuario_idUsuario` ASC),
+  CONSTRAINT `fk_ParametroUsuario_Usuario1`
+    FOREIGN KEY (`Usuario_idUsuario`)
+    REFERENCES `Usuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'listado de parámetros por usuario.';
 
 
 -- -----------------------------------------------------
--- Table `Pagina_has_Pagina`
+-- Table `PaginaenPagina`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `Pagina_has_Pagina` ;
+DROP TABLE IF EXISTS `PaginaenPagina` ;
 
-CREATE TABLE IF NOT EXISTS `Pagina_has_Pagina` (
-  `Pagina_idPagina` INT UNSIGNED NOT NULL,
-  `Pagina_idPagina1` INT UNSIGNED NOT NULL,
-  PRIMARY KEY (`Pagina_idPagina`, `Pagina_idPagina1`),
-  INDEX `fk_Pagina_has_Pagina_Pagina2_idx` (`Pagina_idPagina1` ASC),
-  INDEX `fk_Pagina_has_Pagina_Pagina1_idx` (`Pagina_idPagina` ASC))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `Pagina_has_Pagina1`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `Pagina_has_Pagina1` ;
-
-CREATE TABLE IF NOT EXISTS `Pagina_has_Pagina1` (
+CREATE TABLE IF NOT EXISTS `PaginaenPagina` (
   `Pagina_idPagina` INT UNSIGNED NOT NULL,
   `Pagina_idPagina1` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`Pagina_idPagina`, `Pagina_idPagina1`),
   INDEX `fk_Pagina_has_Pagina1_Pagina2_idx` (`Pagina_idPagina1` ASC),
-  INDEX `fk_Pagina_has_Pagina1_Pagina1_idx` (`Pagina_idPagina` ASC))
+  INDEX `fk_Pagina_has_Pagina1_Pagina1_idx` (`Pagina_idPagina` ASC),
+  CONSTRAINT `fk_Pagina_has_Pagina1_Pagina1`
+    FOREIGN KEY (`Pagina_idPagina`)
+    REFERENCES `Pagina` (`idPagina`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Pagina_has_Pagina1_Pagina2`
+    FOREIGN KEY (`Pagina_idPagina1`)
+    REFERENCES `Pagina` (`idPagina`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
