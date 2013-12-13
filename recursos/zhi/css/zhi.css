@@ -116,23 +116,26 @@ table.table tr:hover td {
   height: 700px;
 }
 
-input[type="search"] {
-
- -webkit-appearance: searchfield;
-}
-
-input[type="search"]::-webkit-search-cancel-button {
--webkit-appearance: searchfield-cancel-button;
-}
 
 /* stop the glowing blue shadow (para busqueda rapida) */
-#txt_search,
-#txt_search:focus {
+.no-glow,
+.no-glow:focus {
  box-shadow:none;
  -webkit-box-shadow:none; 
  border-color:#cccccc; 
 }
 
+.reset_search.btn-link, .reset_search.btn-link:hover, .reset_search.btn-link:focus .reset_search.btn-link:active {
+color: #333333;
+text-decoration: none;
+background-color: transparent;
+border-bottom-color: #cccccc; 
+border-top-color: #cccccc; 
+border-radius:0px;
+outline: none;
+margin-left: -1px;
+
+}
 
 /* Custom page CSS
 -------------------------------------------------- */
