@@ -379,3 +379,10 @@ if (isset($_GET['debug'])) {print_r($body_table);}
 		  </tbody>
 	</table>
 </div>
+<div class="row"> 
+	<div class="col-md-12">
+
+		<span class="pull-right"><h5>Desplegando 1-10 de 331 resultados</h5></span>
+
+	</div>
+</div>	
