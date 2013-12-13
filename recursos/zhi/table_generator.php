@@ -389,8 +389,11 @@ if ($total != 0) {
 </div>
 
 <?php
-}else{
-
-	echo "No hay registros</br>";
+}else{ 
+?>
+<br>
+<div class="alert alert-warning"><?php echo "No se encontraron regitros que coincidan con su búsqueda, por favor intentelo de nuevo.</br>"; ?></div>
+	
+<?php 
 }
 ?>
