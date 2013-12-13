@@ -125,7 +125,7 @@ table.table tr:hover td {
  border-color:#cccccc; 
 }
 
-.reset_search.btn-link, .reset_search.btn-link:hover, .reset_search.btn-link:focus .reset_search.btn-link:active {
+.reset-search.btn-link, .reset-search.btn-link:hover, .reset-search.btn-link:focus .reset-search.btn-link:active {
 color: #333333;
 text-decoration: none;
 background-color: transparent;
@@ -134,7 +134,6 @@ border-top-color: #cccccc;
 border-radius:0px;
 outline: none;
 margin-left: -1px;
-
 }
 
 /* Custom page CSS
