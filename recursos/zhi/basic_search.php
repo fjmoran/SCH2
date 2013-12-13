@@ -67,7 +67,7 @@ if ((isset($campos_busqueda)) && ($_GET['table']) && ($_GET['callerURL'])){
 				<div class="input-group">
 				    <input type="text" class="form-control input-sm no-glow" id="txt_search" name="txt_search" style="border-right-color: transparent;" value="<?php echo $_GET['txt_search'];?>">
 
-				      <div class="input-group-btn">
+				      <div class="input-group-btn hide"> <!-- este es el hide del reset-search -->
 				        <button class="btn btn-link btn-sm reset-search" type="button"><span class="glyphicon glyphicon-remove"></span></button>
 				      </div>
 
