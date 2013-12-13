@@ -67,8 +67,8 @@ if ((isset($campos_busqueda)) && ($_GET['table']) && ($_GET['callerURL'])){
 				<div class="input-group">
 				    <input type="text" class="form-control input-sm no-glow" id="txt_search" name="txt_search" style="border-right-color: transparent;" value="<?php echo $_GET['txt_search'];?>">
 
-				      <div class="input-group-btn hide"> <!-- este es el hide del reset-search -->
-				        <button class="btn btn-link btn-sm reset-search" type="button"><span class="glyphicon glyphicon-remove"></span></button>
+				      <div id="div_reset_button" class="input-group-btn <?php if (!isset($_GET['txt_search'])) { echo "hide"; } ?>"> <!-- este es el hide del reset-search -->
+				        <button class="btn btn-link btn-sm reset-search" type="button" id="reset_search_button"><span id="reset" class="glyphicon glyphicon-remove"></span></button>
 				      </div>
 
 				      <div class="input-group-btn">
@@ -114,6 +114,22 @@ if ((isset($campos_busqueda)) && ($_GET['table']) && ($_GET['callerURL'])){
    }
  });
  });
+
+$("#txt_search").keydown(function(){
+	$('#div_reset_button').removeClass('hide');
+});
+
+$("#reset_search_button").click(function(){
+	$.ajax({
+		url: '<?php echo $_GET['callerURL']; ?>',
+		success: function(response, textStatus, jqXHR){
+      		$('#cuerpo').html(response);   //select the id and put the response in the html
+    	},
+   		error: function(jqXHR, textStatus, errorThrown){
+      		console.log('error(s):'+textStatus, errorThrown);
+   		}
+	});
+});
 </script>
 
 <?php
