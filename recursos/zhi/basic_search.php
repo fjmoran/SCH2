@@ -68,7 +68,7 @@ if ((isset($campos_busqueda)) && ($_GET['table']) && ($_GET['callerURL'])){
 				    <input type="text" class="form-control input-sm" id="txt_search" name="txt_search" value="<?php echo $_GET['txt_search'];?>">
 				      <div class="input-group-btn">
 				        <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" name="select_field"> <!-- <span class="glyphicon glyphicon-search"></span> --> Buscar <span class="caret"></span></button>
-				        <ul class="dropdown-menu pull-right">
+				        <ul id="listado_busqueda" class="dropdown-menu pull-right">
 				        	<?php
 				        	echo $lista_opciones;
 				        	?>
@@ -81,7 +81,7 @@ if ((isset($campos_busqueda)) && ($_GET['table']) && ($_GET['callerURL'])){
 </form>
 
 <script type="text/javascript">
-    $("ul.dropdown-menu > li").click(function() {
+    $("#listado_busqueda > li").click(function() {
         target = $(this).text();
         columna = $(this).attr('columna');
         foreign = $(this).attr('foreign');
@@ -100,7 +100,7 @@ if ((isset($campos_busqueda)) && ($_GET['table']) && ($_GET['callerURL'])){
   $.ajax({
     url: '<?php echo $_GET['callerURL']; ?>',
     type: 'get',
-   data: variable,
+    data: variable,
    success: function(response, textStatus, jqXHR){
       $('#cuerpo').html(response);   //select the id and put the response in the html
     },
