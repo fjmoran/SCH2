@@ -362,6 +362,7 @@ foreach ($campos_tabla as $campo) {
 
 if (isset($_GET['debug'])) {print_r($body_table);}
 
+if ($total != 0) {
 ?>
 <br>
 <div id='table_generated'>
@@ -382,7 +383,14 @@ if (isset($_GET['debug'])) {print_r($body_table);}
 <div class="row"> 
 	<div class="col-md-12">
 
-		<span class="pull-right"><h5>Desplegando 1-10 de 331 resultados</h5></span>
+		<span class="pull-right"><h5><?php echo "Desplegando pagina ".$_GET['pagina']." de ".ceil($total/$_GET['tampag'])." paginas"; ?></h5></span>
 
 	</div>
-</div>	
+</div>
+
+<?php
+}else{
+
+	echo "No hay registros</br>";
+}
+?>
