@@ -73,7 +73,7 @@ if ((isset($campos_busqueda)) && ($_GET['table']) && ($_GET['callerURL'])){
 
 				      <div class="input-group-btn">
 				        <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" name="select_field"><span class="glyphicon glyphicon-search"></span>&nbsp<span class="glyphicon glyphicon-chevron-down"></span></button>
-				        <ul class="dropdown-menu pull-right">
+				        <ul id="listado_busqueda"class="dropdown-menu pull-right">
 				        	<?php
 				        	echo $lista_opciones;
 				        	?>
@@ -86,7 +86,7 @@ if ((isset($campos_busqueda)) && ($_GET['table']) && ($_GET['callerURL'])){
 </form>
 
 <script type="text/javascript">
-    $("ul.dropdown-menu > li").click(function() {
+    $("#listado_busqueda > li").click(function() {
         target = $(this).text();
         columna = $(this).attr('columna');
         foreign = $(this).attr('foreign');
