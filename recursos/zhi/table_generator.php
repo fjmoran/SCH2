@@ -383,7 +383,7 @@ if ($total != 0) {
 <div class="row"> 
 	<div class="col-md-12">
 
-		<span class="pull-right"><h5><?php echo "Desplegando pagina ".$_GET['pagina']." de ".ceil($total/$_GET['tampag'])." paginas"; ?></h5></span>
+		<span class="pull-right"><h5><?php echo "Desplegando página ".$_GET['pagina']." de ".ceil($total/$_GET['tampag'])." páginas"; ?></h5></span>
 
 	</div>
 </div>

@@ -5,7 +5,7 @@
 <?php
 
 $_GET['table'] = $bd.".Menu";
-$_GET['select'] = "nombreMenu as Menu, nivelMenu as Nivel, urlMenu as URL, targetMenu as Destino, activoMenu as Estado";
+$_GET['select'] = "nombreMenu as Menu, nivelMenu as Nivel, Pagina_idPagina as Pagina, Menu_idMenu as MenuPadre, Menu_Pagina_idPagina as MenuPagina, activoMenu as Estado";
 $_GET['where'] = "idMenu='".$_GET['idMenu']."'";
 $_GET['edit'] = 1;
 $_GET['jquery'] = "$('#cuerpo').load('pages_admin/menu_mod.php');";

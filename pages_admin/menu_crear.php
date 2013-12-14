@@ -4,7 +4,7 @@
 
 <?php 
 $_GET['table'] = $bd.".Menu";
-$_GET['select'] = "nombreMenu as Menu, nivelMenu as Nivel, urlMenu as URL, targetMenu as Destino, activoMenu as Estado";
+	$_GET['select'] = "nombreMenu as Menu, nivelMenu as Nivel, Pagina_idPagina as Pagina, Menu_idMenu as MenuPadre, Menu_Pagina_idPagina as MenuPagina, activoMenu as Estado";
 $_GET['jquery'] = "$('#cuerpo').load('pages_admin/menu_mod.php');";
 
 require("../recursos/zhi/insert_table_generic.php");
