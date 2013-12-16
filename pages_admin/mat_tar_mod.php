@@ -55,10 +55,10 @@ $_GET['table'] = $db.".TarifaMateria";
 	<h4>Tarifas por materia disponibles</h4>
 
 	<?php 
-	$_GET['select'] = "Materia_idMateria as Materia, Moneda_idMoneda as Moneda, valorTarifaMateria as Valor";
+	$_GET['select'] = "Materia_idMateria as Materia, Materia_Cliente_idCliente as Cliente, Moneda_idMoneda as Moneda, valorTarifaMateria as Valor";
 	$_GET['orderby'] = "Materia_idMateria";
-	$_GET['tabla']['width'] = "45%, 25%, 20%";
-	$_GET['tabla']['title'] = "Materia, Moneda, Tarifa";
+	$_GET['tabla']['width'] = "25%, 30%, 10%, 20%";
+	$_GET['tabla']['title'] = "Materia, Cliente, Moneda, Tarifa";
 	$_GET['acciones'] = "true";
 	$_GET['accion']['editar']['URL'] = "pages_admin/mat_tar_editar.php";
 	$_GET['accion']['editar']['title'] = "Editar";
