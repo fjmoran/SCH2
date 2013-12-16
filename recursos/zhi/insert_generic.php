@@ -66,6 +66,12 @@ if ($mysqli->multi_query($select_all)) {
 						$_POST[$campo_select->orgname] = date('Y-m-d',strtotime($_POST[$campo_select->orgname]));
 						if (isset($debug)) { echo "En Case por tipo Fecha ".$_POST[$campo_select->orgname]." </br>";}
 						break;
+					case 3:
+						if ($debug) {echo "En case por integer :@".$_POST[$campo_select->orgname]."@</br>";}
+						if (empty($_POST[$campo_select->orgname])) {
+							$_POST[$campo_select->orgname] = "NULL";
+						}
+						break;
 				}
 
 				array_push($VALUES,$mysqli->real_escape_string($_POST[$campo_select->orgname])); 
@@ -90,6 +96,7 @@ if ($mysqli->multi_query($select_all)) {
 	$list_value = "('";
 	$list_value .= implode("','",$VALUES);
 	$list_value .="')";
+	$list_value = str_replace("'NULL'","NULL",$list_value);
 	$insert = "INSERT INTO ".$_POST['table']." VALUES ".$list_value;
 	if ($debug){
 		echo $insert;
