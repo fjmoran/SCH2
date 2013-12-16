@@ -122,7 +122,7 @@ foreach ($info_campo as $valor) {
       if (!($valor->flags & 2)) {
         // No es llave primaria, por lo que es una referencia.
         if (isset($_GET['debug'])) { echo "No es Llave Primaria</br>"; }
-        $query = "select REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME from information_schema.key_column_usage where column_name = '".$valor->orgname."' and table_name='".$table."'";
+       	$query = "select REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME from information_schema.key_column_usage where column_name = '".$valor->orgname."' and table_name='".$table."'";
         if (isset($_GET['debug'])) { echo $query."</br>"; }
         $rsfk = $mysqli->query($query);
         $info = $rsfk->fetch_assoc();
@@ -160,7 +160,25 @@ foreach ($info_campo as $valor) {
         }
       }else {
         if (isset($_GET['debug'])) { echo " Es un Foreign Key de la tabla ".$info['REFERENCED_TABLE_NAME']."</br>"; }
-        $select_list = "select ".$info['REFERENCED_COLUMN_NAME']." as id, nombre".$info['REFERENCED_TABLE_NAME']." as nombre from ".$schema.".".$info[REFERENCED_TABLE_NAME]." where activo".$info[REFERENCED_TABLE_NAME]."='1'";
+        
+        // Nuevo metodo de obtener el listado del FK
+        $fk_descomposicion_por_nombre = explode("_",$valor->orgname);
+	    $fk_tabla_consulta = $fk_descomposicion_por_nombre[count($fk_descomposicion_por_nombre)-2];
+        $fk_llave_consulta = $fk_descomposicion_por_nombre[count($fk_descomposicion_por_nombre)-1];
+        $fk_columna_consulta = "nombre".$fk_tabla_consulta;
+        
+        if ($_GET['debug']) {
+	        
+	        echo "Descomposición por Nombre : ".$fk_descomposicion_por_nombre."</br>";
+	        echo "Tabla consulta fk : ".$fk_tabla_consulta."</br>";
+	        echo "Llave consulta fk : ".$fk_llave_consulta."</br>";
+	        echo "Columna consulta fk : ".$fk_columna_consulta."</br>";
+        }
+        // haciendo compatibilidad con viejo sistema
+        // $info['REFERENCED_COLUMN_NAME'] = $fk_descomposicion_por_nombre[count($fk_descomposicion_por_nombre)-1];
+        // $info['REFERENCED_TABLE_NAME'] = $fk_descomposicion_por_nombre[count($fk_descomposicion_por_nombre)-2];
+        
+        $select_list = "select ".$fk_llave_consulta." as id, ".$fk_columna_consulta." as nombre from ".$db.".".$fk_tabla_consulta." where activo".$fk_tabla_consulta."='1'";
         if (isset($_GET['debug'])) { echo "Query Foreign Key ".$select_list."</br>"; }
         $rs_list_fk = $mysqli->query($select_list);
         $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><select name=\"".$valor->orgname."\" class=\"form-control\">";

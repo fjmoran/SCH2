@@ -68,7 +68,7 @@ if ($mysqli->multi_query($select_all)) {
 						break;
 					case 3:
 						if ($debug) {echo "En case por integer :@".$_POST[$campo_select->orgname]."@</br>";}
-						if (empty($_POST[$campo_select->orgname])) {
+						if ((empty($_POST[$campo_select->orgname])) && ($_POST[$campo_select->orgname]!=0)) {
 							$_POST[$campo_select->orgname] = "NULL";
 						}
 						break;
