@@ -155,10 +155,10 @@ function paginar($actual=1, $total, $por_pagina=10, $enlace,$href,$por_ventana=1
   $texto = "<ul class=\"pagination pagination-sm\" >";
 
   if ($actual > 1) {
-    $texto .= "<li onclick=\"$('#cuerpo').load('$enlace$anterior');\"><a href=\"".$href."_".$anterior."\">Anterior</a></li> ";
+    $texto .= "<li onclick=\"$('#cuerpo').load('$enlace$anterior');\"><a href=\"".$href."_".$anterior."\"><span class='glyphicon glyphicon-chevron-left'></span></a></li> ";
   }
   else {
-    $texto .= "<li class=\"disabled\"><a href=#>Anterior</a></li> ";
+    $texto .= "<li class=\"disabled\"><a href=#><span class='glyphicon glyphicon-chevron-left'></a></li> ";
   }
   for ($i=$inicio_ventana; $i<$actual; $i++) {
     $texto .= "<li onclick=\"$('#cuerpo').load('$enlace$i');\"><a href=\"".$href."_".$i."\">$i</a></li> ";
@@ -168,10 +168,10 @@ function paginar($actual=1, $total, $por_pagina=10, $enlace,$href,$por_ventana=1
     $texto .= "<li onclick=\"$('#cuerpo').load('$enlace$i');\"><a href=\"".$href."_".$i."\">$i</a></li> ";
   }
   if ($actual<$total_paginas) {
-    $texto .= "<li onclick=\"$('#cuerpo').load('$enlace$posterior');\"><a href=\"".$href."_".$posterior."\">Siguiente</a>";
+    $texto .= "<li onclick=\"$('#cuerpo').load('$enlace$posterior');\"><a href=\"".$href."_".$posterior."\"><span class='glyphicon glyphicon-chevron-right'></a>";
   }
   else {
-    $texto .= "<li class=\"disabled\"><a href=#>Siguiente</a></li>";
+    $texto .= "<li class=\"disabled\"><a href=#><span class='glyphicon glyphicon-chevron-right'></a></li>";
   }
   
   $texto .= "</ul>";
