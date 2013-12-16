@@ -215,7 +215,7 @@ if ($regen_select) { // Si falto algun PRIMARY KEY o hay alguna llave foranea, s
 	// se ejecuta el query con las PRIMARY KEY faltantes
 	$rs = $mysqli->query($select);
 	if (!$rs) {
-		echo "Falló al ejecutar la consulta: (". $mysqli->errno .") ". $mysqli->error;
+		echo "Falló al ejecutar la consulta: (". $mysqli->errno .") ". $mysqli->error."</br>";
 	}
 }
 
