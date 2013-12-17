@@ -5,7 +5,7 @@
 <?php
 
 $_GET['table'] = $bd.".TarifaMateria";
-$_GET['select'] = "Materia_idMateria as Materia, Moneda_idMoneda as Moneda, Materia_Cliente_idCliente as Cliente, valorTarifaMateria as Valor";
+$_GET['select'] = "Materia_idMateria as Materia, Moneda_idMoneda as Moneda, Materia_Cliente_idCliente as Cliente, valorTarifaMateria as Tarifa";
 $_GET['where'] = "idTarifaMateria='".$_GET['idTarifaMateria']."'";
 $_GET['edit'] = 1;
 $_GET['jquery'] = "$('#cuerpo').load('pages_admin/mat_tar_mod.php');";
