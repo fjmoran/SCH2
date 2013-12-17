@@ -153,20 +153,28 @@ foreach ($fkeys as $fkey=>$value){
 		
 		if (isset($_GET['debug'])) {echo "Se encontro la llave foranea ".$fkey." </br>";}
 		
-		if ($last_table == $value[0]){
+		if (substr_count($fkey, "_") > 1) {
+			$descomposicion_fkey = explode("_",$fkey);
+			$tabla_fkey = $descomposicion_fkey[count($descomposicion_fkey)-2];
+			$columna_fkey = $descomposicion_fkey[count($descomposicion_fkey)-1];
+		}else {
+			$tabla_fkey = $value[0];
+			$columna_fkey = $value[1];
+		}
+		if ($last_table == $tabla_fkey){
 			
-			$left_join[sizeof($left_join)-1] .= " AND ".$value[0].".".$value[1]."=".$table.".".$fkey;
+			$left_join[sizeof($left_join)-1] .= " AND ".$tabla_fkey.".".$columna_fkey."=".$table.".".$fkey;
 			if (isset($_GET['debug'])) {
-				echo "Misma Tabla ".$value[0]." ";
+				echo "Misma Tabla ".$tabla_fkey." ";
 				print_r ($left_join);
 				echo "</br>";
 			}
 		}else{
-				array_push ($left_join,"LEFT JOIN ".$value[0]." ON ".$value[0].".".$value[1]."=".$table.".".$fkey);
+				array_push ($left_join,"LEFT JOIN ".$tabla_fkey." ON ".$tabla_fkey.".".$columna_fkey."=".$table.".".$fkey);
 				$pos = array_search($fkey,$column_select);
 				if(isset($_GET['debug'])) {echo "position : ".$pos."</br>valor : ".$column_select[$pos]."</br>";}
-				$title_select[$pos] = "nombre".$value[0];
-				$last_table = $value[0];
+				$title_select[$pos] = "nombre".$tabla_fkey;
+				$last_table = $tabla_fkey;
 			}
 		
 		if (!(isset($_GET['select']))) { $_GET['select'] = $table.".*";}
