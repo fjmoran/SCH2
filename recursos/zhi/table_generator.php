@@ -291,7 +291,7 @@ foreach ($campos_tabla as $campo) {
 					$rs_moneda_simbolo = $mysqli->query($query_simbolo);
 					$simbolo = $rs_moneda_simbolo->fetch_assoc();
 					$rs_moneda_simbolo->close();
-					$body_table .= sprintf("%s%s",$simbolo['nombreMoneda'],number_format($campo[$columna],2));
+					$body_table .= sprintf("%s%s",$simbolo['nombreMoneda'],number_format($campo[$columna],2,",","."));
 				}else{
 					$body_table .= htmlentities($campo[$columna],ENT_SUBSTITUTE,'UTF-8');
 				}
