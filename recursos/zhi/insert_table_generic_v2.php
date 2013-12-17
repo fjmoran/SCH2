@@ -123,7 +123,7 @@ foreach ($info_campo as $valor) {
         // No es llave primaria, por lo que es una referencia.
         if (isset($_GET['debug'])) { echo "No es Llave Primaria</br>"; }
        	$query = "select REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME from information_schema.key_column_usage where column_name = '".$valor->orgname."' and table_name='".$table."'";
-        if (isset($_GET['debug'])) { echo $query."</br>"; }
+        if (isset($_GET['debug'])) { echo "Query de FOREIGN key cuando no es primary key ".$query."</br>"; }
         $rsfk = $mysqli->query($query);
         $info = $rsfk->fetch_assoc();
         if (isset($_GET['debug'])) { print_r ($info); echo "</br>"; }
@@ -182,6 +182,15 @@ foreach ($info_campo as $valor) {
         if (isset($_GET['debug'])) { echo "Query Foreign Key ".$select_list."</br>"; }
         $rs_list_fk = $mysqli->query($select_list);
         $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><select name=\"".$valor->orgname."\" class=\"form-control\">";
+        if (!($valor->flags & 1)){
+	      $campo_formulario .= "<option value=\"NULL\"";
+          if ((isset($_GET['where'])) and ($_GET['edit'])){
+            if ($info_fila[$valor->name] == $list_fk['id']){
+              $campo_formulario .= "selected";
+            }
+          }
+          $campo_formulario .= " >&nbsp;</option>";
+        }
         while ($list_fk=$rs_list_fk->fetch_assoc()) {
           $campo_formulario .= "<option value=\"".$list_fk['id']."\"";
           if ((isset($_GET['where'])) and ($_GET['edit'])){
