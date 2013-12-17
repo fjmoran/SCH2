@@ -287,11 +287,11 @@ foreach ($campos_tabla as $campo) {
 				break;
 			case 4:
 				if (substr_count($_GET['table'], "Tarifa")){
-					$query_simbolo = "select nombreMoneda from MONEDA, ".$_GET['table']." WHERE Moneda_idMoneda = idMoneda";
+					$query_simbolo = "select nombreMoneda from MONEDA, ".$_GET['table']." WHERE idMoneda = ".$campo['Moneda_idMoneda'];
 					$rs_moneda_simbolo = $mysqli->query($query_simbolo);
 					$simbolo = $rs_moneda_simbolo->fetch_assoc();
 					$rs_moneda_simbolo->close();
-					$body_table .= sprintf("%s%s",$simbolo['nombreMoneda'],number_format($campo[$columna],2,",","."));
+					$body_table .= sprintf("%s %s",$simbolo['nombreMoneda'],number_format($campo[$columna],2,",","."));
 				}else{
 					$body_table .= htmlentities($campo[$columna],ENT_SUBSTITUTE,'UTF-8');
 				}
