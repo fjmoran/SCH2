@@ -24,7 +24,6 @@
         <li onclick="$('#cuerpo').load('pages_admin/menu_mod.php');"><a href="#menu_mod"><span class="glyphicon glyphicon-chevron-right"></span> Menú</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/paginas_mod.php');"><a href="#paginas_mod"><span class="glyphicon glyphicon-chevron-right"></span> Páginas</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/param_mod.php');"><a href="#param_mod"><span class="glyphicon glyphicon-chevron-right"></span> Parámetros Globales</a></li>
-        <li onclick="$('#cuerpo').load('pages_admin/perm_menu_mod.php');"><a href="#perm_menu_mod"><span class="glyphicon glyphicon-chevron-right"></span> Permisos menú</a></li>
         <li onclick="$('#cuerpo').load('pages_admin/perm_pag_mod.php');"><a href="#perm_pag_mod"><span class="glyphicon glyphicon-chevron-right"></span> Permisos página</a></li>                                                
         <li class="nav-header">Información del Sistema</li>
         <li onclick="$('#cuerpo').load('pages_admin/version.php');"><a href="#version"><span class="glyphicon glyphicon-chevron-right"></span> Versión</a></li>  
