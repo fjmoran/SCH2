@@ -65,9 +65,11 @@ foreach ($info_campo as $valor) {
     printf("Tipo:          %d</br>", $valor->type);
   }
    switch ($valor->type) {
-    case 4:
-    case 252:
-    case 253: $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><input id=\"".$valor->orgname."\" class=\"form-control\" type=\"text\" name=\"".$valor->orgname."\"";
+    case 4: // si el campo es tipo FLOAT
+    case 252: // si el campo es de tipo TEXT
+    case 253:  // si el campo es de tipo VARCHAR
+        if (isset($_GET['debug'])) { echo "Tipo FLOAT,TEXT o VARCHAR </br>";}
+    	$campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><input id=\"".$valor->orgname."\" class=\"form-control\" type=\"text\" name=\"".$valor->orgname."\"";
               if ((isset($_GET['where'])) and ($_GET['edit'])){
                 $campo_formulario .= "value=\"".$info_fila[$valor->name]."\"";
               }
@@ -75,8 +77,9 @@ foreach ($info_campo as $valor) {
               if ($valor->flags & 1) { array_push($validacion,$valor->orgname); }
               break;
               
-    case 1:
-            if ((isset($_GET['idUsuario'])) && ($_GET['idUsuario'] == $_SESSION['idUsuario'])) {
+    case 1: // si el campo es del tipo boolean, este tipo se muestra como un checkbox.
+	      if (isset($_GET['debug'])) { echo "Tipo BOOLEAN </br>";}
+          if ((isset($_GET['idUsuario'])) && ($_GET['idUsuario'] == $_SESSION['idUsuario'])) {
             	$campo_formulario .= "<input type=\"hidden\" name=\"".$valor->orgname."\" value=\"1\">";          
             #if ($valor->flags & 1) { array_push($validacion, $valor->orgname);}
           } else {
@@ -88,13 +91,11 @@ foreach ($info_campo as $valor) {
             }else{
               $campo_formulario .= " checked";
             }
-
-            $campo_formulario .= " > Activo</label></div>";
-            
+            $campo_formulario .= " > Activo</label></div>";            
           }
             break;
 
-    case 10:
+    case 10: // si el campo es del tipo date/time
       if(isset($_GET['debug'])) { echo "Es del tipo Fecha </br>";}
         $campo_formulario .= "<div class=\"form-group\">";
         $campo_formulario .= "<label for=\"".$valor->orgname."\">Fecha:</label>";
@@ -118,7 +119,8 @@ foreach ($info_campo as $valor) {
         if ($valor->flags & 1) { array_push($validacion, $valor->orgname);}
       break;
       
-    case 3:
+    case 3: // si el campo encontrado es una Integer (la restriccion es que todas las llaves en el modelo son integer, en caso de no ser asi, hay que hacer todas estas validaciones con los tipos de datos que sean llaves en el modelo.
+        if (isset($_GET['debug'])) { echo "Tipo INTEGER </br>";}
       if (!($valor->flags & 2)) {
         // No es llave primaria, por lo que es una referencia.
         if (isset($_GET['debug'])) { echo "No es Llave Primaria</br>"; }
@@ -178,11 +180,11 @@ foreach ($info_campo as $valor) {
         // $info['REFERENCED_COLUMN_NAME'] = $fk_descomposicion_por_nombre[count($fk_descomposicion_por_nombre)-1];
         // $info['REFERENCED_TABLE_NAME'] = $fk_descomposicion_por_nombre[count($fk_descomposicion_por_nombre)-2];
         
-        $select_list = "select ".$fk_llave_consulta." as id, ".$fk_columna_consulta." as nombre from ".$db.".".$fk_tabla_consulta." where activo".$fk_tabla_consulta."='1'";
+        $select_list = "select ".$fk_llave_consulta." as id, ".$fk_columna_consulta." as nombre from ".$db.".".$fk_tabla_consulta." where activo".$fk_tabla_consulta."='1'"; // Creo la consulta, posee varias restricciones con respecto a como esta hecha la tabla, entre ellas el hecho que la tabla tiene un campo llamado nombre<tabla> que se desplegara en los select para ser visto por el usuario
         if (isset($_GET['debug'])) { echo "Query Foreign Key ".$select_list."</br>"; }
-        $rs_list_fk = $mysqli->query($select_list);
-        $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><select name=\"".$valor->orgname."\" class=\"form-control\">";
-        if (!($valor->flags & 1)){
+        $rs_list_fk = $mysqli->query($select_list); // Ejecuto la consulta
+        $campo_formulario = "<label for=\"".$valor->orgname."\">".htmlentities($valor->name,ENT_SUBSTITUTE,'UTF-8').":</label><select name=\"".$valor->orgname."\" class=\"form-control\">"; // Creo el label con el select del campo para el formulario
+        if (!($valor->flags & 1)){ // verifico que NO sea una llave que tenga el flag de not null activo para agregar la opción de NULL en el select
 	      $campo_formulario .= "<option value=\"NULL\"";
           if ((isset($_GET['where'])) and ($_GET['edit'])){
             if ($info_fila[$valor->name] == $list_fk['id']){
@@ -191,7 +193,7 @@ foreach ($info_campo as $valor) {
           }
           $campo_formulario .= " >&nbsp;</option>";
         }
-        while ($list_fk=$rs_list_fk->fetch_assoc()) {
+        while ($list_fk=$rs_list_fk->fetch_assoc()) { // agrego todos los valores encontrados en la tabla de la llave. Estos son los option del select.
           $campo_formulario .= "<option value=\"".$list_fk['id']."\"";
           if ((isset($_GET['where'])) and ($_GET['edit'])){
             if ($info_fila[$valor->name] == $list_fk['id']){
@@ -206,7 +208,7 @@ foreach ($info_campo as $valor) {
       #if($valor->flags & 1) { array_push($validacion, $valor->orgname);}
       break;
       
-      case 254:
+      case 254: // si el campo es de tipo SET
         if (isset($_GET['debug'])) { echo "Tipo SET </br>";}
         //Acá va lo que se tiene que hacer con el tipo set
         $show_setvalues = "show columns from ".$_GET['table']." LIKE '".$valor->orgname."'";
