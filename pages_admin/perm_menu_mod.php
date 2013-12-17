@@ -9,6 +9,8 @@ if (($_GET['debug']) || ($_POST['debug'])){
 }
 
 #$debug = 1;
+#$_GET['debug']=1;
+
 if ($debug){
 echo "GET : ";
 print_r($_GET);
@@ -56,8 +58,8 @@ $_GET['table'] = $db.".Usuario";
 
 	<?php 
 	$_GET['table'] = $bd.".PermisoMenu";
-	$_GET['select'] = "Menu_idMenu as Menu, Perfil_idPerfil as Rol";
-	$_GET['orderby'] = "Perfil_idPerfil, Menu_idMenu";
+	$_GET['select'] = "PermisoMenu.Menu_idMenu as Menu, Perfil_idPerfil as Rol";
+	$_GET['orderby'] = "Perfil_idPerfil, PermisoMenu.Menu_idMenu";
 	$_GET['tabla']['width'] = "45%, 45%";
 	$_GET['tabla']['title'] = "Menu, Rol";
 	$_GET['acciones'] = "true";

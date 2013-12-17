@@ -8,6 +8,9 @@ if (($_GET['debug']) || ($_POST['debug'])){
 	$debug = 1;
 }
 
+$debug=1;
+$_GET['debug']=1;
+
 if ($debug){
 echo "GET : ";
 print_r($_GET);
