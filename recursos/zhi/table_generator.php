@@ -179,7 +179,7 @@ foreach ($fkeys as $fkey=>$value){
 		
 		if (!(isset($_GET['select']))) { $_GET['select'] = $table.".*";}
 		
-		$_GET['select'] .= ", ".$value[0].".nombre".$value[0]." ";
+		$_GET['select'] .= ", ".$tabla_fkey.".nombre".$tabla_fkey." ";
 
 		$regen_select = true;
 	}

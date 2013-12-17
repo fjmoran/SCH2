@@ -66,7 +66,7 @@ $_GET['table'] = $db.".TarifaMateria";
 	$_GET['accion']['eliminar']['URL'] = "pages_admin/mat_tar_del.php";
 	$_GET['accion']['eliminar']['title'] = "Eliminar";
 	$_GET['accion']['eliminar']['class'] = "glyphicon glyphicon-trash";	
-	$_GET['debug'] = 1;
+	#$_GET['debug'] = 1;
 
 	list($reg,$total)=select_paginar($_GET['table'],$_GET['where'],$_GET['pagina'],$_GET['tampag'],"id".$_GET['table'],$mysqli);
 
