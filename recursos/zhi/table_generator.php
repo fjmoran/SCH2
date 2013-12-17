@@ -280,11 +280,21 @@ foreach ($campos_tabla as $campo) {
 		$body_table .= "<td>";
 		switch ($campo_tipo[$columna]){
 			case 3:
-			case 4:
 			case 253:
 			case 254:
 			case 252:
 				$body_table .= htmlentities($campo[$columna],ENT_SUBSTITUTE,'UTF-8');
+				break;
+			case 4:
+				if (substr_count($_GET['table'], "Tarifa")){
+					$query_simbolo = "select nombreMoneda from MONEDA, ".$_GET['table']." WHERE Moneda_idMoneda = idMoneda";
+					$rs_moneda_simbolo = $mysqli->query($query_simbolo);
+					$simbolo = $rs_moneda_simbolo->fetch_assoc();
+					$rs_moneda_simbolo->close();
+					$body_table .= sprintf("%s%s",$simbolo['nombreMoneda'],number_format($campo[$columna],2));
+				}else{
+					$body_table .= htmlentities($campo[$columna],ENT_SUBSTITUTE,'UTF-8');
+				}
 				break; 
 			case 1:
 				$body_table .= "<span class=\"label ";
