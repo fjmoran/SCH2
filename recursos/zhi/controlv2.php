@@ -18,7 +18,7 @@ if ($rs=$mysqli->query($SSQL)){
 		$_SESSION['userUsuario']=$row['userUsuario'];
 		$_SESSION['idUsuario']=$row['idUsuario'];
 		$_SESSION['nombreUsuario']=$row['nombreUsuario'];
-		$_SESSION['idperfilUsuario'] = $row['Perfil_idPerfil'];
+		$_SESSION['Perfil_idPerfil'] = $row['Perfil_idPerfil'];
 		$_SESSION['schema'] = $ini_array['schema'];
 		$rs->close();
 		header ("Location:http://".$host."/".$ini_array['basedir']."/index.php");
