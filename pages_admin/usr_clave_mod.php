@@ -7,6 +7,16 @@
       </div>
       <form role="form">
         <div class="modal-body">
+
+          <div class="row"> <!-- Solo para usuario -->
+            <div class="col-md-6">
+              <div class="form-group"> 
+                <label id="lbl_antclave" for="clave">Clave actual:</label>
+                <input id="antclave" class="form-control" type="password" placeholder="Clave actual">
+              </div>              
+            </div>           
+          </div>  <!-- Fin Solo para usuario -->
+
           <div class="row"> 
             <div class="col-md-6">
               <div class="form-group"> 
