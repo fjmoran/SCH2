@@ -63,7 +63,7 @@ if ($rs_datos_usr = $mysqli->query($query_datos_usr)){
 	      <div class="col-md-12">
 	        <p>
             <button class="btn btn-default">Cancelar</button>
-	          <button class="btn btn-info" data-toggle="modal" data-target="#usr_clave_mod">Cambiar clave</button>
+	          <button class="btn btn-info" data-toggle="modal" data-target="#usr_clave_mod" onclick="$('#usr_clave_mod').load('pages_admin/usr_clave_mod.php');">Cambiar clave</button>
 	          <button class="btn btn-primary">Guardar</button>
 	        </p>
 	      </div>
@@ -75,6 +75,6 @@ if ($rs_datos_usr = $mysqli->query($query_datos_usr)){
 
 <div id="usr_clave_mod" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="agregarLabel" aria-hidden="true">
 
-  <?php require("usr_clave_mod.php"); ?>
+  <!-- <?php //require("usr_clave_mod.php"); ?> -->
     
 </div><!-- modal -->  
