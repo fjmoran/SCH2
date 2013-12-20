@@ -12,7 +12,7 @@
               <div class="col-md-6">
                 <div class="form-group"> 
                   <label id="lbl_antclave" for="clave">Clave actual:</label>
-                  <input id="antclave" class="form-control required" type="password" placeholder="Clave actual" name="antclave">
+                  <input id="antclave" class="form-control required" type="password" placeholder="Clave actual" name="antclave" data-validation="server" data-validation-url="recursos/zhi/check_clave.php">
                 </div>              
               </div>           
             </div>  <!-- Fin Solo para usuario -->
@@ -35,18 +35,32 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Guardar</button>
+          <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
       </form>
 <script src="recursos/jquery/jquery-1.10.2.js"></script>      
 <script src="recursos/form-validator/jquery.form-validator.js"></script>
+<script src="recursos/CryptoJSv3/rollups/sha1.js"></script>
 
 <script>
  
   $.validate({
     modules : 'security.dev',
+    onValidate : function() {
+      var clave = $('#antclave');
+      var clave1 = $('#pass');
+      var clave2 = $('#pass_confirmation');
+      var clavesha1 = CryptoJS.SHA1(clave.val());
+      var clave1sha1 = CryptoJS.SHA1(clave1.val());
+      var clave2sha1 = CryptoJS.SHA1(clave2.val());
+      clave.val(clavesha1);
+      clave1.val(clave1sha1);
+      clave2.val(clave2sha1);
+      return {
+      }
+    }
   });
- 
+
 </script>
     </div><!-- modal-content -->
   </div><!-- modal-dialog -->
