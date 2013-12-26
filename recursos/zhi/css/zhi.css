@@ -154,6 +154,10 @@ margin-left: -1px;
   padding: 0 0 2.5em; 
   float: left; 
   margin-right: 10px; 
+  background: #eee; 
+  padding: 5px; 
+  width: 300px;
+
 }
 
 #sortable1 li, #sortable2 li { 

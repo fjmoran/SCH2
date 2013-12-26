@@ -23,19 +23,17 @@ require_once("../recursos/zhi/funciones.php");
 	 	</div>
 	 	<div class="row">		
 	 		<div class="col-md-6">
-	 			<ul id="sortable1" class="connectedSortable">
+	 			Listado de Paginas
+	 			<ul id="sortable1" class="droptrue">
 	 				<?php
 	 					echo listado("ui-state-default","Pagina","nombrePagina","idPagina",$mysqli);
 	 				?>
 				</ul>
 			</div>
-	 		<div class="col-md-6">				
-				<ul id="sortable2" class="connectedSortable">
-				  <li class="ui-state-highlight">Item 1</li>
-				  <li class="ui-state-highlight">Item 2</li>
-				  <li class="ui-state-highlight">Item 3</li>
-				  <li class="ui-state-highlight">Item 4</li>
-				  <li class="ui-state-highlight">Item 5</li>
+	 		<div class="col-md-6">
+	 			Paginas con Permiso Para el ROL			
+				<ul id="sortable2" class="droptrue">
+
 				</ul>
 	 		</div>		
 	 	</div>
@@ -44,8 +42,15 @@ require_once("../recursos/zhi/funciones.php");
 
 <script>
   $(function() {
-    $( "#sortable1, #sortable2" ).sortable({
-      connectWith: ".connectedSortable"
-    }).disableSelection();
+    $( "ul.droptrue" ).sortable({
+      connectWith: "ul"
+    });
+ 
+    $( "ul.dropfalse" ).sortable({
+      connectWith: "ul",
+      dropOnEmpty: false
+    });
+ 
+    $( "#sortable1, #sortable2, #sortable3" ).disableSelection();
   });
-</script>
+  </script></script>
