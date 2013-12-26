@@ -13,16 +13,6 @@ require_once("../recursos/zhi/funciones.php");
 	    <link href="../recursos/jquery-ui/css/zhi/jquery-ui-1.10.3.custom.min.css" rel="stylesheet">    
 	    <link href="../fonts/fonts.css" rel="stylesheet" type="text/css">
 	    <link href="../img/favicon.ico" rel="SHORTCUT ICON">
-	    <script src="../recursos/jquery/jquery-1.10.2.js"></script>
-	    <script src="../recursos/jquery-ui/js/jquery-ui-1.10.3.custom.js"></script>
-	    <script src="../recursos/bootstrap3/js/bootstrap.min.js"></script>
-			<script>$(function(){$("ul.droptrue").sortable({connectWith:"ul"});$("ul.dropfalse").sortable({connectWith:"ul",dropOnEmpty:false});$("#sortable1,#sortable2").disableSelection();});$(document).ready(function(){$('#sortable1,#sortable2').tooltip({selector:"[rel=tooltip]"})});</script>
-			<script>
-				$( "#frmboton" ).click(function() {
-  				alert( "Handler for .submit() called." );
-  				//event.preventDefault();
-				});
-			</script>
 	</head>
 	<body style>
 		<div class="container">
@@ -71,7 +61,15 @@ require_once("../recursos/zhi/funciones.php");
 									</ul>
 						 		</div>		
 						 	</div>
-						 	<input type="button" value="actualizar" class="button" id="frmboton">
+							<div class="row">
+							    <div class="row pull-left"> <!-- fila para botones -->
+							      <div class="col-md-12">
+							        <p>
+							          <input class="btn btn-success" type="button" value="Actualizar" id="frmboton">
+							        </p>
+							      </div>
+							    </div>  
+							<div>     
 					 	</form>
 					 	<?php
 					 	}
@@ -83,3 +81,14 @@ require_once("../recursos/zhi/funciones.php");
 		<iframe name="IframeOutput" class="hide"></iframe>
 	</body>
 </html>
+
+	<script src="../recursos/jquery/jquery-1.10.2.js"></script>
+	<script src="../recursos/jquery-ui/js/jquery-ui-1.10.3.custom.js"></script>
+	<script src="../recursos/bootstrap3/js/bootstrap.min.js"></script>
+	<script>$(function(){$("ul.droptrue").sortable({connectWith:"ul"});$("ul.dropfalse").sortable({connectWith:"ul",dropOnEmpty:false});$("#sortable1,#sortable2").disableSelection();});$(document).ready(function(){$('#sortable1,#sortable2').tooltip({selector:"[rel=tooltip]"})});</script>
+	<script>
+		$('#frmboton').click(function() {
+  		alert( "Handler for .submit() called." );
+  		//event.preventDefault();
+		});
+	</script>
