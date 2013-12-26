@@ -23,7 +23,7 @@ require_once("../recursos/zhi/funciones.php");
 	 	</div>
 	 	<div class="row">		
 	 		<div class="col-md-6">
-	 			Listado de Paginas
+	 			Listado de Paginas (todas menos las que ya tiene permisos)
 	 			<ul id="sortable1" class="droptrue">
 	 				<?php
 	 					echo listado("ui-state-default","Pagina","nombrePagina","idPagina",$mysqli);
