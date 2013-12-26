@@ -21,20 +21,7 @@
 	 	<div class="row">		
 	 		<div class="col-md-12">
 	 			Aca poner el array de checkboxes. (completar)
-						<!-- <li class="sortable-item" id="A">Sortable item A</li>
-						<li class="sortable-item" id="B">Sortable item B</li> -->
-<!--						<li class="sortable-item" id="C">Sortable item C</li>
-						<li class="sortable-item" id="D">Sortable item D</li> -->
 	 		</div>		
 	 	</div>
  	</form>	
 </div><!-- col-md-11 -->
-<script type="text/javascript" src="recursos/jquery/jquery-1.10.2.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js">
-<script>
-  $(function() {
-    $( "#sortable1, #sortable2" ).sortable({
-      connectWith: ".connectedSortable"
-    }).disableSelection();
-  });
-  </script>
