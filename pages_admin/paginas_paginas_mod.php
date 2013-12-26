@@ -59,6 +59,9 @@ require_once("../recursos/zhi/funciones.php");
 						 		<div class="col-md-6">
 						 			<h5>Permisos para el Rol</h5>		
 									<ul id="sortable2" class="droptrue">
+										<?php
+											echo listado("ui-state-default","Pagina","nombrePagina","idPagina",$mysqli,"Pagina.idPagina IN (select Pagina_idPagina1 from PaginaenPagina where Pagina_idPagina ='".$_POST['pagina']."')");
+										?>
 									</ul>
 						 		</div>		
 						 	</div>
