@@ -3,7 +3,13 @@ require_once("../recursos/zhi/auth.php");
 require_once("../recursos/zhi/CreaConnv2.php");
 require_once("../recursos/zhi/funciones.php");
 ?>
-
+<script>
+  $(function() {
+    $( "#sortable1, #sortable2" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+  });
+</script>
 <div class="col-md-11">
  	<h2>Permisos por Rol</h2>
  	<h5>Seleccione el rol que desea configurar.</h5><br>
@@ -28,11 +34,6 @@ require_once("../recursos/zhi/funciones.php");
 	 				<?php
 	 					echo listado("ui-state-default","Pagina","nombrePagina","idPagina",$mysqli);
 	 				?>
-				  <!-- <li class="ui-state-default">Item 1</li>
-				  <li class="ui-state-default">Item 2</li>
-				  <li class="ui-state-default">Item 3</li>
-				  <li class="ui-state-default">Item 4</li>
-				  <li class="ui-state-default">Item 5</li> -->
 				</ul>
  
 				<ul id="sortable2" class="connectedSortable">
