@@ -31,7 +31,7 @@ require_once("../recursos/zhi/funciones.php");
 				</ul>
 			</div>
 	 		<div class="col-md-6">
-	 			<h5>Permisos Para el Rol</h5>		
+	 			<h5>Permisos para el Rol</h5>		
 				<ul id="sortable2" class="droptrue">
 
 				</ul>
