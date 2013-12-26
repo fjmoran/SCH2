@@ -1,8 +1,8 @@
-/*! jQuery UI - v1.10.3 - 2013-08-23
+/*! jQuery UI - v1.10.3 - 2013-12-26
 * http://jqueryui.com
-* Includes: jquery.ui.core.css, jquery.ui.datepicker.css
-* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Helvetica%2CArial%2Csans-serif&fwDefault=bold&fsDefault=1.1em&cornerRadius=2px&bgColorHeader=%23dddddd&bgTextureHeader=highlight_soft&bgImgOpacityHeader=50&borderColorHeader=%23dddddd&fcHeader=%23444444&iconColorHeader=%23428bca&bgColorContent=%23ffffff&bgTextureContent=flat&bgImgOpacityContent=75&borderColorContent=%23dddddd&fcContent=%23444444&iconColorContent=%23D43F3A&bgColorDefault=%23f6f6f6&bgTextureDefault=highlight_soft&bgImgOpacityDefault=100&borderColorDefault=%23dddddd&fcDefault=%23428bca&iconColorDefault=%23666666&bgColorHover=%23428bca&bgTextureHover=highlight_soft&bgImgOpacityHover=25&borderColorHover=%23428bca&fcHover=%23ffffff&iconColorHover=%23ffffff&bgColorActive=%23ffffff&bgTextureActive=glass&bgImgOpacityActive=65&borderColorActive=%23dddddd&fcActive=%23D43F3A&iconColorActive=%23454545&bgColorHighlight=%23ffffff&bgTextureHighlight=flat&bgImgOpacityHighlight=55&borderColorHighlight=%23cccccc&fcHighlight=%23444444&iconColorHighlight=%23428bca&bgColorError=%23ffffff&bgTextureError=flat&bgImgOpacityError=55&borderColorError=%23D43F3A&fcError=%23222222&iconColorError=%23D43F3A&bgColorOverlay=%23eeeeee&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=80&bgColorShadow=%23aaaaaa&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=60&thicknessShadow=4px&offsetTopShadow=-4px&offsetLeftShadow=-4px&cornerRadiusShadow=0px
-* Copyright 2013 jQuery Foundation and other contributors Licensed MIT */
+* Includes: jquery.ui.core.css, jquery.ui.resizable.css, jquery.ui.selectable.css, jquery.ui.datepicker.css, jquery.ui.theme.css
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Helvetica%2CArial%2Csans-serif&fwDefault=bold&fsDefault=1.1em&cornerRadius=2px&bgColorHeader=dddddd&bgTextureHeader=highlight_soft&bgImgOpacityHeader=50&borderColorHeader=dddddd&fcHeader=444444&iconColorHeader=0073ea&bgColorContent=ffffff&bgTextureContent=flat&bgImgOpacityContent=75&borderColorContent=dddddd&fcContent=444444&iconColorContent=ff0084&bgColorDefault=f6f6f6&bgTextureDefault=highlight_soft&bgImgOpacityDefault=100&borderColorDefault=dddddd&fcDefault=0073ea&iconColorDefault=666666&bgColorHover=0073ea&bgTextureHover=highlight_soft&bgImgOpacityHover=25&borderColorHover=0073ea&fcHover=ffffff&iconColorHover=ffffff&bgColorActive=ffffff&bgTextureActive=glass&bgImgOpacityActive=65&borderColorActive=dddddd&fcActive=ff0084&iconColorActive=454545&bgColorHighlight=ffffff&bgTextureHighlight=flat&bgImgOpacityHighlight=55&borderColorHighlight=cccccc&fcHighlight=444444&iconColorHighlight=0073ea&bgColorError=ffffff&bgTextureError=flat&bgImgOpacityError=55&borderColorError=ff0084&fcError=222222&iconColorError=ff0084&bgColorOverlay=eeeeee&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=80&bgColorShadow=aaaaaa&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=60&thicknessShadow=4px&offsetTopShadow=-4px&offsetLeftShadow=-4px&cornerRadiusShadow=0px
+* Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
 
 /* Layout helpers
 ----------------------------------*/
@@ -85,6 +85,79 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+.ui-resizable {
+	position: relative;
+}
+.ui-resizable-handle {
+	position: absolute;
+	font-size: 0.1px;
+	display: block;
+}
+.ui-resizable-disabled .ui-resizable-handle,
+.ui-resizable-autohide .ui-resizable-handle {
+	display: none;
+}
+.ui-resizable-n {
+	cursor: n-resize;
+	height: 7px;
+	width: 100%;
+	top: -5px;
+	left: 0;
+}
+.ui-resizable-s {
+	cursor: s-resize;
+	height: 7px;
+	width: 100%;
+	bottom: -5px;
+	left: 0;
+}
+.ui-resizable-e {
+	cursor: e-resize;
+	width: 7px;
+	right: -5px;
+	top: 0;
+	height: 100%;
+}
+.ui-resizable-w {
+	cursor: w-resize;
+	width: 7px;
+	left: -5px;
+	top: 0;
+	height: 100%;
+}
+.ui-resizable-se {
+	cursor: se-resize;
+	width: 12px;
+	height: 12px;
+	right: 1px;
+	bottom: 1px;
+}
+.ui-resizable-sw {
+	cursor: sw-resize;
+	width: 9px;
+	height: 9px;
+	left: -5px;
+	bottom: -5px;
+}
+.ui-resizable-nw {
+	cursor: nw-resize;
+	width: 9px;
+	height: 9px;
+	left: -5px;
+	top: -5px;
+}
+.ui-resizable-ne {
+	cursor: ne-resize;
+	width: 9px;
+	height: 9px;
+	right: -5px;
+	top: -5px;
+}
+.ui-selectable-helper {
+	position: absolute;
+	z-index: 100;
+	border: 1px dotted black;
 }
 .ui-datepicker {
 	width: 17em;
@@ -297,12 +370,12 @@
 	border: 1px solid #dddddd;
 	background: #f6f6f6 url(images/ui-bg_highlight-soft_100_f6f6f6_1x100.png) 50% 50% repeat-x;
 	font-weight: bold;
-	color: #428bca;
+	color: #428BCA;
 }
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
-	color: #428bca;
+	color: #428BCA;
 	text-decoration: none;
 }
 .ui-state-hover,
@@ -311,8 +384,8 @@
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-	border: 1px solid #428bca;
-	background: #428bca url(images/ui-bg_highlight-soft_25_428bca_1x100.png) 50% 50% repeat-x;
+	border: 1px solid #428BCA;
+	background: #428BCA url(images/ui-bg_highlight-soft_25_428BCA_1x100.png) 50% 50% repeat-x;
 	font-weight: bold;
 	color: #ffffff;
 }
@@ -329,12 +402,12 @@
 	border: 1px solid #dddddd;
 	background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
 	font-weight: bold;
-	color: #D43F3A;
+	color: #d9534f;
 }
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
-	color: #D43F3A;
+	color: #d9534f;
 	text-decoration: none;
 }
 
@@ -355,7 +428,7 @@
 .ui-state-error,
 .ui-widget-content .ui-state-error,
 .ui-widget-header .ui-state-error {
-	border: 1px solid #D43F3A;
+	border: 1px solid #d9534f;
 	background: #ffffff url(images/ui-bg_flat_55_ffffff_40x100.png) 50% 50% repeat-x;
 	color: #222222;
 }
