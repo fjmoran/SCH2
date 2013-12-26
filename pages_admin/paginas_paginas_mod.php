@@ -16,7 +16,13 @@ require_once("../recursos/zhi/funciones.php");
 	    <script src="../recursos/jquery/jquery-1.10.2.js"></script>
 	    <script src="../recursos/jquery-ui/js/jquery-ui-1.10.3.custom.js"></script>
 	    <script src="../recursos/bootstrap3/js/bootstrap.min.js"></script>
-		<script>$(function(){$("ul.droptrue").sortable({connectWith:"ul"});$("ul.dropfalse").sortable({connectWith:"ul",dropOnEmpty:false});$("#sortable1,#sortable2").disableSelection();});$(document).ready(function(){$('#sortable1,#sortable2').tooltip({selector:"[rel=tooltip]"})});</script>
+			<script>$(function(){$("ul.droptrue").sortable({connectWith:"ul"});$("ul.dropfalse").sortable({connectWith:"ul",dropOnEmpty:false});$("#sortable1,#sortable2").disableSelection();});$(document).ready(function(){$('#sortable1,#sortable2').tooltip({selector:"[rel=tooltip]"})});</script>
+			<script>
+				$( "#frmboton" ).click(function() {
+  				alert( "Handler for .submit() called." );
+  				//event.preventDefault();
+				});
+			</script>
 	</head>
 	<body style>
 		<div class="container">
@@ -46,7 +52,7 @@ require_once("../recursos/zhi/funciones.php");
 								if ((isset($_POST['pagina'])) && (!empty($_POST['pagina'])))
 								{
 							?>
-						<form role="form" action="../recursos/zhi/update_paginas_paginas.php" name="paginaenpagina" method="POST">	
+						<form role="form" action="../recursos/zhi/update_paginas_paginas.php" name="paginasenpagina" id="paginasenpagina" method="POST">	
 						 	<div class="row">		
 						 		<div class="col-md-6">
 						 			<h5>Páginas disponibles</h5>
@@ -65,6 +71,7 @@ require_once("../recursos/zhi/funciones.php");
 									</ul>
 						 		</div>		
 						 	</div>
+						 	<input type="button" value="actualizar" class="button" id="frmboton">
 					 	</form>
 					 	<?php
 					 	}
