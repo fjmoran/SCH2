@@ -23,7 +23,7 @@ require_once("../recursos/zhi/funciones.php");
 	 	</div>
 	 	<div class="row">		
 	 		<div class="col-md-6">
-	 			Listado de Paginas (todas menos las que ya tiene permisos)
+	 			<h5>Páginas disponibles (arrastre a la caja de la derecha los items a los que desea dar permisos)</h5>
 	 			<ul id="sortable1" class="droptrue">
 	 				<?php
 	 					echo listado("ui-state-default","Pagina","nombrePagina","idPagina",$mysqli);
@@ -31,7 +31,7 @@ require_once("../recursos/zhi/funciones.php");
 				</ul>
 			</div>
 	 		<div class="col-md-6">
-	 			Paginas con Permiso Para el ROL			
+	 			<h5>Páginas con Permiso Para el ROL <br><br></h5>		
 				<ul id="sortable2" class="droptrue">
 
 				</ul>
