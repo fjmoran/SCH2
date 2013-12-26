@@ -51,15 +51,22 @@ function Cambia_Formato_Fecha($fecha){
 	$new_fecha = mktime(0,0,0,$mes,$dia,$agno);
 	return $new_fecha;
 }
-function comando_mysql($sql){
-	$rs = mysql_query($sql) or die("No se pudo realizar $sql ".mysql_error()."\n");
-	return $rs;
+
+function comando_mysql($sql,$connector){
+	if ($rs = $connector->query($sql)){
+		return $rs;
+	}else{
+		printf("Error: %s\n Error: %s", $mysqli->sqlstate,$mysqli->error);
+		return False;
+	}
 }
+
 function Cambia_fmto_Hora($hora){
 	list($horas,$minutos,$segundos) = split(":",$hora);
 	$total = ($horas*60+$minutos)*60+$segundos;
 	return $total;
 }
+
 function array_hora($hora){
 	// recibe la en formato de horas no de segundos
 	$horas = floor($hora);
@@ -105,6 +112,7 @@ function buscar_usuario_ejecucion($id_tarea){ // Se ocupa cuando el se modifica 
 	mysql_free_result($rs_select_ejecucion);
 	return $usuarios;
 }
+
 function TIME_TO_SEC($hora){
 	list($horas,$minutos,$segundo) = split(":",$hora);
 	$sec = $horas * 3600 + $minutos * 60 + $segundo;
@@ -122,6 +130,41 @@ function myfragment($str, $n, $delim='...') { // {{{
    }
 }
 
+function option_select($tabla,$colNombre,$colValor,$conector,$selValor="",$orderby=""){
+	$result ="";
+	$query = "select $colValor,$colNombre from $tabla ";
+	if (!empty($orderby)){
+		$query .= $orderby;
+	}
+	if ($rs_query = comando_mysql($query,$conector)){
+		while ($fila = $rs_query->fetch_assoc()){
+			$result .= "<option value=\"".$fila[$colValor]."\" ";
+			if ((!(empty($selValor))) && ($selValor == $colValor)) {
+				$result .= "selected ";
+			}
+			$result .= ">".$fila[$colNombre]."</option>\n";
+		}
+	}else{
+		$result = "Fallo Query $query </br>";
+	}
+	return $result;
+}
+
+function listado($class,$tabla,$colNombre,$colValor,$conector,$where="",$selValor="",$orderby=""){
+	$result ="";
+	$query = "select $colValor,$colNombre from $tabla ";
+	if (!empty($where)){ $query .= $where." ";}
+	if (!empty($orderby)){ $query .= $orderby;}
+	if ($rs_query = comando_mysql($query,$conector)){
+		while ($fila = $rs_query->fetch_assoc()){
+			$result .= "<li class=\"".$class."\" ";
+			$result .= ">".$fila[$colNombre]."</li>\n";
+		}
+	}else{
+		$result = "Fallo Query $query </br>";
+	}
+	return $result;
+}
 /******************************************************/
 /* Funcion paginar
  * actual:          Pagina actual

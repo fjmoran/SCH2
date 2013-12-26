@@ -1,3 +1,9 @@
+<?php
+require_once("../recursos/zhi/auth.php");
+require_once("../recursos/zhi/CreaConnv2.php");
+require_once("../recursos/zhi/funciones.php");
+?>
+
 <div class="col-md-11">
  	<h2>Permisos por Rol</h2>
  	<h5>Seleccione el rol que desea configurar.</h5><br>
@@ -7,11 +13,9 @@
 			 	<div class="form-group">
 		          <label for="rol">Rol:</label>
 		            <select id="rol" class="form-control">
-		              <option>Rol 1</option>                          
-		              <option>Rol 2</option>
-		              <option>Rol 3</option>  
-		              <option>Rol 4</option>  
-		              <option>Rol 5</option>                                                                          
+		            	<?php
+		            		echo option_select("Perfil","nombrePerfil","idPerfil",$mysqli);
+		            	?>
 		            </select>          
 		        </div>
 	 		</div>
@@ -20,7 +24,24 @@
 	 	</div>
 	 	<div class="row">		
 	 		<div class="col-md-12">
-	 			Aca poner el array de checkboxes. (completar)
+	 			<ul id="sortable1" class="connectedSortable">
+	 				<?php
+	 					echo listado("ui-state-default","Pagina","nombrePagina","idPagina",$mysqli);
+	 				?>
+				  <!-- <li class="ui-state-default">Item 1</li>
+				  <li class="ui-state-default">Item 2</li>
+				  <li class="ui-state-default">Item 3</li>
+				  <li class="ui-state-default">Item 4</li>
+				  <li class="ui-state-default">Item 5</li> -->
+				</ul>
+ 
+				<ul id="sortable2" class="connectedSortable">
+				  <li class="ui-state-highlight">Item 1</li>
+				  <li class="ui-state-highlight">Item 2</li>
+				  <li class="ui-state-highlight">Item 3</li>
+				  <li class="ui-state-highlight">Item 4</li>
+				  <li class="ui-state-highlight">Item 5</li>
+				</ul>
 	 		</div>		
 	 	</div>
  	</form>	
