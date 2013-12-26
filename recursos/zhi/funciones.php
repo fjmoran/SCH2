@@ -130,6 +130,18 @@ function myfragment($str, $n, $delim='...') { // {{{
    }
 }
 
+/******************************************************/
+/* Funcion option_select
+ * tabla:           Tablas que intervienen en el select
+ * colNombre:		Columna del select que se pondra como titulo en el elemento de la lista
+ * colValor:		Columna que se ocupara como indice en la lista
+ * conector:		Variable de conexión a la BD.
+ * where:			(Opcional) setencia where del select a la BD
+ * selValor:		(Opcional) en caso de que exista un valor previamente selecccionado
+ * orderby: 		(opcional) Si se quiere agregar algun orden especifico al select
+ *
+ * Devuelve un texto que representa la lista de todas las opciones que muestra el select
+ */
 function option_select($tabla,$colNombre,$colValor,$conector,$selValor="",$orderby=""){
 	$result ="";
 	$query = "select $colValor,$colNombre from $tabla ";
@@ -150,6 +162,19 @@ function option_select($tabla,$colNombre,$colValor,$conector,$selValor="",$order
 	return $result;
 }
 
+/******************************************************/
+/* Funcion listado
+ * class:			Clase del elemento de la lista
+ * tabla:           Tablas que intervienen en el select
+ * colNombre:		Columna del select que se pondra como titulo en el elemento de la lista
+ * colValor:		Columna que se ocupara como indice en la lista
+ * conector:		Variable de conexión a la BD.
+ * where:			(Opcional) setencia where del select a la BD
+ * selValor:		(Opcional) en caso de que exista un valor previamente selecccionado
+ * orderby: 		(opcional) Si se quiere agregar algun orden especifico al select
+ *
+ * Devuelve un texto que representa la lista de todos los elementos seleccionados
+ */
 function listado($class,$tabla,$colNombre,$colValor,$conector,$where="",$selValor="",$orderby=""){
 	$result ="";
 	$title = "descripcion".$tabla;
