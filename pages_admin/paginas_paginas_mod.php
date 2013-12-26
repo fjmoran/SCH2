@@ -23,13 +23,13 @@ require_once("../recursos/zhi/funciones.php");
 			<div class="col-md-10">
 				<div id="cuerpo">
 					<div class="col-md-11">
-					 	<h2>Paginas en Paginas</h2>
-					 	<h5>Seleccione la pagina que desea configurar y arrastre las paginas de la columna izquierda a la derecha para indicar que dichas paginas estan contenidas.</h5><br>
+					 	<h2>Relaciones entre Páginas</h2>
+					 	<h5>Seleccione la pagina que desea configurar y arrastre las paginas de la columna izquierda a la derecha para indicar que dichas paginas estan relacionadas.</h5><br>
 					 	<form role="form" action="paginas_paginas_mod.php" name="selpagina" method="POST">
 						 	<div class="row">
 						 		<div class="col-md-6">
 								 	<div class="form-group">
-							          <label for="rol">Rol:</label>
+							          <label for="rol">Página:</label>
 							            <select id="pagina" class="form-control" name="pagina" onchange="javascript:submit();">
 							            	<option value="">&nbsp</option>
 							            	<?php
@@ -49,7 +49,7 @@ require_once("../recursos/zhi/funciones.php");
 						<form role="form" action="../recursos/zhi/update_paginas_paginas.php" name="paginaenpagina" method="POST">	
 						 	<div class="row">		
 						 		<div class="col-md-6">
-						 			<h5>Permisos disponibles</h5>
+						 			<h5>Páginas disponibles</h5>
 						 			<ul id="sortable1" class="droptrue">
 						 				<?php
 						 					echo listado("ui-state-default","Pagina","nombrePagina","idPagina",$mysqli,"Pagina.idPagina NOT IN (select Pagina_idPagina1 from PaginaenPagina where Pagina_idPagina ='".$_POST['pagina']."')");
@@ -57,7 +57,7 @@ require_once("../recursos/zhi/funciones.php");
 									</ul>
 								</div>
 						 		<div class="col-md-6">
-						 			<h5>Permisos para el Rol</h5>		
+						 			<h5>Páginas relacionadas</h5>		
 									<ul id="sortable2" class="droptrue">
 										<?php
 											echo listado("ui-state-default","Pagina","nombrePagina","idPagina",$mysqli,"Pagina.idPagina IN (select Pagina_idPagina1 from PaginaenPagina where Pagina_idPagina ='".$_POST['pagina']."')");
