@@ -53,4 +53,16 @@ require_once("../recursos/zhi/funciones.php");
  
     $( "#sortable1, #sortable2, #sortable3" ).disableSelection();
   });
-  </script></script>
+  </script>
+
+  <script type="text/javascript"> 
+      
+      $(document).ready(function(){       
+        /* Tooltip */
+        $('#sortable1, #sortable2').tooltip({
+          selector: "[rel=tooltip]"
+         })
+      })    
+  </script>
+
+
