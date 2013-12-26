@@ -151,7 +151,7 @@ function option_select($tabla,$colNombre,$colValor,$conector,$selValor="",$order
 	if ($rs_query = comando_mysql($query,$conector)){
 		while ($fila = $rs_query->fetch_assoc()){
 			$result .= "<option value=\"".$fila[$colValor]."\" ";
-			if ((!(empty($selValor))) && ($selValor == $colValor)) {
+			if ((!(empty($selValor))) && ($selValor == $fila[$colValor])) {
 				$result .= "selected ";
 			}
 			$result .= ">".$fila[$colNombre]."</option>\n";
@@ -180,7 +180,7 @@ function listado($class,$tabla,$colNombre,$colValor,$conector,$where="",$selValo
 	$title = "descripcion".$tabla;
 	$query = "select $colValor,$colNombre,$title from $tabla ";
 	
-	if (!empty($where)){ $query .= $where." ";}
+	if (!empty($where)){ $query .= "where ".$where." ";}
 	if (!empty($orderby)){ $query .= $orderby;}
 	if ($rs_query = comando_mysql($query,$conector)){
 		while ($fila = $rs_query->fetch_assoc()){
