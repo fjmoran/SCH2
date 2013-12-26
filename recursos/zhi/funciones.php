@@ -152,13 +152,15 @@ function option_select($tabla,$colNombre,$colValor,$conector,$selValor="",$order
 
 function listado($class,$tabla,$colNombre,$colValor,$conector,$where="",$selValor="",$orderby=""){
 	$result ="";
-	$query = "select $colValor,$colNombre from $tabla ";
+	$title = "descripcion".$tabla;
+	$query = "select $colValor,$colNombre,$title from $tabla ";
+	
 	if (!empty($where)){ $query .= $where." ";}
 	if (!empty($orderby)){ $query .= $orderby;}
 	if ($rs_query = comando_mysql($query,$conector)){
 		while ($fila = $rs_query->fetch_assoc()){
 			$result .= "<li id=tabla_[\"".$fila[$colValor]."]\" class=\"".$class."\" ";
-			$result .= ">".$fila[$colNombre]."</li>\n";
+			$result .= " rel=\"tooltip\" data-toogle=\"tooltip\" title=\"".$fila[$title]."\">".$fila[$colNombre]."</li>\n";
 		}
 	}else{
 		$result = "Fallo Query $query </br>";
