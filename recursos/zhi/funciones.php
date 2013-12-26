@@ -157,7 +157,7 @@ function listado($class,$tabla,$colNombre,$colValor,$conector,$where="",$selValo
 	if (!empty($orderby)){ $query .= $orderby;}
 	if ($rs_query = comando_mysql($query,$conector)){
 		while ($fila = $rs_query->fetch_assoc()){
-			$result .= "<li class=\"".$class."\" ";
+			$result .= "<li id=tabla_[\"".$fila[$colValor]."]\" class=\"".$class."\" ";
 			$result .= ">".$fila[$colNombre]."</li>\n";
 		}
 	}else{
