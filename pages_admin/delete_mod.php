@@ -32,23 +32,7 @@ $id = "id".$tabla;
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cancelar</button>
-          <button type="submit" class="btn 
-          <?php 
-          if ($_GET['activar'] == 0) {
-          	echo "btn-success";
-          }else{
-	          echo "btn-danger"; 
-          }
-          ?>
-          ">
-          <?php
-          if ($_GET['activar']==0){
-	          echo "Activar";
-          }else{
-	          echo "Desactivar";
-          }
-          ?>
-          </button> <!-- class="btn btn-success" -->
+          <button type="submit" class="btn btn-danger"> Borrar </button>
         </div>
         <input type="hidden" name="<?php echo $id; ?>" value="<?php echo $_GET[$id]; ?>">
         <input type="hidden" name="table" value="<?php echo $_GET['table']; ?>">
