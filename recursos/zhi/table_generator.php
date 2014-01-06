@@ -363,7 +363,7 @@ foreach ($campos_tabla as $campo) {
 								}
 							break;
 						default:
-							if (array_key_exists('modal',$value)){
+							if ((array_key_exists('modal',$value)) && ($value['modal'] == 1)){
 								$body_table .= "<a data-target=\"#generic_modal\" href=\"".$value['URL']."?table=".$_GET['table']."&".$id."callerURL=".$_GET['callerURL']."\" data-toggle=\"modal\">";
 							}else {
 								$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."');\" href=\"#".$table."_".$key."\" >";
