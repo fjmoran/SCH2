@@ -85,6 +85,10 @@ $_GET['table'] = $db.".EstadoFactura";
 
 </div><!-- col-md-11 -->
 
+<div id="mod_eliminar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="act_deasctLabel" aria-hidden="true">
+    
+</div><!-- modal activar y desactivar -->  
+
     <script type="text/javascript"> 
       
       $(document).ready(function(){       

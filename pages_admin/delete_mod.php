@@ -1,4 +1,5 @@
 <?php
+
 $pos = 0;
 $tabla = "";
 $id = "";
@@ -9,6 +10,7 @@ $pos = strpos($_GET['table'],".") + 1;
 $tabla = substr($_GET['table'],$pos);
 $id = "id".$tabla;
 ?>
+
 <div class="modal-dialog">
     <div class="modal-content">
 

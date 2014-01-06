@@ -336,37 +336,44 @@ foreach ($campos_tabla as $campo) {
 						print_r($value);
 						echo "</br>";
 					}
-					if ($key == 'activar'){
-						if (isset($_GET['debug'])) { echo "En acción activar ".$campo['idUsuario']." = ".$_SESSION['idUsuario']."</br>";}
-						if ($activo){
-							if (!(($UserTable) && ($campo['idUsuario'] == $_SESSION['idUsuario']))){
-								$body_table .= "<a data-target=\"#act_desact\" href=\"pages_admin/act_desact.php?table=".$_GET['table']."&activar=1&".$id."callerURL=".$_GET['callerURL']."\" data-toggle=\"modal\" data-backdrop=\"static\" data-keyboard=\"false\">";
-							}
-							$body_table .= "<span class=\"glyphicon glyphicon-remove-circle\" style=\"color:";
-							if (!(($UserTable) && ($campo['idUsuario'] == $_SESSION['idUsuario']))){
-								$body_table .= "black";
-							}else {
-								$body_table .= "#777";
-							}
-							$body_table .= "; font-size:12px; margin-right: 3px; margin-left: 3px;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span>";
-							if (!(($UserTable) && ($campo['idUsuario'] == $_SESSION['idUsuario']))){
-								$body_table .= "</a>";
-							}
-						}else {
-								$body_table .= "<a data-target=\"#act_desact\" href=\"pages_admin/act_desact.php?table=".$_GET['table']."&activar=0&".$id."callerURL=".$_GET['callerURL']."\" data-toggle=\"modal\" data-backdrop=\"static\" data-keyboard=\"false\">";
-								$body_table .= "<span class=\"glyphicon glyphicon-refresh\" style=\"color:";
-								$body_table .= "black";
-							$body_table .= "; font-size:12px; margin-right: 3px; margin-left: 3px;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span>";
-								$body_table.= "</a>";
-						}
-					}else{
-						if (strpos($value['URL'],"#") === 0){
-							$body_table .= "<a data-target=\"".$value['URL']."\" href=\"pages_admin/".substr($value['URL'],1).".php?".$id."\" data-toggle=\"modal\">";
-						}else {
-							$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."');\" href=\"#".$table."_".$key."\" >";
-						}
-						$body_table .= "<span class=\"".$value['class']."\" style=\"color: black; font-size:12px; margin-right: 3px; margin-left: 3px;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"".$value['title']."\"></span></a>";
 
+					switch ($key){
+						case "activar":
+							if (isset($_GET['debug'])) { echo "En acción activar ".$campo['idUsuario']." = ".$_SESSION['idUsuario']."</br>";}
+							if ($activo){
+								if (!(($UserTable) && ($campo['idUsuario'] == $_SESSION['idUsuario']))){
+									$body_table .= "<a data-target=\"#act_desact\" href=\"pages_admin/act_desact.php?table=".$_GET['table']."&activar=1&".$id."callerURL=".$_GET['callerURL']."\" data-toggle=\"modal\" data-backdrop=\"static\" data-keyboard=\"false\">";
+								}
+								$body_table .= "<span class=\"glyphicon glyphicon-remove-circle\" style=\"color:";
+								if (!(($UserTable) && ($campo['idUsuario'] == $_SESSION['idUsuario']))){
+									$body_table .= "black";
+								}else {
+									$body_table .= "#777";
+								}
+								$body_table .= "; font-size:12px; margin-right: 3px; margin-left: 3px;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Desactivar\"></span>";
+								if (!(($UserTable) && ($campo['idUsuario'] == $_SESSION['idUsuario']))){
+									$body_table .= "</a>";
+								}
+								}else {
+									$body_table .= "<a data-target=\"#act_desact\" href=\"pages_admin/act_desact.php?table=".$_GET['table']."&activar=0&".$id."callerURL=".$_GET['callerURL']."\" data-toggle=\"modal\" data-backdrop=\"static\" data-keyboard=\"false\">";
+									$body_table .= "<span class=\"glyphicon glyphicon-refresh\" style=\"color:";
+									$body_table .= "black";
+								$body_table .= "; font-size:12px; margin-right: 3px; margin-left: 3px;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Reactivar\"></span>";
+									$body_table.= "</a>";
+								}
+							break;
+						case "eliminar":
+							$body_table .= "<a data-target=\"#mod_eliminar\" href=\"pages_admin/delete_mod.php?table=".$_GET['table']."&".$id."callerURL=".$_GET['callerURL']."\" data-toggle=\"modal\" data-backdrop=\"static\" data-keyboard=\"false\">";
+							$body_table .= "<span class=\"".$value['class']."\" style=\"color: black; font-size:12px; margin-right: 3px; margin-left: 3px;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"".$value['title']."\"></span></a>";
+							break;
+						default:
+							if (strpos($value['URL'],"#") === 0){
+								$body_table .= "<a data-target=\"".$value['URL']."\" href=\"pages_admin/".substr($value['URL'],1).".php?".$id."\" data-toggle=\"modal\">";
+							}else {
+								$body_table .= "<a onclick=\"$('#cuerpo').load('".$value['URL']."?".$id."');\" href=\"#".$table."_".$key."\" >";
+							}
+							$body_table .= "<span class=\"".$value['class']."\" style=\"color: black; font-size:12px; margin-right: 3px; margin-left: 3px;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"".$value['title']."\"></span></a>";
+							break;
 					}
 
 				}
