@@ -113,8 +113,8 @@ echo "<html>
 	<body>
 	<p>Se insertado con exito en la tabla ".$_POST['table']." con el id ".$ID." </p>
 	
-	<script src=\"recursos/jquery/jquery-1.10.2.min.js\"></script>    
-  <script src=\"recursos/bootstrap3/js/bootstrap.min.js\"></script>
+	<script src=\"../jquery/jquery-1.10.2.min.js\"></script>    
+  <script src=\"../bootstrap3/js/bootstrap.min.js\"></script>
 	<script type=\"text/javascript\">
 		parent.".$_POST['jquery']."
 	</script>
