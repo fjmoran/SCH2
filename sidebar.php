@@ -32,7 +32,7 @@ require_once("recursos/zhi/funciones.php");
     <div class="btn-group pull-right">
       <?php
         $generic_anchor = "<a class=\"btn btn-default\" href=\"%s\"><span class=\"%s\"></span> %s</a>";
-        $select_menu0 = "select Menu.nombreMenu as nombre, Menu.spanclassMenu as class,Pagina.urlPagina as URL from Menu, Pagina where nivelMenu='0' AND activoMenu='1' AND Menu.Pagina_idPagina = Pagina.idPagina ORDER BY posicionMenu DESC;";
+        $select_menu0 = "select Menu.nombreMenu as nombre, Menu.spanclassMenu as class,Pagina.urlPagina as URL from Menu, Pagina where nivelMenu='0' AND activoMenu='1' AND Menu.Pagina_idPagina = Pagina.idPagina ORDER BY posicionMenu ASC;";
         if ($rs_menu0 = comando_mysql($select_menu0,$mysqli)){
           while ($fila = $rs_menu0->fetch_assoc()){
             printf($generic_anchor,$fila['URL'],$fila['class'],$fila['nombre']);
