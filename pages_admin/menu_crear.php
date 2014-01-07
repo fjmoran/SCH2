@@ -11,7 +11,7 @@ require_once("../recursos/zhi/auth.php");
 
 <?php 
 $_GET['table'] = $db.".Menu";
-$_GET['select'] = "nombreMenu as Menu, nivelMenu as Nivel, Pagina_idPagina as Pagina, Menu_idMenu as Padre, activoMenu as Estado";
+$_GET['select'] = "nombreMenu as Menu, nivelMenu as Nivel, Pagina_idPagina as Pagina, Menu_idMenu as Padre, posicionMenu as Posicion, activoMenu as Estado";
 $_GET['jquery'] = "$('#cuerpo').load('pages_admin/menu_mod.php');";
 #$_GET['debug'] = 1;
 

@@ -56,10 +56,10 @@ $_GET['table'] = $db.".Menu";
 	<h4>Items de menú disponibles</h4>
 
 	<?php 
-	$_GET['select'] = "nombreMenu as Menu, nivelMenu as Nivel, Pagina_idPagina as Pagina, activoMenu as Estado";	
+	$_GET['select'] = "nombreMenu as Menu, nivelMenu as Nivel, Pagina_idPagina as Pagina, posicionMenu as Posicion, activoMenu as Estado";	
 	$_GET['orderby'] = "nivelMenu ASC, activoMenu DESC";
-	$_GET['tabla']['width'] = "25%, 20%, 30%, 15%";
-	$_GET['tabla']['title'] = "Menú, Nivel, Página, Estado";
+	$_GET['tabla']['width'] = "20%, 20%, 25%, 10% ,15%";
+	$_GET['tabla']['title'] = "Menú, Nivel, Página, Posición ,Estado";
 	$_GET['acciones'] = "true";
 	$_GET['accion']['editar']['URL'] = "pages_admin/menu_editar.php";
 	$_GET['accion']['editar']['title'] = "Editar";
