@@ -732,6 +732,7 @@ CREATE TABLE IF NOT EXISTS `SCH2`.`Menu` (
   `nivelMenu` INT NOT NULL DEFAULT 1 COMMENT 'indique que nivel tiene',
   `activoMenu` TINYINT(1) NOT NULL DEFAULT true COMMENT 'indica si la opción esta activa para ser desplegada.',
   `posicionMenu` INT UNSIGNED NOT NULL DEFAULT 0,
+  `spanclassMenu` VARCHAR(100) NULL,
   `Pagina_idPagina` INT UNSIGNED NULL,
   `Menu_idMenu` INT UNSIGNED NULL DEFAULT NULL,
   PRIMARY KEY (`idMenu`),
