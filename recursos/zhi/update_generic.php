@@ -65,7 +65,11 @@ foreach ($data_campos as $data_fila){
 					break;
 			}
 			if ($i > 0) {$update .= ",";}
-			$update .= "$llave = '".$_POST[$llave]."'";
+			if ($_POST[$llave] === 'NULL'){
+				$update .= "$llave = NULL";
+			}else{ 
+				$update .= "$llave = '".$_POST[$llave]."'";
+					}
 			$i++;
 		} else {
 			if ($debug) {echo "No esta definido $llave en _POST </br>";}
