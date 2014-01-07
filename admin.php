@@ -15,6 +15,8 @@ require "recursos/zhi/auth.php";
     <link href="recursos/jquery-ui/css/zhi/jquery-ui-1.10.3.custom.min.css" rel="stylesheet">    
     <!-- Fonts -->
     <link href='fonts/fonts.css' rel='stylesheet' type='text/css'>
+    <!-- Validate -->
+    <link rel="stylesheet" href="http://jquery.bassistance.de/validate/demo/site-demos.css">
     <!-- Fav Icon -->    
     <link href="img/favicon.ico" rel="SHORTCUT ICON">
     <!-- jquery -->  
@@ -42,7 +44,9 @@ require "recursos/zhi/auth.php";
   <script src="recursos/bootstrap3/js/bootstrap.min.js"></script>
   <script src="recursos/highcharts/js/highcharts.js"></script>
   <script src="recursos/highcharts/js/modules/exporting.js"></script>
-  <script src="recursos/jquery-ui/js/jquery-ui-1.10.3.custom.min.js"></script>
+  <script src="recursos/jquery-ui/js/jquery-ui-1.10.3.custom.min.js"></script>   
+  <script src="recursos/form-validator/jquery.form-validator.js"></script>
+  <script src="recursos/CryptoJSv3/rollups/sha1.js"></script>
 
   <script type="text/javascript"> 
     
