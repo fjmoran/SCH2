@@ -36,6 +36,11 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
           <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
+        <?php
+        if (isset($_GET['idUsuario'])){
+          echo "<input type=\"hidden\" name=\"idUsuario\" value=\"".$_GET['idUsuario']."\">";
+        }
+        ?>
       </form>
   <script>
     $.validate({
