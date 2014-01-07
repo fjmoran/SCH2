@@ -7,8 +7,8 @@ require "recursos/zhi/auth.php";
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Sistema de Control de Horas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Validate -->
-    <link rel="stylesheet" href="http://jquery.bassistance.de/validate/demo/site-demos.css">    
+     <!-- Validate 
+    <link rel="stylesheet" href="http://jquery.bassistance.de/validate/demo/site-demos.css">    -->
     <!-- Bootstrap -->
     <link href="recursos/bootstrap3/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <!-- Zhi CSS -->
