@@ -67,9 +67,10 @@ $_GET['table'] = $db.".Usuario";
 	$_GET['accion']['tar']['URL'] = "pages_admin/usr_tar_mod.php";
 	$_GET['accion']['tar']['title'] = "Tarifa del Usuario";
 	$_GET['accion']['tar']['class'] = "glyphicon glyphicon-usd";	
-	$_GET['accion']['clave']['URL'] = "#usr_clave_mod";
+	$_GET['accion']['clave']['URL'] = "pages_admin/usr_clave_mod.php";
 	$_GET['accion']['clave']['title'] = "Cambiar clave";
 	$_GET['accion']['clave']['class'] = "glyphicon glyphicon-user";
+	$_GET['accion']['clave']['modal'] = "1";
 	$_GET['accion']['activar']['URL'] = "pages_admin/usr_estado.php";
 
 	list($reg,$total)=select_paginar($_GET['table'],$_GET['where'],$_GET['pagina'],$_GET['tampag'],"id".$_GET['table'],$mysqli);
@@ -94,12 +95,12 @@ $_GET['table'] = $db.".Usuario";
 </div><!-- col-md-11 -->
 
 
-<div id="usr_clave_mod" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="agregarLabel" aria-hidden="true">
+<!-- <div id="usr_clave_mod" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="agregarLabel" aria-hidden="true">
     
-</div><!-- modal cambio de clave-->  
+</div><!-- modal cambio de clave -->  
 
 
-<div id="act_desact" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="act_deasctLabel" aria-hidden="true">
+<div id="generic_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="act_deasctLabel" aria-hidden="true">
     
 </div><!-- modal activar y desactivar -->  
 
