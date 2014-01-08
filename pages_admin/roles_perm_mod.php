@@ -37,32 +37,26 @@ require_once("../recursos/zhi/funciones.php");
 				</ul>
 	 		</div>		
 	 	</div>
+		<div class="row">
+			<div class="row pull-left"> <!-- fila para botones -->
+			    <div class="col-md-12">
+			    	<p>
+			  	  <input class="btn btn-success" type="submit" value="Actualizar" id="frmboton">
+				    </p>
+			    </div>
+		    </div>  
+		<div>	 	
  	</form>	
 </div><!-- col-md-11 -->
 
+<script>$(function(){$("ul.droptrue").sortable({connectWith:"ul"});$("ul.dropfalse").sortable({connectWith:"ul",dropOnEmpty:false});$("#sortable1,#sortable2").disableSelection();});$(document).ready(function(){$('#sortable1,#sortable2').tooltip({selector:"[rel=tooltip]"})});</script>
 <script>
-  $(function() {
-    $( "ul.droptrue" ).sortable({
-      connectWith: "ul"
-    });
- 
-    $( "ul.dropfalse" ).sortable({
-      connectWith: "ul",
-      dropOnEmpty: false
-    });
- 
-    $( "#sortable1, #sortable2, #sortable3" ).disableSelection();
-  });
-  </script>
-
-  <script type="text/javascript"> 
-      
-      $(document).ready(function(){       
-        /* Tooltip */
-        $('#sortable1, #sortable2').tooltip({
-          selector: "[rel=tooltip]"
-         })
-      })    
-  </script>
-
-
+$('#send_all').bind({
+    'click': function(){ 
+        $('#sortable1 li').each(function(){
+            $(this).appendTo('#sortable2');
+        });
+        $tabs.tabs('select', 1 );
+    }
+});
+</script>
