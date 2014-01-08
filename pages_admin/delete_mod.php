@@ -36,7 +36,7 @@ if($rs_nombre = comando_mysql($select_nombre,$mysqli)){
           <div class="row"> 
             <div class="col-md-12">
 
-              Esta seguro que desea borrar el registro de nombre <?php echo $nombre." ?"; //." con ".$id." ".$_GET[$id];
+              Esta seguro que desea borrar el registro de nombre <b>'<?php echo $nombre."'</b>?"; //." con ".$id." ".$_GET[$id];
               //echo $_GET['callerURL'];
               ?>
              
