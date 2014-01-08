@@ -1,4 +1,7 @@
 <?php
+require_once("../recursos/zhi/auth.php");
+require_once("../recursos/zhi/CreaConnv2.php");
+require_once("../recursos/zhi/funciones.php");
 
 $pos = 0;
 $tabla = "";
@@ -9,6 +12,14 @@ if (isset($_GET['debug'])) { echo "Borrado de Registro </br>";}
 $pos = strpos($_GET['table'],".") + 1;
 $tabla = substr($_GET['table'],$pos);
 $id = "id".$tabla;
+$nombre = "";
+
+$select_nombre = "select nombre".$tabla." from ".$tabla." where ".$id." = '".$_GET[$id]."'";
+if($rs_nombre = comando_mysql($select_nombre,$mysqli)){
+  $fila = $rs_nombre->fetch_array();
+  $nombre = $fila[0];
+  $rs_nombre->free();
+}
 ?>
 
 <div class="modal-dialog">
@@ -25,7 +36,7 @@ $id = "id".$tabla;
           <div class="row"> 
             <div class="col-md-12">
 
-              Esta seguro que desea borrar al item con <?php echo $id." ".$_GET[$id];
+              Esta seguro que desea borrar el registro de nombre <?php echo $nombre." ?"; //." con ".$id." ".$_GET[$id];
               //echo $_GET['callerURL'];
               ?>
              
