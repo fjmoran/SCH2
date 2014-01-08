@@ -62,9 +62,10 @@ $_GET['table'] = $db.".TipoContacto";
 	$_GET['accion']['editar']['URL'] = "pages_admin/cto_tipo_editar.php";
 	$_GET['accion']['editar']['title'] = "Editar";
 	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";	
-	$_GET['accion']['eliminar']['URL'] = "pages_admin/cto_tipo_del.php";
+	$_GET['accion']['eliminar']['URL'] = "pages_admin/delete_mod.php";
 	$_GET['accion']['eliminar']['title'] = "Eliminar";
-	$_GET['accion']['eliminar']['class'] = "glyphicon glyphicon-trash";	
+	$_GET['accion']['eliminar']['class'] = "glyphicon glyphicon-trash";
+	$_GET['accion']['eliminar']['modal'] = "1";	
 
 	list($reg,$total)=select_paginar($_GET['table'],$_GET['where'],$_GET['pagina'],$_GET['tampag'],"id".$_GET['table'],$mysqli);
 

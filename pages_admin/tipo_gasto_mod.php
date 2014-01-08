@@ -61,9 +61,10 @@ $_GET['table'] = $db.".TipoGasto";
 	$_GET['accion']['editar']['URL'] = "pages_admin/tipo_gasto_editar.php";
 	$_GET['accion']['editar']['title'] = "Editar";
 	$_GET['accion']['editar']['class'] = "glyphicon glyphicon-pencil";	
-	$_GET['accion']['eliminar']['URL'] = "pages_admin/tipo_gasto_del.php";
+	$_GET['accion']['eliminar']['URL'] = "pages_admin/delete_mod.php";
 	$_GET['accion']['eliminar']['title'] = "Eliminar";
 	$_GET['accion']['eliminar']['class'] = "glyphicon glyphicon-trash";	
+	$_GET['accion']['eliminar']['modal'] = "1";	
 
 	list($reg,$total)=select_paginar($_GET['table'],$_GET['where'],$_GET['pagina'],$_GET['tampag'],"id".$_GET['table'],$mysqli);
 
@@ -83,6 +84,10 @@ $_GET['table'] = $db.".TipoGasto";
 	</div>
 
 </div><!-- col-md-11 -->
+
+<div id="generic_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="act_deasctLabel" aria-hidden="true">
+    
+</div>
 
     <script type="text/javascript"> 
       

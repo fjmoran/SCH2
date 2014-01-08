@@ -85,9 +85,9 @@ $_GET['table'] = $db.".Menu";
 
 </div><!-- col-md-11 -->
 
-<div id="act_desact" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="act_deasctLabel" aria-hidden="true">
+<div id="generic_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="act_deasctLabel" aria-hidden="true">
     
-</div><!-- modal activar y desactivar --> 
+</div>
 
     <script type="text/javascript"> 
       

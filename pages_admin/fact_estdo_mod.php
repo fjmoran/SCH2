@@ -65,7 +65,7 @@ $_GET['table'] = $db.".EstadoFactura";
 	$_GET['accion']['eliminar']['URL'] = "pages_admin/delete_mod.php";
 	$_GET['accion']['eliminar']['title'] = "Eliminar";
 	$_GET['accion']['eliminar']['class'] = "glyphicon glyphicon-trash";
-	$_GET['accion']['eliminar']['modal'] = 1;
+	$_GET['accion']['eliminar']['modal'] = "1";
 	
 	list($reg,$total)=select_paginar($_GET['table'],$_GET['where'],$_GET['pagina'],$_GET['tampag'],"id".$_GET['table'],$mysqli);
 
@@ -88,7 +88,7 @@ $_GET['table'] = $db.".EstadoFactura";
 
 <div id="generic_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="act_deasctLabel" aria-hidden="true">
     
-</div><!-- modal activar y desactivar -->  
+</div>
 
     <script type="text/javascript"> 
       
