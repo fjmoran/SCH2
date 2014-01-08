@@ -32,7 +32,6 @@ require_once("../recursos/zhi/funciones.php");
 			</div>
 			<div class="col-md-2" style="padding-top: 190px;">
 				<a href="#" class="btn btn-success btn-sm btn-block" role="button"> Agregar todos >> </a>
-				</br></br>
 				<a href="#" class="btn btn-danger btn-sm btn-block" role="button"> << Quitar todos</a>
 			</div>	
 	 		<div class="col-md-6">
