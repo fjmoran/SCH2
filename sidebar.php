@@ -2,7 +2,6 @@
 require_once("recursos/zhi/auth.php");
 require_once("recursos/zhi/CreaConnv2.php");
 require_once("recursos/zhi/funciones.php");
-
 ?>
 <div class="container">
 <div class="row">
@@ -39,7 +38,6 @@ require_once("recursos/zhi/funciones.php");
           }
           $rs_menu0->free();
         }
-
       ?>
     </div>
    </div>

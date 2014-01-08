@@ -1,3 +1,8 @@
+<?php
+require_once("recursos/zhi/auth.php");
+require_once("recursos/zhi/CreaConnv2.php");
+require_once("recursos/zhi/funciones.php");
+?>
 <div class="container">
 <div class="row">
   <div class="col-md-2">
@@ -18,10 +23,16 @@
    <div class="container">
 
     <div class="btn-group pull-right">
-      <a class="btn btn-default" href="index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a>
-      <a class="btn btn-default" href="informes.php"><span class="glyphicon glyphicon-file"></span> Informes</a>      
-      <a class="btn btn-default" href="admin.php"><span class="glyphicon glyphicon-wrench"></span> Administración</a>
-      <a class="btn btn-default" href="login.php"><span class="glyphicon glyphicon-off"></span> Salir</a>
+      <?php
+        $generic_anchor = "<a class=\"btn btn-default\" href=\"%s\"><span class=\"%s\"></span> %s</a>";
+        $select_menu0 = "select Menu.nombreMenu as nombre, Menu.spanclassMenu as class,Pagina.urlPagina as URL from Menu, Pagina where nivelMenu='0' AND activoMenu='1' AND Menu.Pagina_idPagina = Pagina.idPagina ORDER BY posicionMenu ASC;";
+        if ($rs_menu0 = comando_mysql($select_menu0,$mysqli)){
+          while ($fila = $rs_menu0->fetch_assoc()){
+            printf($generic_anchor,$fila['URL'],$fila['class'],$fila['nombre']);
+          }
+          $rs_menu0->free();
+        }
+      ?>
     </div>
 
    </div>
