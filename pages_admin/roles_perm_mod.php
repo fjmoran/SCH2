@@ -43,10 +43,10 @@ require_once("../recursos/zhi/funciones.php");
 	 		</div>		
 	 	</div>
 		<div class="row">
-			<div class="row pull-left"> <!-- fila para botones -->
+			<div class="row pull-right"> <!-- fila para botones -->
 			    <div class="col-md-12">
 			    	<p>
-			  	  <input class="btn btn-success" type="submit" value="Actualizar" id="frmboton">
+			  	  <input class="btn btn-success" type="submit" value="Guardar" id="frmboton">
 				    </p>
 			    </div>
 		    </div>  
