@@ -37,13 +37,11 @@ require_once("recursos/zhi/funciones.php");
           while ($fila = $rs_menu0->fetch_assoc()){
             printf($generic_anchor,$fila['URL'],$fila['class'],$fila['nombre']);
           }
-          $rs->free();
-        }else{
-          echo "Fallo select";
+          $rs_menu0->free();
         }
+
       ?>
     </div>
-
    </div>
 
  <div class="row" id="main-box">
