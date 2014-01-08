@@ -849,11 +849,11 @@ COMMENT = 'tabla de feriados legales';
 DROP TABLE IF EXISTS `SCH2`.`Parametro` ;
 
 CREATE TABLE IF NOT EXISTS `SCH2`.`Parametro` (
-  `idParametros` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nombreParametros` VARCHAR(45) NOT NULL,
-  `valorParametros` VARCHAR(45) NOT NULL,
-  `activoParametros` TINYINT(1) NOT NULL DEFAULT true,
-  PRIMARY KEY (`idParametros`))
+  `idParametro` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nombreParametro` VARCHAR(45) NOT NULL,
+  `valorParametro` VARCHAR(45) NOT NULL,
+  `activoParametro` TINYINT(1) NOT NULL DEFAULT true,
+  PRIMARY KEY (`idParametro`))
 ENGINE = InnoDB
 COMMENT = 'tabla de parámetros estándar del sistema';
 
