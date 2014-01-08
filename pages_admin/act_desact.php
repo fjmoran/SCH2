@@ -41,7 +41,7 @@ if($rs_nombre = comando_mysql($select_nombre,$mysqli)){
           <div class="row"> 
             <div class="col-md-12">
 
-              Esta seguro que desea <?php if ($_GET['activar'] == 0) { echo "activar"; } else { echo "desactivar";} ?> el registro con nombre <?php echo $nombre." ?"; //$id." ".$_GET[$id];
+              Esta seguro que desea <?php if ($_GET['activar'] == 0) { echo "activar"; } else { echo "desactivar";} ?> el registro con nombre <b>'<?php echo $nombre."'</b>?"; //$id." ".$_GET[$id];
               //echo $_GET['callerURL'];
               ?>
              
