@@ -22,7 +22,7 @@ require_once("../recursos/zhi/funciones.php");
 	 		</div>
 	 	</div>
 	 	<div class="row">		
-	 		<div class="col-md-6">
+	 		<div class="col-md-4">
 	 			<h5>Permisos disponibles</h5>
 	 			<ul id="sortable1" class="droptrue">
 	 				<?php
@@ -30,6 +30,11 @@ require_once("../recursos/zhi/funciones.php");
 	 				?>
 				</ul>
 			</div>
+			<div class="col-md-2" style="padding-top: 190px;">
+				<a href="#" class="btn btn-success btn-sm btn-block" role="button"> Agregar todos >> </a>
+				</br></br>
+				<a href="#" class="btn btn-danger btn-sm btn-block" role="button"> << Quitar todos</a>
+			</div>	
 	 		<div class="col-md-6">
 	 			<h5>Permisos para el Rol</h5>		
 				<ul id="sortable2" class="droptrue">
