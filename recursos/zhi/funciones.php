@@ -56,7 +56,7 @@ function comando_mysql($sql,$connector){
 	if ($rs = $connector->query($sql)){
 		return $rs;
 	}else{
-		printf("Error: %s\n Error: %s", $mysqli->sqlstate,$mysqli->error);
+		printf("Error: %s\n Error: %s", $mysqli->errno,$mysqli->error);
 		return False;
 	}
 }
