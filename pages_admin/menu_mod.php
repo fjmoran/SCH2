@@ -57,7 +57,7 @@ $_GET['table'] = $db.".Menu";
 
 	<?php 
 	$_GET['select'] = "nombreMenu as Menu, nivelMenu as Nivel, Pagina_idPagina as Pagina, posicionMenu as Posicion, activoMenu as Estado";	
-	$_GET['orderby'] = "nivelMenu ASC, activoMenu DESC";
+	$_GET['orderby'] = "nivelMenu ASC, posicionMenu ASC,activoMenu DESC";
 	$_GET['tabla']['width'] = "20%, 20%, 25%, 10% ,15%";
 	$_GET['tabla']['title'] = "Menú, Nivel, Página, Posición ,Estado";
 	$_GET['acciones'] = "true";
