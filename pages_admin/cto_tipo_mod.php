@@ -85,6 +85,10 @@ $_GET['table'] = $db.".TipoContacto";
 
 </div><!-- col-md-11 -->
 
+<div id="generic_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="act_deasctLabel" aria-hidden="true">
+    
+</div>
+
     <script type="text/javascript"> 
       
       $(document).ready(function(){       

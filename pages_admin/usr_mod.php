@@ -94,16 +94,9 @@ $_GET['table'] = $db.".Usuario";
 
 </div><!-- col-md-11 -->
 
-
-<!-- <div id="usr_clave_mod" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="agregarLabel" aria-hidden="true">
-    
-</div> modal cambio de clave -->  
-
-
 <div id="generic_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="act_deasctLabel" aria-hidden="true">
     
-</div><!-- modal activar y desactivar -->  
-
+</div>
 
     <script type="text/javascript"> 
       
