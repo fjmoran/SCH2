@@ -1,13 +1,25 @@
 <?php
+require_once("../recursos/zhi/auth.php");
+require_once("../recursos/zhi/CreaConnv2.php");
+require_once("../recursos/zhi/funciones.php");
+
 $pos = 0;
 $tabla = "";
 $id = "";
+$nombre = "";
 
 if (isset($_GET['debug'])) { echo "Activación y Desactivación </br>";}
 
 $pos = strpos($_GET['table'],".") + 1;
 $tabla = substr($_GET['table'],$pos);
 $id = "id".$tabla;
+
+$select_nombre = "select nombre".$tabla." from ".$tabla." where ".$id." = '".$_GET[$id]."'";
+if($rs_nombre = comando_mysql($select_nombre,$mysqli)){
+  $fila = $rs_nombre->fetch_array();
+  $nombre = $fila[0];
+  $rs_nombre->free();
+}
 ?>
 <div class="modal-dialog">
     <div class="modal-content">
@@ -29,7 +41,7 @@ $id = "id".$tabla;
           <div class="row"> 
             <div class="col-md-12">
 
-              Esta seguro que desea <?php if ($_GET['activar'] == 0) { echo "activar"; } else { echo "desactivar";} ?> al item con <?php echo $id." ".$_GET[$id];
+              Esta seguro que desea <?php if ($_GET['activar'] == 0) { echo "activar"; } else { echo "desactivar";} ?> el registro con nombre <?php echo $nombre." ?"; //$id." ".$_GET[$id];
               //echo $_GET['callerURL'];
               ?>
              
