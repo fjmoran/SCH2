@@ -1394,6 +1394,19 @@ INSERT INTO `SCH2`.`Pagina` (`idPagina`, `urlPagina`, `nombrePagina`, `descripci
 
 COMMIT;
 
+
+-- -----------------------------------------------------
+-- Data for table `SCH2`.`Menu`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `SCH2`;
+INSERT INTO `SCH2`.`Menu` (`idMenu`, `nombreMenu`, `nivelMenu`, `activoMenu`, `posicionMenu`, `spanclassMenu`, `Pagina_idPagina`, `Menu_idMenu`) VALUES (1, 'Inicio', 0, 1, 1, 'glyphicon glyphicon-home', 1, NULL);
+INSERT INTO `SCH2`.`Menu` (`idMenu`, `nombreMenu`, `nivelMenu`, `activoMenu`, `posicionMenu`, `spanclassMenu`, `Pagina_idPagina`, `Menu_idMenu`) VALUES (2, 'Informes', 0, 1, 2, 'glyphicon glyphicon-file', 2, NULL);
+INSERT INTO `SCH2`.`Menu` (`idMenu`, `nombreMenu`, `nivelMenu`, `activoMenu`, `posicionMenu`, `spanclassMenu`, `Pagina_idPagina`, `Menu_idMenu`) VALUES (3, 'AdministraciÃ³n', 0, 1, 3, 'glyphicon glyphicon-wrench', 3, NULL);
+INSERT INTO `SCH2`.`Menu` (`idMenu`, `nombreMenu`, `nivelMenu`, `activoMenu`, `posicionMenu`, `spanclassMenu`, `Pagina_idPagina`, `Menu_idMenu`) VALUES (4, 'Salir', 0, 1, 4, 'glyphicon glyphicon-off', 4, NULL);
+
+COMMIT;
+
 USE `SCH2`;
 
 DELIMITER $$
