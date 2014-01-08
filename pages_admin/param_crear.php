@@ -4,7 +4,7 @@
 
 <?php 
 $_GET['table'] = $bd.".Parametro";
-$_GET['select'] = "nombreParametros, valorParametros as Valor, activoParametros as Estado";
+$_GET['select'] = "nombreParametro, valorParametro as Valor, activoParametro as Estado";
 $_GET['jquery'] = "$('#cuerpo').load('pages_admin/param_mod.php');";
 
 require("../recursos/zhi/insert_table_generic.php");

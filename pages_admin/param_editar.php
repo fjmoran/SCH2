@@ -5,8 +5,8 @@
 <?php
 
 $_GET['table'] = $bd.".Parametro";
-$_GET['select'] = "nombreParametros, valorParametros as Valor, activoParametros as Estado";
-$_GET['where'] = "idParametros='".$_GET['idParametros']."'";
+$_GET['select'] = "nombreParametro, valorParametro as Valor, activoParametro as Estado";
+$_GET['where'] = "idParametro='".$_GET['idParametro']."'";
 $_GET['edit'] = 1;
 $_GET['jquery'] = "$('#cuerpo').load('pages_admin/param_mod.php');";
 

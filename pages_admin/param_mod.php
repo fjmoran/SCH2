@@ -56,8 +56,8 @@ $_GET['table'] = $db.".Parametro";
 	<h4>Páginas disponibles</h4>
 
 	<?php 
-	$_GET['select'] = "nombreParametros, valorParametros as Valor, activoParametros as Estado";
-	$_GET['orderby'] = "activoParametros DESC, nombreParametros";
+	$_GET['select'] = "nombreParametro, valorParametro as Valor, activoParametro as Estado";
+	$_GET['orderby'] = "activoParametro DESC, nombreParametro";
 	$_GET['tabla']['width'] = "45%, 30%, 15%";
 	$_GET['tabla']['title'] = "Parámetro, Valor, Estado";
 	$_GET['acciones'] = "true";
