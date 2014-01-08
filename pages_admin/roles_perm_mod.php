@@ -8,7 +8,7 @@ require_once("../recursos/zhi/funciones.php");
  	<h5>Seleccione el rol que desea configurar y arrastre los permisos de la columna izquierda a la derecha.</h5><br>
  	<form role="form">
 	 	<div class="row">
-	 		<div class="col-md-6">
+	 		<div class="col-md-4">
 			 	<div class="form-group">
 		          <label for="rol">Rol:</label>
 		            <select id="rol" class="form-control">
@@ -18,7 +18,7 @@ require_once("../recursos/zhi/funciones.php");
 		            </select>          
 		        </div>
 	 		</div>
-	 		<div class="col-md-6"> <!-- columna vacia -->
+	 		<div class="col-md-8"> <!-- columna vacia -->
 	 		</div>
 	 	</div>
 	 	<div class="row">		
@@ -34,18 +34,20 @@ require_once("../recursos/zhi/funciones.php");
 				<a href="#" class="btn btn-success btn-sm btn-block" role="button"> Agregar todos >> </a>
 				<a href="#" class="btn btn-danger btn-sm btn-block" role="button"> << Quitar todos</a>
 			</div>	
-	 		<div class="col-md-6">
+	 		<div class="col-md-4">
 	 			<h5>Permisos para el Rol</h5>		
 				<ul id="sortable2" class="droptrue">
 
 				</ul>
+	 		</div>
+	 		<div class="col-md-2">
 	 		</div>		
 	 	</div>
 		<div class="row">
 			<div class="row pull-right"> <!-- fila para botones -->
 			    <div class="col-md-12">
 			    	<p>
-			  	  <input class="btn btn-success" type="submit" value="Guardar" id="frmboton">
+			  	  <input class="btn btn-primary" type="submit" value="Guardar" id="frmboton">
 				    </p>
 			    </div>
 		    </div>  
