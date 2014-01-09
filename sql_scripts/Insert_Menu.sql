@@ -2,7 +2,7 @@
 -- Query: SELECT * FROM SCH2.Menu
 LIMIT 0, 1000
 
--- Date: 2014-01-08 11:28
+-- Date: 2014-01-09 09:54
 */
 INSERT INTO `Menu` (`idMenu`,`nombreMenu`,`nivelMenu`,`activoMenu`,`posicionMenu`,`spanclassMenu`,`Pagina_idPagina`,`Menu_idMenu`) VALUES (1,'Inicio',0,1,1,'glyphicon glyphicon-home',1,NULL);
 INSERT INTO `Menu` (`idMenu`,`nombreMenu`,`nivelMenu`,`activoMenu`,`posicionMenu`,`spanclassMenu`,`Pagina_idPagina`,`Menu_idMenu`) VALUES (2,'Informes',0,1,2,'glyphicon glyphicon-file',2,NULL);
@@ -29,6 +29,7 @@ INSERT INTO `Menu` (`idMenu`,`nombreMenu`,`nivelMenu`,`activoMenu`,`posicionMenu
 INSERT INTO `Menu` (`idMenu`,`nombreMenu`,`nivelMenu`,`activoMenu`,`posicionMenu`,`spanclassMenu`,`Pagina_idPagina`,`Menu_idMenu`) VALUES (23,'MenÃº',1,1,19,'glyphicon glyphicon-chevron-right',21,3);
 INSERT INTO `Menu` (`idMenu`,`nombreMenu`,`nivelMenu`,`activoMenu`,`posicionMenu`,`spanclassMenu`,`Pagina_idPagina`,`Menu_idMenu`) VALUES (24,'PÃ¡ginas',1,1,20,'glyphicon glyphicon-chevron-right',22,3);
 INSERT INTO `Menu` (`idMenu`,`nombreMenu`,`nivelMenu`,`activoMenu`,`posicionMenu`,`spanclassMenu`,`Pagina_idPagina`,`Menu_idMenu`) VALUES (25,'ParÃ¡metros Globales',1,1,21,'glyphicon glyphicon-chevron-right',23,3);
-INSERT INTO `Menu` (`idMenu`,`nombreMenu`,`nivelMenu`,`activoMenu`,`posicionMenu`,`spanclassMenu`,`Pagina_idPagina`,`Menu_idMenu`) VALUES (26,'InformaciÃ³n del Sistema',1,1,22,'glyphicon glyphicon-chevron-right',NULL,3);
-INSERT INTO `Menu` (`idMenu`,`nombreMenu`,`nivelMenu`,`activoMenu`,`posicionMenu`,`spanclassMenu`,`Pagina_idPagina`,`Menu_idMenu`) VALUES (27,'VersiÃ³n',1,1,23,'glyphicon glyphicon-chevron-right',24,3);
-INSERT INTO `Menu` (`idMenu`,`nombreMenu`,`nivelMenu`,`activoMenu`,`posicionMenu`,`spanclassMenu`,`Pagina_idPagina`,`Menu_idMenu`) VALUES (28,'Licencia',1,1,24,'glyphicon glyphicon-chevron-right',25,NULL);
+INSERT INTO `Menu` (`idMenu`,`nombreMenu`,`nivelMenu`,`activoMenu`,`posicionMenu`,`spanclassMenu`,`Pagina_idPagina`,`Menu_idMenu`) VALUES (26,'InformaciÃ³n del Sistema',1,1,23,'glyphicon glyphicon-chevron-right',NULL,3);
+INSERT INTO `Menu` (`idMenu`,`nombreMenu`,`nivelMenu`,`activoMenu`,`posicionMenu`,`spanclassMenu`,`Pagina_idPagina`,`Menu_idMenu`) VALUES (27,'VersiÃ³n',1,1,24,'glyphicon glyphicon-chevron-right',24,3);
+INSERT INTO `Menu` (`idMenu`,`nombreMenu`,`nivelMenu`,`activoMenu`,`posicionMenu`,`spanclassMenu`,`Pagina_idPagina`,`Menu_idMenu`) VALUES (28,'Licencia',1,1,25,'glyphicon glyphicon-chevron-right',25,3);
+INSERT INTO `Menu` (`idMenu`,`nombreMenu`,`nivelMenu`,`activoMenu`,`posicionMenu`,`spanclassMenu`,`Pagina_idPagina`,`Menu_idMenu`) VALUES (29,'Mapa de pÃ¡ginas',1,1,22,'glyphicon glyphicon-chevron-right',66,3);

@@ -2,7 +2,7 @@
 -- Query: SELECT * FROM SCH2.Pagina
 LIMIT 0, 1000
 
--- Date: 2013-12-18 16:57
+-- Date: 2014-01-09 09:55
 */
 INSERT INTO `Pagina` (`idPagina`,`urlPagina`,`nombrePagina`,`descripcionPagina`,`activoPagina`) VALUES (1,'index.php','index.php','Inicio (MenÃº Superior)',1);
 INSERT INTO `Pagina` (`idPagina`,`urlPagina`,`nombrePagina`,`descripcionPagina`,`activoPagina`) VALUES (2,'informes.php','informes.php','Informes (MenÃº Superior)',1);
@@ -69,3 +69,4 @@ INSERT INTO `Pagina` (`idPagina`,`urlPagina`,`nombrePagina`,`descripcionPagina`,
 INSERT INTO `Pagina` (`idPagina`,`urlPagina`,`nombrePagina`,`descripcionPagina`,`activoPagina`) VALUES (63,'usr_editar.php','pages_admin/usr_editar.php','EdiciÃ³n de Usuario',1);
 INSERT INTO `Pagina` (`idPagina`,`urlPagina`,`nombrePagina`,`descripcionPagina`,`activoPagina`) VALUES (64,'usr_mi_perfil.php','pages_admin/usr_mi_perfil.php','EdiciÃ³n de Perfil del usuario',1);
 INSERT INTO `Pagina` (`idPagina`,`urlPagina`,`nombrePagina`,`descripcionPagina`,`activoPagina`) VALUES (65,'usr_tar_mod.php','pages_admin/usr_tar_mod.php','EdiciÃ³n de Tarifa del usuario',1);
+INSERT INTO `Pagina` (`idPagina`,`urlPagina`,`nombrePagina`,`descripcionPagina`,`activoPagina`) VALUES (66,'#paginas_paginas_mod','pages_admin/paginas_paginas_mod.php','Relaciones entre pÃ¡ginas del sistema',1);
