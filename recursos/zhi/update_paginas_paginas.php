@@ -63,7 +63,9 @@ if ($mysqli->multi_query($query)) {
 //            printf("-----------------\n");
         }
     } while ($mysqli->next_result());
+    echo 1;
+    // echo <h2>Se ha terminado con exito la actualización de la tabla PaginaenPagina.</h2>
+} else {
+	echo 0;
 }
 ?>
-
-<h2>Se ha terminado con exito la actualización de la tabla PaginaenPagina.</h2>

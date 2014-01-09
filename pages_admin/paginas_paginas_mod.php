@@ -14,7 +14,7 @@ require_once("../recursos/zhi/funciones.php");
 		<div class="col.md-12">
 			<div id="alert-insert" class="alert alert-success alert-dismissable hide">
 		  		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		  		Se ha realizado con exito la actualización de la tabla.
+		  		<span id="text-alert">Se ha realizado con exito la actualización de la tabla.</span>
 			</div>
 		<div>	
 	</div>
@@ -76,16 +76,17 @@ require_once("../recursos/zhi/funciones.php");
 </div><!-- col-md-11 -->
 
 <script>
-$(function(){
-	$("ul.droptrue").sortable({connectWith:"ul"});
-	$("ul.dropfalse").sortable({connectWith:"ul",dropOnEmpty:false});$("#sortable1,#sortable2").disableSelection();});
-$(document).ready(function(){
-	$('#sortable1,#sortable2').tooltip({
-		selector:"[rel=tooltip]"})
-});
-</script>
+	$(function(){
+		$("ul.droptrue").sortable({connectWith:"ul"});
+		$("ul.dropfalse").sortable({connectWith:"ul",dropOnEmpty:false});
+		$("#sortable1,#sortable2").disableSelection();
+	});
 
-<script>
+	$(document).ready(function(){
+		$('#sortable1,#sortable2').tooltip({
+			selector:"[rel=tooltip]"})
+	});
+
 	$( '#pagina' ).change(function() {
 		var $form = $(this).parents('form'),
 		term = $form.serialize(),
@@ -103,7 +104,8 @@ $(document).ready(function(){
   		event.preventDefault();
   		$.post('recursos/zhi/update_paginas_paginas.php',neworder + "&" + pagina_padre,function(data){
   		//alert(data);
-  		$('#alert-insert').removeClass('hide');
+  		if (data == '1') { $('#alert-insert').removeClass('hide').toggleClass('alert-success').toggleClass('alert-danger'); ('#text-alert').html('Se ha realizado con exito la actualización de la tabla.'); }
+  		if (data == '0') { $('#alert-insert').removeClass('hide').toggleClass('alert-success').toggleClass('alert-danger'); ('#text-alert').html('Ha fallado la actualización');}
   		//$('#cuerpo').html(data);
   		});
   	});	
