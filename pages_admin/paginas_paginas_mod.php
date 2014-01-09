@@ -47,10 +47,10 @@ require_once("../recursos/zhi/funciones.php");
 						 		</div>		
 						 	</div>
 							<div class="row">
-							    <div class="row pull-right"> <!-- fila para botones -->
+							    <div class="row pull-left"> <!-- fila para botones -->
 							      <div class="col-md-12">
 							        <p>
-							          <input class="btn btn-primary" type="submit" value="Guardar" id="frmboton">
+							          <input class="btn btn-success" type="submit" value="Actualizar" id="frmboton">
 							        </p>
 							      </div>
 							    </div>  
@@ -78,7 +78,7 @@ require_once("../recursos/zhi/funciones.php");
 		$('#paginasenpagina').submit(function(event) {
 			var pagina_padre = $('#selpagina').serialize();
 			var neworder = $('#sortable2').sortable('serialize');
-  		alert( "Handler for .submit() called." + neworder + pagina_padre);
+  		//alert( "Handler for .submit() called." + neworder + pagina_padre);
   		event.preventDefault();
   		$.post('recursos/zhi/update_paginas_paginas.php',neworder + "&" + pagina_padre,function(data){
   			//alert(data);
