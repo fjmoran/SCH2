@@ -103,9 +103,15 @@ require_once("../recursos/zhi/funciones.php");
   		//alert( "Handler for .submit() called." + neworder + pagina_padre);
   		event.preventDefault();
   		$.post('recursos/zhi/update_paginas_paginas.php',neworder + "&" + pagina_padre,function(data){
-  		//alert(data);
-  		if (data == '1') { $('#alert-insert').removeClass('hide').addClass('alert-success').removeClass('alert-danger'); ('#text-alert').html('Se ha realizado con exito la actualización de la tabla.'); }
-  		if (data == '0') { $('#alert-insert').removeClass('hide').removeClass('alert-success').addClass('alert-danger'); ('#text-alert').html('Ha fallado la actualización');}
+  		//alert("@" + data + "@");
+  		if (data == '1') { 
+  			$('#alert-insert').removeClass('hide').addClass('alert-success').removeClass('alert-danger');
+  			$('#text-alert').html('Se ha realizado con exito la actualización de la tabla.'); 
+  		}
+  		if (data == '0') { 
+  			$('#alert-insert').removeClass('hide').removeClass('alert-success').addClass('alert-danger'); 
+  			$('#text-alert').html('Ha fallado la actualización');
+  		}
   		//$('#cuerpo').html(data);
   		});
   	});	
