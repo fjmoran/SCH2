@@ -64,23 +64,23 @@ require_once("../recursos/zhi/funciones.php");
 	<script>$(function(){$("ul.droptrue").sortable({connectWith:"ul"});$("ul.dropfalse").sortable({connectWith:"ul",dropOnEmpty:false});$("#sortable1,#sortable2").disableSelection();});$(document).ready(function(){$('#sortable1,#sortable2').tooltip({selector:"[rel=tooltip]"})});
 	</script>
 	<script>
-// Attach a submit handler to the form
-$( '#pagina' ).change(function() {
-  var $form = $(this).parents('form'),
-    term = $form.serialize(),
-    url = $form.attr( "action" );
-  var posting = $.post(url, term );
-  posting.done(function( data ) {
-    $( '#cuerpo' ).empty().html( data );
-  });
-});
+
+		$( '#pagina' ).change(function() {
+		  var $form = $(this).parents('form'),
+		    term = $form.serialize(),
+		    url = $form.attr( "action" );
+		  var posting = $.post(url, term );
+		  posting.done(function( data ) {
+		    $( '#cuerpo' ).empty().html( data );
+		  });
+		});
 
 		$('#paginasenpagina').submit(function(event) {
 			var pagina_padre = $('#selpagina').serialize();
 			var neworder = $('#sortable2').sortable('serialize');
-  		//alert( "Handler for .submit() called." + neworder + pagina_padre);
+  		alert( "Handler for .submit() called." + neworder + pagina_padre);
   		event.preventDefault();
-  		$.post('../recursos/zhi/update_paginas_paginas.php',neworder + "&" + pagina_padre,function(data){
+  		$.post('recursos/zhi/update_paginas_paginas.php',neworder + "&" + pagina_padre,function(data){
   			//alert(data);
   			$('#cuerpo').html(data);
   		});
