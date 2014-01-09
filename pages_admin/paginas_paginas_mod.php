@@ -104,13 +104,19 @@ require_once("../recursos/zhi/funciones.php");
   		event.preventDefault();
   		$.post('recursos/zhi/update_paginas_paginas.php',neworder + "&" + pagina_padre,function(data){
   		//alert("@" + data + "@");
-  		if (data == '1') { 
-  			$('#alert-insert').removeClass('hide').addClass('alert-success').removeClass('alert-danger');
-  			$('#text-alert').html('Se ha realizado con exito la actualización de la tabla.'); 
-  		}
-  		if (data == '0') { 
-  			$('#alert-insert').removeClass('hide').removeClass('alert-success').addClass('alert-danger'); 
-  			$('#text-alert').html('Ha fallado la actualización');
+  		switch (data){
+  			case "1": 
+  				$('#alert-insert').removeClass('hide').addClass('alert-success').removeClass('alert-danger').removeClass('alert-warning');
+  				$('#text-alert').html('Se ha realizado con exito la actualización de la tabla.'); 
+  			break;
+  			case "0": 
+  				$('#alert-insert').removeClass('hide').removeClass('alert-success').addClass('alert-danger').removeClass('alert-warning'); 
+  				$('#text-alert').html('Ha fallado la actualización');
+  			break;
+  			case "2":
+					$('#alert-insert').removeClass('hide').removeClass('alert-success').removeClass('alert-danger').addClass('alert-warning'); 
+  				$('#text-alert').html('No se han realizados cambios');
+  			break;
   		}
   		//$('#cuerpo').html(data);
   		});

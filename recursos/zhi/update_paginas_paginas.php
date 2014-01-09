@@ -48,24 +48,27 @@ foreach($paginas_en_paginas as $idPagina1){
 	}
 }
 //echo "$query </br>";
-
-if ($mysqli->multi_query($query)) {
-    do {
-        /* store first result set */
-        if ($result = $mysqli->store_result()) {
-            while ($row = $result->fetch_row()) {
-//                printf("%s\n", $row[0]);
-            }
-            $result->free();
-        }
-        /* print divider */
-        if ($mysqli->more_results()) {
-//            printf("-----------------\n");
-        }
-    } while ($mysqli->next_result());
-    echo 1;
-    // echo <h2>Se ha terminado con exito la actualización de la tabla PaginaenPagina.</h2>
-} else {
-	echo 0;
+if (empty($query)){
+	echo "2";
+}else{
+	if ($mysqli->multi_query($query)) {
+	    do {
+	        /* store first result set */
+	        if ($result = $mysqli->store_result()) {
+	            while ($row = $result->fetch_row()) {
+	//                printf("%s\n", $row[0]);
+	            }
+	            $result->free();
+	        }
+	        /* print divider */
+	        if ($mysqli->more_results()) {
+	//            printf("-----------------\n");
+	        }
+	    } while ($mysqli->next_result());
+	    echo 1;
+	    // echo <h2>Se ha terminado con exito la actualización de la tabla PaginaenPagina.</h2>
+	} else {
+		echo 0;
+	}
 }
 ?>
