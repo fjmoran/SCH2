@@ -754,24 +754,49 @@ COMMENT = 'Despliegue del Menu con URL.';
 
 
 -- -----------------------------------------------------
+-- Table `SCH2`.`PaginaenPagina`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `SCH2`.`PaginaenPagina` ;
+
+CREATE TABLE IF NOT EXISTS `SCH2`.`PaginaenPagina` (
+  `idPaginaenPagina` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `Pagina_idPagina` INT UNSIGNED NOT NULL,
+  `Pagina_idPagina1` INT UNSIGNED NOT NULL,
+  INDEX `fk_Pagina_has_Pagina1_Pagina2_idx` (`Pagina_idPagina1` ASC),
+  INDEX `fk_Pagina_has_Pagina1_Pagina1_idx` (`Pagina_idPagina` ASC),
+  PRIMARY KEY (`idPaginaenPagina`),
+  CONSTRAINT `fk_Pagina_has_Pagina1_Pagina1`
+    FOREIGN KEY (`Pagina_idPagina`)
+    REFERENCES `SCH2`.`Pagina` (`idPagina`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Pagina_has_Pagina1_Pagina2`
+    FOREIGN KEY (`Pagina_idPagina1`)
+    REFERENCES `SCH2`.`Pagina` (`idPagina`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `SCH2`.`PermisoPagina`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `SCH2`.`PermisoPagina` ;
 
 CREATE TABLE IF NOT EXISTS `SCH2`.`PermisoPagina` (
   `Perfil_idPerfil` INT UNSIGNED NOT NULL,
-  `Pagina_idPagina` INT UNSIGNED NOT NULL,
   `idPermisoPagina` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`idPermisoPagina`, `Perfil_idPerfil`, `Pagina_idPagina`),
-  INDEX `fk_PermisoPagina_Pagina1_idx` (`Pagina_idPagina` ASC),
+  `PaginaenPagina_idPaginaenPagina` INT UNSIGNED NOT NULL,
+  PRIMARY KEY (`idPermisoPagina`, `Perfil_idPerfil`, `PaginaenPagina_idPaginaenPagina`),
+  INDEX `fk_PermisoPagina_PaginaenPagina1_idx` (`PaginaenPagina_idPaginaenPagina` ASC),
   CONSTRAINT `fk_PermisoPagina_Perfil1`
     FOREIGN KEY (`Perfil_idPerfil`)
     REFERENCES `SCH2`.`Perfil` (`idPerfil`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_PermisoPagina_Pagina1`
-    FOREIGN KEY (`Pagina_idPagina`)
-    REFERENCES `SCH2`.`Pagina` (`idPagina`)
+  CONSTRAINT `fk_PermisoPagina_PaginaenPagina1`
+    FOREIGN KEY (`PaginaenPagina_idPaginaenPagina`)
+    REFERENCES `SCH2`.`PaginaenPagina` (`idPaginaenPagina`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -878,30 +903,6 @@ CREATE TABLE IF NOT EXISTS `SCH2`.`ParametroUsuario` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'listado de parámetros por usuario.';
-
-
--- -----------------------------------------------------
--- Table `SCH2`.`PaginaenPagina`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `SCH2`.`PaginaenPagina` ;
-
-CREATE TABLE IF NOT EXISTS `SCH2`.`PaginaenPagina` (
-  `Pagina_idPagina` INT UNSIGNED NOT NULL,
-  `Pagina_idPagina1` INT UNSIGNED NOT NULL,
-  INDEX `fk_Pagina_has_Pagina1_Pagina2_idx` (`Pagina_idPagina1` ASC),
-  INDEX `fk_Pagina_has_Pagina1_Pagina1_idx` (`Pagina_idPagina` ASC),
-  PRIMARY KEY (`Pagina_idPagina1`, `Pagina_idPagina`),
-  CONSTRAINT `fk_Pagina_has_Pagina1_Pagina1`
-    FOREIGN KEY (`Pagina_idPagina`)
-    REFERENCES `SCH2`.`Pagina` (`idPagina`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Pagina_has_Pagina1_Pagina2`
-    FOREIGN KEY (`Pagina_idPagina1`)
-    REFERENCES `SCH2`.`Pagina` (`idPagina`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
