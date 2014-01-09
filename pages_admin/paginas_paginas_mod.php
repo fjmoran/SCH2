@@ -103,7 +103,8 @@ $(document).ready(function(){
   		event.preventDefault();
   		$.post('recursos/zhi/update_paginas_paginas.php',neworder + "&" + pagina_padre,function(data){
   		//alert(data);
-  		$('#cuerpo').html(data);
+  		$('#alert-insert').removeClass('hide');
+  		//$('#cuerpo').html(data);
   		});
   	});	
 </script>
