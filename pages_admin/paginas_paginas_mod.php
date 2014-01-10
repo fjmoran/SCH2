@@ -120,6 +120,7 @@ require_once("../recursos/zhi/funciones.php");
 	$('#paginasenpagina').submit(function(event) {
 		var pagina_padre = $('#selpagina').serialize();
 		var neworder = $('#sortable2').sortable('serialize');
+		$('#p_bar').modal('show');
   		//alert( "Handler for .submit() called." + neworder + pagina_padre);
   		event.preventDefault();
   		$.post('recursos/zhi/update_paginas_paginas.php',neworder + "&" + pagina_padre,function(data){
@@ -138,6 +139,8 @@ require_once("../recursos/zhi/funciones.php");
   				$('#text-alert').html('No se han realizados cambios');
   			break;
   		}
+  		$('#p_bar').modal('hide');
+  		$('#alert-insert').show();
   		$('#alert-insert').delay(2000).fadeOut('slow');
   		//$('#cuerpo').html(data);
   		});

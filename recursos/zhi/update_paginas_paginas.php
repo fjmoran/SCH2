@@ -71,4 +71,5 @@ if (empty($query)){
 		echo 0;
 	}
 }
+sleep(2);
 ?>
