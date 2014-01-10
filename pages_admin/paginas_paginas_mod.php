@@ -127,16 +127,16 @@ require_once("../recursos/zhi/funciones.php");
   			break;
   			case "0": 
   				$('#alert-insert').removeClass('hide').removeClass('alert-success').addClass('alert-danger').removeClass('alert-warning'); 
-  				$('#text-alert').html('Ha fallado la actualización');
+  				$('#text-alert').html('Ha fallado la actualización.');
   			break;
   			case "2":
 					$('#alert-insert').removeClass('hide').removeClass('alert-success').removeClass('alert-danger').addClass('alert-warning'); 
-  				$('#text-alert').html('No se han realizados cambios');
+  				$('#text-alert').html('No ha realizados cambios.');
   			break;
   		}
   		$('#p_bar').modal('hide');
   		$('#alert-insert').show();
-  		$('label').blur();
+  		$('#frmboton').blur();
   		$('#alert-insert').delay(3000).fadeOut('slow');
   		//$('#cuerpo').html(data);
   		});
