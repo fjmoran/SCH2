@@ -11,7 +11,7 @@ require_once("../recursos/zhi/funciones.php");
  	<form role="form"  name="selpagina" id="selpagina" action="pages_admin/paginas_paginas_mod.php" method="POST">
 
 	<div class="row">
-		<div class="col.md-12">
+		<div class="col-md-12">
 			<div id="alert-insert" class="alert alert-success alert-dismissable hide">
 		  		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 		  		<span id="text-alert">Se ha realizado con exito la actualización de la tabla.</span>
