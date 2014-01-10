@@ -136,6 +136,7 @@ require_once("../recursos/zhi/funciones.php");
   		}
   		$('#p_bar').modal('hide');
   		$('#alert-insert').show();
+  		$('label').blur();
   		$('#alert-insert').delay(3000).fadeOut('slow');
   		//$('#cuerpo').html(data);
   		});
