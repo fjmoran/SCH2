@@ -2,7 +2,13 @@
 require_once("auth.php");
 require_once("CreaConnv2.php");
 
-$update_clave = "update Usuario set claveUsuario='".$_POST['pass']."' where idUsuario='".$_SESSION['idUsuario']."'";
+if(($_SESSION['idUsuario'] == $_POST['idUsuario'])||(empty($_POST['idUsuario']))){
+	$idUsuario = $_SESSION['idUsuario'];
+}else{
+	$idUsuario = $_POST['idUsuario'];
+}
+
+$update_clave = "update Usuario set claveUsuario='".$_POST['pass']."' where idUsuario='".$idUsuario."'";
 if ($mysqli->query($update_clave)){
 	printf("Update exitoso se han modificado %d filas",$mysqli->affected_rows);
 }else{
