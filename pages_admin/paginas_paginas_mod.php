@@ -64,11 +64,6 @@ require_once("../recursos/zhi/funciones.php");
 		    <div class="row pull-right"> <!-- fila para botones -->
 		      <div class="col-md-12">
 		        <p>
-		        <!-- borrar -->
-				<button class="btn btn-primary" data-toggle="modal" data-target="#p_bar">
-				  progress bar
-				</button>
-				<!-- hasta aca -->
 		          <input class="btn btn-primary" type="submit" value="Guardar" id="frmboton">
 		        </p>
 		      </div>
@@ -87,7 +82,7 @@ require_once("../recursos/zhi/funciones.php");
       <div class="modal-body">
       <h4>Guardando...</h4>
 		<div class="progress progress-striped active">
-		  <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+		  <div class="progress-bar"  role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
 		  </div>
 		</div>
       </div>
@@ -141,7 +136,7 @@ require_once("../recursos/zhi/funciones.php");
   		}
   		$('#p_bar').modal('hide');
   		$('#alert-insert').show();
-  		$('#alert-insert').delay(2000).fadeOut('slow');
+  		$('#alert-insert').delay(3000).fadeOut('slow');
   		//$('#cuerpo').html(data);
   		});
   	});	
