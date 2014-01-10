@@ -64,6 +64,11 @@ require_once("../recursos/zhi/funciones.php");
 		    <div class="row pull-right"> <!-- fila para botones -->
 		      <div class="col-md-12">
 		        <p>
+		        <!-- borrar -->
+				<button class="btn btn-primary" data-toggle="modal" data-target="#p_bar">
+				  progress bar
+				</button>
+				<!-- hasta aca -->
 		          <input class="btn btn-primary" type="submit" value="Guardar" id="frmboton">
 		        </p>
 		      </div>
@@ -74,6 +79,21 @@ require_once("../recursos/zhi/funciones.php");
  	}
  	?>
 </div><!-- col-md-11 -->
+
+<!-- Modal progress bar -->
+<div class="modal fade" id="p_bar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+      <h4>Guardando...</h4>
+		<div class="progress progress-striped active">
+		  <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+		  </div>
+		</div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <script>
 	$(function(){
