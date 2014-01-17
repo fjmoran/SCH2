@@ -76,20 +76,22 @@ session_destroy();
       <form class="form-signin" name="login" action="recursos/zhi/controlv2.php" method="post">
         <h2 class="form-signin-heading">Acceso</h2>
         <input type="text" class="form-control reset-alert" placeholder="Usuario" name="user" <?php 
-        if (isset($_GET[user])) {
-        	echo "value=\"".$_GET[user]."\"";
+        if (isset($_GET['user'])) {
+        	echo "value=\"".$_GET['user']."\"";
         } ?>
         ">
         <input type="password" class="form-control reset-alert" placeholder="Contraseña" name="password">
         <h4 class="text-center"><span id="login-error" class="label label-danger 
         	<?php 
-        	if (!isset($_GET[error])) {
+        	if (!isset($_GET['error'])) {
         		echo " hide \">";
-        	}else if ($_GET[error] == 1) {
+        	}else if ($_GET['error'] == 1) {
         		echo "\">Usuario o Contraseña incorrecto";
-        	}else if ($_GET[error] == 2) {
+        	}else if ($_GET['error'] == 2) {
         		echo "\">Autentificación necesaria";
-        	}
+        	}else if ($_GET['error']){
+            echo "\">No tiene permisos suficientes";
+          }
         	?>
         </span></h4>
         <label class="checkbox">
