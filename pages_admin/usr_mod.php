@@ -1,8 +1,21 @@
 <?php
 
-require_once("../recursos/zhi/CreaConnv2.php");
-require_once ("../recursos/zhi/auth.php");
+require ("../recursos/zhi/auth.php");
+require_once ("../recursos/zhi/CreaConnv2.php");
 require_once ("../recursos/zhi/funciones.php");
+
+
+$select_id = "select idPagina from Pagina where nombrePagina='".pathinfo($_SERVER['PHP_SELF'])."'";
+if($rs = $mysqli->query($select_id)){
+	$fila = $rs->fetch_assoc();
+	$_SESSION['parent_page'] = $_SESSION['current_page'];
+	$_SESSION['current_page'] = $fila['idPagina'];
+}else{
+	$_SESSION['parent_page'] = $_SESSION['current_page'];
+	$_SESSION['current_page'] = FALSE;
+}
+$rs->free();
+
 
 if (($_GET['debug']) || ($_POST['debug'])){
 	$debug = 1;

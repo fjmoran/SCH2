@@ -20,8 +20,26 @@ if ($rs=$mysqli->query($SSQL)){
 		$_SESSION['nombreUsuario']=$row['nombreUsuario'];
 		$_SESSION['Perfil_idPerfil'] = $row['Perfil_idPerfil'];
 		$_SESSION['schema'] = $ini_array['schema'];
-		$rs->close();
-		header ("Location:http://".$host."/".$ini_array['basedir']."/index.php");
+		$_SESSION['permisos'] = array();
+		$rs->free();
+
+		$select_permisos = "select * from PermisoPagina, PaginaenPagina where Perfil_idPerfil = '".$_SESSION['Perfil_idPerfil']."' AND PaginaenPagina.idPaginaenPagina = PermisoPagina.PaginaenPagina_idPaginaenPagina";
+		//echo $select_permisos."</br>";
+		if ($rs=$mysqli->query($select_permisos)){
+			while ($fila = $rs->fetch_assoc()){				
+				array_push($_SESSION['permisos'],$fila);
+			}
+			//echo "SESSION[permisos] :";
+			//print_r($_SESSION['permisos']);
+			$rs->free();
+		}else{
+			$_SESSION['permisos'] = FALSE;
+		}
+		if (is_array($_SESSION['permisos'])){
+			header ("Location:http://".$host."/".$ini_array['basedir']."/index.php");
+		}else{
+			header("Location:http://".$host."/".$ini_array['basedir']."/login.php?error=3&user=".$_POST['user']);
+		}
 	}
 	else
 	{
