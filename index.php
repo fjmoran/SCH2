@@ -10,7 +10,9 @@ require ("recursos/zhi/auth.php");
     <!-- Bootstrap -->
     <link href="recursos/bootstrap3/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <!-- Bootstrap FileUload-->
-    <link href="recursos/bootstrap-fileupload/bootstrap-fileupload.min.css" rel="stylesheet">        
+    <link href="recursos/bootstrap-fileupload/bootstrap-fileupload.min.css" rel="stylesheet"> 
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="recursos/font-awesome/css/font-awesome.min.css">       
     <!-- Jquery-ui -->
     <link href="recursos/jquery-ui/css/zhi/jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
     <!-- Zhi CSS -->

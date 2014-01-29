@@ -11,6 +11,8 @@ require "recursos/zhi/auth.php";
     <link rel="stylesheet" href="http://jquery.bassistance.de/validate/demo/site-demos.css">    -->
     <!-- Bootstrap -->
     <link href="recursos/bootstrap3/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="recursos/font-awesome/css/font-awesome.min.css">      
     <!-- Zhi CSS -->
     <link href="recursos/zhi/css/zhi.css" rel="stylesheet"> 
     <!-- Jquery-ui -->
