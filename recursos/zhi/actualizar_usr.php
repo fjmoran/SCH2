@@ -11,8 +11,7 @@ if($mysqli->query($update_Usuario)){
 }
 
 ?>
-<script src="recursos/jquery/jquery-1.10.2.min.js"></script>    
-<script src="recursos/bootstrap3/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
 parent.$("#cuerpo").load('pages/default.php');
 </script>

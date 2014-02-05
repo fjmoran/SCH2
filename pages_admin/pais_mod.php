@@ -85,7 +85,11 @@ $_GET['table'] = $db.".Pais";
 </div><!-- col-md-11 -->
 
 <div id="generic_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="act_deasctLabel" aria-hidden="true">
-    
+	<div class="modal-dialog">
+	    <div class="modal-content" id="generic_modal_content">
+	    	<!-- Contenido Modal -->
+	    </div>
+	</div>        
 </div>
 
     <script type="text/javascript"> 

@@ -20,7 +20,7 @@ require ("recursos/zhi/auth.php");
     <!-- Fav Icon -->    
     <link href="img/favicon.ico" rel="SHORTCUT ICON">
 
-
+    <script src="recursos/jquery/jquery-1.10.2.min.js"></script> 
 
   </head>
   <body>
@@ -56,10 +56,12 @@ require ("recursos/zhi/auth.php");
  <!-- javascript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="recursos/jquery/jquery-1.10.2.min.js"></script>    
+   
   <script src="recursos/bootstrap3/js/bootstrap.min.js"></script>
   <script src="recursos/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>  
   <script src="recursos/jquery-ui/js/jquery-ui-1.10.3.custom.min.js"></script>
+  <script src="recursos/form-validator/jquery.form-validator.js"></script>
+  <script src="recursos/CryptoJSv3/rollups/sha1.js"></script>
   
   <script type="text/javascript"> 
     

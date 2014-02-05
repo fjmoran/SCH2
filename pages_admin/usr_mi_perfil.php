@@ -63,7 +63,7 @@ if ($rs_datos_usr = $mysqli->query($query_datos_usr)){
 	      <div class="col-md-12">
 	        <p>
             <button class="btn btn-default">Cancelar</button>
-	          <button class="btn btn-info" data-toggle="modal" data-target="#usr_clave_mod" onclick="$('#usr_clave_mod').load('pages_admin/usr_clave_mod.php');">Cambiar clave</button>
+	          <a class="btn btn-info" data-toggle="modal" data-target="#usr_clave_mod" href="pages_admin/usr_clave_mod.php">Cambiar clave</a>
 	          <button class="btn btn-primary">Guardar</button>
 	        </p>
 	      </div>
@@ -73,8 +73,17 @@ if ($rs_datos_usr = $mysqli->query($query_datos_usr)){
 </div><!-- col-md-11 -->
 
 
-<div id="usr_clave_mod" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="agregarLabel" aria-hidden="true">
+<div id="usr_clave_mod" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="act_deasctLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Contenido Modal -->
+      </div>
+  </div>        
+</div>
 
-  <!-- <?php //require("usr_clave_mod.php"); ?> -->
-    
-</div><!-- modal -->  
+    <script type="text/javascript">
+    $('.modal').on('hidden.bs.modal', function () {
+      // alert("cerrado!");
+      $(this).removeData();
+    });
+  </script>
