@@ -21,28 +21,72 @@ require_once("../recursos/zhi/funciones.php");
 	 		<div class="col-md-8"> <!-- columna vacia -->
 	 		</div>
 	 	</div>
-	 	<div class="row">		
-	 		<div class="col-md-4">
-	 			<h5>Permisos disponibles</h5>
-	 			<ul id="sortable1" class="droptrue">
-	 				<?php
-	 					echo listado("ui-state-default","Pagina","nombrePagina","idPagina",$mysqli);
-	 				?>
-				</ul>
-			</div>
-			<div class="col-md-2" style="padding-top: 190px;">
-				<a href="#" class="btn btn-success btn-sm btn-block" role="button"> Agregar todos >> </a>
-				<a href="#" class="btn btn-danger btn-sm btn-block" role="button"> << Quitar todos</a>
-			</div>	
-	 		<div class="col-md-4">
-	 			<h5>Permisos para el Rol</h5>		
-				<ul id="sortable2" class="droptrue">
 
-				</ul>
-	 		</div>
-	 		<div class="col-md-2">
-	 		</div>		
-	 	</div>
+	 	<!-- Nav tabs -->
+		<ul class="nav nav-tabs" role="tablist">
+		  <li class="active"><a href="#index" role="tab" data-toggle="tab">Inicio</a></li>
+		  <li><a href="#informes" role="tab" data-toggle="tab">Informes</a></li>
+		  <li><a href="#admin" role="tab" data-toggle="tab">Administración</a></li>
+		  <li><a href="#login" role="tab" data-toggle="tab">Salir</a></li>
+		</ul>
+
+		<!-- Tab panes -->
+		<div class="tab-content">
+		  <div class="tab-pane active" id="index">
+
+		  	<div class="row">
+		  		<div class="col-md-12">
+		  		  <br>
+			  	  <div class="checkbox">
+				    <label>
+				      <input type="checkbox"> <h4>Habilitar menú Inicio</h4>
+				    </label>
+				  </div> <br>
+				</div>  
+			</div>  
+
+		 	<div class="row">		
+		 		<div class="col-md-4">
+		 			<h5>Permisos disponibles</h5>
+		 			<ul id="sortable1" class="droptrue">
+		 				<?php
+		 					echo listado("ui-state-default","Pagina","nombrePagina","idPagina",$mysqli);
+		 				?>
+					</ul>
+				</div>
+				<div class="col-md-2" style="padding-top: 190px;">
+					<a href="#" class="btn btn-success btn-sm btn-block" role="button"> Agregar todos >> </a>
+					<a href="#" class="btn btn-danger btn-sm btn-block" role="button"> << Quitar todos</a>
+				</div>	
+		 		<div class="col-md-4">
+		 			<h5>Permisos para el Rol</h5>		
+					<ul id="sortable2" class="droptrue">
+
+					</ul>
+		 		</div>
+		 		<div class="col-md-2">
+		 		</div>		
+		 	</div>
+
+		  </div>
+		  <div class="tab-pane" id="informes">
+
+		  	INFORMES
+
+		  </div>
+		  <div class="tab-pane" id="admin">
+
+		  	ADMIN
+
+		  </div>
+		  <div class="tab-pane" id="login">
+
+		  	LOGIN
+
+		  </div>
+		</div>
+
+
 		<div class="row">
 			<div class="row pull-right"> <!-- fila para botones -->
 			    <div class="col-md-12">
