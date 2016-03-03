@@ -7,7 +7,7 @@ $(function () {
             plotShadow: false
         },
         title: {
-            text: 'Participación de mercado, Exploradores'
+            text: 'Reporte Mensual'
         },
         tooltip: {
     	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -26,18 +26,18 @@ $(function () {
         },
         series: [{
             type: 'pie',
-            name: 'Browser share',
+            name: 'Share',
             data: [
-                ['Firefox',   45.0],
-                ['IE',       26.8],
+                ['Andres L.',   45.0],
+                ['Camilo D.',       26.8],
                 {
-                    name: 'Chrome',
+                    name: 'Daniela A.',
                     y: 12.8,
                     sliced: true,
                     selected: true
                 },
-                ['Safari',    8.5],
-                ['Opera',     6.2],
+                ['Valentin W.',    8.5],
+                ['Ernesto J.',     6.2],
                 ['Otros',   0.7]
             ]
         }]
