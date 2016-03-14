@@ -12,8 +12,8 @@
     <br>
 <h4>Contactos</h4>
 
-<table class="table table-striped table-bordered table-condensed">
-  <thead>
+<table class="table table-striped table-condensed">
+  <thead style="text-align: center; color:#428BCA;">
     <tr>
       <th width=10%>RUT</th>
       <th width=35%>Nombre</th>
