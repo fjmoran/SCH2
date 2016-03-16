@@ -1,3 +1,15 @@
+<?php
+require_once "../recursos/zhi/CreaConnv2.php";
+$today = date("d-m-Y");
+
+if ($mysqli->connect_errno) {
+    printf("Connect failed: %s\n", $mysqli->connect_error);
+    exit();
+}
+
+$query = "select * from Gasto";	
+
+?>
 <div class="col-md-11">
 <h2>Gastos</h2>
 <h5>Seleccione la fecha que desea vizualizar</h5>
@@ -25,7 +37,25 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+<?php
+if ($result = $mysqli->query($query)) {
+
+    /* fetch associative array */
+    while ($row = $result->fetch_assoc()) {
+    	echo "<tr>
+      <td> {$row['fechaGasto']}</td>    	
+      <td> {$row['Materia_Cliente_idCliente']}</td>
+      <td>{$row['descripcionGasto']}</td>
+      <td>{$row['montoGasto']} hrs.</td>
+      <td><span class=\"glyphicon glyphicon-lock\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Facturado\"></span></td>
+    </tr>";
+    }
+
+    /* free result set */
+    $result->free();
+}
+?>  	
+<!--    <tr>
       <td>25-07-2013</td>    	
       <td>Cemento Polpaico S.A.</td>
       <td>Asesoria Legal</td>
@@ -102,7 +132,7 @@
       <td>UF 15</td>
       <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
       <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-    </tr>    
+    </tr>    -->
   </tbody>
 </table>
 

@@ -1,3 +1,7 @@
+<?php
+require_once "../recursos/zhi/CreaConnv2.php";
+$query = "select * from Contacto";
+?>
 <div class="col-md-11">
 <h2>Busqueda de contactos</h2>
 <h5>Realice una busqueda por el nombre, RUT o Correo electrónico</h5>
@@ -23,6 +27,27 @@
     </tr>
   </thead>
   <tbody>
+<?php
+if ($result = $mysqli->query($query)) {
+
+    /* fetch associative array */
+    while ($row = $result->fetch_assoc()) {
+    	echo "<tr>
+      <td>{$row['rutContacto']}</td>    	
+      <td>{$row['nombreContacto']}</td>
+      <td>{$row['emailContacto']}</td>
+      <td>{$row['telefonoContacto']} hrs.</td>
+      <td><td><a href=\"#cli_ver\"><span class=\"glyphicon glyphicon-eye-open\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Ver detalles\" onclick=\"$('#cuerpo').load('pages/cli_ver.php');\"></span></a>
+          <a href=\"#cli_editar\"><span class=\"glyphicon glyphicon-pencil\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Editar\" onclick=\"$('#cuerpo').load('pages/cli_editar.php');\"></span></a> 
+      <span class=\"glyphicon glyphicon-remove\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Eliminar\"></span></td>
+</td>
+    </tr>";
+    }
+
+    /* free result set */
+    $result->free();
+}
+?> <!--
     <tr>
       <td>60.455.345-3</td>    	
       <td>Cemento Polpaico S.A.</td>
@@ -112,7 +137,7 @@
       <td><a href="#cto_ver"><span class="glyphicon glyphicon-eye-open" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Ver detalles" onclick="$('#cuerpo').load('pages/cto_ver.php');"></span></a>
           <a href="#cto_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar" onclick="$('#cuerpo').load('pages/cto_editar.php');"></span></a> 
       <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-    </tr>    
+    </tr> -->    
   </tbody>
 </table>
 

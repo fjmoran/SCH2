@@ -1,3 +1,7 @@
+<?php
+require_once "../recursos/zhi/CreaConnv2.php";
+
+?>
 <div class="col-md-11">
 <h2>Edición de Cliente</h2>
 <h5>Modificque los datos que corresponda</h5><br>

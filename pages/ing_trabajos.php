@@ -1,6 +1,14 @@
 <?php
-// require "recursos/zhi/CreaConn.php";
+require_once "../recursos/zhi/CreaConnv2.php";
 $today = date("d-m-Y");
+
+if ($mysqli->connect_errno) {
+    printf("Connect failed: %s\n", $mysqli->connect_error);
+    exit();
+}
+
+$query = "select * from Trabajo";	
+
 ?>
 <div class="col-md-11">
 <h2>Trabajos</h2>
@@ -29,7 +37,26 @@ $today = date("d-m-Y");
     </tr>
   </thead>
   <tbody>
-    <tr>
+<?php
+
+if ($result = $mysqli->query($query)) {
+
+    /* fetch associative array */
+    while ($row = $result->fetch_assoc()) {
+    	echo "<tr>
+      <td> {$row['fechaTrabajo']}</td>    	
+      <td> {$row['Materia_Cliente_idCliente']}</td>
+      <td>{$row['Materia_idMateria']}</td>
+      <td>{$row['tiempoTrabajo']} hrs.</td>
+      <td><span class=\"glyphicon glyphicon-lock\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Facturado\"></span></td>
+    </tr>";
+    }
+
+    /* free result set */
+    $result->free();
+}
+?>
+<!--    <tr>
       <td>25-07-2013</td>    	
       <td>Cemento Polpaico S.A.</td>
       <td>Asesoria Legal</td>
@@ -106,7 +133,7 @@ $today = date("d-m-Y");
       <td>2:45 hrs.</td>
       <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
       <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-    </tr>    
+    </tr> -->   
   </tbody>
 </table>
 

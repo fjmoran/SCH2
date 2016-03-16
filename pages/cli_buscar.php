@@ -1,3 +1,7 @@
+<?php
+require_once "../recursos/zhi/CreaConnv2.php";
+$query = "select * from Cliente";	
+?>
 <div class="col-md-11">
 <h2>Busqueda de clientes</h2>
 <h5>Realice una busqueda por el nombre o razón social del cliente, RUT o Correo electrónico</h5>
@@ -23,7 +27,28 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+<?php
+if ($result = $mysqli->query($query)) {
+
+    /* fetch associative array */
+    while ($row = $result->fetch_assoc()) {
+    	echo "<tr>
+      <td>{$row['rutCliente']}</td>    	
+      <td>{$row['nombreCliente']}</td>
+      <td>{$row['emailCliente']}</td>
+      <td>{$row['Usuario_idUsuario']} hrs.</td>
+      <td><td><a href=\"#cli_ver\"><span class=\"glyphicon glyphicon-eye-open\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Ver detalles\" onclick=\"$('#cuerpo').load('pages/cli_ver.php');\"></span></a>
+          <a href=\"#cli_editar\"><span class=\"glyphicon glyphicon-pencil\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Editar\" onclick=\"$('#cuerpo').load('pages/cli_editar.php');\"></span></a> 
+      <span class=\"glyphicon glyphicon-remove\" style=\"color: black;\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Eliminar\"></span></td>
+</td>
+    </tr>";
+    }
+
+    /* free result set */
+    $result->free();
+}
+?> <!--
+   <tr>
       <td>60.455.345-3</td>    	
       <td>Cemento Polpaico S.A.</td>
       <td>cemento.polpaico@mail.com</td>
@@ -112,7 +137,7 @@
       <td><a href="#cli_ver"><span class="glyphicon glyphicon-eye-open" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Ver detalles" onclick="$('#cuerpo').load('pages/cli_ver.php');"></span></a>
           <a href="#cli_editar"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar" onclick="$('#cuerpo').load('pages/cli_editar.php');"></span></a> 
       <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-    </tr>    
+    </tr>    -->
   </tbody>
 </table>
 

@@ -1,3 +1,15 @@
+<?php
+require_once "../recursos/zhi/CreaConnv2.php";
+$today = date("d-m-Y");
+
+if ($mysqli->connect_errno) {
+    printf("Connect failed: %s\n", $mysqli->connect_error);
+    exit();
+}
+
+$query = "select * from Abono";	
+
+?>
 <div class="col-md-11">
 <h2>Abonos</h2>
 <h5>Seleccione la fecha que desea vizualizar</h5>
@@ -25,6 +37,24 @@
     </tr>
   </thead>
   <tbody>
+<?php
+if ($result = $mysqli->query($query)) {
+
+    /* fetch associative array */
+    while ($row = $result->fetch_assoc()) {
+    	echo "<tr>
+      <td>{$row['fechaAbono']}</td>    	
+      <td>{$row['Cliente_idCliente']}</td>
+      <td>{$row['descripcionAbono']}</td>
+      <td>{$row['montoAbono']} hrs.</td>
+      <td><span class=\"glyphicon glyphicon-lock\" rel=\"tooltip\" data-toggle=\"tooltip\" title=\"Facturado\"></span></td>
+    </tr>";
+    }
+
+    /* free result set */
+    $result->free();
+}
+?>
     <tr>
       <td>25-07-2013</td>    	
       <td>Cemento Polpaico S.A.</td>
