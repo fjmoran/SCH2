@@ -59,7 +59,7 @@ require ("recursos/zhi/auth.php");
    
   <script src="recursos/bootstrap3/js/bootstrap.min.js"></script>
   <script src="recursos/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>  
-  <script src="recursos/jquery-ui/js/jquery-ui-1.10.3.custom.min.js"></script>
+  <script src="recursos/jquery-ui/js/jquery-ui-1.11.4.min.js"></script>
   <script src="recursos/form-validator/jquery.form-validator.js"></script>
   <script src="recursos/CryptoJSv3/rollups/sha1.js"></script>
   

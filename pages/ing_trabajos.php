@@ -55,85 +55,7 @@ if ($result = $mysqli->query($query)) {
     /* free result set */
     $result->free();
 }
-?>
-<!--    <tr>
-      <td>25-07-2013</td>    	
-      <td>Cemento Polpaico S.A.</td>
-      <td>Asesoria Legal</td>
-      <td>2:30 hrs.</td>
-      <td><span class="glyphicon glyphicon-lock" rel="tooltip" data-toggle="tooltip" title="Facturado"></span></td>
-    </tr>
-    <tr>
-      <td>21-07-2013</td>      	
-      <td>Pesquera Pacific Star S.A.</td>
-      <td>Redacción de documentos</td>
-      <td>1:45 hrs.</td>
-      <td><span class="glyphicon glyphicon-lock" rel="tooltip" data-toggle="tooltip" title="Facturado"></span></td>
-    </tr>
-    <tr>
-      <td>21-07-2013</td>    	
-      <td>Direct TV Chile Ltda.</td>
-      <td>Redacción de escritura</td>
-      <td>0:30 hrs.</td>
-      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-    </tr>
-    <tr>
-      <td>20-07-2013</td>     	
-      <td>Telefónica Móviles Chile S.A.</td>
-      <td>Redacción de escritura</td>
-      <td>3:00 hrs.</td>
-      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-    </tr>
-    <tr>
-      <td>18-07-2013</td>     	
-      <td>Consorcio Maderero S.A.</td>
-      <td>Asesoria Legal</td>
-      <td>1:15 hrs.</td>
-      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-    </tr>
-    <tr>
-      <td>18-07-2013</td>     	
-      <td>Agrícola Los Ciruelos Ltda.</td>
-      <td>Asesoria Legal</td>
-      <td>4:00 hrs.</td>
-      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-    </tr>
-    <tr>
-      <td>16-07-2013</td>     	
-      <td>Jaime Acevedo E.</td>
-      <td>Redacción de documentos</td>
-      <td>7:30 hrs.</td>
-      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-    </tr>
-    <tr>
-      <td>16-07-2013</td>     	
-      <td>Direct TV Chile Ltda.</td>
-      <td>Asesoria Legal</td>
-      <td>3:30 hrs.</td>
-      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-    </tr>
-    <tr>
-      <td>15-07-2013</td>     	
-      <td>Direct TV Chile Ltda.</td>
-      <td>Redacción de documentos</td>
-      <td>1:00 hrs</td>
-      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-    </tr>
-    <tr>
-      <td>15-07-2013</td>     	
-      <td>Consorcio Maderero S.A.</td>
-      <td>Redacción de documentos</td>
-      <td>2:45 hrs.</td>
-      <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
-      <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-    </tr> -->   
+?>  
   </tbody>
 </table>
 
@@ -165,8 +87,8 @@ if ($result = $mysqli->query($query)) {
         <div class="modal-body">
           <div class="row"> 
             <div class="col-md-6">
-              <div class="form-group"> 
-                <label for="nombre">Cliente:</label>
+              <div class="form-group ui-widget"> 
+                <label for="lbl_nombre">Cliente:</label>
                 <input id="nombre" class="form-control" type="text" placeholder="Nombre del cliente">
               </div> 
               <div class="form-group">
@@ -185,7 +107,7 @@ if ($result = $mysqli->query($query)) {
               </div>              
             </div>  
             <div class="col-md-6">
-              <div class="form-group"> 
+              <div class="form-group ui-widget"> 
                 <label id="lbl_materia" for="materia">Materia:</label>
                 <input id="materia" class="form-control" type="text" placeholder="Materia">
               </div>
@@ -246,7 +168,7 @@ if ($result = $mysqli->query($query)) {
             <div class="col-md-6">
               <div class="form-group"> 
                 <label for="nombre">Cliente:</label>
-                <input id="nombre" class="form-control" type="text" placeholder="Nombre del cliente">
+                <input id="nombre" class="form-control" placeholder="Nombre del cliente">
               </div> 
               <div class="form-group">
                 <label for="horas">Horas:</label>
@@ -312,7 +234,77 @@ if ($result = $mysqli->query($query)) {
           selector: "[rel=tooltip]"
          })
       });
-    </script>
+
+        /* Autocomplete nombre */
+        $(function() { 
+          var availableTags = [
+            "ActionScript",
+            "AppleScript",
+            "Asp",
+            "BASIC",
+            "C",
+            "C++",
+            "Clojure",
+            "COBOL",
+            "ColdFusion",
+            "Erlang",
+            "Fortran",
+            "Groovy",
+            "Haskell",
+            "Java",
+            "JavaScript",
+            "Lisp",
+            "Perl",
+            "PHP",
+            "Python",
+            "Ruby",
+            "Scala",
+            "Scheme",
+            "Aperro", 
+            "AGato",
+            "Acanario",
+            "Aleon"           
+          ];
+          $("#nombre").autocomplete({
+            source: availableTags
+          });
+        });
+
+        $(function() { 
+          var availableTags = [
+            "AZtionScript",
+            "AppleScript",
+            "Asp",
+            "BASIC",
+            "C",
+            "C++",
+            "Clojure",
+            "COBOL",
+            "ColdFusion",
+            "Erlang",
+            "Fortran",
+            "Groovy",
+            "Haskell",
+            "Java",
+            "JavaScript",
+            "Lisp",
+            "Perl",
+            "PHP",
+            "Python",
+            "Ruby",
+            "Scala",
+            "Scheme",
+            "Aperro", 
+            "AGato",
+            "Acanario",
+            "Aleon"           
+          ];
+          $("#materia").autocomplete({
+            source: availableTags
+          });
+        });        
+
+    </script>      
 
 <?php
 /* incluye script para hacer el cambio de los nombres en los labels */
