@@ -55,7 +55,7 @@ if ($result = $mysqli->query($query)) {
     $result->free();
 }
 ?>
-    <tr>
+<!--    <tr>
       <td>25-07-2013</td>    	
       <td>Cemento Polpaico S.A.</td>
       <td>Asesoria Legal</td>
@@ -132,7 +132,7 @@ if ($result = $mysqli->query($query)) {
       <td>UF 15</td>
       <td><a href="#editar" data-toggle="modal"><span class="glyphicon glyphicon-pencil" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Editar"></span></a>
       <span class="glyphicon glyphicon-remove" style="color: black;" rel="tooltip" data-toggle="tooltip" title="Eliminar"></span></td>
-    </tr>    
+    </tr>  -->   
   </tbody>
 </table>
 
