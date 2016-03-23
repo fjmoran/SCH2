@@ -262,12 +262,13 @@ if ($result = $mysqli->query($query)) {
     $cantresult = $result->num_rows; 
     $contresult = 0;
     while ($row = $result->fetch_assoc()) {
-    	echo "\{
+    	echo "{
       value: \"{$row['idCliente']},
-      label: \"{$row['nombreCliente']}
-      \}";
-      $contresult ++;
+      label: \"{$row['nombreCliente']}\"
+      }";
+      
       if ($conresult < $num_rows) { echo ","; }
+      $contresult ++;
     }
 
     /* free result set */
