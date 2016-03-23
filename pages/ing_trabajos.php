@@ -90,7 +90,7 @@ if ($result = $mysqli->query($query)) {
               <div class="form-group ui-widget"> 
                 <label for="lbl_nombre">Cliente:</label>
                 <input id="nombre" class="form-control" type="text" placeholder="Nombre del cliente">
-                <input id="nombre-id" type="text" onchange="alert('Cambio!!!!!');" hidden />
+                <input id="nombre-id" type="text" onchange="alert("Cambio!!!!!");" hidden />
               </div> 
               <div class="form-group">
                 <label for="horas">Horas:</label>
@@ -134,7 +134,7 @@ if ($result = $mysqli->query($query)) {
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">guardar</button>
+          <button type="button" class="btn btn-primary">Guardar</button>
         </div>
       </form>
     </div><!-- modal-content -->
