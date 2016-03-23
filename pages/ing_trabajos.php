@@ -325,10 +325,12 @@ if ($result = $mysqli->query($query)) {
             source: availableTags
           });
         });
-        $("#nombre-id").trigger("special-change");
+
         $("#nombre-id").on("special-change", function () {
             alert("Cambio!!!!")
         });
+
+        $("#nombre-id").trigger("special-change");
     </script>
 
 <?php
