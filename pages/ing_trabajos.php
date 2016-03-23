@@ -90,7 +90,7 @@ if ($result = $mysqli->query($query)) {
               <div class="form-group ui-widget"> 
                 <label for="lbl_nombre">Cliente:</label>
                 <input id="nombre" class="form-control" type="text" placeholder="Nombre del cliente">
-                <input id="nombre-id" name="nombre-id" type="text" hidden />
+                <input id="nombre-id" name="nombre-id" type="text" onchange="alert(document.f.nombre-id.value);" hidden />
               </div> 
               <div class="form-group">
                 <label for="horas">Horas:</label>
