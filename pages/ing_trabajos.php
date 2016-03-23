@@ -111,6 +111,7 @@ if ($result = $mysqli->query($query)) {
               <div class="form-group ui-widget">
                 <label id="lbl_materia" for="materia">Materia:</label>
                 <input id="materia" class="form-control" type="text" placeholder="Materia">
+                <input id="materia-id" type="text" hidden />
               </div>
               <div class="form-group">
                 <label for="minutos">Minutos:</label>
@@ -277,7 +278,7 @@ if ($result = $mysqli->query($query)) {
 ?>
           ];
     $( "#nombre" ).autocomplete({
-      minLength: 0,
+      minLength: 2,
       source: projects,
       focus: function( event, ui ) {
         $( "#nombre" ).val( ui.item.label );
@@ -286,13 +287,13 @@ if ($result = $mysqli->query($query)) {
       select: function( event, ui ) {
         $( "#nombre" ).val( ui.item.label );
         $( "#nombre-id" ).val( ui.item.value )
-                         .trigger("special-change");
+                         .trigger("special-change-nombre");
 
         return false;
       }
     })
   });
-
+/*
         $(function() {
           var availableTags = [
             "AZtionScript",
@@ -326,9 +327,19 @@ if ($result = $mysqli->query($query)) {
             source: availableTags
           });
         });
+*/
+        $("#nombre-id").on("special-change-nombre", function () {
+          alert("Cambio!!!!")
 
-        $("#nombre-id").on("special-change", function () {
-            alert("Cambio!!!!")
+          $( "#materia" ).autocomplete({
+            source: "../recursos/zhi/search_materia.php?idcliente=" + $("#nombre-id").value,
+            minLength: 2,
+            select: function( event, ui ) {
+              $( "#materia" ).val( ui.item.label );
+              $( "#materia-id" ).val( ui.item.value )
+                                .trigger("special-change-materia");
+            }
+          });
         });
     </script>
 
