@@ -327,7 +327,7 @@ if ($result = $mysqli->query($query)) {
         });
 
         $("#nombre-id").on("special-change", function () {
-            Alert("Cambio!!!!")
+            alert("Cambio!!!!")
         });
     </script>
 
