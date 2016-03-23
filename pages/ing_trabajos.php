@@ -279,52 +279,7 @@ if ($result = $mysqli->query($query)) {
     })
   });          
 
-
-        /* Autocomplete materia */
-     $(function() {
-    var projects = [
  <?php
- 
-$query = "select idMateria, nombreMateria from Materia order by nombreCliente";
-if ($result = $mysqli->query($query)) {
-
-    /* fetch associative array */
-    $cantresult = $result->num_rows; 
-    $contresult = 0;
-    while ($row = $result->fetch_assoc()) {
-    	echo "{
-      value: \"{$row['idCliente']}\",
-      label: \"{$row['nombreCliente']}\"
-      }";
-      
-      if ($conresult < $cantresult) { echo ","; }
-      $contresult ++;
-    }
-
-    /* free result set */
-    $result->free();
-}
-?>  
-          ];
-    $( "#nombre" ).autocomplete({
-      minLength: 0,
-      source: projects,
-      focus: function( event, ui ) {
-        $( "#nombre" ).val( ui.item.label );
-        return false;
-      },
-      select: function( event, ui ) {
-        $( "#nombre" ).val( ui.item.label );
-        $( "#nombre-id" ).val( ui.item.value );
- 
-        return false;
-      }
-    })
-  });          
-
-    </script>      
-
-<?php
 /* incluye script para hacer el cambio de los nombres en los labels */
 include ("../recursos/zhi/replace_label.php");
 ?>
