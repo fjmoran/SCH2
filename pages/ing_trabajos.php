@@ -285,7 +285,8 @@ if ($result = $mysqli->query($query)) {
       },
       select: function( event, ui ) {
         $( "#nombre" ).val( ui.item.label );
-        $( "#nombre-id" ).val( ui.item.value );
+        $( "#nombre-id" ).val( ui.item.value )
+                         .trigger("special-change");
 
         return false;
       }
@@ -329,8 +330,6 @@ if ($result = $mysqli->query($query)) {
         $("#nombre-id").on("special-change", function () {
             alert("Cambio!!!!")
         });
-
-        $("#nombre-id").trigger("special-change");
     </script>
 
 <?php
