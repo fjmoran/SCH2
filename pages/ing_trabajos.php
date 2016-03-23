@@ -90,7 +90,7 @@ if ($result = $mysqli->query($query)) {
               <div class="form-group ui-widget"> 
                 <label for="lbl_nombre">Cliente:</label>
                 <input id="nombre" class="form-control" type="text" placeholder="Nombre del cliente">
-                <input id="nombre-id" type="text" onchange="alert("Cambio!!!!!");" hidden />
+                <input id="nombre-id" type="text" hidden>
               </div> 
               <div class="form-group">
                 <label for="horas">Horas:</label>
@@ -240,6 +240,19 @@ if ($result = $mysqli->query($query)) {
         /* Autocomplete nombre */
      $(function() {
     var projects = [
+      {
+        value: "jquery",
+        label: "jQuery",
+        desc: "the write less, do more, JavaScript library",
+        icon: "jquery_32x32.png"
+      },
+      {
+        value: "jquery-ui",
+        label: "jQuery UI",
+        desc: "the official user interface library for jQuery",
+        icon: "jqueryui_32x32.png"
+      },
+
  <?php
  
 $query = "select idCliente, nombreCliente from Cliente order by nombreCliente";
@@ -279,48 +292,39 @@ if ($result = $mysqli->query($query)) {
     })
   });          
 
-
-        /* Autocomplete materia */
-     $(function() {
-    var projects = [
- <?php
- 
-$query = "select idMateria, nombreMateria from Materia order by nombreCliente";
-if ($result = $mysqli->query($query)) {
-
-    /* fetch associative array */
-    $cantresult = $result->num_rows; 
-    $contresult = 0;
-    while ($row = $result->fetch_assoc()) {
-    	echo "{
-      value: \"{$row['idCliente']}\",
-      label: \"{$row['nombreCliente']}\"
-      }";
-      
-      if ($conresult < $cantresult) { echo ","; }
-      $contresult ++;
-    }
-
-    /* free result set */
-    $result->free();
-}
-?>  
+        $(function() { 
+          var availableTags = [
+            "AZtionScript",
+            "AppleScript",
+            "Asp",
+            "BASIC",
+            "C",
+            "C++",
+            "Clojure",
+            "COBOL",
+            "ColdFusion",
+            "Erlang",
+            "Fortran",
+            "Groovy",
+            "Haskell",
+            "Java",
+            "JavaScript",
+            "Lisp",
+            "Perl",
+            "PHP",
+            "Python",
+            "Ruby",
+            "Scala",
+            "Scheme",
+            "Aperro", 
+            "AGato",
+            "Acanario",
+            "Aleon"           
           ];
-    $( "#nombre" ).autocomplete({
-      minLength: 0,
-      source: projects,
-      focus: function( event, ui ) {
-        $( "#nombre" ).val( ui.item.label );
-        return false;
-      },
-      select: function( event, ui ) {
-        $( "#nombre" ).val( ui.item.label );
-        $( "#nombre-id" ).val( ui.item.value );
- 
-        return false;
-      }
-    })
-  });          
+          $("#materia").autocomplete({
+            source: availableTags
+          });
+        });        
 
     </script>      
 
