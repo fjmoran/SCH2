@@ -263,7 +263,7 @@ if ($result = $mysqli->query($query)) {
     $contresult = 0;
     while ($row = $result->fetch_assoc()) {
     	echo "{
-      value: \"{$row['idCliente']},
+      value: \"{$row['idCliente']}\",
       label: \"{$row['nombreCliente']}\"
       }";
       
