@@ -7,7 +7,7 @@ if ($mysqli->connect_errno) {
     exit();
 }
 
-$query = "select * from Trabajo";	
+$query = "select * from Trabajo";
 
 ?>
 <div class="col-md-11">
@@ -44,7 +44,7 @@ if ($result = $mysqli->query($query)) {
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
     	echo "<tr>
-      <td> {$row['fechaTrabajo']}</td>    	
+      <td> {$row['fechaTrabajo']}</td>
       <td> {$row['Materia_Cliente_idCliente']}</td>
       <td>{$row['Materia_idMateria']}</td>
       <td>{$row['tiempoTrabajo']} hrs.</td>
@@ -55,7 +55,7 @@ if ($result = $mysqli->query($query)) {
     /* free result set */
     $result->free();
 }
-?>  
+?>
   </tbody>
 </table>
 
@@ -70,12 +70,12 @@ if ($result = $mysqli->query($query)) {
     <li><a href="#">Siguiente</a></li>
   </ul>
 </div>
-  
+
 </div><!-- col-md-10 -->
 
 <!-- Modal 1 -->
 <div id="agregar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="agregarLabel" aria-hidden="true">
-  
+
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -85,52 +85,52 @@ if ($result = $mysqli->query($query)) {
       </div>
       <form role="form">
         <div class="modal-body">
-          <div class="row"> 
+          <div class="row">
             <div class="col-md-6">
-              <div class="form-group ui-widget"> 
+              <div class="form-group ui-widget">
                 <label for="lbl_nombre">Cliente:</label>
                 <input id="nombre" class="form-control" type="text" placeholder="Nombre del cliente">
                 <input id="nombre-id" type="text" hidden>
-              </div> 
+              </div>
               <div class="form-group">
                 <label for="horas">Horas:</label>
-                  <select id="horas" class="form-control">            
-                    <option>1</option>              
+                  <select id="horas" class="form-control">
+                    <option>1</option>
                     <option>2</option>
-                    <option>3</option>  
-                    <option>4</option>  
-                    <option>5</option>  
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
                     <option>6</option>
-                    <option>7</option>  
-                    <option>8</option>  
-                    <option>9</option>                                                                                              
-                  </select>          
-              </div>              
-            </div>  
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                  </select>
+              </div>
+            </div>
             <div class="col-md-6">
-              <div class="form-group ui-widget"> 
+              <div class="form-group ui-widget">
                 <label id="lbl_materia" for="materia">Materia:</label>
                 <input id="materia" class="form-control" type="text" placeholder="Materia">
               </div>
               <div class="form-group">
                 <label for="minutos">Minutos:</label>
-                  <select id="minutos" class="form-control"> 
-                    <option>0</option>                              
-                    <option>15</option>              
+                  <select id="minutos" class="form-control">
+                    <option>0</option>
+                    <option>15</option>
                     <option>30</option>
-                    <option>45</option>                                                                                              
-                  </select>          
-              </div>               
+                    <option>45</option>
+                  </select>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
-              <div class="form-group"> 
+              <div class="form-group">
                 <label for="descripcion">Descripción:</label>
                 <textarea id="descripcion" class="form-control" rows="3"></textarea>
               </div>
-            </div>             
-          </div>   
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -139,11 +139,11 @@ if ($result = $mysqli->query($query)) {
       </form>
     </div><!-- modal-content -->
   </div><!-- modal-dialog -->
-</div><!-- modal -->  
+</div><!-- modal -->
 <!-- Fin Modal 1 -->
 <!-- Modal 2 -->
 <div id="editar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="agregarLabel" aria-hidden="true">
-  
+
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -163,74 +163,74 @@ if ($result = $mysqli->query($query)) {
                   <input type="text" class="form-control" id="cal2" placeholder="Seleccione una fecha" readonly="true">
                 </div>
               </div>
-            </div>  
-          </div>  
-          <div class="row"> 
+            </div>
+          </div>
+          <div class="row">
             <div class="col-md-6">
-              <div class="form-group"> 
+              <div class="form-group">
                 <label for="nombre">Cliente:</label>
                 <input id="nombre" class="form-control" placeholder="Nombre del cliente">
                 <input id="nombre-id" type="text" value="" hidden>
-              </div> 
+              </div>
               <div class="form-group">
                 <label for="horas">Horas:</label>
-                  <select id="horas" class="form-control">            
-                    <option>1</option>              
+                  <select id="horas" class="form-control">
+                    <option>1</option>
                     <option>2</option>
-                    <option>3</option>  
-                    <option>4</option>  
-                    <option>5</option>  
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
                     <option>6</option>
-                    <option>7</option>  
-                    <option>8</option>  
-                    <option>9</option>                                                                                              
-                  </select>          
-              </div>              
-            </div>  
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                  </select>
+              </div>
+            </div>
             <div class="col-md-6">
-              <div class="form-group"> 
+              <div class="form-group">
                 <label id="lbl_materia" for="materia" >Materia:</label>
                 <input id="materia" class="form-control" type="text" placeholder="Materia">
               </div>
               <div class="form-group">
                 <label for="minutos">Minutos:</label>
-                  <select id="minutos" class="form-control"> 
-                    <option>0</option>                              
-                    <option>15</option>              
+                  <select id="minutos" class="form-control">
+                    <option>0</option>
+                    <option>15</option>
                     <option>30</option>
-                    <option>45</option>                                                                                              
-                  </select>          
-              </div>               
+                    <option>45</option>
+                  </select>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
-              <div class="form-group"> 
+              <div class="form-group">
                 <label for="descripcion">Descripción:</label>
                 <textarea id="descripcion" class="form-control" rows="3"></textarea>
               </div>
-            </div>             
-          </div>   
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
           <button type="button" class="btn btn-primary">guardar</button>
         </div>
       </form>
-      
+
     </div><!-- modal-content -->
   </div><!-- modal-dialog -->
 </div><!-- modal -->
 <!-- Fin Modal 2 -->
 
-    <script type="text/javascript"> 
+    <script type="text/javascript">
 
       $(document).ready(function(){
 
-        /* Calendario 1*/       
+        /* Calendario 1*/
         $('#cal1').datepicker();
-        /* Calendario 2*/       
-        $('#cal2').datepicker();        
+        /* Calendario 2*/
+        $('#cal2').datepicker();
         /* Tooltip */
         $('.table').tooltip({
           selector: "[rel=tooltip]"
@@ -254,27 +254,27 @@ if ($result = $mysqli->query($query)) {
       },
 
  <?php
- 
+
 $query = "select idCliente, nombreCliente from Cliente order by nombreCliente";
 if ($result = $mysqli->query($query)) {
 
     /* fetch associative array */
-    $cantresult = $result->num_rows; 
+    $cantresult = $result->num_rows;
     $contresult = 0;
     while ($row = $result->fetch_assoc()) {
     	echo "{
       value: \"{$row['idCliente']}\",
       label: \"{$row['nombreCliente']}\"
       }";
-      
-      if ($conresult < $num_rows) { echo ","; }
+
+      if ($conresult < $cantresult) { echo ","; }
       $contresult ++;
     }
 
     /* free result set */
     $result->free();
 }
-?>  
+?>
           ];
     $( "#nombre" ).autocomplete({
       minLength: 0,
@@ -286,13 +286,13 @@ if ($result = $mysqli->query($query)) {
       select: function( event, ui ) {
         $( "#nombre" ).val( ui.item.label );
         $( "#nombre-id" ).val( ui.item.value );
- 
+
         return false;
       }
     })
-  });          
+  });
 
-        $(function() { 
+        $(function() {
           var availableTags = [
             "AZtionScript",
             "AppleScript",
@@ -316,17 +316,17 @@ if ($result = $mysqli->query($query)) {
             "Ruby",
             "Scala",
             "Scheme",
-            "Aperro", 
+            "Aperro",
             "AGato",
             "Acanario",
-            "Aleon"           
+            "Aleon"
           ];
           $("#materia").autocomplete({
             source: availableTags
           });
-        });        
+        });
 
-    </script>      
+    </script>
 
 <?php
 /* incluye script para hacer el cambio de los nombres en los labels */
