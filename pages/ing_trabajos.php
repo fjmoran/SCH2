@@ -254,7 +254,7 @@ if ($result = $mysqli->query($query)) {
       label: \"{$row['nombreCliente']}\"
       }";
       
-      if ($conresult < $cantresult) { echo ","; }
+      if ($conresult < $num_rows) { echo ","; }
       $contresult ++;
     }
 
