@@ -2,7 +2,7 @@
 <h2>Creación de Contacto</h2>
 <h5>Ingrese los datos del contacto a registrar.</h5><br>
   
-  <form role="form">
+  <form role="form" name="crear_contacto">
     <ul class="nav nav-tabs" id="tabs_crear">
       <li class="active"><a href="#datos_basicos" data-toggle="tab">Datos Básicos</a></li>
       <li><a href="#direccion" data-toggle="tab">Dirección</a></li>
@@ -21,48 +21,48 @@
 
         <div class="form-group">
           <label for="nombres">Nombres:</label>
-          <input id="nombres" class="form-control" type="text" placeholder="Nombres">
+          <input id="nombres" class="form-control" type="text" placeholder="Nombres" name="nombres">
         </div> 
         <div class="form-group">
           <label for="apellido2">Apellido materno:</label>
-          <input id="apellido2" class="form-control" type="text" placeholder="Apellido materno"> 
+          "<input id="apellido2" class="form-control" type="text" placeholder="Apellido materno" name="apellido2"> 
         </div>
 
         <div class="form-group">
           <label for="telefono">Teléfono:</label>
-          <input id="telefono" class="form-control" type="text" placeholder="Teléfono">          
+          <input id="telefono" class="form-control" type="text" placeholder="Teléfono" name="telefono">          
         </div>
         <div class="form-group">
           <label for="email">Correo Electrónico:</label>
-          <input id="email" class="form-control" type="email" placeholder="nombre@dominio.com">      
+          <input id="email" class="form-control" type="email" placeholder="nombre@dominio.com" name="email">      
         </div>  
         <div class="form-group">
           <label for="twitter">Twitter:</label>
-          <input id="twitter" class="form-control" type="text" placeholder="Twitter">       
+          <input id="twitter" class="form-control" type="text" placeholder="Twitter" name="twitter">       
         </div>                                                 
       </div>
       <div class="col-md-6"> <!-- columna derecha -->
 
         <div class="form-group">
           <label for="apellido1">Apellido paterno:</label>
-          <input id="apellido1" class="form-control" type="text" placeholder="Apellido paterno"> 
+          <input id="apellido1" class="form-control" type="text" placeholder="Apellido paterno" name="apellido1"> 
         </div>  
 
         <div class="form-group">
           <label for="rut">RUT:</label>
-          <input id="rut" class="form-control" type="text" placeholder="xx.xxx.xxx-x">        
+          <input id="rut" class="form-control" type="text" placeholder="xx.xxx.xxx-x" name="rut">        
         </div>
         <div class="form-group">
           <label for="movil">Teléfono móvil:</label>
-          <input id="movil" class="form-control" type="text" placeholder="Teléfono móvil">       
+          <input id="movil" class="form-control" type="text" placeholder="Teléfono móvil" name="movil">       
         </div>  
         <div class="form-group">
           <label for="linkedin">LinkedIn:</label>
-          <input id="linkedin" class="form-control" type="text" placeholder="LinkedIn">       
+          <input id="linkedin" class="form-control" type="text" placeholder="LinkedIn" name="linkedin">       
         </div>
         <div class="form-group">
           <label for="facebook">Facebook:</label>
-          <input id="facebook" class="form-control" type="text" placeholder="Facebook">       
+          <input id="facebook" class="form-control" type="text" placeholder="Facebook" name="facebook">       
         </div>                                                       
       </div>  
     </div>
@@ -79,7 +79,7 @@
       <div class="col-md-6"> <!-- columna derecha dirección -->
         <div class="form-group">
           <label for="pais">País:</label>
-            <select id="pais" class="form-control">
+            <select id="pais" class="form-control" name="pais">
               <option>Chile</option>              
               <option>Argentina</option>
               <option>Perú</option>  
@@ -89,7 +89,7 @@
         </div> 
         <div class="form-group">
           <label for="comuna">Comuna:</label>
-            <select id="Comuna" class="form-control">
+            <select id="Comuna" class="form-control" name="comuna">
               <option>Las Condes</option>              
               <option>Santiago</option>
               <option>Ñuñoa</option>  
@@ -99,13 +99,13 @@
         </div>
         <div class="form-group">
           <label for="depto">Oficina o Departamento:</label>
-          <input id="depto" class="form-control" type="text" placeholder="Oficina o Departamento">       
+          <input id="depto" class="form-control" type="text" placeholder="Oficina o Departamento" name="depto">       
         </div>                     
       </div>
       <div class="col-md-6"> <!-- columna izquerda dirección -->
         <div class="form-group">
           <label for="region">Región:</label>
-            <select id="region" class="form-control">
+            <select id="region" class="form-control" name="region">
             <option>Región Metropolitana</option>              
             <option>Región Arica y Parinacota</option>
             <option>Región Tarapacá</option>  
@@ -115,7 +115,7 @@
         </div>
         <div class="form-group">
           <label for="calle">Calle o Avenida:</label>
-          <input id="calle" class="form-control" type="text" placeholder="Calle o Avenida">       
+          <input id="calle" class="form-control" type="text" placeholder="Calle o Avenida" name="calle">       
         </div>         
       </div>
     </div>

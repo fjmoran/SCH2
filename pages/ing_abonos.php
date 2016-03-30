@@ -160,7 +160,7 @@ if ($result = $mysqli->query($query)) {
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h4 class="modal-title" id="myModalLabel">Ingreso de Abono</h4>
       </div>
-      <form role="form">
+      <form role="form" name="agregar_abono" method="post" action="agregar_abono.php">
         <div class="modal-body">
           <div class="row">
             <div class="col-md-12">

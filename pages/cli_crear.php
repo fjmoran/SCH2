@@ -1,8 +1,14 @@
+<?php
+
+require_once "../recursos/zhi/CreaConnv2.php";
+
+?>
+
 <div class="col-md-11">
 <h2>Creación de Cliente</h2>
 <h5>Ingrese los datos de la empresa o persona que desea registrar</h5><br>
   
-  <form role="form">
+  <form role="form" name="crear_cliente" method="post">
     <ul class="nav nav-tabs" id="tabs_crear">
       <li class="active"><a href="#datos_basicos" data-toggle="tab">Datos Básicos</a></li>
       <li><a href="#direccion" data-toggle="tab">Dirección</a></li>
@@ -36,39 +42,43 @@
       <div class="col-md-6"> <!-- columna izquierda -->
         <div class="form-group empresa"> <!-- empresa -->
           <label for="razon_social">Razón Social:</label>
-          <input id="razon_social" class="form-control" type="text" placeholder="Razón Social">           
+          <input id="razon_social" class="form-control" type="text" placeholder="Razón Social" name="razon_social">           
         </div>
         <div class="form-group empresa"> <!-- empresa -->
           <label for="fantasia">Nombre de fantasía:</label>
-          <input id="fantasia" class="form-control" type="text" placeholder="Nombre de fantasía">           
+          <input id="fantasia" class="form-control" type="text" placeholder="Nombre de fantasía" name="fantasia">           
         </div>
 
         <div class="form-group hidden persona"> <!-- persona -->
           <label for="nombres">Nombres:</label>
-          <input id="nombres" class="form-control" type="text" placeholder="Nombres">
+          <input id="nombres" class="form-control" type="text" placeholder="Nombres" name="nombres">
         </div> 
         <div class="form-group hidden persona"> <!-- persona -->
           <label for="apellido2">Apellido materno:</label>
-          <input id="apellido2" class="form-control" type="text" placeholder="Apellido materno"> 
+          <input id="apellido2" class="form-control" type="text" placeholder="Apellido materno" name="apellido2"> 
         </div>
 
         <div class="form-group">
           <label for="telefono">Teléfono:</label>
-          <input id="telefono" class="form-control" type="text" placeholder="Teléfono">          
+          <input id="telefono" class="form-control" type="text" placeholder="Teléfono" name="telefono">          
         </div> 
         <div class="form-group">
           <label for="fax">Fax:</label>
-          <input id="fax" class="form-control" type="text" placeholder="Fax">         
+          <input id="fax" class="form-control" type="text" placeholder="Fax" name="fax">         
         </div>
         <div class="form-group">
           <label for="abogado">Abogado a cargo:</label>
-            <select id="abogado" class="form-control">
-              <option>No asignado</option>             
-              <option>Abogado 1</option>              
-              <option>Abogado 2</option>
-              <option>Abogado 3</option>  
-              <option>Abogado 4</option>  
-              <option>Abogado 5</option>                                                                          
+            <select id="abogado" class="form-control" name="abogado">
+            	<?php
+            		$query = "select idUsuario, nombreUsuario from Usuario where activoUsuario=1";
+            		
+            		if ($result = $mysqli->query($query)){
+            			while ($row = $result->fetch_assoc()) {
+    								echo "<option value=\"{$row['idUsuario']}\">{$row['nombreUsuario']}</option>";
+    							}
+    						}
+								$result->free();
+            	?>                                                                          
             </select>          
         </div>                                   
       </div>
@@ -76,24 +86,24 @@
 
         <div class="form-group hidden persona"> <!-- persona -->
           <label for="apellido1">Apellido paterno:</label>
-          <input id="apellido1" class="form-control" type="text" placeholder="Apellido paterno"> 
+          <input id="apellido1" class="form-control" type="text" placeholder="Apellido paterno" name="apellido1"> 
         </div>  
 
         <div class="form-group">
           <label for="rut">RUT:</label>
-          <input id="rut" class="form-control" type="text" placeholder="xx.xxx.xxx-x">        
+          <input id="rut" class="form-control" type="text" placeholder="xx.xxx.xxx-x" name="rut">        
         </div>
         <div class="form-group">
           <label for="giro">Giro:</label>
-          <input id="giro" class="form-control" type="text" placeholder="Giro">       
+          <input id="giro" class="form-control" type="text" placeholder="Giro" name="giro">       
         </div>
         <div class="form-group">
           <label for="email">Correo Electrónico:</label>
-          <input id="email" class="form-control" type="email" placeholder="nombre@dominio.com">      
+          <input id="email" class="form-control" type="email" placeholder="nombre@dominio.com" name="email">      
         </div>  
         <div class="form-group">
           <label for="web">Sitio Web:</label>
-          <input id="web" class="form-control" type="text" placeholder="Sitio Web">       
+          <input id="web" class="form-control" type="text" placeholder="Sitio Web" name="web">       
         </div>                       
       </div>  
     </div>
@@ -110,43 +120,60 @@
       <div class="col-md-6"> <!-- columna derecha dirección -->
         <div class="form-group">
           <label for="pais">País:</label>
-            <select id="pais" class="form-control">
-              <option>Chile</option>              
-              <option>Argentina</option>
-              <option>Perú</option>  
-              <option>U.S.A.</option>  
-              <option>Otro</option>                                                                         
+            <select id="pais" class="form-control" name="pais">
+							<?php
+            		$query = "select idPais, nombrePais from Pais where activoPais=1";
+            		
+            		if ($result = $mysqli->query($query)){
+            			while ($row = $result->fetch_assoc()) {
+    								echo "<option value=\"{$row['idPais']}\">{$row['nombrePais']}</option>";
+    							}
+    						}
+								$result->free();
+            	?>                   
             </select>          
         </div> 
         <div class="form-group">
           <label for="comuna">Comuna:</label>
-            <select id="Comuna" class="form-control">
-              <option>Las Condes</option>              
-              <option>Santiago</option>
-              <option>Ñuñoa</option>  
-              <option>Providencia</option>  
-              <option>No aplica</option>                                                                         
+            <select id="Comuna" class="form-control" name="comuna">
+							<?php
+            		$query = "select idComuna, nombreComuna from Comuna where activoComuna=1";
+            		
+            		if ($result = $mysqli->query($query)){
+            			while ($row = $result->fetch_assoc()) {
+    								echo "<option value=\"{$row['idComuna']}\">{$row['nombreComuna']}</option>";
+    							}
+    						}
+								$result->free();
+            	?>                   
+							<option>No aplica</option>                                                                         
             </select>          
         </div>
         <div class="form-group">
           <label for="depto">Oficina o Departamento:</label>
-          <input id="depto" class="form-control" type="text" placeholder="Oficina o Departamento">       
+          <input id="depto" class="form-control" type="text" placeholder="Oficina o Departamento" name="depto">        
         </div>                     
       </div>
       <div class="col-md-6"> <!-- columna izquerda dirección -->
         <div class="form-group">
           <label for="region">Región:</label>
-            <select id="region" class="form-control">
-            <option>Región Metropolitana</option>              
-            <option>Región Arica y Parinacota</option>
-            <option>Región Tarapacá</option>  
-            <option>Región Antofagasta</option>  
+            <select id="region" class="form-control" name="region">
+            		<?php
+            		$query = "select idRegion, nombreRegion from Region where  activoRegion=1";
+            		
+            		if ($result = $mysqli->query($query)){
+            			while ($row = $result->fetch_assoc()) {
+    								echo "<option value=\"{$row['idRegion']}\">{$row['nombreRegion']}</option>";
+    							}
+    						}
+								$result->free();
+            	?>                   
             <option>No aplica</option>                                                                         
             </select>          
         </div>
         <div class="form-group">
           <label for="calle">Calle o Avenida:</label>
-          <input id="calle" class="form-control" type="text" placeholder="Calle o Avenida">       
+          <input id="calle" class="form-control" type="text" placeholder="Calle o Avenida" name="calle">       
         </div>         
       </div>
     </div>
