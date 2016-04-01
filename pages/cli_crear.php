@@ -8,7 +8,7 @@ require_once "../recursos/zhi/CreaConnv2.php";
 <h2>Creación de Cliente</h2>
 <h5>Ingrese los datos de la empresa o persona que desea registrar</h5><br>
 
-  <form role="form" name="crear_cliente" method="post" action="recursos/sch2/crear_cliente.php" target="IframeOutput">
+  <form role="form" name="crear_cliente" method="post" action="recursos/sch2/crear_cliente.php" target="Salida">
     <ul class="nav nav-tabs" id="tabs_crear">
       <li class="active"><a href="#datos_basicos" data-toggle="tab">Datos Básicos</a></li>
       <li><a href="#direccion" data-toggle="tab">Dirección</a></li>
@@ -68,7 +68,7 @@ require_once "../recursos/zhi/CreaConnv2.php";
         </div>
         <div class="form-group">
           <label for="abogado">Abogado a cargo:</label>
-            <select id="abogado" class="form-control" name="abogado">
+            <select id="abogado" class="form-control" name="Usuario_idUsuario">
             	<?php
             		$query = "select idUsuario, nombreUsuario from Usuario where activoUsuario=1";
 
@@ -120,7 +120,7 @@ require_once "../recursos/zhi/CreaConnv2.php";
       <div class="col-md-6"> <!-- columna derecha dirección -->
         <div class="form-group">
           <label for="pais">País:</label>
-            <select id="pais" class="form-control" name="pais">
+            <select id="pais" class="form-control" name="Pais_idPais">
 							<?php
             		$query = "select idPais, nombrePais from Pais where activoPais=1";
 
@@ -135,7 +135,7 @@ require_once "../recursos/zhi/CreaConnv2.php";
         </div>
         <div class="form-group">
           <label for="comuna">Comuna:</label>
-            <select id="Comuna" class="form-control" name="comuna">
+            <select id="Comuna" class="form-control" name="Comuna_idComuna">
 							<?php
             		$query = "select idComuna, nombreComuna from Comuna where activoComuna=1";
 
@@ -157,7 +157,7 @@ require_once "../recursos/zhi/CreaConnv2.php";
       <div class="col-md-6"> <!-- columna izquerda dirección -->
         <div class="form-group">
           <label for="region">Región:</label>
-            <select id="region" class="form-control" name="region">
+            <select id="region" class="form-control" name="Region_idRegion">
             		<?php
             		$query = "select idRegion, nombreRegion from Region where  activoRegion=1";
 
@@ -188,10 +188,9 @@ require_once "../recursos/zhi/CreaConnv2.php";
         </p>
       </div>
     </div>
-
   </form>
 </div>
-
+<iframe name="Salida"/>
 <script type="text/javascript">
 function toggleSet(rad)
 {

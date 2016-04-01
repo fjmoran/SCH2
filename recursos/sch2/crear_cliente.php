@@ -20,19 +20,24 @@ switch ($tipo) {
 }
 
 foreach ($_POST as $llave => $valor) {
-  $col_name = $llave."Cliente";
+  $pos = stripos($llave,"_id");
+  if ($pos === false){
+    $col_name = $llave."Cliente";
+  }else{
+    $col_name = $llave;
+  }
   if (!empty($valor)){
     array_push($query_col, $col_name);
     array_push($query_set, $valor);
   }
 }
-
+$query .= "(". implode(",",$query_col) . ") VALUES (" . implode(",",$query_set) .")";
 echo "<html>";
-echo "<verbatim>";
-print_r($query_col);
+echo implode(",",$query_col);
 echo "<br>=====<br>";
-print_r($query_set);
-echo "</verbatim>";
+echo implode(",",$query_set);
+echo "<br>=====<br>";
+echo $query;
 echo "</html>";
 
  ?>
