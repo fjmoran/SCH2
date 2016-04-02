@@ -2,8 +2,13 @@
 require_once "../zhi/CreaConnv2.php";
 
 $query = "insert into Cliente ";
+$query_cliente_col = array("nombresCliente","nombreCliente","apellido1Cliente","apellido2Cliente","rutCliente","giroCliente","telefonoCliente","emailCliente","faxCliente","webCliente","Usuario_idUsuario","tipoCliente");
+$query_cliente_set = array();
+$query_dir_col = array("Pais_idPais","Comuna_idComuna","Region_idRegion","calleDireccion");
+$query_dir_set = array();
 $query_col = array();
 $query_set = array();
+
 $tipo = $_POST['optionsRadios'];
 unset($_POST['optionsRadios']);
 
@@ -19,18 +24,24 @@ switch ($tipo) {
           break;
 }
 
-foreach ($_POST as $llave => $valor) {
-  $pos = stripos($llave,"_id");
-  if ($pos === false){
-    $col_name = $llave."Cliente";
+foreach($query_cliente_col as $ValorCliente){
+  $pos = stripos($ValorCliente,"Cliente");
+  if($pos != false){
+    $llave = substr($ValorCliente,0,-7);
+    $query_cliente_set[$ValorCliente] = $_POST[$llave];
   }else{
-    $col_name = $llave;
+    $query_cliente_set[$ValorCliente] = $_POST[$ValorCliente];
   }
+}
+
+foreach ($query_cliente_set as $llave => $valor) {
+  $col_name = $llave;
   if (!empty($valor)){
     array_push($query_col, $col_name);
     array_push($query_set, $valor);
   }
 }
+
 $query .= "(". implode(",",$query_col) . ") VALUES (" . implode(",",$query_set) .")";
 echo "<html>";
 echo implode(",",$query_col);
@@ -40,4 +51,4 @@ echo "<br>=====<br>";
 echo $query;
 echo "</html>";
 
- ?>
+?>
